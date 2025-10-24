@@ -1,0 +1,4892 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html>
+<html b:version='2' class='v2' expr:dir='data:blog.languageDirection' xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
+<head>
+  <meta charset='utf-8'/>
+  <meta content='width=device-width, initial-scale=1.0' name='viewport'/>
+  <title><data:blog.pageTitle/></title>
+  
+  <!-- Theme Information -->
+  <meta content='Al Quran Pro - Islamic Blog Theme' name='theme-name'/>
+  <meta content='Akter Molla' name='theme-author'/>
+  <meta content='3.0' name='theme-version'/>
+  
+  <!-- Fonts -->
+  <link href='https://fonts.maateen.me/kalpurush/font.css' rel='stylesheet'/>
+  <link href='https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&amp;display=swap' rel='stylesheet'/>
+  <link href='https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&amp;display=swap' rel='stylesheet'/>
+  <link href='https://fonts.googleapis.com/css2?family=Scheherazade+New:wght@400;700&amp;display=swap' rel='stylesheet'/>
+  <link href='https://fonts.googleapis.com/css2?family=Lateef:wght@400;700&amp;display=swap' rel='stylesheet'/>
+  
+  <!-- ==================== GLOBAL CSS ==================== -->
+  <b:skin><![CDATA[
+  /* CSS Variables */
+  :root {
+    /* Islamic Color Palette */
+    --primary: #1a472a;
+    --secondary: #2d5a27;
+    --accent: #8e6e53;
+    --gold: #c19a3f;
+    --light-green: #e8f5e8;
+    --white: #ffffff;
+    --dark: #1a1a1a;
+    --text: #2c3e2c;
+    --light-bg: #f8fbf8;
+    --gray-light: #f5f5f5;
+    --gray-medium: #e0e0e0;
+    --gray-dark: #757575;
+    
+    /* Font Sizes */
+    --bengali-font-size: 16px;
+    --arabic-font-size: 1.6rem;
+    --ui-font-size: 1rem;
+    
+    /* Font Families */
+    --font-bengali: 'Kalpurush', 'Hind Siliguri', sans-serif;
+    --font-arabic: 'Amiri', 'Scheherazade New', serif;
+    --font-ui: 'Hind Siliguri', sans-serif;
+    
+    /* Shadows and Border Radius */
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    --shadow-hover: 0 8px 24px rgba(0, 0, 0, 0.12);
+    --shadow-large: 0 12px 40px rgba(0, 0, 0, 0.15);
+    --rounded: 8px;
+    --rounded-lg: 16px;
+    --rounded-full: 50px;
+    
+    /* Transitions */
+    --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    --transition-slow: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+  }
+
+  /* Dark Mode Variables */
+  [data-theme="dark"] {
+    --primary: #2d8b57;
+    --secondary: #3a9a5f;
+    --accent: #a88b72;
+    --gold: #d4b15f;
+    --light-green: #1a2a1a;
+    --white: #1e1e1e;
+    --dark: #f5f5f5;
+    --text: #e0e0e0;
+    --light-bg: #121212;
+    --gray-light: #2a2a2a;
+    --gray-medium: #3a3a3a;
+    --gray-dark: #a0a0a0;
+  }
+
+  /* Reset and Base Styles */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: var(--font-bengali);
+    color: var(--text);
+    background: var(--light-bg);
+    line-height: 1.7;
+    overflow-x: hidden;
+    font-size: var(--bengali-font-size);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  /* Typography */
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+    line-height: 1.3;
+    margin-top: 0;
+    color: var(--primary);
+    font-family: var(--font-ui);
+  }
+
+  h1 { font-size: 2.5rem; }
+  h2 { font-size: 2rem; }
+  h3 { font-size: 1.5rem; }
+  h4 { font-size: 1.25rem; }
+  h5 { font-size: 1.1rem; }
+  h6 { font-size: 1rem; }
+
+  p {
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+  }
+
+  a {
+    color: var(--primary);
+    text-decoration: none;
+    transition: var(--transition);
+  }
+
+  a:hover {
+    color: var(--secondary);
+  }
+
+  /* Layout */
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  /* ==================== HEADER SECTION ==================== */
+  .agency-header {
+    background: var(--white);
+    box-shadow: var(--shadow);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 0.8rem 0;
+    transition: var(--transition);
+    border-bottom: 3px solid var(--primary);
+  }
+
+  .header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--primary);
+    text-decoration: none;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .logo:hover {
+    color: var(--secondary);
+    transform: translateY(-2px);
+  }
+
+  /* Navigation */
+  .nav-menu {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+
+  .nav-item {
+    position: relative;
+  }
+
+  .nav-link {
+    color: var(--dark);
+    text-decoration: none;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    transition: var(--transition);
+    display: inline-block;
+    border-radius: var(--rounded);
+    font-size: 1.1rem;
+    font-family: var(--font-ui);
+  }
+
+  .nav-link:hover {
+    color: var(--primary);
+    background-color: rgba(26, 71, 42, 0.1);
+  }
+
+  .nav-link.active {
+    color: var(--primary);
+    font-weight: 700;
+    background-color: rgba(26, 71, 42, 0.1);
+  }
+
+  /* Theme Toggle */
+  .theme-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.5rem;
+    padding: 0.5rem;
+    border-radius: 50%;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+  }
+
+  .theme-toggle:hover {
+    background: rgba(26, 71, 42, 0.1);
+  }
+
+  /* ==================== HERO SECTION ==================== */
+  .hero-section {
+    background: linear-gradient(135deg, rgba(26, 71, 42, 0.9), rgba(45, 90, 39, 0.8));
+    color: var(--white);
+    padding: 8rem 2rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    background-image: url('https://images.unsplash.com/photo-1541250623744-9ac4f8c56c5f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: overlay;
+  }
+
+  .hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 0;
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .hero-title {
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+    animation: fadeInUp 0.8s ease;
+    font-family: var(--font-arabic);
+  }
+
+  .hero-subtitle {
+    font-size: 1.5rem;
+    max-width: 800px;
+    margin: 0 auto 3rem;
+    opacity: 0.9;
+    animation: fadeInUp 1s ease 0.2s forwards;
+    opacity: 0;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+  }
+
+  /* ==================== BUTTONS ==================== */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.8rem 2rem;
+    border-radius: var(--rounded-full);
+    font-weight: 600;
+    text-decoration: none;
+    transition: var(--transition);
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    box-shadow: var(--shadow);
+    font-family: var(--font-ui);
+    font-size: var(--ui-font-size);
+    position: relative;
+    overflow: hidden;
+    min-height: 44px;
+  }
+
+  .btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none !important;
+  }
+
+  .btn-primary {
+    background: var(--gold);
+    color: var(--dark);
+  }
+
+  .btn-primary:hover:not(:disabled) {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-hover);
+    background: #d4b15f;
+  }
+
+  .btn-outline {
+    background: transparent;
+    border: 2px solid var(--white);
+    color: var(--white);
+  }
+
+  .btn-outline:hover:not(:disabled) {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+  }
+
+  .btn-read-more {
+    background: var(--primary);
+    color: var(--white);
+    padding: 0.6rem 1.5rem;
+    font-size: 0.9rem;
+  }
+
+  .btn-read-more:hover:not(:disabled) {
+    background: var(--secondary);
+    transform: translateY(-2px);
+  }
+
+  .btn-secondary {
+    background: var(--secondary);
+    color: var(--white);
+  }
+
+  .btn-secondary:hover:not(:disabled) {
+    background: var(--primary);
+    transform: translateY(-2px);
+  }
+
+  /* ==================== MAIN CONTENT ==================== */
+  .main-content {
+    padding: 3rem 0;
+    min-height: 60vh;
+  }
+
+  /* Section Titles */
+  .section-title {
+    text-align: center;
+    font-size: 2.2rem;
+    margin-bottom: 2rem;
+    color: var(--primary);
+    position: relative;
+    padding-bottom: 1rem;
+  }
+
+  .section-title:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: var(--gold);
+    border-radius: 2px;
+  }
+
+  /* Islamic Border */
+  .islamic-border {
+    position: relative;
+    border: 2px solid var(--gold);
+    border-radius: var(--rounded);
+    padding: 1.5rem;
+    background: var(--white);
+    margin: 1rem 0;
+  }
+
+  .islamic-border::before {
+    content: "﷽";
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--white);
+    padding: 0 10px;
+    font-family: var(--font-arabic);
+    font-size: 1.5rem;
+    color: var(--gold);
+    z-index: 1;
+  }
+
+  /* ==================== DAILY SECTION ==================== */
+  .daily-section {
+    margin-bottom: 3rem;
+    width: 100%;
+    max-width: none;
+  }
+
+  .daily-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+    width: 100%;
+  }
+
+  .daily-card {
+    background: var(--white);
+    border-radius: var(--rounded-lg);
+    padding: 2rem;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    text-align: center;
+    border: 1px solid rgba(0,0,0,0.05);
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .daily-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-hover);
+  }
+
+  .daily-card-icon {
+    font-size: 2.5rem;
+    color: var(--primary);
+    margin-bottom: 1rem;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 70px;
+    height: 70px;
+    background: rgba(26, 71, 42, 0.1);
+    border-radius: 50%;
+    margin: 0 auto 1rem;
+  }
+
+  .daily-card-title {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    color: var(--primary);
+    position: relative;
+    padding-bottom: 0.5rem;
+  }
+
+  .daily-card-title:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 2px;
+    background: var(--gold);
+    transition: var(--transition);
+  }
+
+  .daily-card:hover .daily-card-title:after {
+    width: 80px;
+  }
+
+  .arabic-text {
+    font-family: var(--font-arabic);
+    font-size: var(--arabic-font-size);
+    text-align: right;
+    direction: rtl;
+    padding: 1.5rem;
+    background: var(--light-green);
+    border-radius: var(--rounded);
+    margin: 1rem 0;
+    line-height: 2;
+    box-shadow: inset 0 0 5px rgba(0,0,0,0.05);
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* ==================== BLOG SECTION ==================== */
+  .blog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+  }
+
+  .blog-post {
+    background: var(--white);
+    border-radius: var(--rounded-lg);
+    padding: 2rem;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    border-left: 4px solid var(--primary);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    position: relative;
+  }
+
+  .blog-post:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-hover);
+  }
+
+  .post-title {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    color: var(--primary);
+    line-height: 1.4;
+  }
+
+  .post-meta {
+    color: var(--gray-dark);
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  .post-excerpt {
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+    color: var(--text);
+    line-height: 1.6;
+  }
+
+  .post-read-more {
+    margin-top: auto;
+  }
+
+  /* Full Post Content */
+  .post-content-full {
+    background: var(--white);
+    border-radius: var(--rounded-lg);
+    padding: 3rem;
+    box-shadow: var(--shadow);
+    margin-bottom: 3rem;
+    border-left: 4px solid var(--primary);
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .post-content-full .post-title {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    color: var(--primary);
+    line-height: 1.3;
+  }
+
+  .post-content-full .post-meta {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--gray-medium);
+  }
+
+  .post-content-full .post-body {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--text);
+  }
+
+  .post-content-full .post-body p {
+    margin-bottom: 1.5rem;
+  }
+
+  .post-content-full .post-body h2,
+  .post-content-full .post-body h3,
+  .post-content-full .post-body h4 {
+    margin: 2rem 0 1rem 0;
+    color: var(--primary);
+  }
+
+  .post-content-full .post-body blockquote {
+    border-left: 4px solid var(--gold);
+    padding-left: 1.5rem;
+    margin: 1.5rem 0;
+    font-style: italic;
+    color: var(--gray-dark);
+    background: var(--light-green);
+    padding: 1.5rem;
+    border-radius: 0 var(--rounded) var(--rounded) 0;
+  }
+
+  .post-content-full .post-body img {
+    max-width: 100%;
+    height: auto;
+    border-radius: var(--rounded);
+    margin: 1.5rem 0;
+  }
+
+  /* Post Footer */
+  .post-footer {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--gray-medium);
+  }
+
+  .post-tags {
+    margin-bottom: 2rem;
+  }
+
+  .post-tags h4 {
+    margin-bottom: 1rem;
+    color: var(--primary);
+  }
+
+  .tags-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .tag {
+    background: var(--light-green);
+    color: var(--primary);
+    padding: 0.4rem 1rem;
+    border-radius: var(--rounded-full);
+    font-size: 0.9rem;
+    text-decoration: none;
+    transition: var(--transition);
+    border: 1px solid transparent;
+  }
+
+  .tag:hover {
+    background: var(--primary);
+    color: var(--white);
+    border-color: var(--primary);
+  }
+
+  .post-share {
+    margin-bottom: 2rem;
+  }
+
+  .post-share h4 {
+    margin-bottom: 1rem;
+    color: var(--primary);
+  }
+
+  .share-buttons {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .share-btn {
+    background: var(--primary);
+    color: var(--white);
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: var(--rounded);
+    cursor: pointer;
+    transition: var(--transition);
+    font-family: var(--font-ui);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 600;
+  }
+
+  .share-btn:hover {
+    background: var(--secondary);
+    transform: translateY(-2px);
+  }
+
+  /* Comments */
+  .comments-section {
+    margin-top: 3rem;
+  }
+
+  .comments-section h3 {
+    margin-bottom: 1.5rem;
+    color: var(--primary);
+  }
+
+  .comment {
+    background: var(--white);
+    border-radius: var(--rounded);
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    box-shadow: var(--shadow);
+    border-left: 3px solid var(--gold);
+  }
+
+  .comment-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .comment-author {
+    font-weight: 600;
+    color: var(--primary);
+  }
+
+  .comment-date {
+    color: var(--gray-dark);
+    font-size: 0.9rem;
+  }
+
+  .comment-body {
+    line-height: 1.6;
+    color: var(--text);
+  }
+
+  /* Navigation Buttons */
+  .blog-navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 3rem 0;
+    padding: 1.5rem 0;
+    border-top: 1px solid var(--gray-medium);
+    border-bottom: 1px solid var(--gray-medium);
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .nav-btn {
+    background: var(--primary);
+    color: var(--white);
+    padding: 0.8rem 1.5rem;
+    border-radius: var(--rounded);
+    text-decoration: none;
+    transition: var(--transition);
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    min-height: 44px;
+  }
+
+  .nav-btn:hover {
+    background: var(--secondary);
+    transform: translateY(-2px);
+  }
+
+  .nav-btn.disabled {
+    background: var(--gray-medium);
+    color: var(--gray-dark);
+    cursor: not-allowed;
+    transform: none;
+  }
+
+  /* ==================== CHATBOT SECTION ==================== */
+  .chatbot-section {
+    background: var(--white);
+    margin: 4rem 0;
+    border-radius: var(--rounded-lg);
+    box-shadow: var(--shadow-large);
+    overflow: hidden;
+    border: 1px solid var(--gray-medium);
+    width: 100%;
+    max-width: none;
+    position: relative;
+  }
+
+  .chatbot-container {
+    width: 100%;
+    height: 100%;
+  }
+
+  #chatbot-header {
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    color: var(--white);
+    padding: 1.5rem 2rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .chatbot-controls {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+
+  .chatbot-control-btn {
+    background: rgba(255,255,255,0.2);
+    border: none;
+    color: var(--white);
+    padding: 0.5rem 1rem;
+    border-radius: var(--rounded);
+    cursor: pointer;
+    transition: var(--transition);
+    font-size: 0.9rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+  }
+
+  .chatbot-control-btn:hover {
+    background: rgba(255,255,255,0.3);
+    transform: translateY(-1px);
+  }
+
+  #chatbot-body {
+    overflow-y: auto;
+    padding: 2rem;
+    background: var(--white);
+    min-height: 400px;
+    max-height: 500px;
+    scrollbar-width: thin;
+    scrollbar-color: var(--primary) var(--gray-light);
+    transition: all 0.3s ease;
+  }
+
+  #chatbot-body.fullscreen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 80px;
+    max-height: none;
+    z-index: 9999;
+    background: var(--white);
+    padding: 2rem;
+  }
+
+  #chatbot-body::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  #chatbot-body::-webkit-scrollbar-track {
+    background: var(--gray-light);
+    border-radius: 4px;
+  }
+
+  #chatbot-body::-webkit-scrollbar-thumb {
+    background-color: var(--primary);
+    border-radius: 6px;
+  }
+
+  #chatbot-input-container {
+    display: flex;
+    padding: 1.5rem 2rem;
+    background: var(--light-green);
+    border-top: 1px solid var(--gray-medium);
+    gap: 1rem;
+    align-items: center;
+    flex-wrap: wrap;
+    position: relative;
+    transition: all 0.3s ease;
+  }
+
+  #chatbot-input-container.fullscreen {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 10000;
+    background: var(--light-green);
+    padding: 1.5rem 2rem;
+  }
+
+  #chatbot-input {
+    flex: 1;
+    min-width: 200px;
+    padding: 1rem 1.5rem;
+    border: 2px solid var(--gray-medium);
+    border-radius: var(--rounded-full);
+    outline: none;
+    font-family: var(--font-ui);
+    transition: var(--transition);
+    font-size: var(--ui-font-size);
+    background: var(--white);
+  }
+
+  #chatbot-input:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(26, 71, 42, 0.1);
+  }
+
+  #chatbot-input:disabled {
+    background: var(--gray-light);
+    cursor: not-allowed;
+  }
+
+  /* Enhanced Messages */
+  .message {
+    margin-bottom: 1.5rem;
+    padding: 1.2rem 1.5rem;
+    border-radius: 1.2rem;
+    max-width: 85%;
+    word-wrap: break-word;
+    line-height: 1.6;
+    position: relative;
+    animation: fadeInUp 0.3s ease;
+    font-size: var(--ui-font-size);
+    box-shadow: var(--shadow);
+  }
+
+  .message.user {
+    background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+    margin-left: auto;
+    border-bottom-right-radius: 0.5rem;
+    color: #1565c0;
+    border: 1px solid #90caf9;
+  }
+
+  .message.bot {
+    background: linear-gradient(135deg, var(--light-green), #e8f5e8);
+    margin-right: auto;
+    border-bottom-left-radius: 0.5rem;
+    color: var(--text);
+    border: 1px solid #c8e6c9;
+  }
+
+  .message.error {
+    background: #ffebee;
+    color: #c62828;
+    border-left: 4px solid #f44336;
+    max-width: 95%;
+  }
+
+  .message.success {
+    background: #e8f5e8;
+    color: #2e7d32;
+    border-left: 4px solid #4caf50;
+    max-width: 95%;
+  }
+
+  .message.info {
+    background: #e3f2fd;
+    color: #1565c0;
+    border-left: 4px solid #2196f3;
+    max-width: 95%;
+  }
+
+  /* Message Timestamp */
+  .message-timestamp {
+    font-size: 0.75rem;
+    color: var(--gray-dark);
+    margin-top: 0.5rem;
+    text-align: right;
+    opacity: 0.7;
+  }
+
+  /* Quick Actions */
+  .quick-actions {
+    display: flex;
+    justify-content: center;
+    margin: 2rem 0;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .quick-action-btn {
+    background: var(--primary);
+    color: var(--white);
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: var(--rounded);
+    cursor: pointer;
+    transition: var(--transition);
+    font-family: var(--font-ui);
+    font-size: var(--ui-font-size);
+    text-align: center;
+    min-width: 150px;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    font-weight: 600;
+    box-shadow: var(--shadow);
+  }
+
+  .quick-action-btn:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-hover);
+    background: var(--secondary);
+  }
+
+  .quick-action-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+  }
+
+  .quick-action-btn.secondary {
+    background: var(--secondary);
+  }
+
+  .quick-action-btn.secondary:hover {
+    background: var(--primary);
+  }
+
+  /* Word Search Results */
+  .word-search-results {
+    background: var(--light-green);
+    border-radius: var(--rounded);
+    padding: 1.5rem;
+    margin: 1rem 0;
+    border-left: 4px solid var(--gold);
+  }
+
+  .word-search-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .word-search-count {
+    background: var(--primary);
+    color: var(--white);
+    padding: 0.3rem 0.8rem;
+    border-radius: var(--rounded-full);
+    font-size: 0.9rem;
+    font-weight: 600;
+  }
+
+  .search-result-item {
+    background: var(--white);
+    border-radius: var(--rounded);
+    padding: 1rem;
+    margin-bottom: 0.8rem;
+    border-left: 3px solid var(--primary);
+    transition: var(--transition);
+  }
+
+  .search-result-item:hover {
+    transform: translateX(5px);
+    box-shadow: var(--shadow);
+  }
+
+  .search-result-item:last-child {
+    margin-bottom: 0;
+  }
+
+  .search-result-sura {
+    font-weight: 600;
+    color: var(--primary);
+    margin-bottom: 0.3rem;
+  }
+
+  .search-result-text {
+    color: var(--text);
+    line-height: 1.5;
+  }
+
+  .search-highlight {
+    background: #fff3cd;
+    color: var(--primary);
+    padding: 0.1rem 0.3rem;
+    border-radius: 3px;
+    font-weight: 600;
+  }
+
+  /* Typing Indicator */
+  .typing {
+    display: flex;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    background: var(--light-green);
+    border-radius: 1.2rem;
+    max-width: 120px;
+    margin-bottom: 1.5rem;
+  }
+
+  .typing-dots {
+    display: flex;
+    gap: 4px;
+  }
+
+  .typing-dots span {
+    width: 8px;
+    height: 8px;
+    background: var(--primary);
+    border-radius: 50%;
+    animation: typing 1.4s infinite ease-in-out;
+  }
+
+  .typing-dots span:nth-child(1) { animation-delay: -0.32s; }
+  .typing-dots span:nth-child(2) { animation-delay: -0.16s; }
+
+  @keyframes typing {
+    0%, 80%, 100% { 
+      transform: scale(0.8); 
+      opacity: 0.5; 
+    }
+    40% { 
+      transform: scale(1); 
+      opacity: 1; 
+    }
+  }
+
+  /* ==================== FOOTER SECTION ==================== */
+  .footer {
+    background: var(--primary);
+    color: var(--white);
+    padding: 4rem 0 2rem;
+    margin-top: 4rem;
+  }
+
+  .footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 3rem;
+    margin-bottom: 2rem;
+  }
+
+  .footer-widget h3 {
+    color: var(--white);
+    margin-bottom: 1.5rem;
+    position: relative;
+    padding-bottom: 0.5rem;
+  }
+
+  .footer-widget h3:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 40px;
+    height: 2px;
+    background: var(--gold);
+  }
+
+  .footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .footer-links li {
+    margin-bottom: 0.8rem;
+  }
+
+  .footer-links a {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    transition: var(--transition);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .footer-links a:hover {
+    color: var(--gold);
+    padding-left: 5px;
+  }
+
+  .footer-bottom {
+    text-align: center;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.7);
+  }
+
+  /* ==================== PANELS ==================== */
+  /* Fullscreen Tafsir */
+  #fullscreen-tafsir {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.95);
+    z-index: 4000;
+    padding: 2rem;
+    overflow-y: auto;
+    backdrop-filter: blur(5px);
+  }
+
+  #fullscreen-tafsir.active {
+    display: block;
+    animation: fadeIn 0.3s ease;
+  }
+
+  #fullscreen-tafsir-content {
+    max-width: 900px;
+    margin: 2rem auto;
+    background: var(--white);
+    padding: 2.5rem;
+    border-radius: var(--rounded-lg);
+    box-shadow: var(--shadow-large);
+    position: relative;
+    animation: scaleIn 0.3s ease;
+  }
+
+  #fullscreen-tafsir-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--gray-medium);
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  #fullscreen-tafsir-title {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--primary);
+  }
+
+  #exit-fullscreen {
+    background: var(--primary);
+    color: var(--white);
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: var(--rounded);
+    cursor: pointer;
+    transition: var(--transition);
+    font-weight: 600;
+    font-family: var(--font-ui);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    min-height: 44px;
+  }
+
+  #exit-fullscreen:hover {
+    background: var(--secondary);
+    transform: translateY(-2px);
+  }
+
+  .tafsir-container {
+    background: #fffde7;
+    padding: 1.5rem;
+    border-radius: var(--rounded);
+    margin-top: 1rem;
+    border-left: 4px solid var(--gold);
+    font-size: var(--ui-font-size);
+    line-height: 1.8;
+    color: var(--text);
+  }
+
+  /* Settings Panel */
+  .settings-panel {
+    position: fixed;
+    top: 0;
+    right: -400px;
+    width: 400px;
+    height: 100vh;
+    background: var(--white);
+    box-shadow: var(--shadow-large);
+    z-index: 5000;
+    transition: var(--transition-slow);
+    overflow-y: auto;
+    padding: 2rem;
+  }
+
+  .settings-panel.open {
+    right: 0;
+  }
+
+  .settings-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--gray-medium);
+  }
+
+  .settings-title {
+    font-size: 1.5rem;
+    color: var(--primary);
+    font-weight: 700;
+  }
+
+  .close-settings {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--gray-dark);
+    transition: var(--transition);
+  }
+
+  .close-settings:hover {
+    color: var(--primary);
+  }
+
+  .setting-group {
+    margin-bottom: 2rem;
+  }
+
+  .setting-label {
+    display: block;
+    margin-bottom: 0.8rem;
+    font-weight: 600;
+    color: var(--primary);
+    font-size: 1.1rem;
+  }
+
+  .setting-select, .setting-input {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    border: 2px solid var(--gray-medium);
+    border-radius: var(--rounded);
+    font-family: var(--font-ui);
+    font-size: var(--ui-font-size);
+    transition: var(--transition);
+  }
+
+  .setting-select:focus, .setting-input:focus {
+    border-color: var(--primary);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(26, 71, 42, 0.1);
+  }
+
+  .setting-description {
+    font-size: 0.9rem;
+    color: var(--gray-dark);
+    margin-top: 0.5rem;
+    line-height: 1.4;
+  }
+
+  /* Sura List Panel */
+  .sura-panel {
+    position: fixed;
+    top: 0;
+    left: -400px;
+    width: 400px;
+    height: 100vh;
+    background: var(--white);
+    box-shadow: var(--shadow-large);
+    z-index: 5000;
+    transition: var(--transition-slow);
+    overflow-y: auto;
+    padding: 2rem;
+  }
+
+  .sura-panel.open {
+    left: 0;
+  }
+
+  .sura-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--gray-medium);
+  }
+
+  .sura-title {
+    font-size: 1.5rem;
+    color: var(--primary);
+    font-weight: 700;
+  }
+
+  .close-sura {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--gray-dark);
+    transition: var(--transition);
+  }
+
+  .close-sura:hover {
+    color: var(--primary);
+  }
+
+  .sura-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+    gap: 0.8rem;
+  }
+
+  .sura-item {
+    background: var(--light-green);
+    border: 2px solid transparent;
+    border-radius: var(--rounded);
+    padding: 1rem 0.5rem;
+    text-align: center;
+    cursor: pointer;
+    transition: var(--transition);
+    font-weight: 600;
+    color: var(--primary);
+  }
+
+  .sura-item:hover {
+    background: var(--primary);
+    color: var(--white);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow);
+  }
+
+  .sura-item.active {
+    background: var(--primary);
+    color: var(--white);
+    border-color: var(--gold);
+  }
+
+  /* ==================== UTILITY CLASSES ==================== */
+  .text-center { text-align: center; }
+  .text-left { text-align: left; }
+  .text-right { text-align: right; }
+
+  .mt-1 { margin-top: 1rem; }
+  .mt-2 { margin-top: 2rem; }
+  .mb-1 { margin-bottom: 1rem; }
+  .mb-2 { margin-bottom: 2rem; }
+
+  .p-1 { padding: 1rem; }
+  .p-2 { padding: 2rem; }
+
+  .hidden { display: none; }
+  .visible { display: block; }
+
+  .flex { display: flex; }
+  .flex-column { flex-direction: column; }
+  .flex-wrap { flex-wrap: wrap; }
+  .items-center { align-items: center; }
+  .justify-center { justify-content: center; }
+  .justify-between { justify-content: space-between; }
+
+  .w-full { width: 100%; }
+  .h-full { height: 100%; }
+
+  /* Loading States */
+  .loading {
+    opacity: 0.6;
+    pointer-events: none;
+  }
+
+  .loading::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--gray-medium);
+    border-top: 2px solid var(--primary);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+  }
+
+  @keyframes spin {
+    0% { transform: translate(-50%, -50%) rotate(0deg); }
+    100% { transform: translate(-50%, -50%) rotate(360deg); }
+  }
+
+  /* Animations */
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes scaleIn {
+    from {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  @keyframes slideInRight {
+    from {
+      opacity: 0;
+      transform: translateX(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes slideInLeft {
+    from {
+      opacity: 0;
+      transform: translateX(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  /* ==================== RESPONSIVE DESIGN ==================== */
+  @media (max-width: 1200px) {
+    .container {
+      padding: 0 1.5rem;
+    }
+  }
+
+  @media (max-width: 992px) {
+    .hero-title {
+      font-size: 2.8rem;
+    }
+    
+    .hero-subtitle {
+      font-size: 1.3rem;
+    }
+    
+    .blog-grid {
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    }
+    
+    .section-title {
+      font-size: 2rem;
+    }
+    
+    .sura-panel,
+    .settings-panel {
+      width: 350px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .header-container {
+      flex-direction: column;
+      gap: 1rem;
+    }
+    
+    .nav-menu {
+      justify-content: center;
+    }
+    
+    .hero-section {
+      padding: 6rem 1rem;
+    }
+    
+    .hero-title {
+      font-size: 2.2rem;
+    }
+    
+    .hero-subtitle {
+      font-size: 1.1rem;
+      margin-bottom: 2rem;
+    }
+    
+    .daily-cards {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+    
+    .blog-grid {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+    
+    .post-content-full {
+      padding: 2rem;
+      margin: 0 1rem 2rem;
+    }
+    
+    .post-content-full .post-title {
+      font-size: 2rem;
+    }
+    
+    .footer-content {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+    
+    .quick-actions {
+      flex-direction: column;
+    }
+    
+    .quick-action-btn {
+      min-width: auto;
+      width: 100%;
+    }
+    
+    #chatbot-input-container {
+      flex-direction: column;
+      align-items: stretch;
+    }
+    
+    #chatbot-input {
+      min-width: auto;
+    }
+    
+    .message {
+      max-width: 95%;
+    }
+    
+    .sura-panel,
+    .settings-panel {
+      width: 100%;
+      right: -100%;
+    }
+    
+    .sura-panel.open {
+      left: 0;
+    }
+    
+    .settings-panel.open {
+      right: 0;
+    }
+  }
+
+  @media (max-width: 576px) {
+    .container {
+      padding: 0 1rem;
+    }
+    
+    .hero-title {
+      font-size: 1.8rem;
+    }
+    
+    .hero-subtitle {
+      font-size: 1rem;
+    }
+    
+    .logo {
+      font-size: 1.5rem;
+    }
+    
+    .nav-menu {
+      gap: 0.5rem;
+    }
+    
+    .nav-link {
+      padding: 0.4rem 0.8rem;
+      font-size: 1rem;
+    }
+    
+    .section-title {
+      font-size: 1.6rem;
+    }
+    
+    .daily-card,
+    .blog-post {
+      padding: 1.5rem;
+    }
+    
+    .arabic-text {
+      font-size: 1.4rem;
+      padding: 1rem;
+    }
+    
+    #fullscreen-tafsir-content {
+      padding: 1.5rem;
+      margin: 1rem;
+    }
+    
+    #fullscreen-tafsir-title {
+      font-size: 1.3rem;
+    }
+    
+    .blog-navigation {
+      flex-direction: column;
+      align-items: stretch;
+    }
+    
+    .nav-btn {
+      text-align: center;
+      justify-content: center;
+    }
+    
+    .sura-list {
+      grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
+    }
+  }
+
+  @media (max-width: 400px) {
+    .hero-title {
+      font-size: 1.6rem;
+    }
+    
+    .hero-subtitle {
+      font-size: 0.9rem;
+    }
+    
+    .btn {
+      padding: 0.7rem 1.5rem;
+      font-size: 0.9rem;
+    }
+    
+    .daily-card-icon {
+      width: 60px;
+      height: 60px;
+      font-size: 2rem;
+    }
+    
+    .share-buttons {
+      flex-direction: column;
+    }
+    
+    .share-btn {
+      justify-content: center;
+    }
+    
+    .chatbot-controls {
+      flex-direction: column;
+      width: 100%;
+    }
+    
+    .chatbot-control-btn {
+      width: 100%;
+      text-align: center;
+    }
+  }
+
+  /* High Contrast Mode Support */
+  @media (prefers-contrast: high) {
+    :root {
+      --primary: #000000;
+      --secondary: #333333;
+      --gold: #ffd700;
+      --text: #000000;
+      --light-bg: #ffffff;
+    }
+    
+    .hero-section::before {
+      background: rgba(0, 0, 0, 0.8);
+    }
+  }
+
+  /* Reduced Motion Support */
+  @media (prefers-reduced-motion: reduce) {
+    * {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+
+  /* Print Styles */
+  @media print {
+    .agency-header,
+    .footer,
+    .chatbot-section,
+    .quick-actions,
+    .post-share,
+    .sura-panel,
+    .settings-panel {
+      display: none;
+    }
+    
+    body {
+      background: white;
+      color: black;
+      font-size: 12pt;
+      line-height: 1.4;
+    }
+    
+    .container {
+      max-width: none;
+      margin: 0;
+      padding: 0;
+    }
+    
+    .post-content-full {
+      box-shadow: none;
+      border: none;
+      padding: 0;
+    }
+    
+    a {
+      color: black;
+      text-decoration: underline;
+    }
+    
+    .arabic-text {
+      background: white;
+      border: 1px solid #ccc;
+    }
+  }
+
+  /* Enhanced Tafsir Modal Styles */
+  .tafsir-modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    animation: fadeIn 0.3s;
+  }
+
+  .tafsir-modal-content {
+    background-color: #fefefe;
+    margin: 5% auto;
+    padding: 0;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 800px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    max-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    animation: slideIn 0.3s;
+  }
+
+  .tafsir-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background-color: #2c5e2e;
+    color: white;
+    border-radius: 10px 10px 0 0;
+  }
+
+  .tafsir-header h3 {
+    margin: 0;
+    font-size: 1.2rem;
+  }
+
+  .tafsir-controls {
+    display: flex;
+    gap: 10px;
+  }
+
+  .tafsir-control-btn {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 1.2rem;
+    padding: 5px;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+  }
+
+  .tafsir-control-btn:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+
+  .tafsir-content {
+    padding: 20px;
+    overflow-y: auto;
+    flex-grow: 1;
+    line-height: 1.6;
+  }
+
+  /* Fullscreen mode */
+  .tafsir-modal.fullscreen .tafsir-modal-content {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    max-width: none;
+    max-height: none;
+    border-radius: 0;
+  }
+
+  /* Tafsir content styling */
+  .tafsir-verse {
+    font-size: 1.4rem;
+    text-align: right;
+    margin-bottom: 15px;
+    padding: 15px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    border-right: 4px solid #2c5e2e;
+  }
+
+  .tafsir-explanation {
+    margin-top: 20px;
+    font-size: 1rem;
+    color: #333;
+  }
+
+  .tafsir-source {
+    margin-top: 15px;
+    font-style: italic;
+    color: #666;
+    font-size: 0.9rem;
+    border-top: 1px solid #eee;
+    padding-top: 10px;
+  }
+
+  /* Tafsir action buttons in one line */
+  .tafsir-action-buttons {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  /* Animations */
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  @keyframes slideIn {
+    from { transform: translateY(-30px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+  }
+
+  /* Responsive design */
+  @media (max-width: 768px) {
+    .tafsir-modal-content {
+      width: 95%;
+      margin: 2% auto;
+    }
+    
+    .tafsir-action-buttons {
+      flex-direction: column;
+      width: 100%;
+    }
+    
+    .tafsir-action-buttons button {
+      width: 100%;
+    }
+  }
+  ]]></b:skin>
+</head>
+
+<body>
+<!-- ==================== HEADER SECTION ==================== -->
+<b:section id='header-section' maxwidgets='1' showaddelement='yes'>
+  <b:widget id='Header1' locked='false' title='Talks With Al Quran (Header)' type='Header' version='1'>
+    <b:widget-settings>
+      <b:widget-setting name='displayUrl'>https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEimoXKR0__JPJ7bTlSIk-F7nAKK-MTCvHAMWKh84rH0I_c5uXeAZVKCHwm4kIriSERBf083Oazbslwi1M4ukHqcNcSz6InwsMDC5DkAFDi0MnUDo8pGRpFAYUIkwdKIrMed1x4OcxR4LHi3r6ov5L-6IAyuD5iMj_dHZN3ACXA7pWoDQkE/s1600/talks%20with%20al%20quran%20logo%20(2).png</b:widget-setting>
+      <b:widget-setting name='displayHeight'>1024</b:widget-setting>
+      <b:widget-setting name='sectionWidth'>1061</b:widget-setting>
+      <b:widget-setting name='useImage'>true</b:widget-setting>
+      <b:widget-setting name='shrinkToFit'>false</b:widget-setting>
+      <b:widget-setting name='imagePlacement'>REPLACE</b:widget-setting>
+      <b:widget-setting name='displayWidth'>1024</b:widget-setting>
+    </b:widget-settings>
+    <b:includable id='main'>
+      <header class='agency-header' role='banner'>
+        <div class='container header-container'>
+          <!-- Logo -->
+          <a class='logo' expr:href='data:blog.homepageUrl'>
+            <img alt='আল-কুরআন লোগো' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEimoXKR0__JPJ7bTlSIk-F7nAKK-MTCvHAMWKh84rH0I_c5uXeAZVKCHwm4kIriSERBf083Oazbslwi1M4ukHqcNcSz6InwsMDC5DkAFDi0MnUDo8pGRpFAYUIkwdKIrMed1x4OcxR4LHi3r6ov5L-6IAyuD5iMj_dHZN3ACXA7pWoDQkE/s1600/talks%20with%20al%20quran%20logo%20(2).png' style='height:50px;width:auto;'/>
+            <span>Talks With Al Quran</span>
+          </a>
+
+          <!-- Navigation Menu -->
+          <nav aria-label='মূল নেভিগেশন'>
+            <ul class='nav-menu'>
+              <li class='nav-item'>
+                <a class='nav-link' expr:href='data:blog.homepageUrl'>হ&#2507;ম</a>
+              </li>
+              <li class='nav-item'>
+                <a class='nav-link' expr:href='data:blog.homepageUrl + &quot;#daily-section&quot;'>আজক&#2503;র আয়&#2494;ত</a>
+              </li>
+              <li class='nav-item'>
+                <a class='nav-link' expr:href='data:blog.homepageUrl + &quot;#blog-posts&quot;'>ব&#2509;লগ প&#2507;স&#2509;ট</a>
+              </li>
+              <li class='nav-item'>
+                <a class='nav-link' expr:href='data:blog.homepageUrl + &quot;#chatbot-section&quot;'>ক&#2497;রআন বট</a>
+              </li>
+              <li class='nav-item'>
+                <button class='theme-toggle' id='theme-toggle' title='থিম পরিবর্তন করুন'>
+                  <span id='theme-icon'>🌙</span>
+                </button>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+    </b:includable>
+    <b:includable id='description'>
+  <div class='descriptionwrapper'>
+    <p class='description'><span><data:description/></span></p>
+  </div>
+</b:includable>
+    <b:includable id='title'>
+  <b:tag cond='data:blog.url != data:blog.homepageUrl' expr:href='data:blog.homepageUrl' name='a'>
+    <data:title/>
+  </b:tag>
+</b:includable>
+  </b:widget>
+</b:section>
+
+<!-- ==================== HOMEPAGE CONTENT ==================== -->
+<b:if cond='data:blog.url == data:blog.homepageUrl'>
+  <!-- Hero Section -->
+  <b:section id='hero-section' maxwidgets='1' showaddelement='no'>
+    <b:widget id='HTML1' locked='false' title='Hero Section' type='HTML' version='1'>
+      <b:widget-settings>
+        <b:widget-setting name='content'/>
+      </b:widget-settings>
+      <b:includable id='main'>
+        <section aria-labelledby='hero-title' class='hero-section'>
+          <div class='hero-content'>
+            <h1 class='hero-title' id='hero-title'>আল-ক&#2497;রআন ও ত&#2494;ফস&#2496;র</h1>
+            <p class='hero-subtitle'>আল-ক&#2497;রআন&#2503;র আয়&#2494;ত, হ&#2494;দ&#2495;স ও দ&#2507;য়&#2494; ন&#2495;য়&#2503; আপন&#2494;র ন&#2495;র&#2509;ভরয&#2507;গ&#2509;য সঙ&#2509;গ&#2496;&#2404; সঠ&#2495;ক ত&#2494;ফস&#2496;র ও ব&#2509;য&#2494;খ&#2509;য&#2494;র ম&#2494;ধ&#2509;যম&#2503; ইসল&#2494;ম&#2495;ক জ&#2509;ঞ&#2494;ন অর&#2509;জন কর&#2497;ন&#2404;</p>
+            <div class='flex justify-center flex-wrap gap-1'>
+              <a class='btn btn-primary' href='#daily-section'>আজক&#2503;র আয়&#2494;ত দ&#2503;খ&#2497;ন</a>
+              <a class='btn btn-outline' href='#blog-posts'>ব&#2509;লগ প&#2507;স&#2509;ট পড&#2492;&#2497;ন</a>
+              <a class='btn btn-secondary' href='#chatbot-section'>ক&#2497;রআন বট</a>
+            </div>
+          </div>
+        </section>
+      </b:includable>
+    </b:widget>
+  </b:section>
+
+  <!-- Today's Ayat, Hadith & Dua - Full Width Sections -->
+  <b:section id='daily-section' maxwidgets='1' showaddelement='no'>
+    <b:widget id='HTML2' locked='false' title='Daily Section' type='HTML' version='1'>
+      <b:widget-settings>
+        <b:widget-setting name='content'/>
+      </b:widget-settings>
+      <b:includable id='main'>
+        <!-- Today's Ayat Section -->
+        <section aria-labelledby='ayat-title' class='daily-section' id='todays-ayat'>
+          <div class='container'>
+            <h2 class='section-title' id='ayat-title'>আজক&#2503;র আয়&#2494;ত</h2>
+            <div class='daily-cards'>
+              <article class='daily-card islamic-border'>
+                <div aria-hidden='true' class='daily-card-icon'>&#64831;&#64830;</div>
+                <h3 class='daily-card-title' id='daily-surah-name'>ল&#2507;ড হচ&#2509;ছ&#2503;...</h3>
+                <div class='arabic-text' id='daily-arabic-text' lang='ar'>ل&#1614;ا إ&#1616;ل&#1614;&#1648;ه&#1614; إ&#1616;ل&#1614;&#1617;ا الل&#1614;&#1617;ه&#1615;</div>
+                <p id='daily-translation'>আল&#2509;ল&#2494;হ ছ&#2494;ড়&#2494; ক&#2507;ন&#2507; ইল&#2494;হ ন&#2503;ই</p>
+                <div class='post-read-more'>
+                  <button class='btn btn-read-more' id='daily-tafsir-btn'>ত&#2494;ফস&#2496;র দ&#2503;খ&#2497;ন</button>
+                  <button class='btn btn-secondary' id='daily-audio-btn'>🎧 শ&#2497;ন&#2497;ন</button>
+                  <button class='btn btn-primary' id='daily-copy-btn'>📋 কপ&#2495; কর&#2497;ন</button>
+                </div>
+              </article>
+            </div>
+            <div class='text-center'>
+              <button class='btn btn-outline' onclick='loadRandomAyat()'>🎲 র&#8205;&#2509;য&#2494;ন&#2509;ডম আয়&#2494;ত</button>
+              <button class='btn btn-secondary' onclick='showAyatOfTheDay()'>📅 আজক&#2503;র ব&#2495;শ&#2503;ষ আয়&#2494;ত</button>
+            </div>
+          </div>
+        </section>
+
+        <!-- Today's Hadith Section -->
+        <section aria-labelledby='hadith-title' class='daily-section' id='todays-hadith'>
+          <div class='container'>
+            <h2 class='section-title' id='hadith-title'>আজক&#2503;র হ&#2494;দ&#2495;স</h2>
+            <div class='daily-cards'>
+              <article class='daily-card islamic-border'>
+                <div aria-hidden='true' class='daily-card-icon'>ﷺ</div>
+                <h3 class='daily-card-title'>সহ&#2496;হ ব&#2497;খ&#2494;র&#2496;</h3>
+                <div class='arabic-text' lang='ar'>من كان يؤمن بالله واليوم الآخر فليقل خيرا أو ليصمت</div>
+                <p>য&#2503; আল&#2509;ল&#2494;হ ও পরক&#2494;ল&#2503; ব&#2495;শ&#2509;ব&#2494;স কর&#2503;, স&#2503; য&#2503;ন ভ&#2494;ল&#2507; কথ&#2494; বল&#2503; অথব&#2494; চ&#2497;প থ&#2494;ক&#2503;&#2404; (ব&#2497;খ&#2494;র&#2496;)</p>
+                <div class='post-read-more'>
+                  <button class='btn btn-read-more' onclick='showHadithExplanation()'>ব&#2509;য&#2494;খ&#2509;য&#2494; দ&#2503;খ&#2497;ন</button>
+                  <button class='btn btn-primary' onclick='copyToClipboard(&quot;হাদিস&quot;)'>📋 কপ&#2495; কর&#2497;ন</button>
+                </div>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <!-- Today's Dua Section -->
+        <section aria-labelledby='dua-title' class='daily-section' id='todays-dua'>
+          <div class='container'>
+            <h2 class='section-title' id='dua-title'>আজক&#2503;র দ&#2507;য়&#2494;</h2>
+            <div class='daily-cards'>
+              <article class='daily-card islamic-border'>
+                <div aria-hidden='true' class='daily-card-icon'>🤲</div>
+                <h3 class='daily-card-title'>জ&#2509;ঞ&#2494;ন ও র&#2495;য&#2495;ক&#2503;র দ&#2507;য়&#2494;</h3>
+                <div class='arabic-text' lang='ar'>اللهم إني أسألك علما نافعا&#1548; ورزقا طيبا&#1548; وعملا متقبلا</div>
+                <p>হ&#2503; আল&#2509;ল&#2494;হ! আম&#2495; আপন&#2494;র ক&#2494;ছ&#2503; উপক&#2494;র&#2496; জ&#2509;ঞ&#2494;ন, পব&#2495;ত&#2509;র র&#2495;য&#2495;ক ও কব&#2497;লয&#2507;গ&#2509;য আমল প&#2509;র&#2494;র&#2509;থন&#2494; কর&#2495;&#2404;</p>
+                <div class='post-read-more'>
+                  <button class='btn btn-read-more' onclick='showDuaBenefits()'>ফয&#2496;লত</button>
+                  <button class='btn btn-primary' onclick='copyToClipboard(&quot;দোয়া&quot;)'>📋 কপ&#2495; কর&#2497;ন</button>
+                  <button class='btn btn-secondary' onclick='setDuaReminder()'>&#9200; র&#2495;ম&#2494;ইন&#2509;ড&#2494;র</button>
+                </div>
+              </article>
+            </div>
+          </div>
+        </section>
+      </b:includable>
+    </b:widget>
+  </b:section>
+</b:if>
+
+<!-- ==================== MAIN CONTENT ==================== -->
+<main class='container main-content' role='main'>
+  <!-- Blog Posts Section -->
+  <b:section id='blog-posts' showaddelement='yes'>
+    <b:widget id='Blog1' locked='false' title='Blog Posts' type='Blog' version='2' visible='true'>
+      <b:widget-settings>
+        <b:widget-setting name='showDateHeader'>false</b:widget-setting>
+        <b:widget-setting name='commentLabel'>$type={blogger}</b:widget-setting>
+        <b:widget-setting name='style.textcolor'>#ffffff</b:widget-setting>
+        <b:widget-setting name='showShareButtons'>true</b:widget-setting>
+        <b:widget-setting name='showCommentLink'>true</b:widget-setting>
+        <b:widget-setting name='style.urlcolor'>#ffffff</b:widget-setting>
+        <b:widget-setting name='showAuthor'>true</b:widget-setting>
+        <b:widget-setting name='style.linkcolor'>#ffffff</b:widget-setting>
+        <b:widget-setting name='style.unittype'>TextAndImage</b:widget-setting>
+        <b:widget-setting name='style.bgcolor'>#ffffff</b:widget-setting>
+        <b:widget-setting name='timestampLabel'>&#8226;</b:widget-setting>
+        <b:widget-setting name='reactionsLabel'/>
+        <b:widget-setting name='showAuthorProfile'>false</b:widget-setting>
+        <b:widget-setting name='style.layout'>1x1</b:widget-setting>
+        <b:widget-setting name='showLabels'>true</b:widget-setting>
+        <b:widget-setting name='showLocation'>false</b:widget-setting>
+        <b:widget-setting name='postLabelsLabel'>Tags:</b:widget-setting>
+        <b:widget-setting name='showTimestamp'>true</b:widget-setting>
+        <b:widget-setting name='postsPerAd'>1</b:widget-setting>
+        <b:widget-setting name='showBacklinks'>false</b:widget-setting>
+        <b:widget-setting name='style.bordercolor'>#ffffff</b:widget-setting>
+        <b:widget-setting name='showInlineAds'>false</b:widget-setting>
+        <b:widget-setting name='showReactions'>false</b:widget-setting>
+      </b:widget-settings>
+      <b:includable id='main'>
+        <b:if cond='data:blog.url == data:blog.homepageUrl'>
+          <!-- Homepage Grid View -->
+          <section aria-labelledby='blog-posts-title' id='blog-posts'>
+            <h2 class='section-title' id='blog-posts-title'>স&#2494;ম&#2509;প&#2509;রত&#2495;ক ব&#2509;লগ প&#2507;স&#2509;ট</h2>
+            <div class='blog-grid'>
+              <b:loop values='data:posts' var='post'>
+                <article class='blog-post' itemscope='itemscope' itemtype='http://schema.org/BlogPosting'>
+                  <h3 class='post-title' itemprop='headline'><data:post.title/></h3>
+                  <div class='post-meta'>
+                    <span itemprop='datePublished'><data:post.date/></span>
+                    <b:if cond='data:post.author'>
+                      <span itemprop='author'><data:post.author/></span>
+                    </b:if>
+                  </div>
+                  <div class='post-excerpt' itemprop='description'>
+                    <data:post.snippet/>
+                  </div>
+                  <div class='post-read-more'>
+                    <a class='btn btn-read-more' expr:aria-label='&quot;পূর্ণ পোস্ট পড়ুন: &quot; + data:post.title' expr:href='data:post.url'>প&#2498;র&#2509;ণ প&#2507;স&#2509;ট পড&#2492;&#2497;ন</a>
+                  </div>
+                </article>
+              </b:loop>
+            </div>
+            <!-- Navigation Buttons -->
+            <nav aria-label='ব্লগ পোস্ট নেভিগেশন' class='blog-navigation'>
+              <b:if cond='data:newerPageUrl'>
+                <a aria-label='নতুন পোস্ট দেখুন' class='nav-btn' expr:href='data:newerPageUrl'>&#9664; নত&#2497;ন প&#2507;স&#2509;ট</a>
+              <b:else/>
+                <span aria-disabled='true' class='nav-btn disabled'>&#9664; নত&#2497;ন প&#2507;স&#2509;ট</span>
+              </b:if>
+              
+              <b:if cond='data:olderPageUrl'>
+                <a aria-label='পুরানো পোস্ট দেখুন' class='nav-btn' expr:href='data:olderPageUrl'>প&#2497;র&#2494;ন&#2507; প&#2507;স&#2509;ট &#9654;</a>
+              <b:else/>
+                <span aria-disabled='true' class='nav-btn disabled'>প&#2497;র&#2494;ন&#2507; প&#2507;স&#2509;ট &#9654;</span>
+              </b:if>
+            </nav>
+          </section>
+        <b:else/>
+          <!-- Full Post Content on Post Pages -->
+          <div class='post-content-full'>
+            <b:include data='top' name='status-message'/>
+            <b:loop values='data:posts' var='post'>
+              <article itemscope='itemscope' itemtype='http://schema.org/BlogPosting'>
+                <h1 class='post-title' itemprop='headline'><data:post.title/></h1>
+                <div class='post-meta'>
+                  <span itemprop='datePublished'><data:post.date/></span>
+                  <b:if cond='data:post.author'>
+                    <span itemprop='author'><data:post.author/></span>
+                  </b:if>
+                  <b:if cond='data:post.labels'>
+                    <span>
+                      <b:loop values='data:post.labels' var='label'>
+                        <a expr:href='data:label.url' itemprop='keywords' rel='tag'><data:label.name/></a>
+                        <b:if cond='data:label.isLast != &quot;true&quot;'>, </b:if>
+                      </b:loop>
+                    </span>
+                  </b:if>
+                </div>
+                <div class='post-body' itemprop='articleBody'>
+                  <data:post.body/>
+                </div>
+                
+                <!-- Post Footer -->
+                <footer class='post-footer'>
+                  <!-- Tags -->
+                  <b:if cond='data:post.labels'>
+                    <div class='post-tags'>
+                      <h4>ট&#2509;য&#2494;গস:</h4>
+                      <div class='tags-list'>
+                        <b:loop values='data:post.labels' var='label'>
+                          <a class='tag' expr:href='data:label.url' itemprop='keywords' rel='tag'><data:label.name/></a>
+                        </b:loop>
+                      </div>
+                    </div>
+                  </b:if>
+                  
+                  <!-- Share Buttons -->
+                  <div class='post-share'>
+                    <h4>শ&#2503;য&#2492;&#2494;র কর&#2497;ন:</h4>
+                    <div class='share-buttons'>
+                      <button aria-label='ফেসবুকে শেয়ার করুন' class='share-btn' onclick='shareOnFacebook()'>
+                        <span aria-hidden='true'>📘</span> ফ&#2503;সব&#2497;ক
+                      </button>
+                      <button aria-label='টুইটারে শেয়ার করুন' class='share-btn' onclick='shareOnTwitter()'>
+                        <span aria-hidden='true'>🐦</span> ট&#2497;ইট&#2494;র
+                      </button>
+                      <button aria-label='লিংকডইনে শেয়ার করুন' class='share-btn' onclick='shareOnLinkedIn()'>
+                        <span aria-hidden='true'>💼</span> ল&#2495;&#2434;কডইন
+                      </button>
+                      <button aria-label='লিংক কপি করুন' class='share-btn' onclick='copyPostLink()'>
+                        <span aria-hidden='true'>🔗</span> ল&#2495;&#2434;ক কপ&#2495;
+                      </button>
+                    </div>
+                  </div>
+                </footer>
+              </article>
+              
+              <!-- Comment Section -->
+              <b:if cond='data:post.allowComments'>
+                <div class='comments-section'>
+                  <b:include data='post' name='comment_picker'/>
+                </div>
+              </b:if>
+            </b:loop>
+          </div>
+        </b:if>
+      </b:includable>
+      <b:includable id='aboutPostAuthor'>
+  <div class='author-name'>
+    <a class='g-profile' expr:href='data:post.author.profileUrl' rel='author' title='author profile'>
+      <span>
+        <data:post.author.name/>
+      </span>
+    </a>
+  </div>
+  <div>
+    <span class='author-desc'>
+      <data:post.author.aboutMe/>
+    </span>
+  </div>
+</b:includable>
+      <b:includable id='addComments'>
+  <a expr:href='data:post.commentsUrl' expr:onclick='data:post.commentsUrlOnclick'>
+    <b:message name='messages.postAComment'/>
+  </a>
+</b:includable>
+      <b:includable id='blogThisShare'>
+  <b:with value='&quot;window.open(this.href, \&quot;_blank\&quot;, \&quot;height=270,width=475\&quot;); return false;&quot;' var='onclick'>
+    <b:include name='platformShare'/>
+  </b:with>
+</b:includable>
+      <b:includable id='bylineByName' var='byline'>
+  <b:switch var='data:byline.name'>
+  <b:case value='share'/>
+    <b:include cond='data:post.shareUrl' name='postShareButtons'/>
+  <b:case value='comments'/>
+    <b:include cond='data:post.allowComments' name='postCommentsLink'/>
+  <b:case value='location'/>
+    <b:include cond='data:post.location' name='postLocation'/>
+  <b:case value='timestamp'/>
+    <b:include cond='not data:view.isPage' name='postTimestamp'/>
+  <b:case value='author'/>
+    <b:include name='postAuthor'/>
+  <b:case value='labels'/>
+    <b:include cond='data:post.labels' name='postLabels'/>
+  <b:case value='icons'/>
+    <b:include cond='data:post.emailPostUrl' name='emailPostIcon'/>
+  </b:switch>
+</b:includable>
+      <b:includable id='bylineRegion' var='regionItems'>
+  <b:loop values='data:regionItems' var='byline'>
+    <b:include data='byline' name='bylineByName'/>
+  </b:loop>
+</b:includable>
+      <b:includable id='commentAuthorAvatar'>
+  <div class='avatar-image-container'>
+    <img class='author-avatar' expr:src='data:comment.authorAvatarSrc' height='35' width='35'/>
+  </div>
+</b:includable>
+      <b:includable id='commentDeleteIcon' var='comment'>
+  <span expr:class='&quot;item-control &quot; + data:comment.adminClass'>
+    <b:if cond='data:showCmtPopup'>
+      <div class='goog-toggle-button'>
+        <div class='goog-inline-block comment-action-icon'/>
+      </div>
+    <b:else/>
+      <a class='comment-delete' expr:href='data:comment.deleteUrl' expr:title='data:messages.deleteComment'>
+        <img src='https://resources.blogblog.com/img/icon_delete13.gif'/>
+      </a>
+    </b:if>
+  </span>
+</b:includable>
+      <b:includable id='commentForm' var='post'>
+  <div class='comment-form'>
+    <a name='comment-form'/>
+    <h4 id='comment-post-message'><data:messages.postAComment/></h4>
+    <b:if cond='data:this.messages.blogComment != &quot;&quot;'>
+      <p><data:this.messages.blogComment/></p>
+    </b:if>
+    <b:include data='post' name='commentFormIframeSrc'/>
+    <iframe allowtransparency='allowtransparency' class='blogger-iframe-colorize blogger-comment-from-post' expr:height='data:cmtIframeInitialHeight ?: &quot;90px&quot;' frameborder='0' id='comment-editor' name='comment-editor' src='' width='100%'/>
+    <data:post.cmtfpIframe/>
+    <script type='text/javascript'>
+      BLOG_CMT_createIframe(&#39;<data:post.appRpcRelayPath/>&#39;);
+    </script>
+  </div>
+</b:includable>
+      <b:includable id='commentFormIframeSrc' var='post'>
+  <a expr:href='data:post.commentFormIframeSrc' id='comment-editor-src'/>
+</b:includable>
+      <b:includable id='commentItem' var='comment'>
+  <div class='comment' expr:id='&quot;c&quot; + data:comment.id'>
+    <b:include cond='data:blog.enabledCommentProfileImages' name='commentAuthorAvatar'/>
+
+    <div class='comment-block'>
+      <div class='comment-author'>
+        <b:if cond='data:comment.authorUrl'>
+          <b:message name='messages.authorSaidWithLink'>
+            <b:param expr:value='data:comment.author' name='authorName'/>
+            <b:param expr:value='data:comment.authorUrl' name='authorUrl'/>
+          </b:message>
+        <b:else/>
+          <b:message name='messages.authorSaid'>
+            <b:param expr:value='data:comment.author' name='authorName'/>
+          </b:message>
+        </b:if>
+      </div>
+      <div expr:class='&quot;comment-body&quot; + (data:comment.isDeleted ? &quot; deleted&quot; : &quot;&quot;)'>
+        <data:comment.body/>
+      </div>
+      <div class='comment-footer'>
+        <span class='comment-timestamp'>
+          <a expr:href='data:comment.url' title='comment permalink'>
+            <data:comment.timestamp/>
+          </a>
+          <b:include data='comment' name='commentDeleteIcon'/>
+        </span>
+      </div>
+    </div>
+  </div>
+</b:includable>
+      <b:includable id='commentList' var='comments'>
+  <div id='comments-block'>
+    <b:loop values='data:comments' var='comment'>
+      <b:include data='comment' name='commentItem'/>
+    </b:loop>
+  </div>
+</b:includable>
+      <b:includable id='commentPicker' var='post'>
+  <b:if cond='data:post.showThreadedComments'>
+    <b:include data='post' name='threadedComments'/>
+  <b:else/>
+    <b:include data='post' name='comments'/>
+  </b:if>
+</b:includable>
+      <b:includable id='comments' var='post'>
+  <section expr:class='&quot;comments&quot; + (data:post.embedCommentForm ? &quot; embed&quot; : &quot;&quot;)' expr:data-num-comments='data:post.numberOfComments' id='comments'>
+    <a name='comments'/>
+    <b:if cond='data:post.allowComments'>
+
+      <b:include name='commentsTitle'/>
+
+      <div expr:id='data:widget.instanceId + &quot;_comments-block-wrapper&quot;'>
+        <b:include cond='data:post.comments' data='post.comments' name='commentList'/>
+      </div>
+
+      <b:if cond='data:post.commentPagingRequired'>
+        <div class='paging-control-container'>
+          <b:if cond='data:post.hasOlderLinks'>
+            <a expr:class='data:post.oldLinkClass' expr:href='data:post.oldestLinkUrl'>
+              <data:messages.oldest/>
+            </a>
+            <a expr:class='data:post.oldLinkClass' expr:href='data:post.olderLinkUrl'>
+              <data:messages.older/>
+            </a>
+          </b:if>
+
+          <span class='comment-range-text'>
+            <data:post.commentRangeText/>
+          </span>
+
+          <b:if cond='data:post.hasNewerLinks'>
+            <a expr:class='data:post.newLinkClass' expr:href='data:post.newerLinkUrl'>
+              <data:messages.newer/>
+            </a>
+            <a expr:class='data:post.newLinkClass' expr:href='data:post.newestLinkUrl'>
+              <data:messages.newest/>
+            </a>
+          </b:if>
+        </div>
+      </b:if>
+
+      <div class='footer'>
+        <b:if cond='data:post.embedCommentForm'>
+          <b:if cond='data:post.allowNewComments'>
+            <b:include data='post' name='commentForm'/>
+          <b:else/>
+            <data:post.noNewCommentsText/>
+          </b:if>
+        <b:else/>
+          <b:if cond='data:post.allowComments'>
+            <b:include data='post' name='addComments'/>
+          </b:if>
+        </b:if>
+      </div>
+    </b:if>
+    <b:if cond='data:showCmtPopup'>
+      <div id='comment-popup'>
+        <iframe allowtransparency='allowtransparency' frameborder='0' id='comment-actions' name='comment-actions' scrolling='no'>
+        </iframe>
+      </div>
+    </b:if>
+  </section>
+</b:includable>
+      <b:includable id='commentsLink'>
+  <a class='comment-link' expr:href='data:post.commentsUrl' expr:onclick='data:post.commentsUrlOnclick'>
+    <b:if cond='data:post.numberOfComments &gt; 0'>
+      <b:message name='messages.numberOfComments'>
+        <b:param expr:value='data:post.numberOfComments' name='numComments'/>
+      </b:message>
+    <b:else/>
+      <data:messages.postAComment/>
+    </b:if>
+  </a>
+</b:includable>
+      <b:includable id='commentsLinkIframe'>
+  <!-- G+ comments, no longer available. The includable is retained for backwards-compatibility. -->
+</b:includable>
+      <b:includable id='commentsTitle'>
+  <h3 class='title'><data:messages.comments/></h3>
+</b:includable>
+      <b:includable id='defaultAdUnit'>
+  <ins class='adsbygoogle' data-ad-format='auto' expr:data-ad-client='data:adClientId ?: data:blog.adsenseClientId' expr:data-ad-host='data:blog.adsenseHostId' expr:style='data:style ?: &quot;display: block;&quot;'>
+    <b:attr cond='not data:blog.analytics4' expr:value='data:blog.analyticsAccountNumber' name='data-analytics-uacct'/>
+  </ins>
+  <script>
+   (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</b:includable>
+      <b:includable id='emailPostIcon'>
+  <span class='byline post-icons'>
+    <!-- email post links -->
+    <span class='item-action'>
+      <a expr:href='data:post.emailPostUrl' expr:title='data:messages.emailPost'>
+        <b:include data='{ iconClass: &quot;touch-icon sharing-icon&quot; }' name='emailIcon'/>
+      </a>
+    </span>
+  </span>
+</b:includable>
+      <b:includable id='facebookShare'>
+  <b:with value='&quot;window.open(this.href, \&quot;_blank\&quot;, \&quot;height=430,width=640\&quot;); return false;&quot;' var='onclick'>
+    <b:include name='platformShare'/>
+  </b:with>
+</b:includable>
+      <b:includable id='feedLinks'>
+  <b:if cond='!data:view.isPost'> <!-- Blog feed links -->
+    <b:if cond='data:feedLinks'>
+      <div class='blog-feeds'>
+        <b:include data='feedLinks' name='feedLinksBody'/>
+      </div>
+    </b:if>
+  <b:else/> <!--Post feed links -->
+    <div class='post-feeds'>
+      <b:loop values='data:posts' var='post'>
+        <b:if cond='data:post.allowComments and data:post.feedLinks'>
+          <b:include data='post.feedLinks' name='feedLinksBody'/>
+        </b:if>
+      </b:loop>
+    </div>
+  </b:if>
+</b:includable>
+      <b:includable id='feedLinksBody' var='links'>
+  <div class='feed-links'>
+  <data:messages.subscribeTo/>
+  <b:loop values='data:links' var='f'>
+     <a class='feed-link' expr:href='data:f.url' expr:type='data:f.mimeType' target='_blank'><data:f.name/> (<data:f.feedType/>)</a>
+  </b:loop>
+  </div>
+</b:includable>
+      <b:includable id='footerBylines'>
+  <b:if cond='data:widgets.Blog.first.footerBylines'>
+    <b:loop index='i' values='data:widgets.Blog.first.footerBylines' var='region'>
+      <b:if cond='not data:region.items.empty'>
+        <div expr:class='&quot;post-footer-line post-footer-line-&quot; + (data:i + 1)'>
+          <b:with value='&quot;footer-&quot; + (data:i + 1)' var='regionName'>
+            <b:include data='region.items' name='bylineRegion'/>
+          </b:with>
+        </div>
+      </b:if>
+    </b:loop>
+  </b:if>
+</b:includable>
+      <b:includable id='googlePlusShare'>
+</b:includable>
+      <b:includable id='headerByline'>
+  <b:if cond='data:widgets.Blog.first.headerByline'>
+    <div class='post-header'>
+      <div class='post-header-line-1'>
+        <b:with value='&quot;header-1&quot;' var='regionName'>
+          <b:include data='data:widgets.Blog.first.headerByline.items' name='bylineRegion'/>
+        </b:with>
+      </div>
+    </div>
+  </b:if>
+</b:includable>
+      <b:includable id='homePageLink'>
+  <a class='home-link' expr:href='data:blog.homepageUrl'>
+    <data:messages.home/>
+  </a>
+</b:includable>
+      <b:includable id='iframeComments' var='post'>
+  <!-- G+ comments, no longer available. The includable is retained for backwards-compatibility. -->
+</b:includable>
+      <b:includable id='inlineAd' var='post'>
+  <b:if cond='!data:view.isPreview'>
+    <b:if cond='data:this.adCode or data:this.adClientId or data:blog.adsenseClientId'>
+      <!-- Ad -->
+      <div class='inline-ad'>
+        <b:if cond='data:this.adCode != &quot;&quot;'>
+          <data:this.adCode/>
+        <b:else/>
+          <b:include cond='data:this.adClientId or data:blog.adsenseClientId' name='defaultAdUnit'/>
+        </b:if>
+      </div>
+    </b:if>
+  <b:else/>
+    <div class='inline-ad'>
+      <div class='inline-ad-placeholder'>
+        <span><b:message name='messages.adsGoHere'/></span>
+      </div>
+    </div>
+  </b:if>
+</b:includable>
+      <b:includable id='linkShare'>
+  <b:with value='&quot;window.prompt(\&quot;Copy to clipboard: Ctrl+C, Enter\&quot;, \&quot;&quot; + data:originalUrl + &quot;\&quot;); return false;&quot;' var='onclick'>
+    <b:include name='platformShare'/>
+  </b:with>
+</b:includable>
+      <b:includable id='nextPageLink'>
+  <a class='blog-pager-older-link' expr:href='data:olderPageUrl' expr:id='data:widget.instanceId + &quot;_blog-pager-older-link&quot;' expr:title='data:messages.olderPosts'>
+    <data:messages.olderPosts/>
+  </a>
+</b:includable>
+      <b:includable id='otherSharingButton'>
+  <span class='sharing-platform-button sharing-element-other' expr:aria-label='data:messages.shareToOtherApps.escaped' expr:data-url='data:originalUrl' expr:title='data:messages.shareToOtherApps.escaped' role='menuitem' tabindex='-1'>
+    <b:with value='{key: &quot;sharingOther&quot;}' var='platform'>
+      <b:include name='sharingPlatformIcon'/>
+    </b:with>
+    <span class='platform-sharing-text'><data:messages.shareOtherApps.escaped/></span>
+  </span>
+</b:includable>
+      <b:includable id='platformShare'>
+  <a expr:class='&quot;goog-inline-block sharing-&quot; + data:platform.key' expr:data-url='data:originalUrl' expr:href='data:shareUrl + &quot;&amp;target=&quot; + data:platform.target' expr:onclick='data:onclick ? data:onclick : &quot;&quot;' expr:title='data:platform.shareMessage' target='_blank'>
+    <span class='share-button-link-text'>
+      <data:platform.shareMessage/>
+    </span>
+  </a>
+</b:includable>
+      <b:includable id='post' var='post'>
+  <div class='post'>
+    <b:include data='post' name='postMeta'/>
+    <b:include data='post' name='postTitle'/>
+    <b:include name='headerByline'/>
+    <b:if cond='data:view.isSingleItem'>
+      <b:include data='post' name='postBody'/>
+    <b:else/>
+      <b:include data='post' name='postBodySnippet'/>
+      <b:include data='post' name='postJumpLink'/>
+    </b:if>
+    <b:include data='post' name='postFooter'/>
+  </div>
+</b:includable>
+      <b:includable id='postAuthor'>
+  <span class='byline post-author vcard'>
+    <span class='post-author-label'>
+      <data:byline.label/>
+    </span>
+    <span class='fn'>
+      <b:if cond='data:post.author.profileUrl'>
+        <meta expr:content='data:post.author.profileUrl'/>
+        <a class='g-profile' expr:href='data:post.author.profileUrl' rel='author' title='author profile'>
+          <span><data:post.author.name/></span>
+        </a>
+      <b:else/>
+        <span><data:post.author.name/></span>
+      </b:if>
+    </span>
+  </span>
+</b:includable>
+      <b:includable id='postBody' var='post'>
+  <!-- If metaDescription is empty, use the post body as the schema.org description too, for G+/FB snippeting. -->
+  <div class='post-body entry-content float-container' expr:id='&quot;post-body-&quot; + data:post.id'>
+    <data:post.body/>
+  </div>
+</b:includable>
+      <b:includable id='postBodySnippet' var='post'>
+  <b:include data='post' name='postBody'/>
+</b:includable>
+      <b:includable id='postCommentsAndAd' var='post'>
+  <article class='post-outer-container'>
+    <!-- Post title and body -->
+    <div class='post-outer'>
+      <b:include data='post' name='post'/>
+    </div>
+
+    <!-- Comments -->
+    <b:include cond='data:view.isSingleItem' data='post' name='commentPicker'/>
+
+    <!-- Show ad inside post container, after comments, if single item. -->
+    <b:include cond='data:view.isSingleItem and data:post.includeAd' data='post' name='inlineAd'/>
+  </article>
+
+  <!-- Show ad outside post container (between posts) for feed pages. -->
+  <b:include cond='data:view.isMultipleItems and data:post.includeAd' data='post' name='inlineAd'/>
+</b:includable>
+      <b:includable id='postCommentsLink'>
+  <b:if cond='data:view.isMultipleItems'>
+    <span class='byline post-comment-link container'>
+      <b:include cond='data:post.commentSource != 1' name='commentsLink'/>
+    </span>
+  </b:if>
+</b:includable>
+      <b:includable id='postFooter' var='post'>
+  <div class='post-footer'>
+    <b:include name='footerBylines'/>
+    <b:include data='post' name='postFooterAuthorProfile'/>
+  </div>
+</b:includable>
+      <b:includable id='postFooterAuthorProfile' var='post'>
+  <b:if cond='data:post.author.aboutMe and data:view.isPost'>
+    <div class='author-profile'>
+      <b:if cond='data:post.author.authorPhoto.url'>
+        <img class='author-image' expr:src='data:post.author.authorPhoto.url' width='50px'/>
+        <div class='author-about'>
+          <b:include data='post' name='aboutPostAuthor'/>
+        </div>
+      <b:else/>
+        <b:include data='post' name='aboutPostAuthor'/>
+      </b:if>
+    </div>
+  </b:if>
+</b:includable>
+      <b:includable id='postHeader' var='post'>
+  <b:include name='headerByline'/>
+</b:includable>
+      <b:includable id='postJumpLink' var='post'>
+  <div class='jump-link flat-button'>
+    <a expr:href='data:post.url fragment &quot;more&quot;' expr:title='data:post.title'>
+      <b:eval expr='data:blog.jumpLinkMessage'/>
+    </a>
+  </div>
+</b:includable>
+      <b:includable id='postLabels'>
+  <span class='byline post-labels'>
+    <span class='byline-label'><data:byline.label/></span>
+    <b:loop index='i' values='data:post.labels' var='label'>
+      <a expr:href='data:label.url' rel='tag'>
+        <data:label.name/>
+      </a>
+    </b:loop>
+  </span>
+</b:includable>
+      <b:includable id='postLocation'>
+  <span class='byline post-location'>
+    <data:byline.label/>
+    <a expr:href='data:post.location.mapsUrl' target='_blank'><data:post.location.name/></a>
+  </span>
+</b:includable>
+      <b:includable id='postMeta' var='post'>
+  <b:include data='post' name='postMetadataJSON'/>
+</b:includable>
+      <b:includable id='postMetadataJSONImage'>
+  &quot;image&quot;: {
+    &quot;@type&quot;: &quot;ImageObject&quot;,
+    <b:if cond='data:post.featuredImage.isResizable'>
+    &quot;url&quot;: &quot;<b:eval expr='resizeImage(data:post.featuredImage, 1200, &quot;1200:630&quot;)'/>&quot;,
+    &quot;height&quot;: 630,
+    &quot;width&quot;: 1200
+    <b:else/>
+    &quot;url&quot;: &quot;https://blogger.googleusercontent.com/img/b/U2hvZWJveA/AVvXsEgfMvYAhAbdHksiBA24JKmb2Tav6K0GviwztID3Cq4VpV96HaJfy0viIu8z1SSw_G9n5FQHZWSRao61M3e58ImahqBtr7LiOUS6m_w59IvDYwjmMcbq3fKW4JSbacqkbxTo8B90dWp0Cese92xfLMPe_tg11g/w1200/&quot;,
+    &quot;height&quot;: 348,
+    &quot;width&quot;: 1200
+    </b:if>
+  },
+</b:includable>
+      <b:includable id='postMetadataJSONPublisher'>
+ &quot;publisher&quot;: {
+    &quot;@type&quot;: &quot;Organization&quot;,
+    &quot;name&quot;: &quot;Blogger&quot;,
+    &quot;logo&quot;: {
+      &quot;@type&quot;: &quot;ImageObject&quot;,
+      &quot;url&quot;: &quot;https://blogger.googleusercontent.com/img/b/U2hvZWJveA/AVvXsEgfMvYAhAbdHksiBA24JKmb2Tav6K0GviwztID3Cq4VpV96HaJfy0viIu8z1SSw_G9n5FQHZWSRao61M3e58ImahqBtr7LiOUS6m_w59IvDYwjmMcbq3fKW4JSbacqkbxTo8B90dWp0Cese92xfLMPe_tg11g/h60/&quot;,
+      &quot;width&quot;: 206,
+      &quot;height&quot;: 60
+    }
+  },
+</b:includable>
+      <b:includable id='postPagination'>
+  <div class='blog-pager container' id='blog-pager'>
+    <b:include cond='data:newerPageUrl' name='previousPageLink'/>
+    <b:include cond='data:olderPageUrl' name='nextPageLink'/>
+    <b:include cond='data:view.url != data:blog.homepageUrl' name='homePageLink'/>
+  </div>
+</b:includable>
+      <b:includable id='postReactions'>
+  <!-- Reaction feature no longer available. The includable is retained for backwards-compatibility. -->
+</b:includable>
+      <b:includable id='postShareButtons'>
+  <div class='byline post-share-buttons goog-inline-block'>
+    <b:with value='data:sharingId ?: ((data:widget.instanceId ?: &quot;sharing&quot;) + &quot;-&quot; + (data:regionName ?: &quot;byline&quot;) + &quot;-&quot; + data:post.id)' var='sharingId'>
+      <!-- Note: 'sharingButtons' includable is from the default Sharing widget markup. -->
+      <b:include data='{                                                sharingId: data:sharingId,                                                originalUrl: data:post.url,                                                platforms: data:this.sharing.platforms,                                                shareUrl: data:post.shareUrl,                                                shareTitle: data:post.title,                                              }' name='sharingButtons'/>
+    </b:with>
+  </div>
+</b:includable>
+      <b:includable id='postTimestamp'>
+  <span class='byline post-timestamp'>
+    <data:byline.label/>
+    <b:if cond='data:post.url'>
+      <meta expr:content='data:post.url.canonical'/>
+      <a class='timestamp-link' expr:href='data:post.url' rel='bookmark' title='permanent link'>
+        <time class='published' expr:datetime='data:post.date.iso8601' expr:title='data:post.date.iso8601'>
+          <data:post.date/>
+        </time>
+      </a>
+    </b:if>
+  </span>
+</b:includable>
+      <b:includable id='postTitle' var='post'>
+  <a expr:name='data:post.id'/>
+  <b:if cond='data:post.title != &quot;&quot;'>
+    <h3 class='post-title entry-title'>
+      <b:if cond='data:post.link or (data:post.url and data:view.url != data:post.url)'>
+        <a expr:href='data:post.link ?: data:post.url'><data:post.title/></a>
+      <b:else/>
+        <data:post.title/>
+      </b:if>
+    </h3>
+  </b:if>
+</b:includable>
+      <b:includable id='previousPageLink'>
+  <a class='blog-pager-newer-link' expr:href='data:newerPageUrl' expr:id='data:widget.instanceId + &quot;_blog-pager-newer-link&quot;' expr:title='data:messages.newerPosts'>
+    <data:messages.newerPosts/>
+  </a>
+</b:includable>
+      <b:includable id='sharingButton'>
+  <span expr:aria-label='data:platform.shareMessage' expr:class='&quot;sharing-platform-button sharing-element-&quot; + data:platform.key' expr:data-href='data:shareUrl + &quot;&amp;target=&quot; + data:platform.target' expr:data-url='data:originalUrl' expr:title='data:platform.shareMessage' role='menuitem' tabindex='-1'>
+    <b:include name='sharingPlatformIcon'/>
+    <span class='platform-sharing-text'><data:platform.name/></span>
+  </span>
+</b:includable>
+      <b:includable id='sharingButtonContent'>
+  <div class='flat-icon-button ripple'>
+    <b:include name='shareIcon'/>
+  </div>
+</b:includable>
+      <b:includable id='sharingButtons'>
+  <div class='sharing' expr:aria-owns='&quot;sharing-popup-&quot; + data:sharingId' expr:data-title='data:shareTitle'>
+    <button class='sharing-button touch-icon-button' expr:aria-controls='&quot;sharing-popup-&quot; + data:sharingId' expr:aria-label='data:messages.share.escaped' expr:id='&quot;sharing-button-&quot; + data:sharingId' role='button'>
+      <b:include name='sharingButtonContent'/>
+    </button>
+    <b:include name='sharingButtonsMenu'/>
+  </div>
+</b:includable>
+      <b:includable id='sharingButtonsMenu'>
+  <div class='share-buttons-container'>
+    <ul aria-hidden='true' class='share-buttons hidden' expr:aria-label='data:messages.share.escaped' expr:id='&quot;sharing-popup-&quot; + data:sharingId' role='menu'>
+      <b:loop values='(data:platforms ?: data:blog.sharing.platforms) filter (p =&gt; p.key not in {&quot;blogThis&quot;})' var='platform'>
+        <li>
+          <b:include name='sharingButton'/>
+        </li>
+      </b:loop>
+      <li aria-hidden='true' class='hidden'>
+        <b:include name='otherSharingButton'/>
+      </li>
+    </ul>
+  </div>
+</b:includable>
+      <b:includable id='sharingPlatformIcon'>
+  <b:include data='{ iconClass: (&quot;touch-icon sharing-&quot; + data:platform.key) }' expr:name='data:platform.key + &quot;Icon&quot;'/>
+</b:includable>
+      <b:includable id='threadedCommentForm' var='post'>
+  <div class='comment-form'>
+    <a name='comment-form'/>
+    <h4 id='comment-post-message'><data:messages.postAComment/></h4>
+    <b:if cond='data:this.messages.blogComment != &quot;&quot;'>
+      <p><data:this.messages.blogComment/></p>
+    </b:if>
+    <b:include data='post' name='commentFormIframeSrc'/>
+    <iframe allowtransparency='allowtransparency' class='blogger-iframe-colorize blogger-comment-from-post' expr:height='data:cmtIframeInitialHeight ?: &quot;90px&quot;' frameborder='0' id='comment-editor' name='comment-editor' src='' width='100%'/>
+    <data:post.cmtfpIframe/>
+    <script type='text/javascript'>
+      BLOG_CMT_createIframe(&#39;<data:post.appRpcRelayPath/>&#39;);
+    </script>
+  </div>
+</b:includable>
+      <b:includable id='threadedCommentJs' var='post'>
+  <script async='async' expr:src='data:post.commentSrc' type='text/javascript'/>
+  <b:template-script inline='true' name='threaded_comments'/>
+  <script type='text/javascript'>
+    blogger.widgets.blog.initThreadedComments(
+        <data:post.commentJso/>,
+        <data:post.commentMsgs/>,
+        <data:post.commentConfig/>);
+  </script>
+</b:includable>
+      <b:includable id='threadedComments' var='post'>
+  <section class='comments threaded' expr:data-embed='data:post.embedCommentForm' expr:data-num-comments='data:post.numberOfComments' id='comments'>
+    <a name='comments'/>
+
+    <b:include name='commentsTitle'/>
+
+    <div class='comments-content'>
+      <b:if cond='data:post.embedCommentForm'>
+        <b:include data='post' name='threadedCommentJs'/>
+      </b:if>
+      <div id='comment-holder'>
+         <data:post.commentHtml/>
+      </div>
+    </div>
+
+    <p class='comment-footer'>
+      <b:if cond='data:post.allowNewComments'>
+        <b:include data='post' name='threadedCommentForm'/>
+      <b:else/>
+        <data:post.noNewCommentsText/>
+      </b:if>
+      <b:if cond='data:post.showManageComments'>
+        <b:include data='post' name='manageComments'/>
+      </b:if>
+    </p>
+
+    <b:if cond='data:showCmtPopup'>
+      <div id='comment-popup'>
+        <iframe allowtransparency='allowtransparency' frameborder='0' id='comment-actions' name='comment-actions' scrolling='no'>
+        </iframe>
+      </div>
+    </b:if>
+  </section>
+</b:includable>
+      <b:includable id='tooltipCss'>
+  <!-- LINT.IfChange -->
+  <style>
+    .post-body a.b-tooltip-container {
+      position: relative;
+      display: inline-block;
+    }
+
+    .post-body a.b-tooltip-container .b-tooltip {
+      display: block !important;
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translate(-20%, 1px);
+      visibility: hidden;
+      opacity: 0;
+      z-index: 1;
+      transition: opacity 0.2s ease-in-out;
+    }
+
+    .post-body a.b-tooltip-container .b-tooltip iframe {
+      width: 200px;
+      height: 198px;
+      max-width: none;
+      border: none;
+      border-radius: 20px;
+      box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, 0.2);
+    }
+
+    @media (hover: hover) {
+      .post-body a.b-tooltip-container:hover .b-tooltip {
+        visibility: visible;
+        opacity: 1;
+      }
+    }
+  </style>
+  <!-- LINT.ThenChange(//depot/google3/java/com/google/blogger/b2/layouts/widgets/v2-style.css) -->
+</b:includable>
+    </b:widget>
+  </b:section>
+
+<!-- ==================== CHATBOT SECTION ==================== -->
+<b:if cond='data:blog.url == data:blog.homepageUrl'>
+  <b:section id='chatbot-section' maxwidgets='1' showaddelement='no'>
+    <b:widget id='HTML8' locked='false' title='Quran Chatbot' type='HTML' version='1'>
+      <b:widget-settings>
+        <b:widget-setting name='content'/>
+      </b:widget-settings>
+      <b:includable id='main'>
+        <section aria-labelledby='chatbot-header' class='chatbot-section' id='chatbot-section'>
+          <div class='chatbot-container'>
+            <div id='chatbot-header'>
+              <span>🤖 ক&#2497;রআন বট + ত&#2494;ফস&#2496;র</span>
+              <div class='chatbot-controls'>
+                <button class='chatbot-control-btn' id='fullscreen-btn' title='ফুলস্ক্রিন'>
+                  <span>📺</span> ফ&#2497;লস&#2509;ক&#2509;র&#2495;ন
+                </button>
+                <button class='chatbot-control-btn' id='sura-panel-btn' title='সূরা তালিকা'>
+                  <span>📖</span> স&#2498;র&#2494; ল&#2495;স&#2509;ট
+                </button>
+                <button class='chatbot-control-btn' id='voice-btn' title='কণ্ঠ সক্রিয় করুন'>
+                  <span>🎤</span> ভয&#2492;&#2503;স
+                </button>
+                <button class='chatbot-control-btn' id='settings-panel-btn' title='সেটিংস'>
+                  <span>&#9881;&#65039;</span> স&#2503;ট&#2495;&#2434;স
+                </button>
+              </div>
+            </div>
+            <div aria-live='polite' id='chatbot-body' role='log'>
+              <div class='message bot'>
+                <strong>🤲 আসস&#2494;ল&#2494;ম আল&#2494;ইক&#2497;ম!</strong><br/>
+                ক&#2497;রআন&#2503;র আয&#2492;&#2494;ত, ত&#2494;ফস&#2496;র ও হ&#2494;দ&#2495;স সম&#2509;পর&#2509;ক&#2503; জ&#2494;ন&#2497;ন&#2404; ন&#2495;চ&#2503;র ব&#2494;টন গ&#2497;ল&#2495;ত&#2503; ক&#2509;ল&#2495;ক কর&#2503; শ&#2497;র&#2497; কর&#2497;ন...
+                <div class='message-timestamp' id='initial-timestamp'/>
+              </div>
+              <div class='quick-actions'>
+                <button class='quick-action-btn' data-action='about' id='about-bot-btn'>
+                  <span>🤖</span> বট সম&#2509;পর&#2509;ক&#2503;
+                </button>
+                <button class='quick-action-btn' data-action='guide' id='usage-guide-btn'>
+                  <span>📖</span> ব&#2509;যবহ&#2494;র গ&#2494;ইড
+                </button>
+                <button class='quick-action-btn' data-action='start' id='go-chat-btn'>
+                  <span>💬</span> চ&#2509;য&#2494;ট শ&#2497;র&#2497;
+                </button>
+                <button class='quick-action-btn' data-action='popular' id='popular-ayat-btn'>
+                  <span>&#11088;</span> জনপ&#2509;র&#2495;য&#2492; আয&#2492;&#2494;ত
+                </button>
+                <button class='quick-action-btn secondary' data-action='prayer' id='prayer-times-btn'>
+                  <span>🕌</span> স&#2494;ল&#2494;ত সময&#2492;
+                </button>
+                <button class='quick-action-btn secondary' data-action='quiz' id='quran-quiz-btn'>
+                  <span>🧠</span> ক&#2497;রআন ক&#2497;ইজ
+                </button>
+              </div>
+            </div>
+            <div id='chatbot-input-container'>
+              <input aria-label='কুরআন বট প্রশ্ন ইনপুট' id='chatbot-input' placeholder='সূরা:আয়াত, শব্দ বা প্রশ্ন লিখুন... (উদা: 2:255, রহমান, নামাজের সময়)' type='text'/>
+              <button class='btn btn-primary' id='send-button' title='প্রশ্ন পাঠান'>
+                <span>📤</span> প&#2494;ঠ&#2494;ন
+              </button>
+              <button class='btn btn-read-more' id='tafsir-button' title='তাফসীর দেখুন'>
+                <span>📖</span> ত&#2494;ফস&#2496;র
+              </button>
+              <button class='btn btn-secondary' id='audio-button' title='অডিও শুনুন'>
+                <span>🎧</span> শ&#2497;ন&#2497;ন
+              </button>
+              <button class='btn btn-read-more' id='clear-button' title='চ্যাট ক্লিয়ার করুন'>
+                <span>🗑&#65039;</span> ক&#2509;ল&#2495;য&#2492;&#2494;র
+              </button>
+            </div>
+          </div>
+        </section>
+        
+        <!-- Tafsir Modal -->
+        <div class='tafsir-modal' id='tafsir-modal'>
+          <div class='tafsir-modal-content'>
+            <div class='tafsir-header'>
+              <h3 id='tafsir-title'>ত&#2494;ফস&#2496;র</h3>
+              <div class='tafsir-controls'>
+                <button class='tafsir-control-btn' id='tafsir-fullscreen-btn' title='ফুলস্ক্রিন'>
+                  <span>📺</span>
+                </button>
+                <button class='tafsir-control-btn' id='tafsir-close-btn' title='বন্ধ করুন'>
+                  <span>&#10005;</span>
+                </button>
+              </div>
+            </div>
+            <div class='tafsir-content' id='tafsir-content'>
+              <!-- Tafsir content will be loaded here -->
+            </div>
+          </div>
+        </div>
+        
+        <!-- Enhanced Fullscreen Tafsir Modal -->
+        <div aria-labelledby='fullscreen-tafsir-title' aria-modal='true' id='fullscreen-tafsir' role='dialog'>
+          <div id='fullscreen-tafsir-content'>
+            <div id='fullscreen-tafsir-header'>
+              <div id='fullscreen-tafsir-title'>ইবন&#2503; ক&#2494;স&#2495;র&#2503;র ত&#2494;ফস&#2496;র</div>
+              <div class='tafsir-action-buttons'>
+                <button class='btn btn-secondary' id='copy-tafsir-btn' title='তাফসীর কপি করুন'>
+                  <span>📋</span> কপ&#2495;
+                </button>
+                <button class='btn btn-primary' id='share-tafsir-btn' title='তাফসীর শেয়ার করুন'>
+                  <span>📤</span> শ&#2503;য&#2492;&#2494;র
+                </button>
+                <button aria-label='তাফসীর বন্ধ করুন' id='exit-fullscreen'>&#10005; বন&#2509;ধ</button>
+              </div>
+            </div>
+            <div id='fullscreen-tafsir-text'/>
+          </div>
+        </div>
+        
+        <!-- Enhanced Sura List Panel -->
+        <div class='sura-panel' id='sura-panel'>
+          <div class='sura-header'>
+            <div class='sura-title'>📖 স&#2509;র&#2494; সম&#2509;হ</div>
+            <button aria-label='সূরা প্যানেল বন্ধ করুন' class='close-sura' id='close-sura'>&#215;</button>
+          </div>
+          <div class='search-container' style='padding: 1rem;'>
+            <input id='sura-search' placeholder='সূরা খুঁজুন...' style='width: 100%; padding: 0.8rem; border: 2px solid var(--gray-medium); border-radius: var(--rounded);' type='text'/>
+          </div>
+          <div class='sura-list' id='sura-list'>
+            <!-- Sura list will be populated by JavaScript -->
+          </div>
+        </div>
+
+        <!-- Enhanced Settings Panel -->
+        <div class='settings-panel' id='settings-panel'>
+          <div class='settings-header'>
+            <div class='settings-title'>&#9881;&#65039; স&#2494;ট&#2497;&#2434;স</div>
+            <button aria-label='সেটিংস প্যানেল বন্ধ করুন' class='close-settings' id='close-settings'>&#215;</button>
+          </div>
+          
+          <div class='setting-group'>
+            <label class='setting-label' for='bengali-font-size'>ব&#2494;&#2434;ল&#2494; ফন&#2509;ট স&#2494;ইজ</label>
+            <select class='setting-select' id='bengali-font-size'>
+              <option value='14px'>ছ&#2507;ট (১৪px)</option>
+              <option selected='selected' value='16px'>ম&#2494;ধ&#2509;যম (১৬px)</option>
+              <option value='18px'>বড&#2492; (১৮px)</option>
+              <option value='20px'>অত&#2495;বড&#2492; (২০px)</option>
+              <option value='22px'>ব&#2495;শ&#2494;ল (২২px)</option>
+            </select>
+            <p class='setting-description'>ব&#2494;&#2434;ল&#2494; ট&#2503;ক&#2509;সট&#2503;র ফন&#2509;ট স&#2494;ইজ স&#2503;ট কর&#2497;ন</p>
+          </div>
+          
+          <div class='setting-group'>
+            <label class='setting-label' for='arabic-font-size'>আরব&#2495; ফন&#2509;ট স&#2494;ইজ</label>
+            <select class='setting-select' id='arabic-font-size'>
+              <option value='1.4rem'>ছ&#2507;ট (১.৪rem)</option>
+              <option selected='selected' value='1.6rem'>ম&#2494;ধ&#2509;যম (১.৬rem)</option>
+              <option value='1.8rem'>বড&#2492; (১.৮rem)</option>
+              <option value='2rem'>অত&#2495;বড&#2492; (২rem)</option>
+              <option value='2.2rem'>ব&#2495;শ&#2494;ল (২.২rem)</option>
+            </select>
+            <p class='setting-description'>আরব&#2495; ট&#2503;ক&#2509;সট&#2503;র ফন&#2509;ট স&#2494;ইজ স&#2503;ট কর&#2497;ন</p>
+          </div>
+          
+          <div class='setting-group'>
+            <label class='setting-label' for='bengali-font-family'>ব&#2494;&#2434;ল&#2494; ফন&#2509;ট স&#2509;ট&#2494;ইল</label>
+            <select class='setting-select' id='bengali-font-family'>
+              <option selected='selected' value='&apos;Kalpurush&apos;, &apos;Hind Siliguri&apos;, sans-serif'>ক&#2494;লপ&#2497;র&#2497;ষ</option>
+              <option value='&apos;Hind Siliguri&apos;, sans-serif'>হ&#2495;ন&#2509;দ স&#2495;ল&#2495;গ&#2497;ড&#2492;&#2495;</option>
+              <option value='&apos;SolaimanLipi&apos;, sans-serif'>স&#2507;ল&#2494;ইম&#2494;ন ল&#2495;প&#2495;</option>
+              <option value='&apos;Siyam Rupali&apos;, sans-serif'>স&#2495;য়&#2494;ম র&#2509;প&#2494;ল&#2495;</option>
+            </select>
+            <p class='setting-description'>ব&#2494;&#2434;ল&#2494; ট&#2503;ক&#2509;সট&#2503;র ফন&#2509;ট স&#2509;ট&#2494;ইল স&#2503;ট কর&#2497;ন</p>
+          </div>
+          
+          <div class='setting-group'>
+            <label class='setting-label' for='arabic-font-family'>আরব&#2495; ফন&#2509;ট স&#2509;ট&#2494;ইল</label>
+            <select class='setting-select' id='arabic-font-family'>
+              <option selected='selected' value='&apos;Amiri&apos;, &apos;Scheherazade New&apos;, serif'>আম&#2495;র&#2495;</option>
+              <option value='&apos;Scheherazade New&apos;, serif'>শ&#2503;হ&#2503;র&#2494;জ&#2494;দ ন&#2495;উ</option>
+              <option value='&apos;Lateef&apos;, serif'>ল&#2494;ত&#2503;ফ</option>
+              <option value='&apos;KFGQPC Uthman Taha Naskh&apos;, serif'>উস&#2494;ম&#2494;ন&#2495; ন&#2494;সখ</option>
+            </select>
+            <p class='setting-description'>আরব&#2495; ট&#2503;ক&#2509;সট&#2503;র ফন&#2509;ট স&#2509;ট&#2494;ইল স&#2503;ট কর&#2497;ন</p>
+          </div>
+          
+          <div class='setting-group'>
+            <label class='setting-label' for='theme-mode'>থ&#2495;ম ম&#2507;ড</label>
+            <select class='setting-select' id='theme-mode'>
+              <option selected='selected' value='light'>ল&#2494;ইট</option>
+              <option value='dark'>ড&#2494;র&#2509;ক</option>
+              <option value='auto'>অট&#2507;</option>
+            </select>
+            <p class='setting-description'>ওয&#2492;&#2503;বস&#2494;ইট&#2503;র থ&#2495;ম ম&#2507;ড স&#2503;ট কর&#2497;ন</p>
+          </div>
+
+          <div class='setting-group'>
+            <label class='setting-label' for='audio-speed'>অড&#2497;ও স&#2509;প&#2509;ড</label>
+            <select class='setting-select' id='audio-speed'>
+              <option value='0.5'>০.৫x (ধ&#2495;র&#2503;)</option>
+              <option selected='selected' value='1'>১x (স&#2494;ম&#2494;ন&#2507;)</option>
+              <option value='1.5'>১.৫x (দ&#2509;র&#2509;ত)</option>
+              <option value='2'>২x (অত&#2495;দ&#2509;র&#2509;ত)</option>
+            </select>
+            <p class='setting-description'>ক&#2497;রআন ত&#2497;ল&#2494;ও&#2494;ত&#2503;র স&#2509;প&#2509;ড স&#2503;ট কর&#2497;ন</p>
+          </div>
+
+          <div class='setting-group'>
+            <label class='setting-label'>
+              <input id='auto-play-audio' style='margin-right: 0.5rem;' type='checkbox'/>
+              অট&#2507; অড&#2497;ও প&#2503;ল
+            </label>
+            <p class='setting-description'>আয়&#2494;ত দ&#2503;খ&#2494;র স&#2494;থ&#2503; অট&#2507; অড&#2497;ও চ&#2494;ল&#2509;ব&#2503;</p>
+          </div>
+
+          <div class='setting-group'>
+            <label class='setting-label'>
+              <input id='show-transliteration' style='margin-right: 0.5rem;' type='checkbox'/> 
+              ট&#2509;র&#2494;&#2434;নস&#2509;ল&#2495;ট&#2509;র&#2509;য&#2494;শ&#2494;ন দ&#2503;খ&#2494;ন
+            </label>
+            <p class='setting-description'>আরব&#2495; ট&#2503;ক&#2509;সট&#2503;র ই&#2434;ন&#2494;র&#2494;জ&#2495; দ&#2503;খ&#2494;ন</p>
+          </div>
+          
+          <div class='setting-group'>
+            <button class='btn btn-primary w-full' id='reset-settings'>🔄 ড&#2495;ফল&#2509;ট স&#2503;ট&#2495;&#2434;স</button>
+            <p class='setting-description'>সকল স&#2503;ট&#2495;&#2434;স ড&#2495;ফল&#2509;ট ম&#2494;ন&#2503; র&#2495;স&#2503;ট কর&#2497;ন</p>
+          </div>
+        </div>
+      </b:includable>
+    </b:widget>
+  </b:section>
+</b:if>
+</main>
+<!-- ==================== FOOTER SECTION ==================== -->
+<b:section id='footer-section' maxwidgets='1' showaddelement='no'>
+  <b:widget id='HTML7' locked='false' title='Footer' type='HTML' version='1'>
+    <b:widget-settings>
+      <b:widget-setting name='content'/>
+    </b:widget-settings>
+    <b:includable id='main'>
+      <footer class='footer' role='contentinfo'>
+        <div class='container'>
+          <div class='footer-content'>
+            <div class='footer-widget'>
+              <h3>আল-ক&#2497;রআন ও ত&#2494;ফস&#2496;র</h3>
+              <p>আল-ক&#2497;রআন&#2503;র আয়&#2494;ত, হ&#2494;দ&#2495;স ও দ&#2507;য়&#2494; ন&#2495;য়&#2503; আপন&#2494;র ন&#2495;র&#2509;ভরয&#2507;গ&#2509;য সঙ&#2509;গ&#2496;&#2404; ইসল&#2494;ম&#2495;ক শ&#2495;ক&#2509;ষ&#2494; ও জ&#2509;ঞ&#2494;ন&#2503;র প&#2509;রচ&#2494;র&#2503; আম&#2494;দ&#2503;র অঙ&#2509;গ&#2496;ক&#2494;র&#2404;</p>
+            </div>
+            <div class='footer-widget'>
+              <h3>দ&#2509;র&#2497;ত ল&#2495;&#2434;ক</h3>
+              <ul class='footer-links'>
+                <li><a expr:href='data:blog.homepageUrl'>হ&#2507;ম</a></li>
+                <li><a expr:href='data:blog.homepageUrl + &quot;#todays-ayat&quot;'>আজক&#2503;র আয়&#2494;ত</a></li>
+                <li><a expr:href='data:blog.homepageUrl + &quot;#todays-hadith&quot;'>আজক&#2503;র হ&#2494;দ&#2495;স</a></li>
+                <li><a expr:href='data:blog.homepageUrl + &quot;#todays-dua&quot;'>আজক&#2503;র দ&#2507;য়&#2494;</a></li>
+                <li><a expr:href='data:blog.homepageUrl + &quot;#blog-posts&quot;'>ব&#2509;লগ প&#2507;স&#2509;ট</a></li>
+                <li><a expr:href='data:blog.homepageUrl + &quot;#chatbot-section&quot;'>ক&#2497;রআন বট</a></li>
+              </ul>
+            </div>
+            <div class='footer-widget'>
+              <h3>য&#2507;গ&#2494;য&#2507;গ</h3>
+              <ul class='footer-links'>
+                <li>📧 ইম&#2503;ইল: info@example.com</li>
+                <li>📞 ফ&#2507;ন: +৮৮০ ১৭XX-XXXXXX</li>
+                <li>📍 ঠ&#2495;ক&#2494;ন&#2494;: ঢ&#2494;ক&#2494;, ব&#2494;&#2434;ল&#2494;দ&#2503;শ</li>
+              </ul>
+            </div>
+          </div>
+          <div class='footer-bottom'>
+            <p>২০২৪ আল-ক&#2497;রআন ও ত&#2494;ফস&#2496;র&#2404; সকল স&#2509;বত&#2509;ব স&#2434;রক&#2509;ষ&#2495;ত&#2404;</p>
+          </div>
+        </div>
+      </footer>
+    </b:includable>
+  </b:widget>
+</b:section>
+
+<!-- ==================== JAVASCRIPT ==================== -->
+<script>
+//<![CDATA[
+// Core initialization
+document.addEventListener('DOMContentLoaded', function() {
+    initializeEnhancedChatbot();
+    initializeBlogFeatures();
+    initializePanels();
+    initializeEnhancedSettings();
+    loadSuraList();
+    initializeDailySection();
+    initializeVoiceRecognition();
+    initializeThemeToggle();
+    initializeTimestamp();
+    loadDailyAyat();
+});
+
+// ==================== UTILITY FUNCTIONS ====================
+function initializeTimestamp() {
+    const initialTimestamp = document.getElementById('initial-timestamp');
+    if (initialTimestamp) {
+        initialTimestamp.textContent = getCurrentTimestamp();
+    }
+}
+
+function getCurrentTimestamp() {
+    const now = new Date();
+    return now.toLocaleTimeString('bn-BD', { 
+        hour: '2-digit', 
+        minute: '2-digit',
+        hour12: true 
+    });
+}
+
+// ==================== THEME TOGGLE ====================
+function initializeThemeToggle() {
+    const themeToggle = document.getElementById('theme-toggle');
+    const themeIcon = document.getElementById('theme-icon');
+    
+    // Load saved theme
+    const savedTheme = localStorage.getItem('quranTheme');
+    if (savedTheme) {
+        document.documentElement.setAttribute('data-theme', savedTheme);
+        updateThemeIcon(savedTheme);
+    }
+    
+    // Toggle theme on button click
+    themeToggle.addEventListener('click', function() {
+        const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
+        const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+        
+        document.documentElement.setAttribute('data-theme', newTheme);
+        localStorage.setItem('quranTheme', newTheme);
+        updateThemeIcon(newTheme);
+    });
+    
+    function updateThemeIcon(theme) {
+        themeIcon.textContent = theme === 'dark' ? '☀️' : '🌙';
+    }
+}
+
+// ==================== DAILY SECTION FUNCTIONS ====================
+function loadDailyAyat() {
+    // Generate a random ayat for daily display
+    const randomSurah = Math.floor(Math.random() * 114) + 1;
+    const maxAyah = getSurahAyahCount(randomSurah);
+    const randomAyah = Math.floor(Math.random() * maxAyah) + 1;
+    
+    // Use the same data loading as chatbot
+    loadQuranData().then(() => {
+        const ayat = window.quranData.find(a => a.sura == randomSurah && a.aya == randomAyah);
+        const arabic = window.arabicData.find(a => a.sura == randomSurah && a.VerseIDAr == randomAyah);
+        
+        if (ayat && arabic) {
+            document.getElementById('daily-surah-name').textContent = `সূরা ${getSurahName(randomSurah)}, আয়াত ${randomAyah}`;
+            document.getElementById('daily-arabic-text').innerHTML = arabic.ayat || 'لَا إِلَٰهَ إِلَّا اللَّهُ';
+            document.getElementById('daily-translation').textContent = ayat.text;
+            
+            // Set up button functionality
+            document.getElementById('daily-tafsir-btn').onclick = function() {
+                showFullTafsir(randomSurah, randomAyah);
+            };
+            
+            document.getElementById('daily-audio-btn').onclick = function() {
+                playAyaAudio(randomSurah, randomAyah);
+            };
+            
+            document.getElementById('daily-copy-btn').onclick = function() {
+                copyAyaText(randomSurah, randomAyah);
+            };
+        }
+    });
+}
+
+function getSurahName(surahNumber) {
+    const suraNames = [
+        "আল-ফাতিহা", "আল-বাকারা", "আল-ইমরান", "আন-নিসা", "আল-মায়িদাহ",
+        "আল-আন'আম", "আল-আ'রাফ", "আল-আনফাল", "আত-তাওবাহ", "ইউনুস",
+        "হুদ", "ইউসুফ", "আর-রাদ", "ইবরাহিম", "আল-হিজর",
+        "আন-নাহল", "আল-ইসরা", "আল-কাহফ", "মারইয়াম", "তাহা"
+    ];
+    return suraNames[surahNumber - 1] || `সূরা ${surahNumber}`;
+}
+
+// ==================== PANELS MANAGEMENT ====================
+function initializePanels() {
+    // Sura List Panel with Search
+    const suraPanelBtn = document.getElementById('sura-panel-btn');
+    const closeSura = document.getElementById('close-sura');
+    const suraPanel = document.getElementById('sura-panel');
+    const suraSearch = document.getElementById('sura-search');
+
+    function openSuraPanel() {
+        suraPanel.classList.add('open');
+        document.body.style.overflow = 'hidden';
+        if (suraSearch) suraSearch.focus();
+    }
+
+    function closeSuraPanel() {
+        suraPanel.classList.remove('open');
+        document.body.style.overflow = 'auto';
+    }
+
+    if (suraPanelBtn) suraPanelBtn.addEventListener('click', openSuraPanel);
+    if (closeSura) closeSura.addEventListener('click', closeSuraPanel);
+
+    // Sura Search Functionality
+    if (suraSearch) {
+        suraSearch.addEventListener('input', function(e) {
+            const searchTerm = e.target.value.toLowerCase();
+            const suraItems = document.querySelectorAll('.sura-item');
+            
+            suraItems.forEach(item => {
+                const text = item.textContent.toLowerCase();
+                if (text.includes(searchTerm)) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        });
+    }
+
+    // Settings Panel
+    const settingsPanelBtn = document.getElementById('settings-panel-btn');
+    const closeSettings = document.getElementById('close-settings');
+    const settingsPanel = document.getElementById('settings-panel');
+
+    function openSettingsPanel() {
+        settingsPanel.classList.add('open');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeSettingsPanel() {
+        settingsPanel.classList.remove('open');
+        document.body.style.overflow = 'auto';
+    }
+
+    if (settingsPanelBtn) settingsPanelBtn.addEventListener('click', openSettingsPanel);
+    if (closeSettings) closeSettings.addEventListener('click', closeSettingsPanel);
+
+    // Close panels on ESC key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+            closeSuraPanel();
+            closeSettingsPanel();
+            closeFullscreenTafsir();
+            exitFullscreenMode();
+        }
+    });
+
+    // Close panels when clicking outside
+    document.addEventListener('click', function(e) {
+        if (suraPanel.classList.contains('open') && !suraPanel.contains(e.target) && !suraPanelBtn.contains(e.target)) {
+            closeSuraPanel();
+        }
+        if (settingsPanel.classList.contains('open') && !settingsPanel.contains(e.target) && !settingsPanelBtn.contains(e.target)) {
+            closeSettingsPanel();
+        }
+    });
+}
+
+// ==================== ENHANCED SETTINGS MANAGEMENT ====================
+function initializeEnhancedSettings() {
+    const bengaliFontSize = document.getElementById('bengali-font-size');
+    const arabicFontSize = document.getElementById('arabic-font-size');
+    const bengaliFontFamily = document.getElementById('bengali-font-family');
+    const arabicFontFamily = document.getElementById('arabic-font-family');
+    const themeMode = document.getElementById('theme-mode');
+    const audioSpeed = document.getElementById('audio-speed');
+    const autoPlayAudio = document.getElementById('auto-play-audio');
+    const showTransliteration = document.getElementById('show-transliteration');
+    const resetSettings = document.getElementById('reset-settings');
+
+    // Load saved settings
+    loadEnhancedSettings();
+
+    // Save settings on change
+    if (bengaliFontSize) bengaliFontSize.addEventListener('change', saveEnhancedSettings);
+    if (arabicFontSize) arabicFontSize.addEventListener('change', saveEnhancedSettings);
+    if (bengaliFontFamily) bengaliFontFamily.addEventListener('change', saveEnhancedSettings);
+    if (arabicFontFamily) arabicFontFamily.addEventListener('change', saveEnhancedSettings);
+    if (themeMode) themeMode.addEventListener('change', saveEnhancedSettings);
+    if (audioSpeed) audioSpeed.addEventListener('change', saveEnhancedSettings);
+    if (autoPlayAudio) autoPlayAudio.addEventListener('change', saveEnhancedSettings);
+    if (showTransliteration) showTransliteration.addEventListener('change', saveEnhancedSettings);
+    if (resetSettings) resetSettings.addEventListener('click', resetAllSettings);
+
+    function saveEnhancedSettings() {
+        const settings = {
+            bengaliFontSize: bengaliFontSize.value,
+            arabicFontSize: arabicFontSize.value,
+            bengaliFontFamily: bengaliFontFamily.value,
+            arabicFontFamily: arabicFontFamily.value,
+            themeMode: themeMode.value,
+            audioSpeed: audioSpeed.value,
+            autoPlayAudio: autoPlayAudio.checked,
+            showTransliteration: showTransliteration.checked
+        };
+        localStorage.setItem('quranThemeSettings', JSON.stringify(settings));
+        applyChatbotSettings(settings);
+    }
+
+    function loadEnhancedSettings() {
+        const savedSettings = localStorage.getItem('quranThemeSettings');
+        if (savedSettings) {
+            const settings = JSON.parse(savedSettings);
+            if (bengaliFontSize) bengaliFontSize.value = settings.bengaliFontSize;
+            if (arabicFontSize) arabicFontSize.value = settings.arabicFontSize;
+            if (bengaliFontFamily) bengaliFontFamily.value = settings.bengaliFontFamily;
+            if (arabicFontFamily) arabicFontFamily.value = settings.arabicFontFamily;
+            if (themeMode) themeMode.value = settings.themeMode;
+            if (audioSpeed) audioSpeed.value = settings.audioSpeed;
+            if (autoPlayAudio) autoPlayAudio.checked = settings.autoPlayAudio;
+            if (showTransliteration) showTransliteration.checked = settings.showTransliteration;
+            applyChatbotSettings(settings);
+        }
+    }
+
+    function resetAllSettings() {
+        localStorage.removeItem('quranThemeSettings');
+        if (bengaliFontSize) bengaliFontSize.value = '16px';
+        if (arabicFontSize) arabicFontSize.value = '1.6rem';
+        if (bengaliFontFamily) bengaliFontFamily.value = "'Kalpurush', 'Hind Siliguri', sans-serif";
+        if (arabicFontFamily) arabicFontFamily.value = "'Amiri', 'Scheherazade New', serif";
+        if (themeMode) themeMode.value = 'light';
+        if (audioSpeed) audioSpeed.value = '1';
+        if (autoPlayAudio) autoPlayAudio.checked = false;
+        if (showTransliteration) showTransliteration.checked = false;
+        applyChatbotSettings({
+            bengaliFontSize: '16px',
+            arabicFontSize: '1.6rem',
+            bengaliFontFamily: "'Kalpurush', 'Hind Siliguri', sans-serif",
+            arabicFontFamily: "'Amiri', 'Scheherazade New', serif",
+            themeMode: 'light',
+            audioSpeed: '1',
+            autoPlayAudio: false,
+            showTransliteration: false
+        });
+    }
+
+    function applyChatbotSettings(settings) {
+        const chatbotSection = document.querySelector('.chatbot-section');
+        
+        // Apply settings only to chatbot section
+        if (chatbotSection) {
+            chatbotSection.style.setProperty('--bengali-font-size', settings.bengaliFontSize);
+            chatbotSection.style.setProperty('--arabic-font-size', settings.arabicFontSize);
+            chatbotSection.style.setProperty('--font-bengali', settings.bengaliFontFamily);
+            chatbotSection.style.setProperty('--font-arabic', settings.arabicFontFamily);
+        }
+        
+        // Apply theme mode
+        if (settings.themeMode === 'dark' || (settings.themeMode === 'auto' && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.setAttribute('data-theme', 'dark');
+        } else {
+            document.documentElement.setAttribute('data-theme', 'light');
+        }
+
+        // Store audio settings globally
+        window.audioSettings = {
+            speed: settings.audioSpeed,
+            autoPlay: settings.autoPlayAudio
+        };
+
+        window.displaySettings = {
+            showTransliteration: settings.showTransliteration
+        };
+    }
+}
+
+// ==================== SURA LIST MANAGEMENT ====================
+function loadSuraList() {
+    const suraList = document.getElementById('sura-list');
+    if (!suraList) return;
+
+    const suraNames = [
+        "আল-ফাতিহা", "আল-বাকারা", "আল-ইমরান", "আন-নিসা", "আল-মায়িদাহ",
+        "আল-আন'আম", "আল-আ'রাফ", "আল-আনফাল", "আত-তাওবাহ", "ইউনুস",
+        "হুদ", "ইউসুফ", "আর-রাদ", "ইবরাহিম", "আল-হিজর",
+        "আন-নাহল", "আল-ইসরা", "আল-কাহফ", "মারইয়াম", "তাহা",
+        "আল-আম্বিয়া", "আল-হাজ্জ", "আল-মুমিনুন", "আন-নূর", "আল-ফুরকান",
+        "আশ-শু'আরা", "আন-নামল", "আল-কাসাস", "আল-আনকাবুত", "আর-রুম",
+        "লুকমান", "আস-সাজদাহ", "আল-আহযাব", "সাবা", "ফাতির",
+        "ইয়াসিন", "আস-সাফফাত", "সাদ", "আয-যুমার", "গাফির",
+        "ফুসসিলাত", "আশ-শুরা", "আয-যুখরুফ", "আদ-দুখান", "আল-জাসিয়াহ",
+        "আল-আহকাফ", "মুহাম্মদ", "আল-ফাতহ", "আল-হুজুরাত", "কাফ",
+        "আয-যারিয়াত", "আত-তুর", "আন-নাজম", "আল-কামার", "আর-রহমান",
+        "আল-ওয়াকিয়াহ", "আল-হাদীদ", "আল-মুজাদilah", "আল-হাশর", "আল-মুমতাহিনাহ",
+        "আস-সাফ", "আল-জুমু'আহ", "আল-মুনাফিকুন", "আত-তাগাবুন", "আত-তালাক",
+        "আত-তাহরীম", "আল-মুলক", "আল-কালাম", "আল-হাক্কাহ", "আল-মা'আরিজ",
+        "নূহ", "আল-জিন", "আল-মুজাম্মিল", "আল-মুদ্দাস্সির", "আল-কিয়ামাহ",
+        "আল-ইনসান", "আল-মুরসালাত", "আন-নাবা", "আন-নাজি'আত", "আবাসা",
+        "আত-তাকভীর", "আল-ইনফিতার", "আল-মুতাফফিফীন", "আল-ইনশিকাক", "আল-বুরূজ",
+        "আত-তারিক", "আল-আ'লা", "আল-গাশিয়াহ", "আল-ফাজর", "আল-বালাদ",
+        "আশ-শামস", "আল-লাইল", "আদ-দুহা", "আল-ইনশিরাহ", "আত-তীন",
+        "আল-আলাক", "আল-কাদর", "আল-বাইয়্যিনাহ", "আয-যিলযাল", "আল-আদিয়াত",
+        "আল-কারি'আহ", "আত-তাকাসুর", "আল-আসর", "আল-হুমাজাহ", "আল-ফীল",
+        "কুরাইশ", "আল-মাউন", "আল-কাওসার", "আল-কাফিরুন", "আন-নাসর",
+        "আল-মাসাদ", "আল-ইখলাস", "আল-ফালাক", "আন-নাস"
+    ];
+
+    let suraHTML = '';
+    suraNames.forEach((name, index) => {
+        const suraNumber = (index + 1).toString().padStart(3, '0');
+        const ayahCount = getSurahAyahCount(index + 1);
+        suraHTML += `
+            <div class="sura-item" data-sura="${index + 1}" data-ayah-count="${ayahCount}">
+                <strong>${index + 1}.</strong> ${name}<br>
+                <small>(${ayahCount} আয়াত)</small>
+            </div>
+        `;
+    });
+
+    suraList.innerHTML = suraHTML;
+
+    // Add click event to sura items
+    suraList.querySelectorAll('.sura-item').forEach(item => {
+        item.addEventListener('click', function() {
+            const suraNumber = this.getAttribute('data-sura');
+            selectSura(suraNumber);
+        });
+    });
+}
+
+function getSurahAyahCount(surahNumber) {
+    const ayahCounts = {
+        1: 7, 2: 286, 3: 200, 4: 176, 5: 120, 6: 165, 7: 206, 8: 75, 9: 129, 10: 109,
+        11: 123, 12: 111, 13: 43, 14: 52, 15: 99, 16: 128, 17: 111, 18: 110, 19: 98, 20: 135,
+        21: 112, 22: 78, 23: 118, 24: 64, 25: 77, 26: 227, 27: 93, 28: 88, 29: 69, 30: 60,
+        31: 34, 32: 30, 33: 73, 34: 54, 35: 45, 36: 83, 37: 182, 38: 88, 39: 75, 40: 85,
+        41: 54, 42: 53, 43: 89, 44: 59, 45: 37, 46: 35, 47: 38, 48: 29, 49: 18, 50: 45,
+        51: 60, 52: 49, 53: 62, 54: 55, 55: 78, 56: 96, 57: 29, 58: 22, 59: 24, 60: 13,
+        61: 14, 62: 11, 63: 11, 64: 18, 65: 12, 66: 12, 67: 30, 68: 52, 69: 52, 70: 44,
+        71: 28, 72: 28, 73: 20, 74: 56, 75: 40, 76: 31, 77: 50, 78: 40, 79: 46, 80: 42,
+        81: 29, 82: 19, 83: 36, 84: 25, 85: 22, 86: 17, 87: 19, 88: 26, 89: 30, 90: 20,
+        91: 15, 92: 21, 93: 11, 94: 8, 95: 8, 96: 19, 97: 5, 98: 8, 99: 8, 100: 11,
+        101: 11, 102: 8, 103: 3, 104: 9, 105: 5, 106: 4, 107: 7, 108: 3, 109: 6, 110: 3,
+        111: 5, 112: 4, 113: 5, 114: 6
+    };
+    return ayahCounts[surahNumber] || 0;
+}
+
+function selectSura(suraNumber) {
+    const chatbotInput = document.getElementById('chatbot-input');
+    if (chatbotInput) {
+        chatbotInput.value = `${suraNumber}:1`;
+        chatbotInput.focus();
+        handleSendMessage();
+    }
+    document.getElementById('sura-panel').classList.remove('open');
+}
+
+// ==================== DAILY SECTION FUNCTIONS ====================
+function initializeDailySection() {
+    // Load random ayat on page load
+    loadRandomAyat();
+    
+    // Set up click events for daily section buttons
+    const dailyButtons = document.querySelectorAll('.daily-section .btn');
+    dailyButtons.forEach(btn => {
+        btn.addEventListener('click', function(e) {
+            e.preventDefault();
+            const action = this.getAttribute('onclick');
+            if (action) {
+                eval(action);
+            }
+        });
+    });
+}
+
+// ==================== ENHANCED CHATBOT FUNCTIONS ====================
+function initializeEnhancedChatbot() {
+    const chatbotBody = document.getElementById('chatbot-body');
+    if (!chatbotBody) return;
+
+    // Initialize data variables
+    window.quranData = [];
+    window.arabicData = [];
+    window.tafsirData = {};
+    window.currentAya = null;
+    window.isLoading = false;
+    window.isFullscreen = false;
+    window.isVoiceActive = false;
+    window.recognition = null;
+
+    // Load Quran data
+    loadQuranData();
+
+    // Setup event listeners
+    setupChatbotEvents();
+    
+    // Setup enhanced tafsir button
+    setupTafsirButton();
+
+    // Fullscreen functionality
+    const fullscreenBtn = document.getElementById('fullscreen-btn');
+    if (fullscreenBtn) {
+        fullscreenBtn.addEventListener('click', toggleFullscreen);
+    }
+
+    // Voice functionality
+    const voiceBtn = document.getElementById('voice-btn');
+    if (voiceBtn) {
+        voiceBtn.addEventListener('click', toggleVoiceRecognition);
+    }
+
+    // Audio functionality
+    const audioBtn = document.getElementById('audio-button');
+    if (audioBtn) {
+        audioBtn.addEventListener('click', playCurrentAyaAudio);
+    }
+}
+
+// ==================== TAFSIR MODAL FUNCTIONS ====================
+function showTafsirModal(sura, aya) {
+    const tafsirModal = document.getElementById('tafsir-modal');
+    const tafsirContent = document.getElementById('tafsir-content');
+    
+    // Load tafsir content
+    const tafsir = window.tafsirData[`${sura}:${aya}`];
+    const arabic = window.arabicData.find(a => a.sura === sura && a.VerseIDAr === aya);
+    const bengali = window.quranData.find(a => a.sura === sura && a.aya === aya);
+    
+    let contentHTML = '';
+    
+    if (arabic?.ayat) {
+        contentHTML += `<div class="tafsir-verse">${arabic.ayat}</div>`;
+    }
+    
+    if (bengali?.text) {
+        contentHTML += `<div style="margin: 15px 0; padding: 15px; background: #f8f9fa; border-radius: 8px; border-left: 4px solid var(--primary);">
+            <strong>বাংলা অনুবাদ:</strong><br>${bengali.text}
+        </div>`;
+    }
+    
+    if (tafsir?.text) {
+        contentHTML += `<div class="tafsir-explanation">
+            <strong>তাফসীর:</strong><br>${tafsir.text}
+        </div>`;
+    } else {
+        contentHTML += `<div class="tafsir-explanation">
+            <p>এই আয়াতের তাফসীর এখনও যোগ করা হয়নি।</p>
+        </div>`;
+    }
+    
+    contentHTML += `<div class="tafsir-source">
+        <strong>উৎস:</strong> ইবনে কাসিরের তাফসীর
+    </div>`;
+    
+    tafsirContent.innerHTML = contentHTML;
+    tafsirModal.style.display = 'block';
+    
+    // Set up fullscreen functionality
+    const fullscreenBtn = document.getElementById('tafsir-fullscreen-btn');
+    fullscreenBtn.onclick = () => toggleTafsirFullscreen(sura, aya);
+    
+    // Set up close functionality
+    const closeBtn = document.getElementById('tafsir-close-btn');
+    closeBtn.onclick = closeTafsirModal;
+}
+
+function toggleTafsirFullscreen(sura, aya) {
+    closeTafsirModal();
+    showFullTafsir(sura, aya);
+}
+
+function closeTafsirModal() {
+    const tafsirModal = document.getElementById('tafsir-modal');
+    tafsirModal.style.display = 'none';
+}
+
+// ==================== ENHANCED FULLSCREEN TAFSIR MANAGEMENT ====================
+function showFullTafsir(sura, aya) {
+    const fullscreenTafsir = document.getElementById('fullscreen-tafsir');
+    const tafsirText = document.getElementById('fullscreen-tafsir-text');
+    
+    const tafsir = window.tafsirData[`${sura}:${aya}`];
+    const arabic = window.arabicData.find(a => a.sura === sura && a.VerseIDAr === aya);
+    const bengali = window.quranData.find(a => a.sura === sura && a.aya === aya);
+    
+    let contentHTML = '';
+    
+    if (arabic?.ayat) {
+        contentHTML += `<div class="arabic-text" lang="ar">${arabic.ayat}</div>`;
+    }
+    
+    if (bengali?.text) {
+        contentHTML += `<div style="padding: 1.5rem; background: var(--light-green); border-radius: var(--rounded); margin: 1rem 0; font-weight: 500; line-height: 1.6;">
+            <strong>বাংলা অনুবাদ:</strong><br>${bengali.text}
+        </div>`;
+    }
+    
+    if (tafsir?.text) {
+        contentHTML += `<div class="tafsir-container">${tafsir.text}</div>`;
+    } else {
+        contentHTML += `<div class="tafsir-container">
+            <p>এই আয়াতের তাফসীর এখনও যোগ করা হয়নি।</p>
+        </div>`;
+    }
+    
+    tafsirText.innerHTML = contentHTML;
+    fullscreenTafsir.classList.add('active');
+    document.body.style.overflow = 'hidden';
+    
+    // Hide chatbot if in fullscreen mode
+    if (window.isFullscreen) {
+        document.querySelector('.chatbot-section').style.display = 'none';
+    }
+}
+
+function closeFullscreenTafsir() {
+    const fullscreenTafsir = document.getElementById('fullscreen-tafsir');
+    fullscreenTafsir.classList.remove('active');
+    document.body.style.overflow = 'auto';
+    
+    // Show chatbot again if it was hidden
+    if (window.isFullscreen) {
+        document.querySelector('.chatbot-section').style.display = 'block';
+    }
+}
+
+// ==================== TAFSIR BUTTON HANDLER ====================
+function setupTafsirButton() {
+    const tafsirButton = document.getElementById('tafsir-button');
+    
+    tafsirButton.addEventListener('click', function() {
+        if (!window.currentAya) {
+            // Try to get from input
+            const query = document.getElementById('chatbot-input').value.trim();
+            const normalizedQuery = convertNumbers(query);
+            const match = normalizedQuery.match(/^(\d+)[:\.\/,](\d+)$/);
+            
+            if (match) {
+                window.currentAya = { sura: match[1], aya: match[2] };
+            } else {
+                addBotMessage('⚠️ প্রথমে একটি আয়াত সিলেক্ট করুন বা সূরা:আয়াত লিখুন', false, 'error');
+                return;
+            }
+        }
+        
+        // Check if chatbot is in fullscreen mode
+        if (window.isFullscreen) {
+            // Show tafsir in modal within chat
+            showTafsirModal(window.currentAya.sura, window.currentAya.aya);
+        } else {
+            // Show fullscreen tafsir
+            showFullTafsir(window.currentAya.sura, window.currentAya.aya);
+        }
+    });
+}
+
+// ==================== FULLSCREEN FUNCTIONALITY ====================
+function toggleFullscreen() {
+    const chatbotBody = document.getElementById('chatbot-body');
+    const chatbotInputContainer = document.getElementById('chatbot-input-container');
+    const fullscreenBtn = document.getElementById('fullscreen-btn');
+
+    if (!window.isFullscreen) {
+        // Enter fullscreen
+        chatbotBody.classList.add('fullscreen');
+        chatbotInputContainer.classList.add('fullscreen');
+        fullscreenBtn.innerHTML = '<span>📺</span> সাধারণ মোড';
+        fullscreenBtn.title = 'সাধারণ মোড';
+        window.isFullscreen = true;
+        
+        // Add overlay to prevent background interaction
+        const overlay = document.createElement('div');
+        overlay.id = 'chatbot-fullscreen-overlay';
+        overlay.style.cssText = `
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            z-index: 9998;
+        `;
+        document.body.appendChild(overlay);
+    } else {
+        exitFullscreenMode();
+    }
+}
+
+function exitFullscreenMode() {
+    const chatbotBody = document.getElementById('chatbot-body');
+    const chatbotInputContainer = document.getElementById('chatbot-input-container');
+    const fullscreenBtn = document.getElementById('fullscreen-btn');
+
+    // Exit fullscreen
+    chatbotBody.classList.remove('fullscreen');
+    chatbotInputContainer.classList.remove('fullscreen');
+    fullscreenBtn.innerHTML = '<span>📺</span> ফুলস্ক্রিন';
+    fullscreenBtn.title = 'ফুলস্ক্রিন';
+    window.isFullscreen = false;
+    
+    // Remove overlay
+    const overlay = document.getElementById('chatbot-fullscreen-overlay');
+    if (overlay) {
+        overlay.remove();
+    }
+}
+
+// ==================== VOICE RECOGNITION ====================
+function initializeVoiceRecognition() {
+    if ('webkitSpeechRecognition' in window || 'SpeechRecognition' in window) {
+        const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+        window.recognition = new SpeechRecognition();
+        window.recognition.continuous = false;
+        window.recognition.interimResults = false;
+        window.recognition.lang = 'bn-BD';
+
+        window.recognition.onstart = function() {
+            addBotMessage('🎤 কথা বলুন... আমি শুনছি।', false, 'info');
+            document.getElementById('voice-btn').innerHTML = '<span>🔴</span> রেকর্ডিং';
+        };
+
+        window.recognition.onresult = function(event) {
+            const transcript = event.results[0][0].transcript;
+            document.getElementById('chatbot-input').value = transcript;
+            addUserMessage(transcript);
+            processUserQuery(transcript);
+        };
+
+        window.recognition.onerror = function(event) {
+            addBotMessage('❌ ভয়েস রেকগনিশনে সমস্যা: ' + event.error, false, 'error');
+            window.isVoiceActive = false;
+            document.getElementById('voice-btn').innerHTML = '<span>🎤</span> ভয়েস';
+        };
+
+        window.recognition.onend = function() {
+            window.isVoiceActive = false;
+            document.getElementById('voice-btn').innerHTML = '<span>🎤</span> ভয়েস';
+        };
+    } else {
+        addBotMessage('❌ আপনার ব্রাউজার ভয়েস রেকগনিশন সাপোর্ট করে না।', false, 'error');
+    }
+}
+
+function toggleVoiceRecognition() {
+    if (!window.recognition) {
+        initializeVoiceRecognition();
+    }
+
+    if (!window.isVoiceActive) {
+        try {
+            window.recognition.start();
+            window.isVoiceActive = true;
+        } catch (error) {
+            addBotMessage('❌ মাইক্রোফোন এক্সেস করতে সমস্যা।', false, 'error');
+        }
+    } else {
+        window.recognition.stop();
+        window.isVoiceActive = false;
+    }
+}
+
+// ==================== QURAN DATA LOADING ====================
+async function loadQuranData() {
+    try {
+        showLoadingState(true);
+        
+        const [quranRes, arabicRes, tafsirRes] = await Promise.all([
+            fetch("https://raw.githubusercontent.com/Akter-Molla/Quran-bot-bn/main/ayats_bn.json"),
+            fetch("https://raw.githubusercontent.com/alQuranBD/Database/master/json/ayats_ar.json"),
+            fetch("https://raw.githubusercontent.com/Akter-Molla/Quran-bot-bn/main/Tafseer_ibn_Kathir.json")
+        ]);
+
+        if (!quranRes.ok || !arabicRes.ok || !tafsirRes.ok) {
+            throw new Error('ডেটা লোড করতে সমস্যা হয়েছে');
+        }
+
+        window.quranData = await quranRes.json();
+        window.arabicData = await arabicRes.json();
+        window.tafsirData = await tafsirRes.json();
+
+        addBotMessage('✅ কুরআন ডেটা সফলভাবে লোড হয়েছে! এখন আপনি আয়াত বা তাফসীর খুঁজতে পারেন।');
+
+    } catch (error) {
+        console.error('ডেটা লোডিং ত্রুটি:', error);
+        addBotMessage('❌ ডেটা লোড করতে সমস্যা হয়েছে। দয়া করে পৃষ্ঠাটি রিফ্রেশ করুন।', false, 'error');
+    } finally {
+        showLoadingState(false);
+    }
+}
+
+// ==================== CHATBOT EVENT HANDLERS ====================
+function setupChatbotEvents() {
+    const sendButton = document.getElementById('send-button');
+    const chatbotInput = document.getElementById('chatbot-input');
+    const clearButton = document.getElementById('clear-button');
+    const audioButton = document.getElementById('audio-button');
+
+    // Send message on button click
+    if (sendButton) {
+        sendButton.addEventListener('click', handleSendMessage);
+    }
+
+    // Send message on Enter key
+    if (chatbotInput) {
+        chatbotInput.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter' && !e.shiftKey) {
+                e.preventDefault();
+                handleSendMessage();
+            }
+        });
+
+        // Auto-focus
+        chatbotInput.focus();
+    }
+
+    // Clear chat
+    if (clearButton) {
+        clearButton.addEventListener('click', clearChat);
+    }
+
+    // Play audio
+    if (audioButton) {
+        audioButton.addEventListener('click', playCurrentAyaAudio);
+    }
+
+    // Enhanced Quick actions with new features
+    document.addEventListener('click', function(e) {
+        if (e.target.matches('.quick-action-btn') || e.target.closest('.quick-action-btn')) {
+            const button = e.target.matches('.quick-action-btn') ? e.target : e.target.closest('.quick-action-btn');
+            const action = button.getAttribute('data-action');
+            handleQuickAction(action);
+        }
+    });
+
+    // Exit fullscreen tafsir
+    const exitFullscreen = document.getElementById('exit-fullscreen');
+    if (exitFullscreen) {
+        exitFullscreen.addEventListener('click', closeFullscreenTafsir);
+    }
+
+    // Copy tafsir
+    const copyTafsirBtn = document.getElementById('copy-tafsir-btn');
+    if (copyTafsirBtn) {
+        copyTafsirBtn.addEventListener('click', copyTafsirText);
+    }
+
+    // Share tafsir
+    const shareTafsirBtn = document.getElementById('share-tafsir-btn');
+    if (shareTafsirBtn) {
+        shareTafsirBtn.addEventListener('click', shareTafsir);
+    }
+}
+
+// ==================== MESSAGE HANDLING ====================
+function handleSendMessage() {
+    if (window.isLoading) return;
+
+    const chatbotInput = document.getElementById('chatbot-input');
+    const query = chatbotInput.value.trim();
+
+    if (!query) {
+        addBotMessage('❌ অনুগ্রহ করে একটি প্রশ্ন বা আয়াত নম্বর লিখুন।', false, 'error');
+        return;
+    }
+
+    // Add user message
+    addUserMessage(query);
+    chatbotInput.value = '';
+    chatbotInput.focus();
+
+    // Process query
+    processUserQuery(query);
+}
+
+function processUserQuery(query) {
+    showTypingIndicator();
+
+    setTimeout(() => {
+        removeTypingIndicator();
+
+        try {
+            const normalizedQuery = convertNumbers(query);
+            
+            if (isSurahAyaPattern(normalizedQuery)) {
+                handleSurahAyaQuery(normalizedQuery);
+            } else if (isKeywordSearch(normalizedQuery)) {
+                handleKeywordSearch(normalizedQuery);
+            } else if (isGreeting(query)) {
+                handleGreeting(query);
+            } else if (isPrayerTimeQuery(query)) {
+                handlePrayerTimeQuery(query);
+            } else if (isQuizQuery(query)) {
+                handleQuizQuery(query);
+            } else {
+                handleGeneralQuery(query);
+            }
+        } catch (error) {
+            console.error('Query processing error:', error);
+            addBotMessage('❌ প্রশ্ন প্রক্রিয়াকরণে সমস্যা হয়েছে। দয়া করে আবার চেষ্টা করুন।', false, 'error');
+        }
+    }, 1000);
+}
+
+function handleQuickAction(action) {
+    showTypingIndicator();
+
+    setTimeout(() => {
+        removeTypingIndicator();
+
+        switch(action) {
+            case 'about':
+                showAboutBot();
+                break;
+            case 'guide':
+                showUsageGuide();
+                break;
+            case 'start':
+                startChat();
+                break;
+            case 'popular':
+                showPopularAyat();
+                break;
+            case 'prayer':
+                showPrayerTimes();
+                break;
+            case 'quiz':
+                startQuranQuiz();
+                break;
+        }
+    }, 500);
+}
+
+// ==================== SEARCH FUNCTIONS ====================
+function handleKeywordSearch(query) {
+    const results = searchQuranWithCount(query);
+    
+    if (results.length === 0) {
+        addBotMessage(`❌ "${query}" এর জন্য কোন ফলাফল পাওয়া যায়নি। দয়া করে ভিন্ন শব্দ দিয়ে চেষ্টা করুন।`, false, 'error');
+    } else if (results.length === 1) {
+        window.currentAya = results[0];
+        displayAyaResult(results[0]);
+    } else {
+        displayWordSearchResults(results, query);
+    }
+}
+
+function searchQuranWithCount(query) {
+    const normalizedQuery = convertNumbers(query);
+    const words = normalizedQuery.toLowerCase().split(/\s+/);
+    const searchResults = [];
+    
+    window.quranData.forEach(aya => {
+        const text = aya.text.toLowerCase();
+        let matchCount = 0;
+        let highlightedText = aya.text;
+        
+        words.forEach(word => {
+            const regex = new RegExp(word, 'gi');
+            const matches = text.match(regex);
+            if (matches) {
+                matchCount += matches.length;
+                highlightedText = highlightedText.replace(regex, match => `<span class="search-highlight">${match}</span>`);
+            }
+        });
+        
+        if (matchCount > 0) {
+            searchResults.push({
+                ...aya,
+                matchCount: matchCount,
+                highlightedText: highlightedText
+            });
+        }
+    });
+    
+    // Sort by match count (descending)
+    searchResults.sort((a, b) => b.matchCount - a.matchCount);
+    
+    return searchResults.slice(0, 10); // Limit results
+}
+
+function displayWordSearchResults(results, query) {
+    const totalMatches = results.reduce((sum, result) => sum + result.matchCount, 0);
+    
+    let resultsHTML = `
+        <div class="word-search-results">
+            <div class="word-search-header">
+                <strong>"${query}" এর জন্য ${results.length}টি আয়াত পাওয়া গেছে</strong>
+                <span class="word-search-count">মোট ${totalMatches}টি মিল</span>
+            </div>
+            <div style="max-height: 300px; overflow-y: auto; padding-right: 10px;">`;
+    
+    results.forEach((aya, index) => {
+        resultsHTML += `
+            <div class="search-result-item">
+                <div class="search-result-sura">
+                    ${index + 1}. সূরা ${aya.sura}, আয়াত ${aya.aya}
+                    <small style="color: var(--gray-dark); margin-left: 10px;">(${aya.matchCount}টি মিল)</small>
+                </div>
+                <div class="search-result-text">${aya.highlightedText}</div>
+                <button onclick="selectAyaFromSearch('${aya.sura}', '${aya.aya}')" 
+                        style="margin-top: 10px; background: var(--gold); color: black; border: none; padding: 8px 12px; border-radius: 5px; cursor: pointer; font-size: 0.9em; font-weight: 600;">
+                    নির্বাচন করুন
+                </button>
+            </div>`;
+    });
+    
+    if (results.length > 10) {
+        resultsHTML += `<div style="text-align: center; margin-top: 15px; color: var(--gray-dark); font-style: italic;">
+            ... এবং আরও ${results.length - 10}টি ফলাফল
+        </div>`;
+    }
+    
+    resultsHTML += `</div></div>`;
+    addBotMessage(resultsHTML, true);
+}
+
+// ==================== DAILY SECTION FUNCTIONS ====================
+window.loadRandomAyat = function() {
+    showTypingIndicator();
+    
+    setTimeout(() => {
+        removeTypingIndicator();
+        
+        // Generate random surah and ayah
+        const randomSurah = Math.floor(Math.random() * 114) + 1;
+        const maxAyah = getSurahAyahCount(randomSurah);
+        const randomAyah = Math.floor(Math.random() * maxAyah) + 1;
+        
+        const query = `${randomSurah}:${randomAyah}`;
+        handleSurahAyaQuery(query);
+        
+        addBotMessage(`🎲 র‍্যান্ডম আয়াত: সূরা ${randomSurah}, আয়াত ${randomAyah}`, false, 'info');
+    }, 800);
+};
+
+window.showAyatOfTheDay = function() {
+    // Simple algorithm to show different ayat based on day of year
+    const today = new Date();
+    const dayOfYear = Math.floor((today - new Date(today.getFullYear(), 0, 0)) / 1000 / 60 / 60 / 24);
+    const specialAyat = [
+        { sura: 2, aya: 255, name: 'আয়াতুল কুরসি' },
+        { sura: 36, aya: 1, name: 'সূরা ইয়াসিন' },
+        { sura: 67, aya: 1, name: 'সূরা মুলক' },
+        { sura: 112, aya: 1, name: 'সূরা ইখলাস' },
+        { sura: 1, aya: 1, name: 'সূরা ফাতিহা' }
+    ];
+    
+    const selectedAyat = specialAyat[dayOfYear % specialAyat.length];
+    const query = `${selectedAyat.sura}:${selectedAyat.aya}`;
+    
+    addBotMessage(`📅 আজকের বিশেষ আয়াত: ${selectedAyat.name}`, false, 'info');
+    handleSurahAyaQuery(query);
+};
+
+window.playAudio = function(sura, aya) {
+    playAyaAudio(sura, aya);
+};
+
+window.copyToClipboard = function(text) {
+    navigator.clipboard.writeText(text).then(() => {
+        addBotMessage('✅ কপি করা হয়েছে!', false, 'success');
+    }).catch(() => {
+        addBotMessage('❌ কপি করতে সমস্যা হয়েছে।', false, 'error');
+    });
+};
+
+window.showHadithExplanation = function() {
+    addBotMessage(`
+        <strong>📖 হাদিসের ব্যাখ্যা:</strong><br><br>
+        <strong>বর্ণনাকারী:</strong> আবু হুরায়রা (রা.)<br>
+        <strong>গ্রন্থ:</strong> সহিহ বুখারি<br><br>
+        <strong>ব্যাখ্যা:</strong><br>
+        এই হাদিসটি মুমিনের চরিত্র ও আচরণ সম্পর্কে গুরুত্বপূর্ণ নির্দেশনা দেয়। এটি শিক্ষা দেয় যে:<br><br>
+        ১. <strong>ভালো কথা বলা:</strong> সর্বদা ভালো ও কল্যাণকর কথা বলতে হবে<br>
+        ২. <strong>নীরবতা পালন:</strong> যখন ভালো কিছু বলার নেই, তখন চুপ থাকাই উত্তম<br>
+        ৩. <strong>বিশ্বাসের প্রকাশ:</strong> আল্লাহ ও আখিরাতে বিশ্বাস কথার মাধ্যমে প্রকাশ পায়<br><br>
+        <em>"মুমিনের জবান সর্বদা পবিত্র ও কল্যাণকর হয়"</em>
+    `, true);
+};
+
+window.showDuaBenefits = function() {
+    addBotMessage(`
+        <strong>🌟 দোয়ার ফযীলত:</strong><br><br>
+        <strong>উপকারিতা জ্ঞান:</strong><br>
+        • উপকারী জ্ঞান মানুষকে সঠিক পথ দেখায়<br>
+        • আল্লাহর নৈকট্য লাভে সাহায্য করে<br>
+        • দুনিয়া ও আখিরাতের সফলতা এনে দেয়<br><br>
+        
+        <strong>পবিত্র রিযিক:</strong><br>
+        • হালাল রুজি জীবনকে বরকতময় করে<br>
+        • আল্লাহর রহমত নাযিল হয়<br>
+        • পরিবারে শান্তি বিরাজ করে<br><br>
+        
+        <strong>কবুলযোগ্য আমল:</strong><br>
+        • আল্লাহর দরবারে আমল গ্রহণযোগ্য হয়<br>
+        • সাওয়াবের পরিমাণ বৃদ্ধি পায়<br>
+        • আখিরাতে নাজাতের কারণ হয়<br><br>
+        
+        <em>"এই দোয়া পড়লে আল্লাহ উপকারী জ্ঞান, হালাল রিযিক ও কবুলযোগ্য আমল দান করেন"</em>
+    `, true);
+};
+
+window.setDuaReminder = function() {
+    if ('Notification' in window && Notification.permission === 'granted') {
+        new Notification('🕌 দোয়ার রিমাইন্ডার', {
+            body: 'আজকের দোয়া পড়ার সময় হয়েছে। আল্লাহ আপনার দোয়া কবুল করুন।',
+            icon: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEimoXKR0__JPJ7bTlSIk-F7nAKK-MTCvHAMWKh84rH0I_c5uXeAZVKCHwm4kIriSERBf083Oazbslwi1M4ukHqcNcSz6InwsMDC5DkAFDi0MnUDo8pGRpFAYUIkwdKIrMed1x4OcxR4LHi3r6ov5L-6IAyuD5iMj_dHZN3ACXA7pWoDQkE/s1600/talks%20with%20al%20quran%20logo%20(2).png'
+        });
+        addBotMessage('✅ রিমাইন্ডার সেট করা হয়েছে! আপনাকে নির্ধারিত সময়ে নোটিফিকেশন দেওয়া হবে।', false, 'success');
+    } else if ('Notification' in window && Notification.permission !== 'denied') {
+        Notification.requestPermission().then(permission => {
+            if (permission === 'granted') {
+                setDuaReminder();
+            }
+        });
+    } else {
+        addBotMessage('ℹ️ রিমাইন্ডার সেট করতে নোটিফিকেশন পারমিশন প্রয়োজন।', false, 'info');
+    }
+};
+
+// ==================== AUDIO FUNCTIONS ====================
+function playAyaAudio(sura, aya) {
+    const audioUrl = `https://cdn.islamic.network/quran/audio/128/ar.alafasy/${sura}/${aya}.mp3`;
+    const audio = new Audio(audioUrl);
+    
+    // Apply audio speed settings
+    if (window.audioSettings) {
+        audio.playbackRate = parseFloat(window.audioSettings.speed);
+    }
+    
+    audio.play().then(() => {
+        addBotMessage('🎧 আয়াত তিলাওয়াত শোনা হচ্ছে...', false, 'info');
+    }).catch(error => {
+        console.error('Audio play error:', error);
+        addBotMessage('❌ অডিও প্লে করতে সমস্যা হয়েছে।', false, 'error');
+    });
+}
+
+function playCurrentAyaAudio() {
+    if (window.currentAya) {
+        playAyaAudio(window.currentAya.sura, window.currentAya.aya);
+    } else {
+        addBotMessage('⚠️ প্রথমে একটি আয়াত সিলেক্ট করুন', false, 'error');
+    }
+}
+
+// ==================== TAFSIR FUNCTIONS ====================
+function copyTafsirText() {
+    const tafsirText = document.getElementById('fullscreen-tafsir-text').innerText;
+    navigator.clipboard.writeText(tafsirText).then(() => {
+        addBotMessage('✅ তাফসীর কপি করা হয়েছে!', false, 'success');
+    }).catch(() => {
+        addBotMessage('❌ তাফসীর কপি করতে সমস্যা হয়েছে।', false, 'error');
+    });
+}
+
+function shareTafsir() {
+    const tafsirText = document.getElementById('fullscreen-tafsir-text').innerText;
+    const title = document.getElementById('fullscreen-tafsir-title').innerText;
+    
+    if (navigator.share) {
+        navigator.share({
+            title: title,
+            text: tafsirText.substring(0, 100) + '...',
+            url: window.location.href
+        });
+    } else {
+        copyTafsirText();
+    }
+}
+
+// ==================== PRAYER TIME FUNCTIONS ====================
+function isPrayerTimeQuery(query) {
+    const prayerKeywords = ['সালাত', 'নামাজ', 'ওয়াক্ত', 'সময়', 'পrayer', 'namaz', 'salah'];
+    return prayerKeywords.some(keyword => query.toLowerCase().includes(keyword));
+}
+
+function handlePrayerTimeQuery(query) {
+    showPrayerTimes();
+}
+
+function showPrayerTimes() {
+    // Simple prayer times calculation (for demonstration)
+    const now = new Date();
+    const prayerTimes = {
+        fajr: '04:30 AM',
+        sunrise: '06:00 AM',
+        dhuhr: '12:15 PM',
+        asr: '04:00 PM',
+        maghrib: '06:30 PM',
+        isha: '08:00 PM'
+    };
+    
+    addBotMessage(`
+        <strong>🕌 আজকের সালাতের সময়সূচী (ঢাকা)</strong><br><br>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 10px 0;">
+            <div><strong>ফজর:</strong> ${prayerTimes.fajr}</div>
+            <div><strong>সূর্যোদয়:</strong> ${prayerTimes.sunrise}</div>
+            <div><strong>জোহর:</strong> ${prayerTimes.dhuhr}</div>
+            <div><strong>আসর:</strong> ${prayerTimes.asr}</div>
+            <div><strong>মাগরিব:</strong> ${prayerTimes.maghrib}</div>
+            <div><strong>ইশা:</strong> ${prayerTimes.isha}</div>
+        </div>
+        <br>
+        <em>⚠️ নোট: এটি আনুমানিক সময়। আপনার এলাকার সঠিক সময় জানতে স্থানীয় মসজিদ দেখুন।</em>
+    `, true);
+}
+
+// ==================== QUIZ FUNCTIONS ====================
+function isQuizQuery(query) {
+    const quizKeywords = ['কুইজ', 'quiz', 'প্রশ্ন', 'পরীক্ষা', 'test', 'জ্ঞান'];
+    return quizKeywords.some(keyword => query.toLowerCase().includes(keyword));
+}
+
+function handleQuizQuery(query) {
+    startQuranQuiz();
+}
+
+function startQuranQuiz() {
+    const quizQuestions = [
+        {
+            question: "কুরআনের প্রথম সূরার নাম কি?",
+            options: ["আল-ফাতিহা", "আল-বাকারা", "আল-ইখলাস", "ইয়াসিন"],
+            correct: 0,
+            explanation: "কুরআনের প্রথম সূরার নাম আল-ফাতিহা, যার অর্থ 'উন্মোচনকারী'। এটি ৭টি আয়াত নিয়ে গঠিত।"
+        },
+        {
+            question: "কুরআনে মোট কয়টি সূরা আছে?",
+            options: ["114", "100", "125", "99"],
+            correct: 0,
+            explanation: "কুরআনে মোট ১১৪টি সূরা আছে, যার মধ্যে ৮৬টি মাক্কী এবং ২৮টি মাদানী সূরা।"
+        },
+        {
+            question: "আয়াতুল কুরসি কোন সূরায় আছে?",
+            options: ["সূরা বাকারা", "সূরা ইখলাস", "সূরা ফাতিহা", "সূরা ইয়াসিন"],
+            correct: 0,
+            explanation: "আয়াতুল কুরসি সূরা বাকারার ২৫৫ নম্বর আয়াত। এটি কুরআনের সবচেয়ে বড় আয়াত।"
+        },
+        {
+            question: "কুরআনের দীর্ঘতম সূরার নাম কি?",
+            options: ["আল-বাকারা", "আল-ইমরান", "আন-নিসা", "আল-মায়িদাহ"],
+            correct: 0,
+            explanation: "আল-বাকারা কুরআনের দীর্ঘতম সূরা, যাতে ২৮৬টি আয়াত আছে।"
+        },
+        {
+            question: "কুরআনের ক্ষুদ্রতম সূরার নাম কি?",
+            options: ["আল-কাওসার", "আল-ইখলাস", "আন-নাস", "আল-ফালাক"],
+            correct: 0,
+            explanation: "আল-কাওসার কুরআনের ক্ষুদ্রতম সূরা, যাতে মাত্র ৩টি আয়াত আছে।"
+        },
+        {
+            question: "কুরআন নাযিল শুরু হয় কোন বছর?",
+            options: ["৬১০ খ্রিস্টাব্দ", "৬২২ খ্রিস্টাব্দ", "৫৭০ খ্রিস্টাব্দ", "৬৩২ খ্রিস্টাব্দ"],
+            correct: 0,
+            explanation: "কুরআন নাযিল শুরু হয় ৬১০ খ্রিস্টাব্দে, রমজান মাসের লাইলাতুল কদরে।"
+        },
+        {
+            question: "কুরআন পূর্ণভাবে নাযিল হতে কত বছর লাগে?",
+            options: ["২৩ বছর", "২০ বছর", "২৫ বছর", "২২ বছর"],
+            correct: 0,
+            explanation: "কুরআন পূর্ণভাবে নাযিল হতে ২৩ বছর সময় লাগে - ১৩ বছর মক্কায় এবং ১০ বছর মদীনায়।"
+        },
+        {
+            question: "কুরআনে 'বিসমিল্লাহির রাহমানির রাহীম' কতবার এসেছে?",
+            options: ["১১৪ বার", "১১৩ বার", "১১৫ বার", "১১২ বার"],
+            correct: 1,
+            explanation: "বিসমিল্লাহির রাহমানির রাহীম কুরআনে ১১৩ বার এসেছে (সূরা তাওবায় নেই, কিন্তু সূরা নমলে দুইবার আছে)।"
+        },
+        {
+            question: "কুরআনে কারীমে নবী মুহাম্মদ (সা.)-এর নাম কতবার এসেছে?",
+            options: ["৪ বার", "৫ বার", "৬ বার", "৭ বার"],
+            correct: 0,
+            explanation: "কুরআনে কারীমে নবী মুহাম্মদ (সা.)-এর নাম ৪ বার এসেছে।"
+        },
+        {
+            question: "কুরআনে কারীমে নবী ঈসা (আ.)-এর নাম কতবার এসেছে?",
+            options: ["২৫ বার", "২০ বার", "৩০ বার", "১৫ বার"],
+            correct: 0,
+            explanation: "কুরআনে কারীমে নবী ঈসা (আ.)-এর নাম ২৫ বার এসেছে।"
+        },
+        {
+            question: "কুরআনে কারীমে নবী মূসা (আ.)-এর নাম কতবার এসেছে?",
+            options: ["১৩৬ বার", "১২৫ বার", "১৫০ বার", "১০০ বার"],
+            correct: 0,
+            explanation: "কুরআনে কারীমে নবী মূসা (আ.)-এর নাম ১৩৬ বার এসেছে, যা সবচেয়ে বেশি।"
+        },
+        {
+            question: "কুরআনের কোন সূরায় 'আল্লাহ' শব্দটি সবচেয়ে বেশি বার এসেছে?",
+            options: ["সূরা বাকারা", "সূরা আলে ইমরান", "সূরা নিসা", "সূরা মায়িদা"],
+            correct: 0,
+            explanation: "সূরা বাকারায় 'আল্লাহ' শব্দটি ২৮১ বার এসেছে, যা সবচেয়ে বেশি।"
+        },
+        {
+            question: "কুরআনের কোন সূরাকে 'কুরআনের হৃদয়' বলা হয়?",
+            options: ["সূরা ইয়াসিন", "সূরা রাহমান", "সূরা মুলক", "সূরা ওয়াকিয়াহ"],
+            correct: 0,
+            explanation: "সূরা ইয়াসিনকে 'কুরআনের হৃদয়' বলা হয়।"
+        },
+        {
+            question: "কুরআনের কোন সূরায় সিজদার আয়াত আছে?",
+            options: ["১৪টি সূরায়", "১৫টি সূরায়", "১২টি সূরায়", "১০টি সূরায়"],
+            correct: 1,
+            explanation: "কুরআনের ১৫টি সূরায় সিজদার আয়াত আছে।"
+        },
+        {
+            question: "কুরআন প্রথম কে সংকলন করেন?",
+            options: ["হযরত আবু বকর (রা.)", "হযরত উসমান (রা.)", "হযরত ওমর (রা.)", "হযরত আলী (রা.)"],
+            correct: 0,
+            explanation: "হযরত আবু বকর (রা.)-এর খিলাফতকালে কুরআন প্রথম সংকলন করা হয়।"
+        }
+    ];
+    
+    let currentQuestion = 0;
+    let score = 0;
+    
+    function askQuestion() {
+        if (currentQuestion >= quizQuestions.length) {
+            showQuizResult();
+            return;
+        }
+        
+        const q = quizQuestions[currentQuestion];
+        let quizHTML = `
+            <strong>🧠 কুরআন কুইজ (${currentQuestion + 1}/${quizQuestions.length})</strong><br><br>
+            <strong>প্রশ্ন:</strong> ${q.question}<br><br>
+        `;
+        
+        q.options.forEach((option, index) => {
+            quizHTML += `
+                <button onclick="checkAnswer(${index}, ${currentQuestion})" 
+                        style="display: block; width: 100%; margin: 5px 0; padding: 10px; border: 1px solid var(--primary); border-radius: 5px; background: var(--light-green); cursor: pointer;">
+                    ${String.fromCharCode(65 + index)}. ${option}
+                </button>
+            `;
+        });
+        
+        addBotMessage(quizHTML, true);
+    }
+    
+    window.checkAnswer = function(selected, questionIndex) {
+        const q = quizQuestions[questionIndex];
+        if (selected === q.correct) {
+            score++;
+            addBotMessage(`✅ সঠিক উত্তর! 🎉<br><br><strong>ব্যাখ্যা:</strong> ${q.explanation}`, false, 'success');
+        } else {
+            addBotMessage(`❌ ভুল উত্তর! সঠিক উত্তর: ${q.options[q.correct]}<br><br><strong>ব্যাখ্যা:</strong> ${q.explanation}`, false, 'error');
+        }
+        
+        currentQuestion++;
+        setTimeout(askQuestion, 2000);
+    };
+    
+    function showQuizResult() {
+        const percentage = Math.round((score / quizQuestions.length) * 100);
+        let message = '';
+        
+        if (percentage >= 80) {
+            message = '🎉 অসাধারণ! আপনি কুরআন সম্পর্কে গভীর জ্ঞান রাখেন। আল্লাহ আপনাকে আরও বরকত দান করুন।';
+        } else if (percentage >= 60) {
+            message = '👍 ভালো হয়েছে! আরও পড়াশোনা করে আপনার জ্ঞান বৃদ্ধি করুন।';
+        } else {
+            message = '📚 আরও পড়ুন এবং শিখুন। আল্লাহ আপনাকে কুরআন বুঝার তাওফিক দান করুন।';
+        }
+        
+        addBotMessage(`
+            <strong>📊 কুইজ রেজাল্ট</strong><br><br>
+            <strong>স্কোর:</strong> ${score}/${quizQuestions.length}<br>
+            <strong>পরcentage:</strong> ${percentage}%<br><br>
+            ${message}<br><br>
+            <button onclick="startQuranQuiz()" style="background: var(--primary); color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-weight: 600;">
+                🔄 আবার চেষ্টা করুন
+            </button>
+        `, true);
+        
+        // Clean up
+        delete window.checkAnswer;
+    }
+    
+    askQuestion();
+}
+
+// ==================== UTILITY FUNCTIONS ====================
+function convertNumbers(input) {
+    const bnToEn = {'০':'0','১':'1','২':'2','৩':'3','৪':'4','৫':'5','৬':'6','৭':'7','৮':'8','৯':'9'};
+    let output = input;
+    for (const [bn, en] of Object.entries(bnToEn)) {
+        output = output.replace(new RegExp(bn, 'g'), en);
+    }
+    return output;
+}
+
+function isSurahAyaPattern(query) {
+    return /^(\d+)[:\.\/,](\d+)$/.test(query) || 
+           /^সূরা\s*(\d+)\s*আয়াত\s*(\d+)$/i.test(query);
+}
+
+function isKeywordSearch(query) {
+    return query.length >= 2 && !isGreeting(query);
+}
+
+function isGreeting(query) {
+    const greetings = ['সালাম', 'assalam', 'hello', 'hi', 'hola', 'নমস্কার', 'আদাব'];
+    return greetings.some(greet => query.toLowerCase().includes(greet.toLowerCase()));
+}
+
+function searchQuran(query) {
+    const normalizedQuery = convertNumbers(query);
+    const suraAyaMatch = normalizedQuery.match(/^(\d+)[:\.\/,](\d+)$/);
+    
+    if (suraAyaMatch) {
+        const [, sura, aya] = suraAyaMatch;
+        const exactMatch = window.quranData.find(a => a.sura === sura && a.aya === aya);
+        return exactMatch ? [exactMatch] : [];
+    }
+    
+    const words = normalizedQuery.toLowerCase().split(/\s+/);
+    return window.quranData.filter(aya => {
+        const text = aya.text.toLowerCase();
+        return words.some(word => text.includes(word));
+    }).slice(0, 10); // Limit results
+}
+
+// ==================== DISPLAY FUNCTIONS ====================
+function addUserMessage(message) {
+    const chatbotBody = document.getElementById('chatbot-body');
+    const messageDiv = document.createElement('div');
+    messageDiv.className = 'message user';
+    messageDiv.innerHTML = message + `<div class="message-timestamp">${getCurrentTimestamp()}</div>`;
+    chatbotBody.appendChild(messageDiv);
+    scrollToBottom();
+}
+
+function addBotMessage(message, isHTML = false, type = 'normal') {
+    const chatbotBody = document.getElementById('chatbot-body');
+    const messageDiv = document.createElement('div');
+    messageDiv.className = `message bot ${type === 'error' ? 'error' : type === 'success' ? 'success' : type === 'info' ? 'info' : ''}`;
+    
+    if (isHTML) {
+        messageDiv.innerHTML = message + `<div class="message-timestamp">${getCurrentTimestamp()}</div>`;
+    } else {
+        messageDiv.innerHTML = message + `<div class="message-timestamp">${getCurrentTimestamp()}</div>`;
+    }
+    
+    chatbotBody.appendChild(messageDiv);
+    scrollToBottom();
+}
+
+function showTypingIndicator() {
+    const chatbotBody = document.getElementById('chatbot-body');
+    const typingDiv = document.createElement('div');
+    typingDiv.id = 'typing-indicator';
+    typingDiv.className = 'message bot typing';
+    typingDiv.innerHTML = '<div class="typing-dots"><span></span><span></span><span></span></div>';
+    chatbotBody.appendChild(typingDiv);
+    scrollToBottom();
+}
+
+function removeTypingIndicator() {
+    const typingIndicator = document.getElementById('typing-indicator');
+    if (typingIndicator) {
+        typingIndicator.remove();
+    }
+}
+
+function scrollToBottom() {
+    const chatbotBody = document.getElementById('chatbot-body');
+    if (chatbotBody) {
+        chatbotBody.scrollTop = chatbotBody.scrollHeight;
+    }
+}
+
+function showLoadingState(show) {
+    window.isLoading = show;
+    const sendButton = document.getElementById('send-button');
+    const chatbotInput = document.getElementById('chatbot-input');
+    
+    if (sendButton) {
+        sendButton.disabled = show;
+        sendButton.innerHTML = show ? '<span>⏳</span> লোড হচ্ছে...' : '<span>📤</span> পাঠান';
+    }
+    
+    if (chatbotInput) {
+        chatbotInput.disabled = show;
+    }
+}
+
+function clearChat() {
+    const chatbotBody = document.getElementById('chatbot-body');
+    if (chatbotBody) {
+        chatbotBody.innerHTML = `
+            <div class="message bot">
+                <strong>🤲 আসসালামু আলাইকুম!</strong><br/>
+                কুরআনের আয়াত, তাফসীর ও হাদিস সম্পর্কে জানুন। নিচের বাটন গুলি ক্লিক করে শুরু করুন...
+                <div class="message-timestamp">${getCurrentTimestamp()}</div>
+            </div>
+            <div class="quick-actions">
+                <button class="quick-action-btn" data-action="about">🤖 বট সম্পর্কে</button>
+                <button class="quick-action-btn" data-action="guide">📖 ব্যবহার গাইড</button>
+                <button class="quick-action-btn" data-action="start">💬 চ্যাট শুরু</button>
+                <button class="quick-action-btn" data-action="popular">⭐ জনপ্রিয় আয়াত</button>
+                <button class="quick-action-btn secondary" data-action="prayer">🕌 সালাত সময়</button>
+                <button class="quick-action-btn secondary" data-action="quiz">🧠 কুরআন কুইজ</button>
+            </div>
+        `;
+    }
+    
+    window.currentAya = null;
+    const chatbotInput = document.getElementById('chatbot-input');
+    if (chatbotInput) {
+        chatbotInput.value = '';
+        chatbotInput.focus();
+    }
+}
+
+// ==================== QUERY HANDLERS ====================
+function handleSurahAyaQuery(query) {
+    const match = query.match(/^(\d+)[:\.\/,](\d+)$/) || 
+                 query.match(/^সূরা\s*(\d+)\s*আয়াত\s*(\d+)$/i);
+    
+    if (match) {
+        const sura = match[1];
+        const aya = match[2];
+        const exactMatch = window.quranData.find(a => a.sura === sura && a.aya === aya);
+        
+        if (exactMatch) {
+            window.currentAya = exactMatch;
+            displayAyaResult(exactMatch);
+            
+            // Auto-play audio if enabled
+            if (window.audioSettings && window.audioSettings.autoPlay) {
+                setTimeout(() => playAyaAudio(sura, aya), 1000);
+            }
+        } else {
+            addBotMessage(`❌ সূরা ${sura}, আয়াত ${aya} পাওয়া যায়নি। দয়া করে সঠিক সূরা ও আয়াত নম্বর দিন।`, false, 'error');
+        }
+    }
+}
+
+function handleGreeting(query) {
+    const responses = [
+        'ওয়া আলাইকুম আসসালাম ওয়া রহমাতুল্লাহি ওয়া বারাকাতuh! কুরআনের আয়াত বা তাফসীর সম্পর্কে জানতে চান?',
+        'আসসালামু আলাইকুম! কেমন আছেন? কুরআন সম্পর্কে কী জানতে চান?',
+        'ওয়া আলাইকুম আসসালাম! আল্লাহ আপনার দিনকে বরকতময় করুন। কীভাবে সাহায্য করতে পারি?'
+    ];
+    const randomResponse = responses[Math.floor(Math.random() * responses.length)];
+    addBotMessage(randomResponse);
+}
+
+function handleGeneralQuery(query) {
+    addBotMessage(`🤔 "${query}" - আমি এই প্রশ্নের উত্তর দিতে পারছি না। আপনি চাইলে:<br><br>
+    1. সূরা:আয়াত লিখুন (যেমন: 2:255)<br>
+    2. কুরআনের শব্দ দিয়ে খুঁজুন (যেমন: রহমান)<br>
+    3. জনপ্রিয় আয়াত দেখতে "⭐ জনপ্রিয় আয়াত" বাটন ক্লিক করুন<br>
+    4. সালাতের সময় জানতে "🕌 সালাত সময়" বাটন ক্লিক করুন<br>
+    5. কুরআন কুইজ খেলতে "🧠 কুরআন কুইজ" বাটন ক্লিক করুন`, true);
+}
+
+// ==================== DISPLAY RESULTS ====================
+function displayAyaResult(aya) {
+    const arabic = window.arabicData.find(a => a.sura === aya.sura && a.VerseIDAr === aya.aya);
+    
+    let resultHTML = `
+        <strong>সূরা ${aya.sura}, আয়াত ${aya.aya}:</strong>`;
+    
+    if (arabic?.ayat) {
+        resultHTML += `<div class="arabic-text" lang="ar">${arabic.ayat}</div>`;
+    }
+    
+    resultHTML += `
+        <div style="margin: 10px 0; padding: 15px; background: #f8f9fa; border-radius: 8px; border-left: 4px solid var(--primary);">
+            ${aya.text}
+        </div>
+        <div class="tafsir-action-buttons">
+            <button onclick="handleTafsirButton('${aya.sura}', '${aya.aya}')" 
+                    style="background: var(--primary); color: white; border: none; padding: 10px 15px; border-radius: 5px; cursor: pointer; font-weight: 600;">
+                📖 তাফসীর দেখুন
+            </button>
+            <button onclick="playAyaAudio('${aya.sura}', '${aya.aya}')" 
+                    style="background: var(--secondary); color: white; border: none; padding: 10px 15px; border-radius: 5px; cursor: pointer; font-weight: 600;">
+                🎧 শুনুন
+            </button>
+            <button onclick="copyAyaText('${aya.sura}', '${aya.aya}')" 
+                    style="background: var(--gold); color: black; border: none; padding: 10px 15px; border-radius: 5px; cursor: pointer; font-weight: 600;">
+                📋 কপি করুন
+            </button>
+        </div>`;
+    
+    addBotMessage(resultHTML, true);
+}
+
+function handleTafsirButton(sura, aya) {
+    if (window.isFullscreen) {
+        showTafsirModal(sura, aya);
+    } else {
+        showFullTafsir(sura, aya);
+    }
+}
+
+// ==================== QUICK ACTION HANDLERS ====================
+function showAboutBot() {
+    addBotMessage(`
+        <strong>🤖 কুরআন বট সম্পর্কে:</strong><br><br>
+        <strong>সংস্করণ:</strong> ৩.০ (এনহ্যান্সড)<br>
+        <strong>ডেভেলপার:</strong> আক্তারুজ্জামান মোল্লা<br>
+        <strong>ফেসবুক:</strong> www.Facebook.com/akter.molla/<br>
+        <strong>ওয়েবসাইট:</strong> https://aktermolla.blogspot.com/<br><br>
+        <strong>🎯 নতুন বৈশিষ্ট্যসমূহ:</strong><br>
+        • 🔊 ভয়েস রেকগনিশন<br>
+        • 🎧 অডিও তিলাওয়াত<br>
+        • 📺 ফুলস্ক্রিন মোড<br>
+        • 🕌 সালাতের সময়<br>
+        • 🧠 ইন্টারেক্টিভ কুইজ<br>
+        • ⚙️ উন্নত সেটিংস<br>
+        • 🔍 সূরা সার্চ<br>
+        • 📋 উন্নত শেয়ারিং<br><br>
+        <em>"কুরআন শিক্ষা সহজ ও ইন্টারেক্টিভ করার প্রয়াস"</em>
+    `, true);
+}
+
+function showUsageGuide() {
+    addBotMessage(`
+        <strong>📖 উন্নত ব্যবহার নির্দেশিকা:</strong><br><br>
+        <strong>১. সূরা:আয়াত ফরম্যাট:</strong><br>
+        • 2:255 (ইংরেজি)<br>
+        • ২.২৫৫ (বাংলা)<br>
+        • ২/২৫৫ (বাংলা)<br>
+        • সূরা ২ আয়াত ২৫৫ (পূর্ণ বাংলা)<br><br>
+        
+        <strong>২. ভয়েস কমান্ড:</strong><br>
+        • 🎤 বাটন ক্লিক করে কথা বলুন<br>
+        • বাংলায় প্রশ্ন করুন<br>
+        • স্বয়ংক্রিয়ভাবে প্রসেস হবে<br><br>
+        
+        <strong>৩. বিশেষ ফিচার:</strong><br>
+        • তাফসীর দেখতে আয়াত সিলেক্ট করুন<br>
+        • অডিও শুনতে 🎧 বাটন ব্যবহার করুন<br>
+        • ফুলস্ক্রিনে দেখতে 📺 বাটন ব্যবহার করুন<br>
+        • কুইজ খেলতে 🧠 বাটন ব্যবহার করুন<br><br>
+        
+        <strong>৪. কীওয়ার্ড সার্চ:</strong><br>
+        • রহমান, রহীম, আল্লাহ, ইসলাম<br>
+        • সালাত, নামাজ, সময়<br>
+        • কুইজ, প্রশ্ন, পরীক্ষা
+    `, true);
+}
+
+function startChat() {
+    addBotMessage(`
+        💬 <strong>চ্যাট শুরু হয়েছে!</strong><br><br>
+        আপনি এখন নিম্নলিখিত বিষয়ে প্রশ্ন করতে পারেন:<br><br>
+        • নির্দিষ্ট আয়াত (যেমন: 2:255)<br>
+        • কুরআনের যেকোনো শব্দ (যেমন: রহমান)<br>
+        • তাফসীর সম্পর্কে জানতে<br>
+        • জনপ্রিয় আয়াত দেখতে<br>
+        • সালাতের সময় জানতে<br>
+        • কুরআন কুইজ খেলতে<br><br>
+        <em>🎤 ভয়েস ব্যবহার করতে উপরের মাইক্রোফোন বাটন ক্লিক করুন!</em>
+    `, true);
+}
+
+function showPopularAyat() {
+    const popularAyat = [
+        { sura: '1', aya: '1', name: 'সূরা ফাতিহা' },
+        { sura: '2', aya: '255', name: 'আয়াতুল কুরসি' },
+        { sura: '36', aya: '1', name: 'সূরা ইয়াসিন' },
+        { sura: '67', aya: '1', name: 'সূরা মুলক' },
+        { sura: '112', aya: '1', name: 'সূরা ইখলাস' },
+        { sura: '55', aya: '1', name: 'সূরা রহমান' },
+        { sura: '12', aya: '1', name: 'সূরা ইউসুফ' }
+    ];
+    
+    let popularHTML = `
+        <strong>⭐ জনপ্রিয় আয়াতসমূহ:</strong><br><br>
+        <div style="display: flex; flex-direction: column; gap: 12px;">`;
+    
+    popularAyat.forEach((ayat, index) => {
+        popularHTML += `
+            <button onclick="selectPopularAya('${ayat.sura}', '${ayat.aya}')" 
+                    style="background: var(--light-green); border: 2px solid var(--primary); padding: 12px 15px; border-radius: 8px; cursor: pointer; text-align: left; transition: var(--transition);">
+                <strong>${index + 1}. ${ayat.name}</strong><br>
+                <small style="color: var(--gray-dark);">সূরা ${ayat.sura}, আয়াত ${ayat.aya}</small>
+            </button>`;
+    });
+    
+    popularHTML += `</div>`;
+    addBotMessage(popularHTML, true);
+}
+
+// ==================== UTILITY FUNCTIONS FOR GLOBAL ACCESS ====================
+window.selectAyaFromSearch = function(sura, aya) {
+    const exactMatch = window.quranData.find(a => a.sura === sura && a.aya === aya);
+    if (exactMatch) {
+        window.currentAya = exactMatch;
+        displayAyaResult(exactMatch);
+    }
+};
+
+window.selectPopularAya = function(sura, aya) {
+    const exactMatch = window.quranData.find(a => a.sura === sura && a.aya === aya);
+    if (exactMatch) {
+        window.currentAya = exactMatch;
+        displayAyaResult(exactMatch);
+    }
+};
+
+window.copyAyaText = function(sura, aya) {
+    const ayaData = window.quranData.find(a => a.sura === sura && a.aya === aya);
+    const arabic = window.arabicData.find(a => a.sura === sura && a.VerseIDAr === aya);
+    
+    let textToCopy = `সূরা ${sura}, আয়াত ${aya}\n\n`;
+    if (arabic?.ayat) {
+        textToCopy += `${arabic.ayat}\n\n`;
+    }
+    textToCopy += ayaData.text;
+    
+    navigator.clipboard.writeText(textToCopy).then(() => {
+        addBotMessage('✅ আয়াতটি ক্লিপবোর্ডে কপি করা হয়েছে!', false, 'success');
+    }).catch(() => {
+        addBotMessage('❌ কপি করতে সমস্যা হয়েছে।', false, 'error');
+    });
+};
+
+// ==================== BLOG FEATURES ====================
+function initializeBlogFeatures() {
+    // Share functionality
+    window.shareOnFacebook = function() {
+        const url = encodeURIComponent(window.location.href);
+        const title = encodeURIComponent(document.title);
+        window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}&t=${title}`, '_blank', 'width=600,height=400');
+    };
+
+    window.shareOnTwitter = function() {
+        const url = encodeURIComponent(window.location.href);
+        const text = encodeURIComponent(document.title);
+        window.open(`https://twitter.com/intent/tweet?url=${url}&text=${text}`, '_blank', 'width=600,height=400');
+    };
+
+    window.shareOnLinkedIn = function() {
+        const url = encodeURIComponent(window.location.href);
+        window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${url}`, '_blank', 'width=600,height=400');
+    };
+
+    window.copyPostLink = function() {
+        const url = window.location.href;
+        navigator.clipboard.writeText(url).then(function() {
+            alert('লিংক কপি করা হয়েছে!');
+        }).catch(function() {
+            alert('লিংক কপি করতে সমস্যা হয়েছে।');
+        });
+    };
+
+    // Image zoom functionality
+    const postContent = document.querySelector('.post-body');
+    if (postContent) {
+        const images = postContent.querySelectorAll('img');
+        images.forEach(img => {
+            img.style.cursor = 'zoom-in';
+            img.addEventListener('click', function() {
+                this.classList.toggle('zoomed');
+                if (this.classList.contains('zoomed')) {
+                    this.style.transform = 'scale(1.5)';
+                    this.style.zIndex = '1000';
+                    this.style.position = 'relative';
+                } else {
+                    this.style.transform = 'scale(1)';
+                    this.style.zIndex = '1';
+                }
+            });
+        });
+
+        // Make tables responsive
+        const tables = postContent.querySelectorAll('table');
+        tables.forEach(table => {
+            const wrapper = document.createElement('div');
+            wrapper.style.overflowX = 'auto';
+            wrapper.style.margin = '1rem 0';
+            table.parentNode.insertBefore(wrapper, table);
+            wrapper.appendChild(table);
+        });
+    }
+
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+}
+
+// ==================== ERROR HANDLING ====================
+window.addEventListener('error', function(e) {
+    console.error('Global error:', e.error);
+});
+
+window.addEventListener('unhandledrejection', function(e) {
+    console.error('Unhandled promise rejection:', e.reason);
+    e.preventDefault();
+});
+//]]>
+</script>
+</body>
+</html>
