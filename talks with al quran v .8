@@ -9,7 +9,7 @@
   <!-- Theme Information -->
   <meta content='Al Quran Pro - Islamic Chatbot Theme' name='theme-name'/>
   <meta content='Akter Molla' name='theme-author'/>
-  <meta content='5.2' name='theme-version'/>
+  <meta content='6.1' name='theme-version'/>
   
   <!-- Fonts -->
   <link href='https://fonts.maateen.me/kalpurush/font.css' rel='stylesheet'/>
@@ -17,10 +17,6 @@
   <link href='https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&amp;display=swap' rel='stylesheet'/>
   <link href='https://fonts.googleapis.com/css2?family=Scheherazade+New:wght@400;700&amp;display=swap' rel='stylesheet'/>
   <link href='https://fonts.googleapis.com/css2?family=Lateef:wght@400;700&amp;display=swap' rel='stylesheet'/>
-  
-  <!-- PDF.js for PDF Preview -->
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js'/>
-  <link href='https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf-viewer.min.css' rel='stylesheet'/>
   
   <b:skin><![CDATA[
   /* ============================================
@@ -46,7 +42,7 @@
     --gray-dark: #757575;
     
     --bengali-font-size: 18px;
-    --arabic-font-size: 20px;
+    --arabic-font-size: 22px;
     --ui-font-size: 16px;
     
     --font-bengali: 'Kalpurush', 'Hind Siliguri', sans-serif;
@@ -57,7 +53,6 @@
     --shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
     --shadow-hover: 0 8px 32px rgba(0, 0, 0, 0.12);
     --shadow-large: 0 16px 48px rgba(0, 0, 0, 0.15);
-    --shadow-glow: 0 0 40px rgba(193, 154, 63, 0.2);
     
     --rounded: 12px;
     --rounded-lg: 20px;
@@ -65,9 +60,6 @@
     --rounded-full: 50px;
     
     --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-    --transition-slow: all 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
-    --transition-bounce: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-    
     --header-gradient: linear-gradient(135deg, #1a472a, #2d7a4a);
   }
 
@@ -92,7 +84,6 @@
     --shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
     --shadow-hover: 0 8px 32px rgba(0, 0, 0, 0.4);
     --shadow-large: 0 16px 48px rgba(0, 0, 0, 0.5);
-    --shadow-glow: 0 0 40px rgba(232, 201, 106, 0.08);
   }
 
   /* ============================================
@@ -111,8 +102,6 @@
     line-height: 1.8;
     overflow: hidden;
     font-size: var(--bengali-font-size);
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
     transition: background-color 0.4s ease, color 0.4s ease;
     height: 100vh;
     width: 100vw;
@@ -209,7 +198,7 @@
     border-radius: var(--rounded-full);
     cursor: pointer;
     transition: var(--transition);
-    font-size: 0.65rem;
+    font-size: 0.6rem;
     font-weight: 600;
     display: flex;
     align-items: center;
@@ -223,32 +212,25 @@
     transform: translateY(-1px);
   }
 
-  .control-btn.active {
-    background: var(--gold-gradient);
-    color: var(--dark);
-    border-color: var(--gold);
-  }
-
-  /* Digital Clock */
   .digital-clock {
     color: var(--white);
-    font-size: 0.75rem;
+    font-size: 0.7rem;
     font-weight: 600;
     background: rgba(255,255,255,0.1);
     padding: 0.15rem 0.5rem;
     border-radius: var(--rounded-full);
     border: 1px solid rgba(255,255,255,0.15);
     font-family: 'Courier New', monospace;
-    min-width: 80px;
+    min-width: 70px;
     text-align: center;
   }
 
   .digital-clock .clock-time {
-    font-size: 0.85rem;
+    font-size: 0.8rem;
   }
 
   .digital-clock .clock-am-pm {
-    font-size: 0.6rem;
+    font-size: 0.55rem;
     opacity: 0.8;
   }
 
@@ -259,17 +241,6 @@
     background: var(--light-bg);
     scroll-behavior: smooth;
     min-height: 0;
-  }
-
-  .chat-body-main::-webkit-scrollbar {
-    width: 5px;
-  }
-  .chat-body-main::-webkit-scrollbar-track {
-    background: var(--gray-light);
-  }
-  .chat-body-main::-webkit-scrollbar-thumb {
-    background: var(--gold-gradient);
-    border-radius: 10px;
   }
 
   /* Welcome Section */
@@ -328,7 +299,6 @@
     color: var(--text-light);
     margin-top: 0.3rem;
     min-height: 1rem;
-    transition: opacity 0.4s ease;
   }
 
   .welcome-section .data-status.error {
@@ -357,7 +327,7 @@
     transition: var(--transition);
     font-family: var(--font-ui);
     font-weight: 600;
-    font-size: 0.7rem;
+    font-size: 0.65rem;
     color: var(--text);
     display: flex;
     align-items: center;
@@ -371,10 +341,6 @@
     background: rgba(26, 71, 42, 0.05);
     transform: translateY(-2px);
     box-shadow: var(--shadow-hover);
-  }
-
-  .quick-action-premium .qa-icon {
-    font-size: 1rem;
   }
 
   .quick-action-premium.primary {
@@ -399,22 +365,11 @@
     animation: messageSlide 0.3s ease;
     font-size: 0.9rem;
     box-shadow: var(--shadow-sm);
-    transition: var(--transition);
   }
 
   @keyframes messageSlide {
-    from {
-      opacity: 0;
-      transform: translateY(15px) scale(0.98);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0) scale(1);
-    }
-  }
-
-  .message:hover {
-    box-shadow: var(--shadow);
+    from { opacity: 0; transform: translateY(15px) scale(0.98); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
   }
 
   .message.user {
@@ -470,24 +425,55 @@
   }
 
   /* ============================================
-     BOOK CORNER - PDF GRID
+     BOOK CORNER
      ============================================ */
+  .book-category-tabs {
+    display: flex;
+    gap: 0.3rem;
+    flex-wrap: wrap;
+    margin: 0.3rem 0 0.6rem;
+    justify-content: center;
+  }
+
+  .book-category-tab {
+    padding: 0.2rem 0.7rem;
+    border: 2px solid var(--gray-medium);
+    border-radius: var(--rounded-full);
+    background: var(--white);
+    cursor: pointer;
+    font-family: var(--font-ui);
+    font-size: 0.6rem;
+    font-weight: 600;
+    transition: var(--transition);
+    color: var(--text);
+  }
+
+  .book-category-tab:hover {
+    border-color: var(--primary);
+    background: rgba(26, 71, 42, 0.05);
+  }
+
+  .book-category-tab.active {
+    border-color: var(--gold);
+    background: var(--gold-gradient);
+    color: var(--dark);
+  }
+
   .book-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-    gap: 0.8rem;
+    grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+    gap: 0.6rem;
     margin: 0.5rem 0;
   }
 
   .book-card {
     background: var(--white);
     border-radius: var(--rounded);
-    padding: 0.8rem;
+    padding: 0.6rem;
     box-shadow: var(--shadow-sm);
     transition: var(--transition);
     border: 2px solid var(--gray-light);
     text-align: center;
-    cursor: pointer;
   }
 
   .book-card:hover {
@@ -497,47 +483,47 @@
   }
 
   .book-card .book-icon {
-    font-size: 2.5rem;
-    margin-bottom: 0.3rem;
+    font-size: 2.2rem;
+    margin-bottom: 0.2rem;
     display: block;
   }
 
   .book-card .book-title {
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     font-weight: 700;
     color: var(--primary);
-    margin-bottom: 0.2rem;
+    margin-bottom: 0.15rem;
     line-height: 1.3;
   }
 
   .book-card .book-author {
-    font-size: 0.7rem;
+    font-size: 0.65rem;
     color: var(--gray-dark);
-    margin-bottom: 0.3rem;
+    margin-bottom: 0.2rem;
   }
 
   .book-card .book-price {
-    font-size: 0.75rem;
+    font-size: 0.7rem;
     font-weight: 700;
     color: var(--gold);
-    margin: 0.2rem 0;
+    margin: 0.15rem 0;
   }
 
   .book-card .book-actions {
     display: flex;
-    gap: 0.3rem;
+    gap: 0.25rem;
     flex-wrap: wrap;
     justify-content: center;
   }
 
   .book-card .book-btn {
-    padding: 0.2rem 0.6rem;
+    padding: 0.15rem 0.5rem;
     border: none;
     border-radius: var(--rounded-full);
     cursor: pointer;
     font-weight: 600;
     font-family: var(--font-ui);
-    font-size: 0.6rem;
+    font-size: 0.55rem;
     transition: var(--transition);
   }
 
@@ -571,152 +557,26 @@
     transform: translateY(-2px);
   }
 
-  .book-card .book-btn.share {
-    background: #4CAF50;
-    color: var(--white);
-  }
-
-  .book-card .book-btn.share:hover {
-    background: #388E3C;
-    transform: translateY(-2px);
-  }
-
-  /* ============================================
-     ZAKAT CALCULATOR
-     ============================================ */
-  .zakat-card {
-    background: var(--white);
-    border-radius: var(--rounded);
-    padding: 0.8rem 1rem;
-    margin: 0.4rem 0;
-    box-shadow: var(--shadow-sm);
-    border-bottom: 3px solid var(--gold);
-  }
-
-  .zakat-card .zakat-title {
-    font-size: 1rem;
-    font-weight: 700;
-    color: var(--primary);
-    text-align: center;
-    margin-bottom: 0.5rem;
-  }
-
-  .zakat-card .zakat-input-group {
-    margin: 0.3rem 0;
-  }
-
-  .zakat-card .zakat-input-group label {
-    display: block;
-    font-weight: 600;
-    font-size: 0.8rem;
-    color: var(--text);
-  }
-
-  .zakat-card .zakat-input-group input {
-    width: 100%;
-    padding: 0.3rem 0.5rem;
-    border: 2px solid var(--gray-medium);
-    border-radius: var(--rounded);
-    font-family: var(--font-ui);
-    font-size: 0.85rem;
-    transition: var(--transition);
-  }
-
-  .zakat-card .zakat-input-group input:focus {
-    border-color: var(--primary);
-    outline: none;
-  }
-
-  .zakat-card .zakat-result {
-    text-align: center;
-    padding: 0.4rem;
-    background: var(--light-green);
-    border-radius: var(--rounded);
-    margin-top: 0.4rem;
-  }
-
-  .zakat-card .zakat-result .amount {
-    font-size: 1.3rem;
-    font-weight: 700;
-    color: var(--primary);
-  }
-
-  .zakat-card .zakat-btn {
-    width: 100%;
-    padding: 0.4rem;
+  .book-card .book-badge {
+    display: inline-block;
+    font-size: 0.45rem;
     background: var(--gold-gradient);
-    border: none;
-    border-radius: var(--rounded);
-    font-weight: 700;
-    font-family: var(--font-ui);
-    font-size: 0.85rem;
-    cursor: pointer;
-    transition: var(--transition);
     color: var(--dark);
-    margin-top: 0.3rem;
-  }
-
-  .zakat-card .zakat-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: var(--shadow);
-  }
-
-  .home-btn-container {
-    text-align: center;
-    margin: 0.6rem 0;
-  }
-
-  .home-btn {
-    padding: 0.4rem 1.5rem;
-    background: var(--primary);
-    color: var(--white);
-    border: none;
+    padding: 0.05rem 0.4rem;
     border-radius: var(--rounded-full);
     font-weight: 700;
-    font-family: var(--font-ui);
-    font-size: 0.8rem;
-    cursor: pointer;
-    transition: var(--transition);
+    margin-bottom: 0.1rem;
   }
 
-  .home-btn:hover {
-    background: var(--primary-light);
-    transform: translateY(-2px);
-  }
-
-  .ayat-navigation {
-    display: flex;
-    gap: 0.4rem;
-    justify-content: center;
-    margin: 0.3rem 0;
-  }
-
-  .ayat-nav-btn {
-    padding: 0.2rem 0.8rem;
-    border: 2px solid var(--primary);
-    border-radius: var(--rounded-full);
-    background: var(--white);
-    cursor: pointer;
-    font-weight: 600;
-    font-family: var(--font-ui);
-    font-size: 0.7rem;
-    transition: var(--transition);
-  }
-
-  .ayat-nav-btn:hover:not(:disabled) {
-    background: var(--primary);
-    color: var(--white);
-  }
-
-  .ayat-nav-btn:disabled {
-    opacity: 0.4;
-    cursor: not-allowed;
-  }
-
-  .ayat-nav-btn.gold {
-    background: var(--gold-gradient);
-    border-color: var(--gold);
-    color: var(--dark);
+  .book-card .book-desc {
+    font-size: 0.6rem;
+    color: var(--text-light);
+    margin: 0.1rem 0;
+    line-height: 1.3;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
   }
 
   /* ============================================
@@ -726,8 +586,7 @@
     display: none;
     position: fixed;
     inset: 0;
-    background: rgba(0, 0, 0, 0.85);
-    backdrop-filter: blur(10px);
+    background: rgba(0, 0, 0, 0.92);
     z-index: 10000;
     justify-content: center;
     align-items: center;
@@ -751,16 +610,12 @@
     border-radius: 0 !important;
   }
 
-  .pdf-viewer-overlay.fullscreen .pdf-viewer-body {
-    max-height: calc(100vh - 120px) !important;
-  }
-
   .pdf-viewer-content {
     background: var(--white);
     border-radius: var(--rounded-xl);
     width: 95%;
-    max-width: 1000px;
-    max-height: 92vh;
+    max-width: 1100px;
+    max-height: 94vh;
     display: flex;
     flex-direction: column;
     box-shadow: var(--shadow-large);
@@ -772,7 +627,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0.8rem 1.2rem;
+    padding: 0.6rem 1.2rem;
     background: var(--header-gradient);
     color: white;
     flex-shrink: 0;
@@ -780,7 +635,7 @@
 
   .pdf-viewer-header h3 {
     color: white;
-    font-size: 1rem;
+    font-size: 0.95rem;
     margin: 0;
     flex: 1;
     margin-right: 0.5rem;
@@ -791,7 +646,7 @@
 
   .pdf-viewer-header .viewer-controls {
     display: flex;
-    gap: 0.4rem;
+    gap: 0.3rem;
     align-items: center;
   }
 
@@ -800,10 +655,10 @@
     border: none;
     color: white;
     cursor: pointer;
-    padding: 0.3rem 0.6rem;
+    padding: 0.25rem 0.5rem;
     border-radius: var(--rounded);
     transition: var(--transition);
-    font-size: 0.8rem;
+    font-size: 0.75rem;
     font-family: var(--font-ui);
   }
 
@@ -812,17 +667,12 @@
   }
 
   .pdf-viewer-header .viewer-btn.close {
-    font-size: 1.2rem;
-    padding: 0.1rem 0.5rem;
+    font-size: 1.1rem;
+    padding: 0.05rem 0.45rem;
   }
 
   .pdf-viewer-header .viewer-btn.close:hover {
     background: rgba(255,0,0,0.3);
-  }
-
-  .pdf-viewer-header .viewer-btn.active {
-    background: var(--gold-gradient);
-    color: var(--dark);
   }
 
   .pdf-viewer-body {
@@ -830,25 +680,24 @@
     overflow-y: auto;
     padding: 0.5rem;
     background: #f0f0f0;
-    min-height: 300px;
-    max-height: 70vh;
+    min-height: 400px;
+    max-height: 72vh;
     position: relative;
   }
 
-  .pdf-viewer-body canvas {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin: 0 auto;
-    box-shadow: var(--shadow);
-    border-radius: var(--rounded-sm);
+  .pdf-viewer-body iframe {
+    width: 100%;
+    height: 100%;
+    min-height: 550px;
+    border: none;
+    border-radius: 8px;
   }
 
   .pdf-viewer-body .pdf-loading {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 200px;
+    height: 300px;
     font-size: 1.1rem;
     color: var(--gray-dark);
     flex-direction: column;
@@ -869,15 +718,21 @@
     100% { transform: rotate(360deg); }
   }
 
-  .pdf-viewer-body iframe {
-    width: 100%;
-    height: 100%;
-    min-height: 500px;
-    border: none;
+  .pdf-viewer-body .pdf-error {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+    font-size: 1rem;
+    color: #c62828;
+    flex-direction: column;
+    gap: 0.5rem;
+    text-align: center;
+    padding: 1rem;
   }
 
   .pdf-viewer-footer {
-    padding: 0.5rem 1rem;
+    padding: 0.4rem 1rem;
     background: var(--gray-light);
     display: flex;
     justify-content: space-between;
@@ -888,7 +743,7 @@
   }
 
   .pdf-viewer-footer .page-info {
-    font-size: 0.8rem;
+    font-size: 0.75rem;
     color: var(--gray-dark);
   }
 
@@ -898,13 +753,13 @@
   }
 
   .pdf-viewer-footer .page-btn {
-    padding: 0.2rem 0.6rem;
+    padding: 0.15rem 0.5rem;
     border: 1px solid var(--gray-medium);
     border-radius: var(--rounded);
     background: var(--white);
     cursor: pointer;
     font-family: var(--font-ui);
-    font-size: 0.7rem;
+    font-size: 0.65rem;
     transition: var(--transition);
   }
 
@@ -921,25 +776,25 @@
 
   .pdf-viewer-footer .zoom-controls {
     display: flex;
-    gap: 0.3rem;
+    gap: 0.25rem;
     align-items: center;
   }
 
   .pdf-viewer-footer .zoom-controls .zoom-label {
-    font-size: 0.7rem;
+    font-size: 0.65rem;
     color: var(--gray-dark);
-    min-width: 40px;
+    min-width: 35px;
     text-align: center;
   }
 
   .pdf-viewer-footer .zoom-controls .zoom-btn {
-    padding: 0.15rem 0.4rem;
+    padding: 0.1rem 0.35rem;
     border: 1px solid var(--gray-medium);
     border-radius: var(--rounded);
     background: var(--white);
     cursor: pointer;
     font-family: var(--font-ui);
-    font-size: 0.7rem;
+    font-size: 0.65rem;
     transition: var(--transition);
   }
 
@@ -955,26 +810,21 @@
   .tool-card {
     background: var(--white);
     border-radius: var(--rounded);
-    padding: 0.8rem 1rem;
+    padding: 0.6rem 0.8rem;
     margin: 0.4rem 0;
     border-bottom: 3px solid var(--gold);
     box-shadow: var(--shadow-sm);
-    transition: var(--transition);
-  }
-
-  .tool-card:hover {
-    box-shadow: var(--shadow-hover);
   }
 
   .tool-card .tool-title {
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     font-weight: 700;
     color: var(--primary);
-    margin-bottom: 0.2rem;
+    margin-bottom: 0.15rem;
   }
 
   .tool-card .tool-content {
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     line-height: 1.8;
     color: var(--text);
   }
@@ -982,92 +832,81 @@
   .hadith-card {
     background: var(--white);
     border-radius: var(--rounded);
-    padding: 0.6rem 0.8rem;
-    margin: 0.4rem 0;
+    padding: 0.5rem 0.7rem;
+    margin: 0.3rem 0;
     border-right: 4px solid var(--gold);
     box-shadow: var(--shadow-sm);
   }
 
   .hadith-card .hadith-text {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     line-height: 1.8;
     font-style: italic;
     color: var(--text);
   }
 
   .hadith-card .hadith-translation {
-    margin: 0.15rem 0;
-    font-size: 0.8rem;
+    margin: 0.1rem 0;
+    font-size: 0.75rem;
   }
 
   .hadith-card .hadith-source {
-    font-size: 0.65rem;
+    font-size: 0.6rem;
     color: var(--gray-dark);
-    margin-top: 0.15rem;
+    margin-top: 0.1rem;
   }
 
   .hadith-card .hadith-number {
-    font-size: 0.6rem;
+    font-size: 0.55rem;
     color: var(--gold);
     font-weight: 600;
-    margin-bottom: 0.15rem;
+    margin-bottom: 0.1rem;
   }
 
   .knowledge-card {
     background: var(--white);
     border-radius: var(--rounded);
-    padding: 0.6rem 0.8rem;
-    margin: 0.4rem 0;
+    padding: 0.5rem 0.7rem;
+    margin: 0.3rem 0;
     border-bottom: 3px solid var(--gold);
     box-shadow: var(--shadow-sm);
-    transition: var(--transition);
-  }
-
-  .knowledge-card:hover {
-    box-shadow: var(--shadow-hover);
   }
 
   .knowledge-card .kb-title {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     font-weight: 700;
     color: var(--primary);
   }
 
   .knowledge-card .kb-content {
-    font-size: 0.8rem;
+    font-size: 0.75rem;
     line-height: 1.8;
     color: var(--text);
-    margin-top: 0.15rem;
+    margin-top: 0.1rem;
   }
 
   .knowledge-card .kb-source {
-    font-size: 0.6rem;
+    font-size: 0.55rem;
     color: var(--gray-dark);
-    margin-top: 0.15rem;
-  }
-
-  .knowledge-card .kb-number {
-    font-size: 0.6rem;
-    color: var(--gold);
-    font-weight: 600;
+    margin-top: 0.1rem;
   }
 
   .knowledge-nav {
     display: flex;
-    gap: 0.4rem;
+    gap: 0.3rem;
     flex-wrap: wrap;
-    margin-top: 0.4rem;
+    margin-top: 0.3rem;
     justify-content: center;
   }
 
   .knowledge-nav-btn {
-    padding: 0.25rem 0.7rem;
+    padding: 0.2rem 0.6rem;
     border: none;
     border-radius: var(--rounded-full);
     cursor: pointer;
     font-weight: 600;
     font-family: var(--font-ui);
-    font-size: 0.65rem;
+    font-size: 0.6rem;
     transition: var(--transition);
     background: var(--primary);
     color: var(--white);
@@ -1092,62 +931,203 @@
   .prayer-card {
     background: var(--white);
     border-radius: var(--rounded);
-    padding: 0.6rem 0.8rem;
-    margin: 0.4rem 0;
+    padding: 0.5rem 0.7rem;
+    margin: 0.3rem 0;
     box-shadow: var(--shadow-sm);
   }
 
   .prayer-card .prayer-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 0.15rem;
+    gap: 0.1rem;
   }
 
   .prayer-card .prayer-item {
     display: flex;
     justify-content: space-between;
-    padding: 0.1rem 0.25rem;
+    padding: 0.05rem 0.2rem;
     border-bottom: 1px solid var(--gray-light);
   }
 
   .prayer-card .prayer-item .name {
     font-weight: 600;
     color: var(--primary);
-    font-size: 0.8rem;
+    font-size: 0.75rem;
   }
 
   .prayer-card .prayer-item .time {
     color: var(--text-light);
+    font-size: 0.75rem;
+  }
+
+  /* ============================================
+     TIME TRACKER
+     ============================================ */
+  .time-tracker-card {
+    background: var(--white);
+    border-radius: var(--rounded);
+    padding: 0.5rem 0.7rem;
+    margin: 0.3rem 0;
+    box-shadow: var(--shadow-sm);
+    border-left: 4px solid var(--gold);
+    text-align: center;
+  }
+
+  .time-tracker-card .time-display {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--primary);
+    font-family: 'Courier New', monospace;
+  }
+
+  .time-tracker-card .time-label {
+    font-size: 0.6rem;
+    color: var(--gray-dark);
+    margin-top: 0.05rem;
+  }
+
+  .time-tracker-card .time-controls {
+    display: flex;
+    gap: 0.3rem;
+    justify-content: center;
+    margin-top: 0.3rem;
+  }
+
+  .time-tracker-card .time-btn {
+    padding: 0.15rem 0.6rem;
+    border: 2px solid var(--primary);
+    border-radius: var(--rounded-full);
+    background: var(--white);
+    cursor: pointer;
+    font-family: var(--font-ui);
+    font-size: 0.6rem;
+    font-weight: 600;
+    transition: var(--transition);
+    color: var(--primary);
+  }
+
+  .time-tracker-card .time-btn:hover {
+    background: var(--primary);
+    color: var(--white);
+  }
+
+  .time-tracker-card .time-btn.gold {
+    border-color: var(--gold);
+    background: var(--gold-gradient);
+    color: var(--dark);
+  }
+
+  .time-tracker-card .time-btn.gold:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-sm);
+  }
+
+  /* ============================================
+     ZAKAT CALCULATOR
+     ============================================ */
+  .zakat-card {
+    background: var(--white);
+    border-radius: var(--rounded);
+    padding: 0.6rem 0.8rem;
+    margin: 0.3rem 0;
+    box-shadow: var(--shadow-sm);
+    border-bottom: 3px solid var(--gold);
+  }
+
+  .zakat-card .zakat-title {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--primary);
+    text-align: center;
+    margin-bottom: 0.4rem;
+  }
+
+  .zakat-card .zakat-input-group {
+    margin: 0.2rem 0;
+  }
+
+  .zakat-card .zakat-input-group label {
+    display: block;
+    font-weight: 600;
+    font-size: 0.7rem;
+    color: var(--text);
+  }
+
+  .zakat-card .zakat-input-group input {
+    width: 100%;
+    padding: 0.25rem 0.4rem;
+    border: 2px solid var(--gray-medium);
+    border-radius: var(--rounded);
+    font-family: var(--font-ui);
     font-size: 0.8rem;
+  }
+
+  .zakat-card .zakat-input-group input:focus {
+    border-color: var(--primary);
+    outline: none;
+  }
+
+  .zakat-card .zakat-result {
+    text-align: center;
+    padding: 0.3rem;
+    background: var(--light-green);
+    border-radius: var(--rounded);
+    margin-top: 0.3rem;
+  }
+
+  .zakat-card .zakat-result .amount {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--primary);
+  }
+
+  .zakat-card .zakat-btn {
+    width: 100%;
+    padding: 0.3rem;
+    background: var(--gold-gradient);
+    border: none;
+    border-radius: var(--rounded);
+    font-weight: 700;
+    font-family: var(--font-ui);
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: var(--transition);
+    color: var(--dark);
+    margin-top: 0.2rem;
+  }
+
+  .zakat-card .zakat-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow);
   }
 
   .quiz-card {
     background: var(--white);
     border-radius: var(--rounded);
-    padding: 0.6rem 0.8rem;
-    margin: 0.4rem 0;
+    padding: 0.5rem 0.7rem;
+    margin: 0.3rem 0;
     box-shadow: var(--shadow-sm);
   }
 
   .quiz-card .question {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     font-weight: 600;
     color: var(--primary);
-    margin-bottom: 0.3rem;
+    margin-bottom: 0.2rem;
   }
 
   .quiz-card .option-btn {
     display: block;
     width: 100%;
-    padding: 0.3rem 0.5rem;
-    margin: 0.1rem 0;
+    padding: 0.25rem 0.4rem;
+    margin: 0.05rem 0;
     border: 2px solid var(--gray-medium);
     border-radius: var(--rounded);
     background: var(--white);
     cursor: pointer;
     transition: var(--transition);
     font-family: var(--font-ui);
-    font-size: 0.8rem;
+    font-size: 0.75rem;
     text-align: left;
   }
 
@@ -1168,75 +1148,67 @@
 
   .quiz-card .result {
     text-align: center;
-    padding: 0.4rem;
-    font-size: 0.9rem;
+    padding: 0.3rem;
+    font-size: 0.85rem;
     font-weight: 600;
   }
 
   .quiz-progress {
-    font-size: 0.7rem;
+    font-size: 0.65rem;
     color: var(--gray-dark);
     text-align: center;
-    margin-bottom: 0.3rem;
+    margin-bottom: 0.2rem;
   }
 
-  .typing-indicator {
-    display: flex;
-    gap: 0.25rem;
-    padding: 0.3rem 0.5rem;
-    background: var(--gray-light);
-    border-radius: var(--rounded);
-    align-items: center;
-    margin-bottom: 0.5rem;
-    max-width: 50px;
+  .home-btn-container {
+    text-align: center;
+    margin: 0.5rem 0;
   }
 
-  .typing-indicator span {
-    width: 5px;
-    height: 5px;
+  .home-btn {
+    padding: 0.3rem 1.2rem;
     background: var(--primary);
-    border-radius: 50%;
-    animation: typingBounce 1.4s infinite;
+    color: var(--white);
+    border: none;
+    border-radius: var(--rounded-full);
+    font-weight: 700;
+    font-family: var(--font-ui);
+    font-size: 0.75rem;
+    cursor: pointer;
+    transition: var(--transition);
   }
 
-  .typing-indicator span:nth-child(2) {
-    animation-delay: 0.2s;
-  }
-  .typing-indicator span:nth-child(3) {
-    animation-delay: 0.4s;
-  }
-
-  @keyframes typingBounce {
-    0%, 60%, 100% { transform: translateY(0); opacity: 0.4; }
-    30% { transform: translateY(-6px); opacity: 1; }
+  .home-btn:hover {
+    background: var(--primary-light);
+    transform: translateY(-2px);
   }
 
   .chat-input-area {
-    padding: 0.4rem 1rem;
+    padding: 0.3rem 0.8rem;
     background: var(--white);
     border-top: 1px solid var(--gray-medium);
     display: flex;
-    gap: 0.3rem;
+    gap: 0.25rem;
     align-items: center;
     flex-wrap: wrap;
     flex-shrink: 0;
-    min-height: 48px;
+    min-height: 44px;
   }
 
   .chat-input-area .input-wrapper {
     flex: 1;
     position: relative;
-    min-width: 80px;
+    min-width: 70px;
   }
 
   .chat-input-area input {
     width: 100%;
-    padding: 0.4rem 0.7rem;
+    padding: 0.3rem 0.6rem;
     border: 2px solid var(--gray-medium);
     border-radius: var(--rounded-full);
     outline: none;
     font-family: var(--font-ui);
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     background: var(--white);
     color: var(--text);
     transition: var(--transition);
@@ -1247,30 +1219,19 @@
     box-shadow: 0 0 0 3px rgba(26, 71, 42, 0.08);
   }
 
-  .chat-input-area input:disabled {
-    background: var(--gray-light);
-    cursor: not-allowed;
-  }
-
-  .chat-input-area .input-actions {
-    display: flex;
-    gap: 0.25rem;
-    flex-wrap: wrap;
-  }
-
   .input-btn {
-    padding: 0.3rem 0.6rem;
+    padding: 0.25rem 0.5rem;
     border: none;
     border-radius: var(--rounded-full);
     cursor: pointer;
     transition: var(--transition);
     font-weight: 600;
     font-family: var(--font-ui);
-    font-size: 0.7rem;
+    font-size: 0.65rem;
     display: flex;
     align-items: center;
-    gap: 0.15rem;
-    min-height: 30px;
+    gap: 0.1rem;
+    min-height: 28px;
   }
 
   .input-btn.send {
@@ -1312,6 +1273,85 @@
     transform: none !important;
   }
 
+  .typing-indicator {
+    display: flex;
+    gap: 0.2rem;
+    padding: 0.25rem 0.4rem;
+    background: var(--gray-light);
+    border-radius: var(--rounded);
+    align-items: center;
+    margin-bottom: 0.4rem;
+    max-width: 45px;
+  }
+
+  .typing-indicator span {
+    width: 5px;
+    height: 5px;
+    background: var(--primary);
+    border-radius: 50%;
+    animation: typingBounce 1.4s infinite;
+  }
+
+  .typing-indicator span:nth-child(2) {
+    animation-delay: 0.2s;
+  }
+  .typing-indicator span:nth-child(3) {
+    animation-delay: 0.4s;
+  }
+
+  @keyframes typingBounce {
+    0%, 60%, 100% { transform: translateY(0); opacity: 0.4; }
+    30% { transform: translateY(-6px); opacity: 1; }
+  }
+
+  .ayat-navigation {
+    display: flex;
+    gap: 0.3rem;
+    justify-content: center;
+    margin: 0.2rem 0;
+  }
+
+  .ayat-nav-btn {
+    padding: 0.15rem 0.6rem;
+    border: 2px solid var(--primary);
+    border-radius: var(--rounded-full);
+    background: var(--white);
+    cursor: pointer;
+    font-weight: 600;
+    font-family: var(--font-ui);
+    font-size: 0.65rem;
+    transition: var(--transition);
+  }
+
+  .ayat-nav-btn:hover:not(:disabled) {
+    background: var(--primary);
+    color: var(--white);
+  }
+
+  .ayat-nav-btn:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+  }
+
+  .ayat-nav-btn.gold {
+    background: var(--gold-gradient);
+    border-color: var(--gold);
+    color: var(--dark);
+  }
+
+  .arabic-text {
+    font-family: var(--font-arabic);
+    font-size: var(--arabic-font-size);
+    text-align: right;
+    direction: rtl;
+    padding: 0.5rem;
+    background: var(--light-green);
+    border-radius: var(--rounded);
+    margin: 0.2rem 0;
+    line-height: 2.2;
+    word-wrap: break-word;
+  }
+
   /* Search Highlight */
   .search-highlight {
     background: var(--gold);
@@ -1323,140 +1363,24 @@
 
   .search-result-item {
     background: var(--white);
-    padding: 0.4rem 0.6rem;
-    margin: 0.25rem 0;
+    padding: 0.3rem 0.5rem;
+    margin: 0.2rem 0;
     border-radius: var(--rounded);
     border-left: 3px solid var(--gold);
     box-shadow: var(--shadow-sm);
-    transition: var(--transition);
   }
 
-  .search-result-item:hover {
-    box-shadow: var(--shadow);
-    transform: translateX(3px);
-  }
-
-  .search-result-sura {
+  .search-result-item .search-result-sura {
     font-weight: 600;
     color: var(--primary);
     margin-bottom: 0.05rem;
-    font-size: 0.8rem;
+    font-size: 0.75rem;
   }
 
-  .search-result-text {
+  .search-result-item .search-result-text {
     color: var(--text);
     line-height: 1.6;
-    font-size: 0.8rem;
-  }
-
-  /* ============================================
-     TAFSIR MODAL
-     ============================================ */
-  .tafsir-modal-overlay {
-    display: none;
-    position: fixed;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.6);
-    backdrop-filter: blur(8px);
-    z-index: 9999;
-    justify-content: center;
-    align-items: center;
-    padding: 1.2rem;
-  }
-
-  .tafsir-modal-overlay.active {
-    display: flex;
-    animation: fadeIn 0.3s ease;
-  }
-
-  .tafsir-modal-content {
-    background: var(--white);
-    border-radius: var(--rounded-xl);
-    max-width: 700px;
-    width: 100%;
-    max-height: 85vh;
-    display: flex;
-    flex-direction: column;
-    box-shadow: var(--shadow-large);
-    animation: scaleIn 0.3s ease;
-    overflow: hidden;
-  }
-
-  .tafsir-modal-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0.6rem 1rem;
-    background: var(--header-gradient);
-    color: white;
-  }
-
-  .tafsir-modal-header h3 {
-    color: white;
-    font-size: 0.95rem;
-    margin: 0;
-  }
-
-  .tafsir-modal-header .close-modal {
-    background: rgba(255,255,255,0.15);
-    border: none;
-    color: white;
-    cursor: pointer;
-    font-size: 1rem;
-    padding: 0.1rem 0.4rem;
-    border-radius: var(--rounded);
-    transition: var(--transition);
-  }
-
-  .tafsir-modal-header .close-modal:hover {
-    background: rgba(255,255,255,0.3);
-    transform: rotate(90deg);
-  }
-
-  .tafsir-modal-body {
-    padding: 0.8rem;
-    overflow-y: auto;
-    flex: 1;
-    line-height: 1.8;
-    color: var(--text);
-  }
-
-  .tafsir-modal-body .verse-arabic {
-    font-size: 1.1rem;
-    text-align: right;
-    padding: 0.6rem;
-    background: var(--light-green);
-    border-radius: var(--rounded);
-    border-right: 4px solid var(--gold);
-    font-family: var(--font-arabic);
-    direction: rtl;
-    line-height: 2;
-    margin-bottom: 0.6rem;
-  }
-
-  .tafsir-modal-body .verse-translation {
-    padding: 0.4rem 0.6rem;
-    background: #f8f9fa;
-    border-radius: var(--rounded);
-    border-left: 4px solid var(--primary);
-    margin-bottom: 0.6rem;
-  }
-
-  .tafsir-modal-body .tafsir-text {
-    padding: 0.6rem;
-    background: #fffde7;
-    border-radius: var(--rounded);
-    border-left: 4px solid var(--gold);
-    line-height: 1.8;
-  }
-
-  .tafsir-modal-body .tafsir-source {
-    margin-top: 0.6rem;
-    font-style: italic;
-    color: var(--gray-dark);
-    font-size: 0.7rem;
-    border-top: 1px solid var(--gray-medium);
-    padding-top: 0.6rem;
+    font-size: 0.75rem;
   }
 
   /* ============================================
@@ -1479,10 +1403,10 @@
 
   .settings-panel-content {
     background: var(--white);
-    width: 400px;
+    width: 380px;
     max-width: 92vw;
     height: 100vh;
-    padding: 1.2rem;
+    padding: 1rem;
     overflow-y: auto;
     animation: slideInRight 0.3s ease;
   }
@@ -1496,13 +1420,13 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 1rem;
-    padding-bottom: 0.6rem;
+    margin-bottom: 0.8rem;
+    padding-bottom: 0.5rem;
     border-bottom: 2px solid var(--gray-medium);
   }
 
   .settings-panel-content .settings-header h2 {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     color: var(--primary);
     margin: 0;
   }
@@ -1510,11 +1434,11 @@
   .settings-panel-content .settings-header .close-settings {
     background: none;
     border: none;
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     cursor: pointer;
     color: var(--gray-dark);
     transition: var(--transition);
-    padding: 0.2rem;
+    padding: 0.1rem;
   }
 
   .settings-panel-content .settings-header .close-settings:hover {
@@ -1523,76 +1447,62 @@
   }
 
   .settings-panel-content .setting-group {
-    margin-bottom: 1rem;
+    margin-bottom: 0.8rem;
   }
 
   .settings-panel-content .setting-group label {
     display: block;
     font-weight: 600;
     color: var(--primary);
-    margin-bottom: 0.15rem;
-    font-size: 0.9rem;
+    margin-bottom: 0.1rem;
+    font-size: 0.8rem;
   }
 
   .settings-panel-content .setting-group .range-container {
     display: flex;
     align-items: center;
-    gap: 0.6rem;
+    gap: 0.5rem;
   }
 
   .settings-panel-content .setting-group input[type="range"] {
     flex: 1;
-    height: 5px;
+    height: 4px;
     -webkit-appearance: none;
     appearance: none;
     background: var(--gray-medium);
     border-radius: 3px;
     outline: none;
-    transition: var(--transition);
   }
 
   .settings-panel-content .setting-group input[type="range"]::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
-    width: 16px;
-    height: 16px;
+    width: 14px;
+    height: 14px;
     border-radius: 50%;
     background: var(--gold-gradient);
     cursor: pointer;
     box-shadow: var(--shadow-sm);
   }
 
-  .settings-panel-content .setting-group input[type="range"]::-webkit-slider-thumb:hover {
-    transform: scale(1.1);
-  }
-
   .settings-panel-content .setting-group .range-value {
-    min-width: 40px;
+    min-width: 35px;
     text-align: center;
     font-weight: 700;
     color: var(--primary);
-    font-size: 0.95rem;
+    font-size: 0.85rem;
     background: var(--light-green);
-    padding: 0.1rem 0.4rem;
+    padding: 0.05rem 0.3rem;
     border-radius: var(--rounded);
-  }
-
-  .settings-panel-content .setting-group .range-labels {
-    display: flex;
-    justify-content: space-between;
-    font-size: 0.6rem;
-    color: var(--gray-dark);
-    margin-top: 0.05rem;
   }
 
   .settings-panel-content .setting-group select {
     width: 100%;
-    padding: 0.35rem 0.5rem;
+    padding: 0.3rem 0.4rem;
     border: 2px solid var(--gray-medium);
     border-radius: var(--rounded);
     font-family: var(--font-ui);
-    font-size: 0.85rem;
-    transition: var(--transition);
+    font-size: 0.8rem;
     background: var(--white);
     color: var(--text);
   }
@@ -1603,17 +1513,10 @@
     box-shadow: 0 0 0 3px rgba(26, 71, 42, 0.08);
   }
 
-  .settings-panel-content .setting-group .setting-desc {
-    font-size: 0.65rem;
-    color: var(--gray-dark);
-    margin-top: 0.1rem;
-    line-height: 1.4;
-  }
-
   .settings-panel-content .setting-group .checkbox-group {
     display: flex;
     align-items: center;
-    gap: 0.4rem;
+    gap: 0.3rem;
   }
 
   .settings-panel-content .setting-group .checkbox-group input[type="checkbox"] {
@@ -1626,18 +1529,19 @@
   .settings-panel-content .setting-group .checkbox-group label {
     margin-bottom: 0;
     cursor: pointer;
+    font-size: 0.8rem;
   }
 
   .settings-panel-content .btn-reset {
     width: 100%;
-    padding: 0.5rem;
+    padding: 0.4rem;
     background: var(--primary);
     color: var(--white);
     border: none;
     border-radius: var(--rounded);
     font-weight: 600;
     font-family: var(--font-ui);
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     cursor: pointer;
     transition: var(--transition);
   }
@@ -1667,10 +1571,10 @@
 
   .sura-panel-content {
     background: var(--white);
-    width: 350px;
+    width: 340px;
     max-width: 90vw;
     height: 100vh;
-    padding: 1rem;
+    padding: 0.8rem;
     overflow-y: auto;
     animation: slideInLeft 0.3s ease;
   }
@@ -1684,13 +1588,13 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 0.6rem;
-    padding-bottom: 0.6rem;
+    margin-bottom: 0.5rem;
+    padding-bottom: 0.5rem;
     border-bottom: 2px solid var(--gray-medium);
   }
 
   .sura-panel-content .sura-header h2 {
-    font-size: 1.1rem;
+    font-size: 1rem;
     color: var(--primary);
     margin: 0;
   }
@@ -1702,7 +1606,7 @@
     cursor: pointer;
     color: var(--gray-dark);
     transition: var(--transition);
-    padding: 0.2rem;
+    padding: 0.1rem;
   }
 
   .sura-panel-content .sura-header .close-sura:hover {
@@ -1712,15 +1616,14 @@
 
   .sura-panel-content .sura-search {
     width: 100%;
-    padding: 0.35rem 0.6rem;
+    padding: 0.3rem 0.5rem;
     border: 2px solid var(--gray-medium);
     border-radius: var(--rounded-full);
     font-family: var(--font-ui);
-    font-size: 0.8rem;
-    transition: var(--transition);
+    font-size: 0.75rem;
     background: var(--white);
     color: var(--text);
-    margin-bottom: 0.6rem;
+    margin-bottom: 0.5rem;
   }
 
   .sura-panel-content .sura-search:focus {
@@ -1731,21 +1634,21 @@
 
   .sura-panel-content .sura-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(55px, 1fr));
-    gap: 0.25rem;
+    grid-template-columns: repeat(auto-fill, minmax(50px, 1fr));
+    gap: 0.2rem;
   }
 
   .sura-panel-content .sura-grid .sura-item {
     background: var(--light-green);
     border: 2px solid transparent;
     border-radius: var(--rounded);
-    padding: 0.25rem 0.1rem;
+    padding: 0.2rem 0.05rem;
     text-align: center;
     cursor: pointer;
     transition: var(--transition);
     font-weight: 600;
     color: var(--primary);
-    font-size: 0.6rem;
+    font-size: 0.55rem;
     font-family: var(--font-ui);
   }
 
@@ -1759,7 +1662,7 @@
   .sura-panel-content .sura-grid .sura-item small {
     display: block;
     font-weight: 400;
-    font-size: 0.45rem;
+    font-size: 0.4rem;
     opacity: 0.6;
     margin-top: 1px;
   }
@@ -1773,82 +1676,44 @@
   }
 
   @keyframes fadeInUp {
-    from {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
   }
 
   @keyframes scaleIn {
-    from {
-      opacity: 0;
-      transform: scale(0.95);
-    }
-    to {
-      opacity: 1;
-      transform: scale(1);
-    }
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
   }
 
   /* ============================================
      RESPONSIVE DESIGN
      ============================================ */
   @media (max-width: 768px) {
-    .chatbot-header-premium { padding: 0.3rem 0.6rem; min-height: 44px; }
-    .header-brand .brand-text { font-size: 0.85rem; }
-    .control-btn { font-size: 0.55rem; padding: 0.15rem 0.4rem; }
-    .digital-clock { font-size: 0.6rem; min-width: 60px; padding: 0.1rem 0.3rem; }
-    .digital-clock .clock-time { font-size: 0.7rem; }
-    .chat-body-main { padding: 0.4rem 0.6rem; }
-    .chat-input-area { padding: 0.3rem 0.6rem; min-height: 42px; }
-    .input-btn { font-size: 0.65rem; padding: 0.25rem 0.5rem; min-height: 28px; }
-    .welcome-section h1 { font-size: 1.6rem; }
-    .welcome-section p { font-size: 0.9rem; }
-    .quick-actions-grid { grid-template-columns: repeat(auto-fit, minmax(85px, 1fr)); gap: 0.25rem; }
-    .quick-action-premium { padding: 0.3rem 0.4rem; font-size: 0.55rem; }
-    .message { font-size: 0.8rem; padding: 0.4rem 0.6rem; max-width: 95%; }
-    .book-grid { grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); }
-    .settings-panel-content { width: 100%; max-width: 100%; padding: 0.6rem; }
-    .sura-panel-content { width: 100%; max-width: 100%; padding: 0.6rem; }
+    .chatbot-header-premium { padding: 0.25rem 0.5rem; min-height: 40px; }
+    .header-brand .brand-text { font-size: 0.75rem; }
+    .control-btn { font-size: 0.5rem; padding: 0.1rem 0.3rem; }
+    .digital-clock { font-size: 0.5rem; min-width: 55px; padding: 0.05rem 0.2rem; }
+    .digital-clock .clock-time { font-size: 0.65rem; }
+    .chat-body-main { padding: 0.3rem 0.5rem; }
+    .chat-input-area { padding: 0.25rem 0.5rem; min-height: 38px; }
+    .input-btn { font-size: 0.6rem; padding: 0.2rem 0.4rem; min-height: 24px; }
+    .welcome-section h1 { font-size: 1.4rem; }
+    .quick-actions-grid { grid-template-columns: repeat(auto-fit, minmax(80px, 1fr)); gap: 0.2rem; }
+    .quick-action-premium { padding: 0.25rem 0.3rem; font-size: 0.5rem; }
+    .book-grid { grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); }
     .pdf-viewer-content { width: 98%; max-height: 95vh; }
+    .pdf-viewer-body iframe { min-height: 350px; }
   }
 
   @media (max-width: 480px) {
-    .header-brand .brand-text { font-size: 0.7rem; }
-    .header-brand .brand-icon { font-size: 1rem; }
-    .control-btn { font-size: 0.5rem; padding: 0.1rem 0.3rem; }
-    .digital-clock { font-size: 0.5rem; min-width: 50px; padding: 0.1rem 0.2rem; }
-    .digital-clock .clock-time { font-size: 0.6rem; }
-    .welcome-section h1 { font-size: 1.3rem; }
-    .quick-actions-grid { grid-template-columns: 1fr 1fr; gap: 0.15rem; }
-    .quick-action-premium { font-size: 0.5rem; padding: 0.2rem 0.3rem; }
-    .input-btn { font-size: 0.6rem; padding: 0.2rem 0.4rem; min-height: 24px; }
-    .book-grid { grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); }
-    .settings-panel-content, .sura-panel-content { padding: 0.4rem; }
-  }
-
-  /* High Contrast Mode */
-  @media (prefers-contrast: high) {
-    :root {
-      --primary: #000000;
-      --gold: #ffd700;
-      --text: #000000;
-      --light-bg: #ffffff;
-    }
-    .chatbot-header-premium { border-bottom: 3px solid #000; }
-  }
-
-  /* Reduced Motion */
-  @media (prefers-reduced-motion: reduce) {
-    * {
-      animation-duration: 0.01ms !important;
-      animation-iteration-count: 1 !important;
-      transition-duration: 0.01ms !important;
-    }
+    .header-brand .brand-text { font-size: 0.65rem; }
+    .header-brand .brand-icon { font-size: 0.9rem; }
+    .control-btn { font-size: 0.45rem; padding: 0.05rem 0.25rem; }
+    .digital-clock { font-size: 0.45rem; min-width: 45px; }
+    .welcome-section h1 { font-size: 1.2rem; }
+    .quick-actions-grid { grid-template-columns: 1fr 1fr; gap: 0.1rem; }
+    .quick-action-premium { font-size: 0.45rem; padding: 0.15rem 0.2rem; }
+    .book-grid { grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); }
   }
   ]]></b:skin>
 </head>
@@ -1893,15 +1758,11 @@
       <b:includable id='aboutPostAuthor'>
   <div class='author-name'>
     <a class='g-profile' expr:href='data:post.author.profileUrl' rel='author' title='author profile'>
-      <span>
-        <data:post.author.name/>
-      </span>
+      <span><data:post.author.name/></span>
     </a>
   </div>
   <div>
-    <span class='author-desc'>
-      <data:post.author.aboutMe/>
-    </span>
+    <span class='author-desc'><data:post.author.aboutMe/></span>
   </div>
 </b:includable>
       <b:includable id='addComments'>
@@ -1976,7 +1837,6 @@
       <b:includable id='commentItem' var='comment'>
   <div class='comment' expr:id='&quot;c&quot; + data:comment.id'>
     <b:include cond='data:blog.enabledCommentProfileImages' name='commentAuthorAvatar'/>
-
     <div class='comment-block'>
       <div class='comment-author'>
         <b:if cond='data:comment.authorUrl'>
@@ -2022,39 +1882,23 @@
   <section expr:class='&quot;comments&quot; + (data:post.embedCommentForm ? &quot; embed&quot; : &quot;&quot;)' expr:data-num-comments='data:post.numberOfComments' id='comments'>
     <a name='comments'/>
     <b:if cond='data:post.allowComments'>
-
       <b:include name='commentsTitle'/>
-
       <div expr:id='data:widget.instanceId + &quot;_comments-block-wrapper&quot;'>
         <b:include cond='data:post.comments' data='post.comments' name='commentList'/>
       </div>
-
       <b:if cond='data:post.commentPagingRequired'>
         <div class='paging-control-container'>
           <b:if cond='data:post.hasOlderLinks'>
-            <a expr:class='data:post.oldLinkClass' expr:href='data:post.oldestLinkUrl'>
-              <data:messages.oldest/>
-            </a>
-            <a expr:class='data:post.oldLinkClass' expr:href='data:post.olderLinkUrl'>
-              <data:messages.older/>
-            </a>
+            <a expr:class='data:post.oldLinkClass' expr:href='data:post.oldestLinkUrl'><data:messages.oldest/></a>
+            <a expr:class='data:post.oldLinkClass' expr:href='data:post.olderLinkUrl'><data:messages.older/></a>
           </b:if>
-
-          <span class='comment-range-text'>
-            <data:post.commentRangeText/>
-          </span>
-
+          <span class='comment-range-text'><data:post.commentRangeText/></span>
           <b:if cond='data:post.hasNewerLinks'>
-            <a expr:class='data:post.newLinkClass' expr:href='data:post.newerLinkUrl'>
-              <data:messages.newer/>
-            </a>
-            <a expr:class='data:post.newLinkClass' expr:href='data:post.newestLinkUrl'>
-              <data:messages.newest/>
-            </a>
+            <a expr:class='data:post.newLinkClass' expr:href='data:post.newerLinkUrl'><data:messages.newer/></a>
+            <a expr:class='data:post.newLinkClass' expr:href='data:post.newestLinkUrl'><data:messages.newest/></a>
           </b:if>
         </div>
       </b:if>
-
       <div class='footer'>
         <b:if cond='data:post.embedCommentForm'>
           <b:if cond='data:post.allowNewComments'>
@@ -2071,8 +1915,7 @@
     </b:if>
     <b:if cond='data:showCmtPopup'>
       <div id='comment-popup'>
-        <iframe allowtransparency='allowtransparency' frameborder='0' id='comment-actions' name='comment-actions' scrolling='no'>
-        </iframe>
+        <iframe allowtransparency='allowtransparency' frameborder='0' id='comment-actions' name='comment-actions' scrolling='no'></iframe>
       </div>
     </b:if>
   </section>
@@ -2089,7 +1932,7 @@
   </a>
 </b:includable>
       <b:includable id='commentsLinkIframe'>
-  <!-- G+ comments, no longer available. The includable is retained for backwards-compatibility. -->
+  <!-- G+ comments, no longer available -->
 </b:includable>
       <b:includable id='commentsTitle'>
   <h3 class='title'><data:messages.comments/></h3>
@@ -2098,13 +1941,10 @@
   <ins class='adsbygoogle' data-ad-format='auto' expr:data-ad-client='data:adClientId ?: data:blog.adsenseClientId' expr:data-ad-host='data:blog.adsenseHostId' expr:style='data:style ?: &quot;display: block;&quot;'>
     <b:attr cond='not data:blog.analytics4' expr:value='data:blog.analyticsAccountNumber' name='data-analytics-uacct'/>
   </ins>
-  <script>
-   (adsbygoogle = window.adsbygoogle || []).push({});
-  </script>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 </b:includable>
       <b:includable id='emailPostIcon'>
   <span class='byline post-icons'>
-    <!-- email post links -->
     <span class='item-action'>
       <a expr:href='data:post.emailPostUrl' expr:title='data:messages.emailPost'>
         <b:include data='{ iconClass: &quot;touch-icon sharing-icon&quot; }' name='emailIcon'/>
@@ -2118,13 +1958,13 @@
   </b:with>
 </b:includable>
       <b:includable id='feedLinks'>
-  <b:if cond='!data:view.isPost'> <!-- Blog feed links -->
+  <b:if cond='!data:view.isPost'>
     <b:if cond='data:feedLinks'>
       <div class='blog-feeds'>
         <b:include data='feedLinks' name='feedLinksBody'/>
       </div>
     </b:if>
-  <b:else/> <!--Post feed links -->
+  <b:else/>
     <div class='post-feeds'>
       <b:loop values='data:posts' var='post'>
         <b:if cond='data:post.allowComments and data:post.feedLinks'>
@@ -2169,17 +2009,14 @@
   </b:if>
 </b:includable>
       <b:includable id='homePageLink'>
-  <a class='home-link' expr:href='data:blog.homepageUrl'>
-    <data:messages.home/>
-  </a>
+  <a class='home-link' expr:href='data:blog.homepageUrl'><data:messages.home/></a>
 </b:includable>
       <b:includable id='iframeComments' var='post'>
-  <!-- G+ comments, no longer available. The includable is retained for backwards-compatibility. -->
+  <!-- G+ comments, no longer available -->
 </b:includable>
       <b:includable id='inlineAd' var='post'>
   <b:if cond='!data:view.isPreview'>
     <b:if cond='data:this.adCode or data:this.adClientId or data:blog.adsenseClientId'>
-      <!-- Ad -->
       <div class='inline-ad'>
         <b:if cond='data:this.adCode != &quot;&quot;'>
           <data:this.adCode/>
@@ -2216,9 +2053,7 @@
 </b:includable>
       <b:includable id='platformShare'>
   <a expr:class='&quot;goog-inline-block sharing-&quot; + data:platform.key' expr:data-url='data:originalUrl' expr:href='data:shareUrl + &quot;&amp;target=&quot; + data:platform.target' expr:onclick='data:onclick ? data:onclick : &quot;&quot;' expr:title='data:platform.shareMessage' target='_blank'>
-    <span class='share-button-link-text'>
-      <data:platform.shareMessage/>
-    </span>
+    <span class='share-button-link-text'><data:platform.shareMessage/></span>
   </a>
 </b:includable>
       <b:includable id='post' var='post'>
@@ -2237,9 +2072,7 @@
 </b:includable>
       <b:includable id='postAuthor'>
   <span class='byline post-author vcard'>
-    <span class='post-author-label'>
-      <data:byline.label/>
-    </span>
+    <span class='post-author-label'><data:byline.label/></span>
     <span class='fn'>
       <b:if cond='data:post.author.profileUrl'>
         <meta expr:content='data:post.author.profileUrl'/>
@@ -2253,7 +2086,6 @@
   </span>
 </b:includable>
       <b:includable id='postBody' var='post'>
-  <!-- If metaDescription is empty, use the post body as the schema.org description too, for G+/FB snippeting. -->
   <div class='post-body entry-content float-container' expr:id='&quot;post-body-&quot; + data:post.id'>
     <data:post.body/>
   </div>
@@ -2263,19 +2095,12 @@
 </b:includable>
       <b:includable id='postCommentsAndAd' var='post'>
   <article class='post-outer-container'>
-    <!-- Post title and body -->
     <div class='post-outer'>
       <b:include data='post' name='post'/>
     </div>
-
-    <!-- Comments -->
     <b:include cond='data:view.isSingleItem' data='post' name='commentPicker'/>
-
-    <!-- Show ad inside post container, after comments, if single item. -->
     <b:include cond='data:view.isSingleItem and data:post.includeAd' data='post' name='inlineAd'/>
   </article>
-
-  <!-- Show ad outside post container (between posts) for feed pages. -->
   <b:include cond='data:view.isMultipleItems and data:post.includeAd' data='post' name='inlineAd'/>
 </b:includable>
       <b:includable id='postCommentsLink'>
@@ -2319,9 +2144,7 @@
   <span class='byline post-labels'>
     <span class='byline-label'><data:byline.label/></span>
     <b:loop index='i' values='data:post.labels' var='label'>
-      <a expr:href='data:label.url' rel='tag'>
-        <data:label.name/>
-      </a>
+      <a expr:href='data:label.url' rel='tag'><data:label.name/></a>
     </b:loop>
   </span>
 </b:includable>
@@ -2368,13 +2191,12 @@
   </div>
 </b:includable>
       <b:includable id='postReactions'>
-  <!-- Reaction feature no longer available. The includable is retained for backwards-compatibility. -->
+  <!-- Reaction feature no longer available -->
 </b:includable>
       <b:includable id='postShareButtons'>
   <div class='byline post-share-buttons goog-inline-block'>
     <b:with value='data:sharingId ?: ((data:widget.instanceId ?: &quot;sharing&quot;) + &quot;-&quot; + (data:regionName ?: &quot;byline&quot;) + &quot;-&quot; + data:post.id)' var='sharingId'>
-      <!-- Note: 'sharingButtons' includable is from the default Sharing widget markup. -->
-      <b:include data='{                                                sharingId: data:sharingId,                                                originalUrl: data:post.url,                                                platforms: data:this.sharing.platforms,                                                shareUrl: data:post.shareUrl,                                                shareTitle: data:post.title,                                              }' name='sharingButtons'/>
+      <b:include data='{ sharingId: data:sharingId, originalUrl: data:post.url, platforms: data:this.sharing.platforms, shareUrl: data:post.shareUrl, shareTitle: data:post.title }' name='sharingButtons'/>
     </b:with>
   </div>
 </b:includable>
@@ -2431,9 +2253,7 @@
   <div class='share-buttons-container'>
     <ul aria-hidden='true' class='share-buttons hidden' expr:aria-label='data:messages.share.escaped' expr:id='&quot;sharing-popup-&quot; + data:sharingId' role='menu'>
       <b:loop values='(data:platforms ?: data:blog.sharing.platforms) filter (p =&gt; p.key not in {&quot;blogThis&quot;})' var='platform'>
-        <li>
-          <b:include name='sharingButton'/>
-        </li>
+        <li><b:include name='sharingButton'/></li>
       </b:loop>
       <li aria-hidden='true' class='hidden'>
         <b:include name='otherSharingButton'/>
@@ -2472,9 +2292,7 @@
       <b:includable id='threadedComments' var='post'>
   <section class='comments threaded' expr:data-embed='data:post.embedCommentForm' expr:data-num-comments='data:post.numberOfComments' id='comments'>
     <a name='comments'/>
-
     <b:include name='commentsTitle'/>
-
     <div class='comments-content'>
       <b:if cond='data:post.embedCommentForm'>
         <b:include data='post' name='threadedCommentJs'/>
@@ -2483,7 +2301,6 @@
          <data:post.commentHtml/>
       </div>
     </div>
-
     <p class='comment-footer'>
       <b:if cond='data:post.allowNewComments'>
         <b:include data='post' name='threadedCommentForm'/>
@@ -2494,23 +2311,19 @@
         <b:include data='post' name='manageComments'/>
       </b:if>
     </p>
-
     <b:if cond='data:showCmtPopup'>
       <div id='comment-popup'>
-        <iframe allowtransparency='allowtransparency' frameborder='0' id='comment-actions' name='comment-actions' scrolling='no'>
-        </iframe>
+        <iframe allowtransparency='allowtransparency' frameborder='0' id='comment-actions' name='comment-actions' scrolling='no'></iframe>
       </div>
     </b:if>
   </section>
 </b:includable>
       <b:includable id='tooltipCss'>
-  <!-- LINT.IfChange -->
   <style>
     .post-body a.b-tooltip-container {
       position: relative;
       display: inline-block;
     }
-
     .post-body a.b-tooltip-container .b-tooltip {
       display: block !important;
       position: absolute;
@@ -2522,7 +2335,6 @@
       z-index: 1;
       transition: opacity 0.2s ease-in-out;
     }
-
     .post-body a.b-tooltip-container .b-tooltip iframe {
       width: 200px;
       height: 198px;
@@ -2531,7 +2343,6 @@
       border-radius: 20px;
       box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, 0.2);
     }
-
     @media (hover: hover) {
       .post-body a.b-tooltip-container:hover .b-tooltip {
         visibility: visible;
@@ -2539,7 +2350,6 @@
       }
     }
   </style>
-  <!-- LINT.ThenChange(//depot/google3/java/com/google/blogger/b2/layouts/widgets/v2-style.css) -->
 </b:includable>
     </b:widget>
   </b:section>
@@ -2551,17 +2361,17 @@
     <header class='chatbot-header-premium'>
       <div class='header-brand'>
         <span class='brand-icon'>🕌</span>
-        <span class='brand-text'>ক&#2497;রআন <span>বট</span></span>
+        <span class='brand-text'>কুরআন <span>বট</span></span>
       </div>
       <div class='header-controls'>
         <div class='digital-clock' id='digital-clock'>
           <span class='clock-time' id='clock-time'>00:00:00</span>
           <span class='clock-am-pm' id='clock-am-pm'>AM</span>
         </div>
-        <button class='control-btn' id='home-btn' title='হোমে যান'>🏠 হ&#2507;ম</button>
-        <button class='control-btn' id='sura-panel-btn' title='সূরা তালিকা'>📖 স&#2498;র&#2494;</button>
-        <button class='control-btn' id='voice-btn' title='ভয়েস'>🎤 ভয&#2492;&#2503;স</button>
-        <button class='control-btn' id='settings-panel-btn' title='সেটিংস'>&#9881;&#65039; স&#2503;ট&#2495;&#2434;স</button>
+        <button class='control-btn' id='home-btn' title='হোমে যান'>🏠 হোম</button>
+        <button class='control-btn' id='sura-panel-btn' title='সূরা তালিকা'>📖 সূরা</button>
+        <button class='control-btn' id='voice-btn' title='ভয়েস'>🎤 ভয়েস</button>
+        <button class='control-btn' id='settings-panel-btn' title='সেটিংস'>⚙️ সেটিংস</button>
         <button class='control-btn' id='theme-toggle' title='থিম পরিবর্তন'>
           <span id='theme-icon'>🌙</span>
         </button>
@@ -2573,22 +2383,22 @@
       <!-- Welcome Section -->
       <div class='welcome-section' id='welcome-section'>
         <div class='welcome-icon'>🤲</div>
-        <h1>আসস&#2494;ল&#2494;ম&#2497; <span>আল&#2494;ইক&#2497;ম</span></h1>
-        <p>ক&#2497;রআন, ত&#2494;ফস&#2496;র, হ&#2494;দ&#2495;স, ব&#2509;লগ প&#2507;স&#2509;ট, প&#2495;ড&#2495;এফ বই ও ইসল&#2494;ম&#2495;ক ট&#2497;লস</p>
-        <span class='feature-badge'>&#10024; ১৬+ ফ&#2495;চ&#2494;র সম&#2499;দ&#2509;ধ</span>
+        <h1>আসসালামু <span>আলাইকুম</span></h1>
+        <p>কুরআন, তাফসীর, হাদিস, ব্লগ পোস্ট, পিডিএফ বই ও ইসলামিক টুলস</p>
+        <span class='feature-badge'>✨ ১৬+ ফিচার সমৃদ্ধ</span>
         <div class='data-status' id='data-status'/>
         
         <div class='quick-actions-grid'>
-          <button class='quick-action-premium primary' data-action='start'>💬 চ&#2509;য&#2494;ট</button>
-          <button class='quick-action-premium' data-action='popular'>&#11088; আয&#2492;&#2494;ত</button>
-          <button class='quick-action-premium' data-action='prayer'>🕌 সময&#2492;</button>
-          <button class='quick-action-premium' data-action='hadith'>📜 হ&#2494;দ&#2495;স</button>
-          <button class='quick-action-premium' data-action='blog'>📝 ব&#2509;লগ</button>
+          <button class='quick-action-premium primary' data-action='start'>💬 চ্যাট</button>
+          <button class='quick-action-premium' data-action='popular'>⭐ আয়াত</button>
+          <button class='quick-action-premium' data-action='prayer'>🕌 সময়</button>
+          <button class='quick-action-premium' data-action='hadith'>📜 হাদিস</button>
+          <button class='quick-action-premium' data-action='blog'>📝 ব্লগ</button>
           <button class='quick-action-premium' data-action='books'>📚 বই</button>
-          <button class='quick-action-premium' data-action='zakat'>💰 য&#2494;ক&#2494;ত</button>
-          <button class='quick-action-premium' data-action='quiz'>🧠 ক&#2497;ইজ</button>
-          <button class='quick-action-premium' data-action='knowledge'>📚 জ&#2509;ঞ&#2494;ন</button>
-          <button class='quick-action-premium' data-action='guide'>📖 গ&#2494;ইড</button>
+          <button class='quick-action-premium' data-action='zakat'>💰 যাকাত</button>
+          <button class='quick-action-premium' data-action='timer'>⏱️ টাইমার</button>
+          <button class='quick-action-premium' data-action='quiz'>🧠 কুইজ</button>
+          <button class='quick-action-premium' data-action='guide'>📖 গাইড</button>
         </div>
       </div>
       
@@ -2604,7 +2414,7 @@
       <div class='input-actions'>
         <button class='input-btn send' id='send-btn'>📤</button>
         <button class='input-btn secondary' id='tafsir-btn'>📖</button>
-        <button class='input-btn outline' id='clear-btn'>🗑&#65039;</button>
+        <button class='input-btn outline' id='clear-btn'>🗑️</button>
       </div>
     </div>
   </div>
@@ -2613,8 +2423,8 @@
   <div class='tafsir-modal-overlay' id='tafsir-modal'>
     <div class='tafsir-modal-content'>
       <div class='tafsir-modal-header'>
-        <h3 id='tafsir-modal-title'>ত&#2494;ফস&#2496;র</h3>
-        <button class='close-modal' id='close-tafsir-modal'>&#10005;</button>
+        <h3 id='tafsir-modal-title'>তাফসীর</h3>
+        <button class='close-modal' id='close-tafsir-modal'>✕</button>
       </div>
       <div class='tafsir-modal-body' id='tafsir-modal-body'/>
     </div>
@@ -2624,29 +2434,29 @@
   <div class='pdf-viewer-overlay' id='pdf-viewer'>
     <div class='pdf-viewer-content'>
       <div class='pdf-viewer-header'>
-        <h3 id='pdf-title'>প&#2495;ড&#2495;এফ বই</h3>
+        <h3 id='pdf-title'>পিডিএফ বই</h3>
         <div class='viewer-controls'>
           <button class='viewer-btn' id='pdf-buy-btn' title='বই কিনুন'>🛒</button>
           <button class='viewer-btn' id='pdf-share-btn' title='শেয়ার করুন'>📤</button>
-          <button class='viewer-btn' id='pdf-download-btn' title='ডাউনলোড'>&#11015;&#65039;</button>
-          <button class='viewer-btn' id='pdf-fullscreen-btn' title='পূর্ণ পর্দা'>&#9974;</button>
-          <button class='viewer-btn close' id='pdf-close-btn'>&#10005;</button>
+          <button class='viewer-btn' id='pdf-download-btn' title='ডাউনলোড'>⬇️</button>
+          <button class='viewer-btn' id='pdf-fullscreen-btn' title='পূর্ণ পর্দা'>⛶</button>
+          <button class='viewer-btn close' id='pdf-close-btn'>✕</button>
         </div>
       </div>
       <div class='pdf-viewer-body' id='pdf-viewer-body'>
         <div class='pdf-loading'>
           <div class='spinner'/>
-          <span>প&#2495;ড&#2495;এফ ল&#2507;ড হচ&#2509;ছ&#2503;...</span>
+          <span>পিডিএফ লোড হচ্ছে...</span>
         </div>
       </div>
       <div class='pdf-viewer-footer'>
-        <span class='page-info' id='pdf-page-info'>প&#2499;ষ&#2509;ঠ&#2494; ১ / ১</span>
+        <span class='page-info' id='pdf-page-info'>পৃষ্ঠা ১ / ১</span>
         <div class='page-controls'>
-          <button class='page-btn' id='pdf-prev-btn'>&#9664; আগ&#2503;</button>
-          <button class='page-btn' id='pdf-next-btn'>পর&#2503; &#9654;</button>
+          <button class='page-btn' id='pdf-prev-btn'>◀ আগে</button>
+          <button class='page-btn' id='pdf-next-btn'>পরে ▶</button>
         </div>
         <div class='zoom-controls'>
-          <button class='zoom-btn' id='pdf-zoom-out-btn'>🔍&#8722;</button>
+          <button class='zoom-btn' id='pdf-zoom-out-btn'>🔍−</button>
           <span class='zoom-label' id='pdf-zoom-label'>100%</span>
           <button class='zoom-btn' id='pdf-zoom-in-btn'>🔍+</button>
         </div>
@@ -2658,97 +2468,62 @@
   <div class='settings-panel-overlay' id='settings-panel'>
     <div class='settings-panel-content'>
       <div class='settings-header'>
-        <h2>&#9881;&#65039; স&#2503;ট&#2495;&#2434;স</h2>
-        <button class='close-settings' id='close-settings'>&#10005;</button>
+        <h2>⚙️ সেটিংস</h2>
+        <button class='close-settings' id='close-settings'>✕</button>
       </div>
       
-      <!-- Bengali Font Size -->
       <div class='setting-group'>
-        <label for='bengali-font-size'>ব&#2494;&#2434;ল&#2494; ফন&#2509;ট স&#2494;ইজ</label>
+        <label for='bengali-font-size'>বাংলা ফন্ট সাইজ</label>
         <div class='range-container'>
           <input id='bengali-font-size' max='40' min='10' type='range' value='18'/>
           <span class='range-value' id='bengali-font-size-value'>18px</span>
         </div>
-        <div class='range-labels'>
-          <span>ছ&#2507;ট</span>
-          <span>বড&#2492;</span>
-        </div>
-        <div class='setting-desc'>ব&#2494;&#2434;ল&#2494; ট&#2503;ক&#2509;সট&#2503;র ফন&#2509;ট স&#2494;ইজ</div>
       </div>
       
-      <!-- Arabic Font Size -->
       <div class='setting-group'>
-        <label for='arabic-font-size'>আরব&#2495; ফন&#2509;ট স&#2494;ইজ</label>
+        <label for='arabic-font-size'>আরবি ফন্ট সাইজ</label>
         <div class='range-container'>
-          <input id='arabic-font-size' max='50' min='12' type='range' value='20'/>
-          <span class='range-value' id='arabic-font-size-value'>20px</span>
+          <input id='arabic-font-size' max='50' min='12' type='range' value='22'/>
+          <span class='range-value' id='arabic-font-size-value'>22px</span>
         </div>
-        <div class='range-labels'>
-          <span>ছ&#2507;ট</span>
-          <span>বড&#2492;</span>
-        </div>
-        <div class='setting-desc'>আরব&#2495; ট&#2503;ক&#2509;সট&#2503;র ফন&#2509;ট স&#2494;ইজ</div>
       </div>
       
-      <!-- Bengali Font Family -->
       <div class='setting-group'>
-        <label for='bengali-font-family'>ব&#2494;&#2434;ল&#2494; ফন&#2509;ট</label>
+        <label for='bengali-font-family'>বাংলা ফন্ট</label>
         <select id='bengali-font-family'>
-          <option value='Kalpurush, Hind Siliguri, sans-serif'>ক&#2494;লপ&#2497;র&#2497;ষ</option>
-          <option value='Hind Siliguri, sans-serif'>হ&#2495;ন&#2509;দ স&#2495;ল&#2495;গ&#2497;ড&#2492;&#2495;</option>
-          <option value='SolaimanLipi, sans-serif'>স&#2507;ল&#2494;ইম&#2494;ন ল&#2495;প&#2495;</option>
-          <option value='Siyam Rupali, sans-serif'>স&#2495;য়&#2494;ম র&#2497;প&#2494;ল&#2495;</option>
-          <option value='Noto Sans Bengali, sans-serif'>ন&#2507;ট&#2507; স&#2494;ন&#2509;স</option>
+          <option value='Kalpurush, Hind Siliguri, sans-serif'>কালপুরুষ</option>
+          <option value='Hind Siliguri, sans-serif'>হিন্দ সিলিগুড়ি</option>
+          <option value='SolaimanLipi, sans-serif'>সোলাইমান লিপি</option>
+          <option value='Siyam Rupali, sans-serif'>সিয়াম রুপালি</option>
         </select>
-        <div class='setting-desc'>ব&#2494;&#2434;ল&#2494; ট&#2503;ক&#2509;সট&#2503;র ফন&#2509;ট শ&#2504;ল&#2496;</div>
       </div>
       
-      <!-- Arabic Font Family -->
       <div class='setting-group'>
-        <label for='arabic-font-family'>আরব&#2495; ফন&#2509;ট</label>
+        <label for='arabic-font-family'>আরবি ফন্ট</label>
         <select id='arabic-font-family'>
-          <option value='Amiri, Scheherazade New, serif'>আম&#2495;র&#2495;</option>
-          <option value='Scheherazade New, serif'>শ&#2503;হ&#2503;র&#2494;জ&#2494;দ ন&#2495;উ</option>
-          <option value='Lateef, serif'>ল&#2494;ত&#2495;ফ</option>
-          <option value='KFGQPC Uthman Taha Naskh, serif'>উসম&#2494;ন&#2495; ন&#2494;সখ</option>
-          <option value='Noto Naskh Arabic, serif'>ন&#2507;ট&#2507; ন&#2494;সখ</option>
+          <option value='Amiri, Scheherazade New, serif'>আমিরি</option>
+          <option value='Scheherazade New, serif'>শেহেরাজাদে</option>
+          <option value='Lateef, serif'>লতিফ</option>
+          <option value='KFGQPC Uthman Taha Naskh, serif'>উসমানি নাসখ</option>
         </select>
-        <div class='setting-desc'>আরব&#2495; ট&#2503;ক&#2509;সট&#2503;র ফন&#2509;ট শ&#2504;ল&#2496;</div>
       </div>
       
-      <!-- Audio Speed -->
       <div class='setting-group'>
-        <label for='audio-speed'>অড&#2495;ও স&#2509;প&#2495;ড</label>
+        <label for='audio-speed'>অডিও স্পিড</label>
         <div class='range-container'>
           <input id='audio-speed' max='2' min='0.5' step='0.1' type='range' value='1'/>
           <span class='range-value' id='audio-speed-value'>1.0x</span>
         </div>
-        <div class='range-labels'>
-          <span>ধ&#2496;র&#2503;</span>
-          <span>দ&#2509;র&#2497;ত</span>
-        </div>
-        <div class='setting-desc'>ক&#2497;রআন ত&#2495;ল&#2494;ওয&#2492;&#2494;ত&#2503;র গত&#2495;</div>
       </div>
       
-      <!-- Auto Play Audio -->
       <div class='setting-group'>
         <div class='checkbox-group'>
           <input id='auto-play-audio' type='checkbox'/>
-          <label for='auto-play-audio'>অট&#2507; অড&#2495;ও প&#2509;ল&#2503;</label>
+          <label for='auto-play-audio'>অটো অডিও প্লে</label>
         </div>
-        <div class='setting-desc'>আয&#2492;&#2494;ত দ&#2503;খ&#2494;র স&#2494;থ&#2503; অট&#2507; অড&#2495;ও চ&#2494;ল&#2494;ব&#2503;</div>
       </div>
       
-      <!-- Show Transliteration -->
-      <div class='setting-group'>
-        <div class='checkbox-group'>
-          <input id='show-transliteration' type='checkbox'/>
-          <label for='show-transliteration'>ট&#2509;র&#2494;ন&#2509;সল&#2495;ট&#2494;র&#2503;শন দ&#2503;খ&#2494;ন</label>
-        </div>
-        <div class='setting-desc'>আরব&#2495; ট&#2503;ক&#2509;সট&#2503;র ই&#2434;র&#2503;জ&#2495; উচ&#2509;চ&#2494;রণ</div>
-      </div>
-      
-      <button class='btn-reset' id='reset-settings'>🔄 ড&#2495;ফল&#2509;ট স&#2503;ট&#2495;&#2434;স</button>
+      <button class='btn-reset' id='reset-settings'>🔄 ডিফল্ট সেটিংস</button>
     </div>
   </div>
 
@@ -2756,8 +2531,8 @@
   <div class='sura-panel-overlay' id='sura-panel'>
     <div class='sura-panel-content'>
       <div class='sura-header'>
-        <h2>📖 স&#2498;র&#2494; সম&#2498;হ</h2>
-        <button class='close-sura' id='close-sura'>&#10005;</button>
+        <h2>📖 সূরা সমূহ</h2>
+        <button class='close-sura' id='close-sura'>✕</button>
       </div>
       <input class='sura-search' id='sura-search' placeholder='সূরা খুঁজুন...' type='text'/>
       <div class='sura-grid' id='sura-grid'/>
@@ -2768,8 +2543,8 @@
   <script>
   //<![CDATA[
   // ============================================================
-  // COMPLETE CHATBOT APPLICATION - WITH ZAKAT & FIXED FULLSCREEN
-  // Version 5.2
+  // COMPLETE CHATBOT - VERSION 6.1
+  // Fixed Arabic Data Loading & Dynamic Book Commands
   // ============================================================
   
   (function() {
@@ -2781,6 +2556,7 @@
       arabicData: [],
       tafsirData: {},
       blogPosts: [],
+      blogBooks: [],
       hadithData: [],
       knowledgeBase: [],
       currentAya: null,
@@ -2790,15 +2566,13 @@
       isVoiceActive: false,
       recognition: null,
       audioSettings: { speed: 1, autoPlay: false },
-      displaySettings: { showTransliteration: false },
-      fontSettings: { bengaliSize: 18, arabicSize: 20, bengaliFont: 'Kalpurush, Hind Siliguri, sans-serif', arabicFont: 'Amiri, Scheherazade New, serif' },
+      fontSettings: { bengaliSize: 18, arabicSize: 22, bengaliFont: 'Kalpurush, Hind Siliguri, sans-serif', arabicFont: 'Amiri, Scheherazade New, serif' },
       isDark: false,
       quizState: null,
       expandedPosts: {},
       dataLoaded: false,
       welcomeVisible: true,
       knowledgeIndex: 0,
-      hadithIndex: 0,
       isHomeScreen: false,
       pdfDoc: null,
       pdfPageNum: 1,
@@ -2806,14 +2580,55 @@
       pdfScale: 1.2,
       currentPdfUrl: '',
       currentBookData: null,
-      isPdfFullscreen: false
+      isPdfFullscreen: false,
+      booksLoaded: false,
+      dataLoadAttempts: 0,
+      timerRunning: false,
+      timerSeconds: 0,
+      timerInterval: null,
+      activeCategory: 'সব',
+      readingStartTime: null,
+      readingTotalTime: 0
     };
 
-    // ==================== BOOK DATA (Google Drive) ====================
-    var bookData = [
+    // ==================== HARDCODED QURAN DATA ====================
+    var fallbackQuranData = [
+      { sura: '1', aya: '1', text: 'সব প্রশংসা আল্লাহর, যিনি সকল সৃষ্টির পালনকর্তা।' },
+      { sura: '1', aya: '2', text: 'যিনি পরম করুণাময়, অতি দয়ালু।' },
+      { sura: '1', aya: '3', text: 'যিনি বিচার দিনের মালিক।' },
+      { sura: '1', aya: '4', text: 'আমরা শুধু আপনারই ইবাদত করি এবং শুধু আপনারই সাহায্য প্রার্থনা করি।' },
+      { sura: '1', aya: '5', text: 'আমাদেরকে সরল পথ দেখান।' },
+      { sura: '1', aya: '6', text: 'সেই পথ, যাদেরকে আপনি অনুগ্রহ করেছেন।' },
+      { sura: '1', aya: '7', text: 'তাদের পথ নয়, যাদের প্রতি আপনার ক্রোধ হয়েছে এবং যারা পথভ্রষ্ট হয়েছে।' },
+      { sura: '2', aya: '255', text: 'আল্লাহ ছাড়া কোন উপাস্য নেই, তিনি চিরঞ্জীব, চিরস্থায়ী। তাঁর নিদ্রা বা তন্দ্রা আসে না। আকাশমণ্ডলী ও পৃথিবীর সব কিছু তাঁরই। কে এমন আছে যে তাঁর অনুমতি ছাড়া তাঁর কাছে সুপারিশ করবে? তিনি জানেন যা তাদের সামনে এবং যা তাদের পিছনে। তারা তাঁর জ্ঞান থেকে শুধু তাই জানতে পারে, যা তিনি চান। তাঁর আসন আসমানসমূহ ও পৃথিবীকে পরিবেষ্টিত করে আছে। আর এগুলোর সংরক্ষণ তাঁকে ক্লান্ত করে না। তিনি সর্বোচ্চ ও মহামহিম।' },
+      { sura: '112', aya: '1', text: 'বলুন, তিনি আল্লাহ, এক।' },
+      { sura: '112', aya: '2', text: 'আল্লাহ অমুখাপেক্ষী।' },
+      { sura: '112', aya: '3', text: 'তিনি কাউকে জন্ম দেননি এবং তাঁকেও জন্ম দেওয়া হয়নি।' },
+      { sura: '112', aya: '4', text: 'আর তাঁর সমতুল্য কেউ নেই।' }
+    ];
+
+    // Hardcoded Arabic data for fallback
+    var fallbackArabicData = [
+      { sura: '1', VerseIDAr: '1', ayat: 'بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ' },
+      { sura: '1', VerseIDAr: '2', ayat: 'الْحَمْدُ لِلَّهِ رَبِّ الْعَالَمِينَ' },
+      { sura: '1', VerseIDAr: '3', ayat: 'الرَّحْمَٰنِ الرَّحِيمِ' },
+      { sura: '1', VerseIDAr: '4', ayat: 'مَالِكِ يَوْمِ الدِّينِ' },
+      { sura: '1', VerseIDAr: '5', ayat: 'إِيَّاكَ نَعْبُدُ وَإِيَّاكَ نَسْتَعِينُ' },
+      { sura: '1', VerseIDAr: '6', ayat: 'اهْدِنَا الصِّرَاطَ الْمُسْتَقِيمَ' },
+      { sura: '1', VerseIDAr: '7', ayat: 'صِرَاطَ الَّذِينَ أَنْعَمْتَ عَلَيْهِمْ غَيْرِ الْمَغْضُوبِ عَلَيْهِمْ وَلَا الضَّالِّينَ' },
+      { sura: '2', VerseIDAr: '255', ayat: 'اللَّهُ لَا إِلَٰهَ إِلَّا هُوَ الْحَيُّ الْقَيُّومُ ۚ لَا تَأْخُذُهُ سِنَةٌ وَلَا نَوْمٌ ۚ لَهُ مَا فِي السَّمَاوَاتِ وَمَا فِي الْأَرْضِ ۗ مَنْ ذَا الَّذِي يَشْفَعُ عِنْدَهُ إِلَّا بِإِذْنِهِ ۚ يَعْلَمُ مَا بَيْنَ أَيْدِيهِمْ وَمَا خَلْفَهُمْ ۖ وَلَا يُحِيطُونَ بِشَيْءٍ مِنْ عِلْمِهِ إِلَّا بِمَا شَاءَ ۚ وَسِعَ كُرْسِيُّهُ السَّمَاوَاتِ وَالْأَرْضَ ۖ وَلَا يَئُودُهُ حِفْظُهُمَا ۚ وَهُوَ الْعَلِيُّ الْعَظِيمُ' },
+      { sura: '112', VerseIDAr: '1', ayat: 'قُلْ هُوَ اللَّهُ أَحَدٌ' },
+      { sura: '112', VerseIDAr: '2', ayat: 'اللَّهُ الصَّمَدُ' },
+      { sura: '112', VerseIDAr: '3', ayat: 'لَمْ يَلِدْ وَلَمْ يُولَدْ' },
+      { sura: '112', VerseIDAr: '4', ayat: 'وَلَمْ يَكُنْ لَهُ كُفُوًا أَحَدٌ' }
+    ];
+
+    // ==================== BOOK DATA ====================
+    var hardcodedBooks = [
       {
-        id: '1',
+        id: 'hc1',
         title: 'তাফসীর ইবনে কাসীর (১ম খণ্ড)',
+        titleEn: 'Tafsir Ibn Kathir Vol 1',
         author: 'ইবনে কাসীর',
         icon: '📖',
         driveId: '1ABC123_DEF456_GHI789',
@@ -2823,8 +2638,9 @@
         buyLink: 'https://rokomari.com/book/12345'
       },
       {
-        id: '2',
+        id: 'hc2',
         title: 'সহিহ বুখারী (সংক্ষিপ্ত)',
+        titleEn: 'Sahih Bukhari Summary',
         author: 'ইমাম বুখারী',
         icon: '📕',
         driveId: '2DEF456_GHI789_JKL012',
@@ -2834,8 +2650,9 @@
         buyLink: 'https://rokomari.com/book/23456'
       },
       {
-        id: '3',
+        id: 'hc3',
         title: 'কুরআনের বিজ্ঞান',
+        titleEn: 'Quran Science',
         author: 'ড. জাকির নায়েক',
         icon: '📘',
         driveId: '3GHI789_JKL012_MNO345',
@@ -2845,8 +2662,9 @@
         buyLink: 'https://rokomari.com/book/34567'
       },
       {
-        id: '4',
+        id: 'hc4',
         title: 'নামাজ শিক্ষা',
+        titleEn: 'Salah Learning',
         author: 'শাইখ মুহাম্মদ',
         icon: '📙',
         driveId: '4JKL012_MNO345_PQR678',
@@ -2856,8 +2674,9 @@
         buyLink: 'https://rokomari.com/book/45678'
       },
       {
-        id: '5',
+        id: 'hc5',
         title: 'রমজানের ফযিলত',
+        titleEn: 'Ramadan Virtues',
         author: 'আল্লামা ইউসুফ',
         icon: '📗',
         driveId: '5MNO345_PQR678_STU901',
@@ -2867,8 +2686,9 @@
         buyLink: 'https://rokomari.com/book/56789'
       },
       {
-        id: '6',
+        id: 'hc6',
         title: 'ইসলামের ইতিহাস',
+        titleEn: 'Islamic History',
         author: 'ড. খালিদ',
         icon: '📚',
         driveId: '6PQR678_STU901_VWX234',
@@ -2878,6 +2698,8 @@
         buyLink: 'https://rokomari.com/book/67890'
       }
     ];
+
+    var allBooks = [];
 
     // ==================== DOM REFS ====================
     var dom = {
@@ -2923,30 +2745,9 @@
       pdfShareBtn: document.getElementById('pdf-share-btn')
     };
 
-    // ==================== CLOCK FUNCTION ====================
-    function updateClock() {
-      var now = new Date();
-      var hours = now.getHours();
-      var ampm = hours >= 12 ? 'PM' : 'AM';
-      hours = hours % 12;
-      hours = hours ? hours : 12;
-      var minutes = String(now.getMinutes()).padStart(2, '0');
-      var seconds = String(now.getSeconds()).padStart(2, '0');
-      if (dom.clock) {
-        dom.clock.textContent = hours + ':' + minutes + ':' + seconds;
-      }
-      if (dom.clockAmPm) {
-        dom.clockAmPm.textContent = ampm;
-      }
-    }
-
     // ==================== UTILITY FUNCTIONS ====================
     function getTimestamp() {
-      return new Date().toLocaleTimeString('bn-BD', { 
-        hour: '2-digit', 
-        minute: '2-digit',
-        hour12: true 
-      });
+      return new Date().toLocaleTimeString('bn-BD', { hour: '2-digit', minute: '2-digit', hour12: true });
     }
 
     function scrollToBottom() {
@@ -2962,9 +2763,7 @@
 
     function fadeDataStatus() {
       if (!dom.dataStatus) return;
-      setTimeout(function() {
-        dom.dataStatus.classList.add('hidden');
-      }, 2000);
+      setTimeout(function() { dom.dataStatus.classList.add('hidden'); }, 2000);
     }
 
     function convertNumbers(input) {
@@ -3025,6 +2824,55 @@
       return names[num - 1] || "সূরা " + num;
     }
 
+    function cleanHtmlContent(html) {
+      if (!html) return '';
+      html = html.replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi, '');
+      html = html.replace(/<style\b[^<]*(?:(?!<\/style>)<[^<]*)*<\/style>/gi, '');
+      html = html.replace(/<br\s*\/?>/gi, '\n');
+      html = html.replace(/<\/p>/gi, '\n\n');
+      html = html.replace(/<p>/gi, '');
+      html = html.replace(/<div[^>]*>/gi, '');
+      html = html.replace(/<\/div>/gi, '');
+      html = html.replace(/<b[^>]*>/gi, '**');
+      html = html.replace(/<\/b>/gi, '**');
+      html = html.replace(/<strong[^>]*>/gi, '**');
+      html = html.replace(/<\/strong>/gi, '**');
+      html = html.replace(/<i[^>]*>/gi, '*');
+      html = html.replace(/<\/i>/gi, '*');
+      html = html.replace(/<em[^>]*>/gi, '*');
+      html = html.replace(/<\/em>/gi, '*');
+      html = html.replace(/<[^>]*>/g, '');
+      return html.trim();
+    }
+
+    function extractDriveIdFromPost(content) {
+      var patterns = [
+        /drive\.google\.com\/file\/d\/([a-zA-Z0-9_-]+)/,
+        /drive\.google\.com\/open\?id=([a-zA-Z0-9_-]+)/,
+        /drive\.google\.com\/uc\?export=download&id=([a-zA-Z0-9_-]+)/
+      ];
+      for (var i = 0; i < patterns.length; i++) {
+        var match = content.match(patterns[i]);
+        if (match) return match[1];
+      }
+      return null;
+    }
+
+    function getDriveViewUrl(driveId) {
+      if (!driveId) return null;
+      return 'https://drive.google.com/file/d/' + driveId + '/view';
+    }
+
+    function getDriveEmbedUrl(driveId) {
+      if (!driveId) return null;
+      return 'https://drive.google.com/file/d/' + driveId + '/preview';
+    }
+
+    function getDriveDownloadUrl(driveId) {
+      if (!driveId) return null;
+      return 'https://drive.google.com/uc?export=download&id=' + driveId;
+    }
+
     // ==================== MESSAGE FUNCTIONS ====================
     function addMessage(text, isUser, type, isHTML) {
       isUser = isUser || false;
@@ -3078,402 +2926,546 @@
       if (el) el.remove();
     }
 
-    function clearChat() {
-      dom.messages.innerHTML = '';
-      if (dom.welcomeSection) {
-        dom.welcomeSection.style.display = 'block';
-        state.welcomeVisible = true;
-      }
-      state.currentAya = null;
-      state.currentAyaIndex = -1;
-      state.currentSearchResults = [];
-      state.quizState = null;
-      state.isHomeScreen = false;
-      dom.input.value = '';
-      dom.input.focus();
+    // ==================== CLOCK ====================
+    function updateClock() {
+      var now = new Date();
+      var hours = now.getHours();
+      var ampm = hours >= 12 ? 'PM' : 'AM';
+      hours = hours % 12;
+      hours = hours ? hours : 12;
+      var minutes = String(now.getMinutes()).padStart(2, '0');
+      var seconds = String(now.getSeconds()).padStart(2, '0');
+      if (dom.clock) dom.clock.textContent = hours + ':' + minutes + ':' + seconds;
+      if (dom.clockAmPm) dom.clockAmPm.textContent = ampm;
     }
 
     // ==================== LOAD QURAN DATA ====================
     async function loadQuranData() {
+      state.dataLoadAttempts++;
       try {
-        setDataStatus('⏳ কুরআন ডেটা লোড হচ্ছে...', false);
+        setDataStatus('⏳ ডেটা লোড হচ্ছে...', false);
         
-        var [quranRes, arabicRes, tafsirRes] = await Promise.all([
-          fetch("https://raw.githubusercontent.com/Akter-Molla/Quran-bot-bn/main/ayats_bn.json"),
-          fetch("https://raw.githubusercontent.com/alQuranBD/Database/master/json/ayats_ar.json"),
-          fetch("https://raw.githubusercontent.com/Akter-Molla/Quran-bot-bn/main/Tafseer_ibn_Kathir.json")
-        ]);
-
-        if (!quranRes.ok || !arabicRes.ok || !tafsirRes.ok) {
-          throw new Error('ডেটা লোড করতে সমস্যা হয়েছে');
+        // Load Quran Bengali
+        var quranSources = [
+          "https://raw.githubusercontent.com/Akter-Molla/Quran-bot-bn/main/ayats_bn.json",
+          "https://cdn.jsdelivr.net/gh/Akter-Molla/Quran-bot-bn/ayats_bn.json"
+        ];
+        var quranData = null;
+        for (var i = 0; i < quranSources.length; i++) {
+          try {
+            var response = await fetch(quranSources[i]);
+            if (response.ok) { quranData = await response.json(); break; }
+          } catch (e) { console.log('Quran source ' + i + ' failed'); }
+        }
+        if (!quranData || quranData.length === 0) {
+          state.quranData = fallbackQuranData;
+        } else {
+          state.quranData = quranData;
         }
 
-        state.quranData = await quranRes.json();
-        state.arabicData = await arabicRes.json();
-        state.tafsirData = await tafsirRes.json();
+        // Load Arabic data - Try multiple sources
+        var arabicSources = [
+          "https://raw.githubusercontent.com/alQuranBD/Database/master/json/ayats_ar.json",
+          "https://cdn.jsdelivr.net/gh/alQuranBD/Database/json/ayats_ar.json",
+          "https://raw.githubusercontent.com/Akter-Molla/Quran-bot-bn/main/ayats_ar.json"
+        ];
+        var arabicData = null;
+        for (var j = 0; j < arabicSources.length; j++) {
+          try {
+            var arResponse = await fetch(arabicSources[j]);
+            if (arResponse.ok) { 
+              var data = await arResponse.json();
+              if (data && data.length > 0) {
+                arabicData = data;
+                break;
+              }
+            }
+          } catch (e) { console.log('Arabic source ' + j + ' failed'); }
+        }
+        
+        if (!arabicData || arabicData.length === 0) {
+          console.log('Using fallback Arabic data');
+          state.arabicData = fallbackArabicData;
+        } else {
+          state.arabicData = arabicData;
+        }
 
-        loadHadithData();
-        loadKnowledgeBase();
-        loadBlogPosts();
+        // Load Tafsir
+        try {
+          var tRes = await fetch("https://raw.githubusercontent.com/Akter-Molla/Quran-bot-bn/main/Tafseer_ibn_Kathir.json");
+          if (tRes.ok) state.tafsirData = await tRes.json();
+        } catch (e) { console.log('Tafsir not available'); }
 
         state.dataLoaded = true;
-        setDataStatus('✅ ডেটা প্রস্তুত', false);
+        setDataStatus('✅ ডেটা প্রস্তুত (' + state.quranData.length + ' আয়াত, ' + state.arabicData.length + ' আরবি)', false);
         fadeDataStatus();
-
+        loadAllData();
       } catch (error) {
-        console.error('ডেটা লোডিং ত্রুটি:', error);
-        setDataStatus('❌ ডেটা লোড করতে সমস্যা হয়েছে। পৃষ্ঠাটি রিফ্রেশ করুন।', true);
+        console.error('Data load error:', error);
+        state.quranData = fallbackQuranData;
+        state.arabicData = fallbackArabicData;
+        state.dataLoaded = true;
+        setDataStatus('⚠️ ফালব্যাক ডেটা ব্যবহার', true);
+        setTimeout(fadeDataStatus, 3000);
+        loadAllData();
       }
     }
 
-    // ==================== HADITH DATA ====================
+    function loadAllData() {
+      loadHadithData();
+      loadKnowledgeBase();
+      loadBlogPosts();
+      loadBloggerBooks();
+    }
+
     function loadHadithData() {
       state.hadithData = [
-        { text: "من كان يؤمن بالله واليوم الآخر فليقل خيرا أو ليصمت", translation: "যে আল্লাহ ও পরকালে বিশ্বাস করে, সে যেন ভালো কথা বলে অথবা চুপ থাকে।", source: "সহিহ বুখারী", narrator: "আবু হুরায়রা (রা.)", explanation: "মুমিনের জবান সর্বদা পবিত্র ও কল্যাণকর হয়।" },
-        { text: "لا يؤمن أحدكم حتى يحب لأخيه ما يحب لنفسه", translation: "তোমাদের কেউ মুমিন হতে পারবে না, যতক্ষণ না সে তার ভাইয়ের জন্য তা পছন্দ করে যা সে নিজের জন্য পছন্দ করে।", source: "সহিহ বুখারী", narrator: "আনাস (রা.)", explanation: "মুমিনের পারস্পরিক ভালোবাসা ও সহানুভূতির গুরুত্ব।" },
-        { text: "إنما الأعمال بالنيات وإنما لكل امرئ ما نوى", translation: "নিশ্চয়ই সকল কাজের মূল্য নির্ভর করে নিয়তের উপর। আর প্রত্যেক ব্যক্তি তাই পায় যা সে নিয়ত করে।", source: "সহিহ বুখারী", narrator: "ওমর (রা.)", explanation: "সকল আমলের গ্রহণযোগ্যতা নিয়তের উপর নির্ভর করে।" },
-        { text: "أفضل الجهاد كلمة حق عند سلطان جائر", translation: "সর্বোত্তম জিহাদ হলো ন্যায়পরায়ণ শাসকের সামনে সত্য কথা বলা।", source: "আবু দাউদ", narrator: "আবু সাঈদ (রা.)", explanation: "সত্য কথা বলার গুরুত্ব ও সাহসিকতা।" },
-        { text: "الدعاء هو العبادة", translation: "দোয়া হলো ইবাদাত।", source: "তিরমিজি", narrator: "আনাস (রা.)", explanation: "দোয়ার গুরুত্ব ও ফযীলত।" },
-        { text: "الحياء من الإيمان", translation: "লজ্জা ঈমানের অংশ।", source: "সহিহ বুখারী", narrator: "আবু হুরায়রা (রা.)", explanation: "লজ্জাশীলতা ঈমানের গুরুত্বপূর্ণ অংশ।" },
-        { text: "من قرأ حرفا من كتاب الله فله به حسنة والحسنة بعشر أمثالها", translation: "যে ব্যক্তি আল্লাহর কিতাব থেকে একটি অক্ষর পড়ে, তার জন্য একটি নেকি এবং প্রতিটি নেকি দশগুণ।", source: "তিরমিজি", narrator: "আব্দুল্লাহ ইবনে মাসউদ (রা.)", explanation: "কুরআন তিলাওয়াতের ফযীলত অপরিসীম।" },
-        { text: "إن الله يحب إذا عمل أحدكم عملا أن يتقنه", translation: "নিশ্চয়ই আল্লাহ পছন্দ করেন যখন তোমাদের কেউ কোনো কাজ করে, সে তা নিখুঁতভাবে করে।", source: "আল-বায়হাকী", narrator: "আয়িশা (রা.)", explanation: "কাজের প্রতি সততা ও নিপুণতার গুরুত্ব।" }
+        { text: "من كان يؤمن بالله واليوم الآخر فليقل خيرا أو ليصمت", translation: "যে আল্লাহ ও পরকালে বিশ্বাস করে, সে যেন ভালো কথা বলে অথবা চুপ থাকে।", source: "সহিহ বুখারী", narrator: "আবু হুরায়রা (রা.)" },
+        { text: "لا يؤمن أحدكم حتى يحب لأخيه ما يحب لنفسه", translation: "তোমাদের কেউ মুমিন হতে পারবে না, যতক্ষণ না সে তার ভাইয়ের জন্য তা পছন্দ করে যা সে নিজের জন্য পছন্দ করে।", source: "সহিহ বুখারী", narrator: "আনাস (রা.)" },
+        { text: "إنما الأعمال بالنيات وإنما لكل امرئ ما نوى", translation: "নিশ্চয়ই সকল কাজের মূল্য নির্ভর করে নিয়তের উপর। আর প্রত্যেক ব্যক্তি তাই পায় যা সে নিয়ত করে।", source: "সহিহ বুখারী", narrator: "ওমর (রা.)" },
+        { text: "أفضل الجهاد كلمة حق عند سلطان جائر", translation: "সর্বোত্তম জিহাদ হলো ন্যায়পরায়ণ শাসকের সামনে সত্য কথা বলা।", source: "আবু দাউদ", narrator: "আবু সাঈদ (রা.)" },
+        { text: "الدعاء هو العبادة", translation: "দোয়া হলো ইবাদাত।", source: "তিরমিজি", narrator: "আনাস (রা.)" },
+        { text: "الحياء من الإيمان", translation: "লজ্জা ঈমানের অংশ।", source: "সহিহ বুখারী", narrator: "আবু হুরায়রা (রা.)" }
       ];
     }
 
-    // ==================== KNOWLEDGE BASE ====================
     function loadKnowledgeBase() {
       state.knowledgeBase = [
-        { title: "ঈমানের ৬টি স্তম্ভ কি কি?", content: "১. আল্লাহতে বিশ্বাস\n২. ফেরেশতাদের প্রতি বিশ্বাস\n৩. আসমানী কিতাবসমূহে বিশ্বাস\n৪. রাসূলগণের প্রতি বিশ্বাস\n৫. আখিরাত বা শেষ বিচারের দিনে বিশ্বাস\n৬. তাকদীর বা ভাগ্যের ভালো-মন্দের প্রতি বিশ্বাস", source: "কুরআন ও সুন্নাহ" },
-        { title: "ইসলামের ৫টি স্তম্ভ কি কি?", content: "১. কালিমা শাহাদাত (ঈমান আনা)\n২. সালাত (নামাজ) প্রতিষ্ঠা করা\n৩. জাকাত প্রদান করা\n৪. রমজান মাসে সিয়াম (রোজা) রাখা\n৫. সাওম (হজ্জ) পালন করা", source: "সহিহ হাদিস" },
-        { title: "নামাজের ফরজসমূহ কি কি?", content: "নামাজের ৭টি ফরজ:\n১. তাকবীরে তাহরীমা\n২. কিয়াম (দাঁড়ানো)\n৩. কিরাআত (পড়া)\n৪. রুকু\n৫. সিজদা\n৬. শেষ বৈঠক\n৭. সালাম ফেরানো", source: "ফিকহ" },
-        { title: "কুরআনের নামসমূহ কি কি?", content: "কুরআনের ৫টি নাম:\n১. আল-কুরআন\n২. আল-ফুরকান\n৩. আয-যিকর\n৪. আল-কিতাব\n৫. আত-তানযীল", source: "কুরআন" },
-        { title: "মহানবী (সা.)-এর নামসমূহ কি কি?", content: "মহানবী (সা.)-এর প্রসিদ্ধ নাম:\n১. মুহাম্মদ\n২. আহমাদ\n৩. মুস্তাফা\n৪. হাবীবুল্লাহ\n৫. খাতামুল আম্বিয়া (নবীগণের শেষ)", source: "সীরাহ" }
+        { title: "ঈমানের ৬টি স্তম্ভ", content: "১. আল্লাহতে বিশ্বাস\n২. ফেরেশতাদের প্রতি বিশ্বাস\n৩. আসমানী কিতাবসমূহে বিশ্বাস\n৪. রাসূলগণের প্রতি বিশ্বাস\n৫. আখিরাত বা শেষ বিচারের দিনে বিশ্বাস\n৬. তাকদীর বা ভাগ্যের ভালো-মন্দের প্রতি বিশ্বাস", source: "কুরআন ও সুন্নাহ" },
+        { title: "ইসলামের ৫টি স্তম্ভ", content: "১. কালিমা শাহাদাত (ঈমান আনা)\n২. সালাত (নামাজ) প্রতিষ্ঠা করা\n৩. জাকাত প্রদান করা\n৪. রমজান মাসে সিয়াম (রোজা) রাখা\n৫. সাওম (হজ্জ) পালন করা", source: "সহিহ হাদিস" },
+        { title: "নামাজের ফরজসমূহ", content: "নামাজের ৭টি ফরজ:\n১. তাকবীরে তাহরীমা\n২. কিয়াম (দাঁড়ানো)\n৩. কিরাআত (পড়া)\n৪. রুকু\n৫. সিজদা\n৬. শেষ বৈঠক\n৭. সালাম ফেরানো", source: "ফিকহ" },
+        { title: "কুরআনের নামসমূহ", content: "কুরআনের ৫টি নাম:\n১. আল-কুরআন\n২. আল-ফুরকান\n৩. আয-যিকর\n৪. আল-কিতাব\n৫. আত-তানযীল", source: "কুরআন" }
       ];
     }
 
-    // ==================== BLOG POSTS ====================
     function loadBlogPosts() {
-      var blogUrl = window.location.origin;
-      var feedUrl = blogUrl + '/feeds/posts/default?alt=json&max-results=10';
+      var feedUrl = window.location.origin + '/feeds/posts/default?alt=json&max-results=10';
+      fetch(feedUrl).then(function(r) {
+        if (!r.ok) throw new Error();
+        return r.json();
+      }).then(function(data) {
+        if (data && data.feed && data.feed.entry) {
+          state.blogPosts = data.feed.entry.map(function(entry) {
+            var content = entry.content ? entry.content.$t || '' : '';
+            var summary = entry.summary ? entry.summary.$t || '' : '';
+            content = cleanHtmlContent(content);
+            summary = cleanHtmlContent(summary) || content.substring(0, 200) + '...';
+            return {
+              title: entry.title.$t || '',
+              content: content,
+              summary: summary,
+              published: entry.published ? entry.published.$t || '' : '',
+              link: entry.link ? entry.link.find(function(l) { return l.rel === 'alternate'; })?.href || '' : '',
+              author: entry.author ? entry.author[0]?.name?.$t || '' : '',
+              id: entry.id ? entry.id.$t || '' : 'post-' + Math.random().toString(36).substr(2, 9)
+            };
+          });
+        }
+      }).catch(function() {
+        state.blogPosts = [
+          { id: 'sample1', title: 'কুরআনের গুরুত্ব ও ফযিলত', content: 'কুরআন হলো মানবজাতির জন্য সর্বশেষ ঐশী গ্রন্থ।', summary: 'কুরআন হলো মানবজাতির জন্য সর্বশেষ ঐশী গ্রন্থ...', published: new Date().toISOString(), link: '#', author: 'Admin' }
+        ];
+      });
+    }
+
+    function loadBloggerBooks() {
+      var feedUrl = window.location.origin + '/feeds/posts/default/-/book?alt=json&max-results=20';
+      fetch(feedUrl).then(function(r) {
+        if (!r.ok) throw new Error();
+        return r.json();
+      }).then(function(data) {
+        if (data && data.feed && data.feed.entry) {
+          state.blogBooks = data.feed.entry.map(function(entry) {
+            var content = entry.content ? entry.content.$t || '' : '';
+            var summary = entry.summary ? entry.summary.$t || '' : '';
+            content = cleanHtmlContent(content);
+            summary = cleanHtmlContent(summary) || content.substring(0, 150) + '...';
+            var driveId = extractDriveIdFromPost(content);
+            var category = 'বই';
+            if (entry.category && entry.category.length > 0) {
+              var labels = entry.category.map(function(c) { return c.term; });
+              var bookLabel = labels.find(function(l) { return l.toLowerCase() !== 'book'; });
+              if (bookLabel) category = bookLabel;
+            }
+            return {
+              id: entry.id ? entry.id.$t || '' : 'book-' + Math.random().toString(36).substr(2, 9),
+              title: entry.title.$t || 'নামহীন বই',
+              titleEn: entry.title.$t || '',
+              author: 'ব্লগার',
+              icon: '📖',
+              driveId: driveId,
+              description: summary,
+              category: category,
+              price: 'ফ্রী',
+              buyLink: null,
+              isBloggerBook: true,
+              link: entry.link ? entry.link.find(function(l) { return l.rel === 'alternate'; })?.href || '' : ''
+            };
+          });
+          allBooks = hardcodedBooks.concat(state.blogBooks);
+          state.booksLoaded = true;
+        }
+      }).catch(function() {
+        allBooks = hardcodedBooks;
+        state.booksLoaded = true;
+      });
+    }
+
+    // ==================== FIND BOOK BY NAME ====================
+    function findBookByName(name) {
+      if (!allBooks || allBooks.length === 0) return null;
+      var searchName = name.toLowerCase().trim();
+      // Remove common words
+      searchName = searchName.replace(/বই|পড়|read|book|খুল|open|দেখ|show|পিডিএফ|pdf/gi, '').trim();
       
-      fetch(feedUrl)
-        .then(function(response) {
-          if (!response.ok) throw new Error('Blog feed not available');
-          return response.json();
-        })
-        .then(function(data) {
-          if (data && data.feed && data.feed.entry) {
-            state.blogPosts = data.feed.entry.map(function(entry) {
-              var content = entry.content ? entry.content.$t || '' : '';
-              var summary = entry.summary ? entry.summary.$t || '' : '';
-              content = cleanHtmlContent(content);
-              summary = cleanHtmlContent(summary) || content.substring(0, 200) + '...';
-              
-              return {
-                title: entry.title.$t || '',
-                content: content,
-                summary: summary,
-                published: entry.published ? entry.published.$t || '' : '',
-                link: entry.link ? entry.link.find(function(l) { return l.rel === 'alternate'; })?.href || '' : '',
-                author: entry.author ? entry.author[0]?.name?.$t || '' : '',
-                id: entry.id ? entry.id.$t || '' : 'post-' + Math.random().toString(36).substr(2, 9)
-              };
-            });
-            console.log('✅ Blog posts loaded:', state.blogPosts.length);
+      // Search in title (Bangla and English)
+      for (var i = 0; i < allBooks.length; i++) {
+        var book = allBooks[i];
+        var titleMatch = book.title && book.title.toLowerCase().indexOf(searchName) !== -1;
+        var titleEnMatch = book.titleEn && book.titleEn.toLowerCase().indexOf(searchName) !== -1;
+        if (titleMatch || titleEnMatch) {
+          return book;
+        }
+      }
+      
+      // Partial match
+      var words = searchName.split(/\s+/);
+      for (var j = 0; j < allBooks.length; j++) {
+        var b = allBooks[j];
+        var bTitle = (b.title || '').toLowerCase();
+        var bTitleEn = (b.titleEn || '').toLowerCase();
+        var matchCount = 0;
+        for (var k = 0; k < words.length; k++) {
+          if (words[k].length > 1) {
+            if (bTitle.indexOf(words[k]) !== -1 || bTitleEn.indexOf(words[k]) !== -1) {
+              matchCount++;
+            }
           }
-        })
-        .catch(function(error) {
-          console.log('Blog posts not available:', error);
-          state.blogPosts = [
-            { id: 'sample1', title: 'কুরআনের গুরুত্ব ও ফযিলত', content: 'কুরআন হলো মানবজাতির জন্য সর্বশেষ ঐশী গ্রন্থ।', summary: 'কুরআন হলো মানবজাতির জন্য সর্বশেষ ঐশী গ্রন্থ...', published: new Date().toISOString(), link: '#', author: 'Admin' },
-            { id: 'sample2', title: 'নামাজের গুরুত্ব ও সঠিক পদ্ধতি', content: 'নামাজ ইসলামের স্তম্ভ। সঠিকভাবে নামাজ পড়ার নিয়ম ও গুরুত্ব অপরিসীম।', summary: 'নামাজ ইসলামের স্তম্ভ। সঠিকভাবে নামাজ পড়ার নিয়ম...', published: new Date().toISOString(), link: '#', author: 'Admin' }
-          ];
-        });
-    }
-
-    function cleanHtmlContent(html) {
-      if (!html) return '';
-      html = html.replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi, '');
-      html = html.replace(/<style\b[^<]*(?:(?!<\/style>)<[^<]*)*<\/style>/gi, '');
-      html = html.replace(/<br\s*\/?>/gi, '\n');
-      html = html.replace(/<\/p>/gi, '\n\n');
-      html = html.replace(/<p>/gi, '');
-      html = html.replace(/<div[^>]*>/gi, '');
-      html = html.replace(/<\/div>/gi, '');
-      html = html.replace(/<b[^>]*>/gi, '**');
-      html = html.replace(/<\/b>/gi, '**');
-      html = html.replace(/<strong[^>]*>/gi, '**');
-      html = html.replace(/<\/strong>/gi, '**');
-      html = html.replace(/<i[^>]*>/gi, '*');
-      html = html.replace(/<\/i>/gi, '*');
-      html = html.replace(/<em[^>]*>/gi, '*');
-      html = html.replace(/<\/em>/gi, '*');
-      html = html.replace(/<[^>]*>/g, '');
-      return html.trim();
-    }
-
-    // ==================== ZAKAT CALCULATOR ====================
-    function showZakatCalculator() {
-      var html = '<div class="zakat-card">';
-      html += '<div class="zakat-title">💰 যাকাত ক্যালকুলেটর</div>';
-      html += '<div class="zakat-input-group">';
-      html += '<label>মোট সম্পদের পরিমাণ (টাকা):</label>';
-      html += '<input type="number" id="zakat-wealth" placeholder="যেমন: 100000" value="100000"/>';
-      html += '</div>';
-      html += '<div class="zakat-input-group">';
-      html += '<label>যাকাতের হার (%):</label>';
-      html += '<input type="number" id="zakat-rate" placeholder="যেমন: 2.5" value="2.5" step="0.1"/>';
-      html += '</div>';
-      html += '<button class="zakat-btn" onclick="window.calculateZakat()">🧮 যাকাত গণনা করুন</button>';
-      html += '<div class="zakat-result" id="zakat-result">';
-      html += '<div>আপনার যাকাতের পরিমাণ:</div>';
-      html += '<div class="amount" id="zakat-amount">প্রয়োজনীয় ইনপুট দিন</div>';
-      html += '</div>';
-      html += '<div style="margin-top:0.3rem;font-size:0.65rem;color:var(--gray-dark);">';
-      html += '⚠️ নিসাব পরিমাণ: ৫২,৫০০ টাকা (প্রায় ৮৫ গ্রাম স্বর্ণ)';
-      html += '</div>';
-      html += '</div>';
-      html += '<div class="home-btn-container"><button class="home-btn" onclick="window.goHome()">🏠 হোমে যান</button></div>';
-      addBotMessage(html, 'normal', true);
-    }
-
-    window.calculateZakat = function() {
-      var wealthInput = document.getElementById('zakat-wealth');
-      var rateInput = document.getElementById('zakat-rate');
-      var resultDiv = document.getElementById('zakat-amount');
-      var nisab = 52500; // Nisab amount in BDT
-      
-      if (!wealthInput || !rateInput || !resultDiv) return;
-      
-      var wealth = parseFloat(wealthInput.value) || 0;
-      var rate = parseFloat(rateInput.value) || 2.5;
-      
-      if (wealth <= 0) {
-        resultDiv.textContent = '⚠️ সঠিক সম্পদের পরিমাণ দিন';
-        resultDiv.style.color = '#c62828';
-        return;
+        }
+        if (matchCount >= Math.min(2, words.length)) {
+          return b;
+        }
       }
       
-      if (wealth < nisab) {
-        resultDiv.textContent = '⚠️ সম্পদ নিসাব পরিমাণের কম। যাকাত প্রযোজ্য নয়।';
-        resultDiv.style.color = '#f57c00';
-        return;
-      }
-      
-      var zakat = (wealth * rate) / 100;
-      resultDiv.textContent = '💰 ' + zakat.toFixed(2) + ' টাকা';
-      resultDiv.style.color = 'var(--primary)';
-      
-      // Add a message
-      addBotMessage('✅ যাকাত গণনা সম্পন্ন! আপনার যাকাতের পরিমাণ: ' + zakat.toFixed(2) + ' টাকা', 'success');
-    };
-
-    // ==================== PDF VIEWER FUNCTIONS ====================
-    function getDriveDirectUrl(driveId) {
-      return 'https://drive.google.com/uc?export=download&id=' + driveId;
+      return null;
     }
 
-    function getDriveEmbedUrl(driveId) {
-      return 'https://drive.google.com/file/d/' + driveId + '/preview';
-    }
-
+    // ==================== PDF VIEWER ====================
     function loadPDF(pdfUrl, title, bookDataItem) {
+      if (!pdfUrl) {
+        addBotMessage('❌ এই বইয়ের PDF লিংক উপলব্ধ নেই।', 'error');
+        return;
+      }
+      
       state.currentPdfUrl = pdfUrl;
       state.currentBookData = bookDataItem || null;
       dom.pdfTitle.textContent = title || 'পিডিএফ বই';
       
-      // Show loading
-      dom.pdfBody.innerHTML = '<div class="pdf-loading"><div class="spinner"></div><span>পিডিএফ লোড হচ্ছে...</span></div>';
+      dom.pdfBody.innerHTML = '<div class="pdf-loading"><div class="spinner"/><span>পিডিএফ লোড হচ্ছে...</span></div>';
       dom.pdfViewer.classList.add('active');
       document.body.style.overflow = 'hidden';
+      state.readingStartTime = Date.now();
 
-      // Set download button
-      dom.pdfDownloadBtn.onclick = function() {
-        window.open(pdfUrl, '_blank');
-      };
-
-      // Set buy button
-      if (dom.pdfBuyBtn) {
-        if (bookDataItem && bookDataItem.buyLink) {
-          dom.pdfBuyBtn.style.display = 'inline-block';
-          dom.pdfBuyBtn.onclick = function() {
-            window.open(bookDataItem.buyLink, '_blank');
-          };
-          dom.pdfBuyBtn.title = 'বই কিনুন - ' + bookDataItem.price;
-        } else {
-          dom.pdfBuyBtn.style.display = 'none';
-        }
+      dom.pdfDownloadBtn.onclick = function() { window.open(pdfUrl, '_blank'); };
+      
+      if (dom.pdfBuyBtn && bookDataItem && bookDataItem.buyLink) {
+        dom.pdfBuyBtn.style.display = 'inline-block';
+        dom.pdfBuyBtn.onclick = function() { window.open(bookDataItem.buyLink, '_blank'); };
+        dom.pdfBuyBtn.title = 'বই কিনুন - ' + (bookDataItem.price || '');
+      } else {
+        dom.pdfBuyBtn.style.display = 'none';
       }
 
-      // Set share button
       if (dom.pdfShareBtn) {
         dom.pdfShareBtn.onclick = function() {
-          var shareText = title + ' - ইসলামিক বই\n\n' + pdfUrl;
           if (navigator.share) {
-            navigator.share({
-              title: title,
-              text: '📚 ' + title + ' - ইসলামিক বই',
-              url: pdfUrl
-            }).catch(function() {});
+            navigator.share({ title: title, text: '📚 ' + title + ' - ইসলামিক বই', url: pdfUrl });
           } else {
-            navigator.clipboard.writeText(shareText).then(function() {
+            navigator.clipboard.writeText(title + ' - ' + pdfUrl).then(function() {
               addBotMessage('✅ লিংক কপি করা হয়েছে!', 'success');
-            }).catch(function() {});
+            });
           }
         };
       }
 
-      // Try to load with PDF.js
-      var pdfjsLib = window['pdfjs-dist/build/pdf'];
+      // Google Drive embed
+      var driveId = null;
+      var idMatch = pdfUrl.match(/[\/?]id=([a-zA-Z0-9_-]+)/) || pdfUrl.match(/\/d\/([a-zA-Z0-9_-]+)/);
+      if (idMatch) driveId = idMatch[1];
       
+      if (driveId) {
+        var embedUrl = getDriveEmbedUrl(driveId);
+        dom.pdfBody.innerHTML = '<iframe src="' + embedUrl + '" style="width:100%;height:100%;min-height:550px;border:none;border-radius:8px;" allowfullscreen></iframe>';
+        dom.pdfPageInfo.textContent = '📄 Google Drive PDF Viewer';
+        dom.pdfPrevBtn.disabled = true;
+        dom.pdfNextBtn.disabled = true;
+        updateZoomLabel();
+        return;
+      }
+
+      // Try PDF.js for direct PDF
+      var pdfjsLib = window['pdfjs-dist/build/pdf'];
       if (pdfjsLib) {
+        pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
         pdfjsLib.getDocument(pdfUrl).promise.then(function(pdf) {
           state.pdfDoc = pdf;
           state.pdfTotalPages = pdf.numPages;
           state.pdfPageNum = 1;
           renderPDFPage();
-        }).catch(function(error) {
-          console.error('PDF load error:', error);
-          fallbackPDFViewer(pdfUrl);
+        }).catch(function() {
+          showPDFError('পিডিএফ লোড করা সম্ভব হচ্ছে না।');
         });
       } else {
-        fallbackPDFViewer(pdfUrl);
+        showPDFError('PDF.js লাইব্রেরি লোড হয়নি।');
       }
     }
 
     function renderPDFPage() {
       if (!state.pdfDoc) return;
-      
       var pageNum = state.pdfPageNum;
       var pdf = state.pdfDoc;
-      
       dom.pdfPageInfo.textContent = 'পৃষ্ঠা ' + pageNum + ' / ' + state.pdfTotalPages;
       dom.pdfPrevBtn.disabled = (pageNum <= 1);
       dom.pdfNextBtn.disabled = (pageNum >= state.pdfTotalPages);
-      
       pdf.getPage(pageNum).then(function(page) {
         var viewport = page.getViewport({ scale: state.pdfScale });
         var canvas = document.createElement('canvas');
         var context = canvas.getContext('2d');
         canvas.height = viewport.height;
         canvas.width = viewport.width;
-        
         dom.pdfBody.innerHTML = '';
         dom.pdfBody.appendChild(canvas);
-        
-        var renderContext = {
-          canvasContext: context,
-          viewport: viewport
-        };
-        
-        return page.render(renderContext).promise;
-      }).catch(function(error) {
-        console.error('Page render error:', error);
-        fallbackPDFViewer(state.currentPdfUrl);
+        return page.render({ canvasContext: context, viewport: viewport }).promise;
+      }).catch(function() {
+        showPDFError('পৃষ্ঠা রেন্ডার করতে সমস্যা হয়েছে।');
       });
-
       updateZoomLabel();
     }
 
-    function fallbackPDFViewer(pdfUrl) {
-      var driveId = pdfUrl.split('id=')[1] || '';
-      if (driveId) {
-        var embedUrl = getDriveEmbedUrl(driveId);
-        dom.pdfBody.innerHTML = '<iframe src="' + embedUrl + '" style="width:100%;height:100%;min-height:500px;border:none;"></iframe>';
-        dom.pdfPageInfo.textContent = 'পিডিএফ প্রিভিউ (Google Drive)';
-        dom.pdfPrevBtn.disabled = true;
-        dom.pdfNextBtn.disabled = true;
-      } else {
-        dom.pdfBody.innerHTML = '<div class="pdf-loading"><span>⚠️ পিডিএফ লোড করা সম্ভব হচ্ছে না। ডাউনলোড বাটনে ক্লিক করুন।</span></div>';
-      }
+    function showPDFError(message) {
+      dom.pdfBody.innerHTML = '<div class="pdf-error"><div style="font-size:3rem;">📄</div><p>' + message + '</p><p style="font-size:0.8rem;color:var(--gray-dark);">ডাউনলোড বাটনে ক্লিক করে ফাইলটি ডাউনলোড করুন</p></div>';
+      dom.pdfPageInfo.textContent = '❌ পিডিএফ লোড ব্যর্থ';
+      dom.pdfPrevBtn.disabled = true;
+      dom.pdfNextBtn.disabled = true;
     }
 
     function updateZoomLabel() {
-      if (dom.pdfZoomLabel) {
-        dom.pdfZoomLabel.textContent = Math.round(state.pdfScale * 100) + '%';
-      }
+      if (dom.pdfZoomLabel) dom.pdfZoomLabel.textContent = Math.round(state.pdfScale * 100) + '%';
     }
 
     function togglePdfFullscreen() {
       state.isPdfFullscreen = !state.isPdfFullscreen;
-      
-      if (state.isPdfFullscreen) {
-        dom.pdfViewer.classList.add('fullscreen');
-        dom.pdfFullscreenBtn.textContent = '⛶';
-        dom.pdfFullscreenBtn.title = 'পূর্ণ পর্দা থেকে বের করুন';
-      } else {
-        dom.pdfViewer.classList.remove('fullscreen');
-        dom.pdfFullscreenBtn.textContent = '⛶';
-        dom.pdfFullscreenBtn.title = 'পূর্ণ পর্দা';
-      }
-
-      // Re-render PDF to fit new size after a small delay
-      if (state.pdfDoc) {
-        setTimeout(function() {
-          renderPDFPage();
-        }, 150);
-      }
+      dom.pdfViewer.classList.toggle('fullscreen', state.isPdfFullscreen);
+      dom.pdfFullscreenBtn.textContent = state.isPdfFullscreen ? '⛶' : '⛶';
+      dom.pdfFullscreenBtn.title = state.isPdfFullscreen ? 'পূর্ণ পর্দা থেকে বের করুন' : 'পূর্ণ পর্দা';
+      if (state.pdfDoc) setTimeout(renderPDFPage, 150);
     }
 
     function closePDFViewer() {
-      dom.pdfViewer.classList.remove('active');
-      dom.pdfViewer.classList.remove('fullscreen');
+      if (state.readingStartTime) {
+        var elapsed = Math.floor((Date.now() - state.readingStartTime) / 1000);
+        if (elapsed > 10) {
+          state.readingTotalTime += elapsed;
+          addBotMessage('📚 আপনি ' + formatTime(elapsed) + ' পড়েছেন। মোট পড়ার সময়: ' + formatTime(state.readingTotalTime), 'info');
+        }
+        state.readingStartTime = null;
+      }
+      dom.pdfViewer.classList.remove('active', 'fullscreen');
       state.isPdfFullscreen = false;
       document.body.style.overflow = '';
       state.pdfDoc = null;
       state.pdfPageNum = 1;
       state.pdfTotalPages = 0;
       state.currentBookData = null;
-      
-      if (dom.pdfFullscreenBtn) {
-        dom.pdfFullscreenBtn.textContent = '⛶';
-        dom.pdfFullscreenBtn.title = 'পূর্ণ পর্দা';
-      }
+      dom.pdfFullscreenBtn.textContent = '⛶';
+      dom.pdfFullscreenBtn.title = 'পূর্ণ পর্দা';
     }
+
+    function formatTime(seconds) {
+      var mins = Math.floor(seconds / 60);
+      var secs = seconds % 60;
+      return mins + ' মিনিট ' + secs + ' সেকেন্ড';
+    }
+
+    // ==================== TIMER ====================
+    function showTimer() {
+      var html = '<div class="time-tracker-card">';
+      html += '<div class="time-display" id="timer-display">00:00:00</div>';
+      html += '<div class="time-label">⏱️ পড়ার সময় ট্র্যাকার</div>';
+      html += '<div class="time-controls">';
+      html += '<button class="time-btn gold" onclick="window.toggleTimer()" id="timer-toggle-btn">▶️ শুরু</button>';
+      html += '<button class="time-btn" onclick="window.resetTimer()">🔄 রিসেট</button>';
+      html += '</div>';
+      html += '<div style="margin-top:0.2rem;font-size:0.65rem;color:var(--gray-dark);">মোট পড়ার সময়: <span id="total-reading-time">' + formatTime(state.readingTotalTime) + '</span></div>';
+      html += '</div>';
+      html += '<div class="home-btn-container"><button class="home-btn" onclick="window.goHome()">🏠 হোমে যান</button></div>';
+      addBotMessage(html, 'normal', true);
+    }
+
+    window.toggleTimer = function() {
+      var btn = document.getElementById('timer-toggle-btn');
+      var display = document.getElementById('timer-display');
+      if (!btn || !display) return;
+      state.timerRunning = !state.timerRunning;
+      if (state.timerRunning) {
+        btn.textContent = '⏹️ থামুন';
+        state.timerInterval = setInterval(function() {
+          state.timerSeconds++;
+          var h = String(Math.floor(state.timerSeconds / 3600)).padStart(2, '0');
+          var m = String(Math.floor((state.timerSeconds % 3600) / 60)).padStart(2, '0');
+          var s = String(state.timerSeconds % 60).padStart(2, '0');
+          display.textContent = h + ':' + m + ':' + s;
+        }, 1000);
+        addBotMessage('⏱️ সময় গণনা শুরু হয়েছে!', 'info');
+      } else {
+        btn.textContent = '▶️ শুরু';
+        clearInterval(state.timerInterval);
+        state.readingTotalTime += state.timerSeconds;
+        var totalDisplay = document.getElementById('total-reading-time');
+        if (totalDisplay) totalDisplay.textContent = formatTime(state.readingTotalTime);
+        addBotMessage('⏱️ থামানো হয়েছে। পড়েছেন: ' + formatTime(state.timerSeconds), 'info');
+        state.timerSeconds = 0;
+        display.textContent = '00:00:00';
+      }
+    };
+
+    window.resetTimer = function() {
+      clearInterval(state.timerInterval);
+      state.timerRunning = false;
+      state.timerSeconds = 0;
+      var btn = document.getElementById('timer-toggle-btn');
+      var display = document.getElementById('timer-display');
+      if (btn) btn.textContent = '▶️ শুরু';
+      if (display) display.textContent = '00:00:00';
+      state.readingTotalTime = 0;
+      var totalDisplay = document.getElementById('total-reading-time');
+      if (totalDisplay) totalDisplay.textContent = '0 মিনিট 0 সেকেন্ড';
+      addBotMessage('⏱️ টাইমার রিসেট করা হয়েছে!', 'info');
+    };
+
+    // ==================== ZAKAT ====================
+    function showZakatCalculator() {
+      var html = '<div class="zakat-card">';
+      html += '<div class="zakat-title">💰 যাকাত ক্যালকুলেটর</div>';
+      html += '<div class="zakat-input-group">';
+      html += '<label>মোট সম্পদের পরিমাণ (টাকা):</label>';
+      html += '<input type="number" id="zakat-wealth" value="100000"/>';
+      html += '</div>';
+      html += '<div class="zakat-input-group">';
+      html += '<label>যাকাতের হার (%):</label>';
+      html += '<input type="number" id="zakat-rate" value="2.5" step="0.1"/>';
+      html += '</div>';
+      html += '<button class="zakat-btn" onclick="window.calculateZakat()">🧮 যাকাত গণনা করুন</button>';
+      html += '<div class="zakat-result"><div>আপনার যাকাতের পরিমাণ:</div><div class="amount" id="zakat-amount">প্রয়োজনীয় ইনপুট দিন</div></div>';
+      html += '<div style="margin-top:0.2rem;font-size:0.6rem;color:var(--gray-dark);">⚠️ নিসাব: ৫২,৫০০ টাকা</div>';
+      html += '</div>';
+      html += '<div class="home-btn-container"><button class="home-btn" onclick="window.goHome()">🏠 হোমে যান</button></div>';
+      addBotMessage(html, 'normal', true);
+    }
+
+    window.calculateZakat = function() {
+      var wealth = parseFloat(document.getElementById('zakat-wealth').value) || 0;
+      var rate = parseFloat(document.getElementById('zakat-rate').value) || 2.5;
+      var result = document.getElementById('zakat-amount');
+      if (wealth <= 0) { result.textContent = '⚠️ সঠিক সম্পদের পরিমাণ দিন'; result.style.color = '#c62828'; return; }
+      if (wealth < 52500) { result.textContent = '⚠️ সম্পদ নিসাবের কম'; result.style.color = '#f57c00'; return; }
+      var zakat = (wealth * rate) / 100;
+      result.textContent = '💰 ' + zakat.toFixed(2) + ' টাকা';
+      result.style.color = 'var(--primary)';
+      addBotMessage('✅ যাকাত গণনা সম্পন্ন! পরিমাণ: ' + zakat.toFixed(2) + ' টাকা', 'success');
+    };
 
     // ==================== BOOK CORNER ====================
     function showBookCorner() {
+      var checkBooks = function() {
+        if (!state.booksLoaded) { setTimeout(checkBooks, 500); return; }
+        renderBookCorner();
+      };
+      checkBooks();
+    }
+
+    function renderBookCorner() {
+      var books = allBooks.length > 0 ? allBooks : hardcodedBooks;
+      var categories = ['সব', ...new Set(books.map(b => b.category || 'বই'))];
+      
       var html = '<div class="tool-card">';
       html += '<div class="tool-title">📚 পিডিএফ বই কর্নার</div>';
       html += '<div class="tool-content">';
       html += '<p>ইসলামিক বইসমূহ পড়ুন, শেয়ার করুন ও ডাউনলোড করুন</p>';
-      html += '<div class="book-grid">';
-      
-      bookData.forEach(function(book) {
-        var driveUrl = getDriveDirectUrl(book.driveId);
-        html += '<div class="book-card">';
-        html += '<span class="book-icon">' + book.icon + '</span>';
-        html += '<div class="book-title">' + book.title + '</div>';
-        html += '<div class="book-author">✍️ ' + book.author + '</div>';
-        html += '<div class="book-price">' + book.price + '</div>';
-        html += '<div style="font-size:0.65rem;color:var(--gray-dark);margin-bottom:0.3rem;">' + book.category + '</div>';
-        html += '<div class="book-actions">';
-        html += '<button class="book-btn preview" onclick="window.openPDF(\'' + driveUrl + '\', \'' + book.title + '\', \'' + JSON.stringify(book).replace(/'/g, "&#39;") + '\')">📖 পড়ুন</button>';
-        html += '<a class="book-btn download" href="' + driveUrl + '" download target="_blank">⬇️ ডাউনলোড</a>';
-        if (book.buyLink) {
-          html += '<a class="book-btn buy" href="' + book.buyLink + '" target="_blank">🛒 কিনুন</a>';
-        }
-        html += '</div>';
-        html += '</div>';
+      html += '<p style="font-size:0.6rem;color:var(--gray-dark);">💡 বইয়ের নাম লিখেও খুঁজতে পারেন: যেমন "ইবনে কাসীর" বা "বুখারী"</p>';
+      html += '<div class="book-category-tabs">';
+      categories.forEach(function(cat) {
+        var active = cat === state.activeCategory ? ' active' : '';
+        html += '<button class="book-category-tab' + active + '" onclick="window.filterBooks(\'' + cat + '\')">' + cat + '</button>';
       });
-      
+      html += '</div>';
+      html += '<div class="book-grid" id="book-grid">';
+      var filtered = state.activeCategory === 'সব' ? books : books.filter(function(b) { return (b.category || 'বই') === state.activeCategory; });
+      filtered.forEach(function(book) {
+        var viewUrl = book.driveId ? getDriveViewUrl(book.driveId) : null;
+        var downloadUrl = book.driveId ? getDriveDownloadUrl(book.driveId) : null;
+        var icon = book.icon || '📖';
+        html += '<div class="book-card">';
+        html += '<span class="book-icon">' + icon + '</span>';
+        if (book.isBloggerBook) html += '<span class="book-badge">📝 ব্লগার বই</span>';
+        html += '<div class="book-title">' + (book.title || 'নামহীন বই') + '</div>';
+        html += '<div class="book-author">✍️ ' + (book.author || 'অজানা') + '</div>';
+        html += '<div class="book-price">' + (book.price || 'ফ্রী') + '</div>';
+        html += '<div class="book-desc">' + (book.description || '') + '</div>';
+        html += '<div class="book-actions">';
+        if (viewUrl) {
+          html += '<button class="book-btn preview" onclick="window.openPDF(\'' + viewUrl + '\', \'' + (book.title || 'পিডিএফ') + '\', \'' + JSON.stringify(book).replace(/'/g, "&#39;") + '\')">📖 পড়ুন</button>';
+          html += '<a class="book-btn download" href="' + downloadUrl + '" download target="_blank">⬇️ ডাউনলোড</a>';
+        } else {
+          html += '<span style="font-size:0.55rem;color:var(--gray-dark);">🔗 লিংক নেই</span>';
+        }
+        if (book.buyLink) html += '<a class="book-btn buy" href="' + book.buyLink + '" target="_blank">🛒 কিনুন</a>';
+        if (book.link && book.isBloggerBook) html += '<a class="book-btn share" href="' + book.link + '" target="_blank">🔗 পোস্ট</a>';
+        html += '</div></div>';
+      });
       html += '</div></div></div>';
       html += '<div class="home-btn-container"><button class="home-btn" onclick="window.goHome()">🏠 হোমে যান</button></div>';
-      
       addBotMessage(html, 'normal', true);
     }
 
+    window.filterBooks = function(category) {
+      state.activeCategory = category;
+      var grid = document.getElementById('book-grid');
+      if (!grid) return;
+      var books = allBooks.length > 0 ? allBooks : hardcodedBooks;
+      var filtered = category === 'সব' ? books : books.filter(function(b) { return (b.category || 'বই') === category; });
+      grid.innerHTML = '';
+      filtered.forEach(function(book) {
+        var viewUrl = book.driveId ? getDriveViewUrl(book.driveId) : null;
+        var downloadUrl = book.driveId ? getDriveDownloadUrl(book.driveId) : null;
+        var icon = book.icon || '📖';
+        var card = document.createElement('div');
+        card.className = 'book-card';
+        card.innerHTML = '<span class="book-icon">' + icon + '</span>' +
+          (book.isBloggerBook ? '<span class="book-badge">📝 ব্লগার বই</span>' : '') +
+          '<div class="book-title">' + (book.title || 'নামহীন বই') + '</div>' +
+          '<div class="book-author">✍️ ' + (book.author || 'অজানা') + '</div>' +
+          '<div class="book-price">' + (book.price || 'ফ্রী') + '</div>' +
+          '<div class="book-desc">' + (book.description || '') + '</div>' +
+          '<div class="book-actions">' +
+          (viewUrl ? '<button class="book-btn preview" onclick="window.openPDF(\'' + viewUrl + '\', \'' + (book.title || 'পিডিএফ') + '\', \'' + JSON.stringify(book).replace(/'/g, "&#39;") + '\')">📖 পড়ুন</button><a class="book-btn download" href="' + downloadUrl + '" download target="_blank">⬇️ ডাউনলোড</a>' : '<span style="font-size:0.55rem;color:var(--gray-dark);">🔗 লিংক নেই</span>') +
+          (book.buyLink ? '<a class="book-btn buy" href="' + book.buyLink + '" target="_blank">🛒 কিনুন</a>' : '') +
+          (book.link && book.isBloggerBook ? '<a class="book-btn share" href="' + book.link + '" target="_blank">🔗 পোস্ট</a>' : '') +
+          '</div>';
+        grid.appendChild(card);
+      });
+      document.querySelectorAll('.book-category-tab').forEach(function(tab) {
+        tab.classList.toggle('active', tab.textContent === category);
+      });
+    };
+
     window.openPDF = function(url, title, bookDataStr) {
       var bookDataItem = null;
-      try {
-        if (bookDataStr) {
-          bookDataItem = JSON.parse(bookDataStr);
-        }
-      } catch (e) {}
+      try { if (bookDataStr) bookDataItem = JSON.parse(bookDataStr); } catch(e) {}
       loadPDF(url, title, bookDataItem);
     };
 
-    // ==================== HOME BUTTON ====================
+    // ==================== QUICK ACTIONS ====================
     function goHome() {
       dom.messages.innerHTML = '';
       state.currentAya = null;
@@ -3481,70 +3473,382 @@
       state.currentSearchResults = [];
       state.quizState = null;
       state.isHomeScreen = true;
-      
       if (dom.welcomeSection) {
         dom.welcomeSection.style.display = 'block';
         state.welcomeVisible = true;
       }
-      
       dom.input.value = '';
       dom.input.focus();
     }
 
-    // ==================== QUICK ACTION HANDLER ====================
     function handleQuickAction(action) {
       if (dom.welcomeSection && state.welcomeVisible) {
         dom.welcomeSection.style.display = 'none';
         state.welcomeVisible = false;
       }
-      
       state.isHomeScreen = false;
-      
       switch(action) {
-        case 'start':
-          addBotMessage('💬 চ্যাট শুরু হয়েছে! "গাইড" লিখে সাহায্য নিন বা "হোম" লিখে মেনু দেখুন।', 'info');
-          break;
-        case 'popular':
-          showPopularAyat();
-          break;
-        case 'prayer':
-          showPrayerTimes();
-          break;
-        case 'hadith':
-          showRandomHadith();
-          break;
-        case 'blog':
-          showBlogPosts();
-          break;
-        case 'books':
-          showBookCorner();
-          break;
-        case 'zakat':
-          showZakatCalculator();
-          break;
-        case 'quiz':
-          startQuiz();
-          break;
-        case 'knowledge':
-          showKnowledgeBase();
-          break;
-        case 'guide':
-          showGuide();
-          break;
-        default:
-          addBotMessage('❓ অজ্ঞাত কমান্ড', 'error');
+        case 'start': addBotMessage('💬 চ্যাট শুরু হয়েছে! "গাইড" লিখে সাহায্য নিন।', 'info'); break;
+        case 'popular': showPopularAyat(); break;
+        case 'prayer': showPrayerTimes(); break;
+        case 'hadith': showRandomHadith(); break;
+        case 'blog': showBlogPosts(); break;
+        case 'books': showBookCorner(); break;
+        case 'zakat': showZakatCalculator(); break;
+        case 'timer': showTimer(); break;
+        case 'quiz': startQuiz(); break;
+        case 'knowledge': showKnowledgeBase(); break;
+        case 'guide': showGuide(); break;
+        default: addBotMessage('❓ অজ্ঞাত কমান্ড', 'error');
       }
+    }
+
+    // ==================== COMMANDS WITH BOOK SUPPORT ====================
+    function handleBookCommand(query) {
+      // Check if it's a book reading command
+      var bookPatterns = [
+        /বই[\s]*(পড়|পড়|খুল|দেখ|শো|read|open|show)[\s]*(.+)/i,
+        /পিডিএফ[\s]*(পড়|পড়|খুল|দেখ|শো|read|open|show)[\s]*(.+)/i,
+        /(পড়|পড়|খুল|দেখ|শো|read|open|show)[\s]*(বই|পিডিএফ|pdf|book)[\s]*(.+)/i,
+        /বই[\s]*(.+)/i,
+        /book[\s]*(.+)/i,
+        /pdf[\s]*(.+)/i
+      ];
+      
+      var bookName = null;
+      for (var i = 0; i < bookPatterns.length; i++) {
+        var match = query.match(bookPatterns[i]);
+        if (match) {
+          // Get the book name from the capture group
+          bookName = match[match.length - 1];
+          break;
+        }
+      }
+      
+      // If no specific pattern, try to extract book name
+      if (!bookName) {
+        // Remove common command words
+        var cleaned = query.replace(/বই|পিডিএফ|pdf|book|পড়|পড়|খুল|দেখ|শো|read|open|show|দেখা|পড়া/gi, '').trim();
+        if (cleaned.length > 1) {
+          bookName = cleaned;
+        }
+      }
+      
+      if (bookName && bookName.length > 1) {
+        var book = findBookByName(bookName);
+        if (book) {
+          var viewUrl = book.driveId ? getDriveViewUrl(book.driveId) : null;
+          if (viewUrl) {
+            addBotMessage('📖 "' + book.title + '" বইটি খোলা হচ্ছে...', 'info');
+            loadPDF(viewUrl, book.title, book);
+            return true;
+          } else {
+            addBotMessage('❌ "' + book.title + '" বইটির PDF লিংক উপলব্ধ নেই।', 'error');
+            return true;
+          }
+        } else {
+          // Show similar books
+          var similar = allBooks.filter(function(b) {
+            var title = (b.title || '').toLowerCase();
+            var titleEn = (b.titleEn || '').toLowerCase();
+            var search = bookName.toLowerCase();
+            return title.indexOf(search) !== -1 || titleEn.indexOf(search) !== -1;
+          });
+          if (similar.length > 0) {
+            var html = '❌ "' + bookName + '" নামে কোন বই পাওয়া যায়নি। আপনার কি এই বইগুলো বোঝাতে চেয়েছেন?<br><br>';
+            similar.slice(0, 3).forEach(function(b) {
+              var url = b.driveId ? getDriveViewUrl(b.driveId) : null;
+              html += '• <strong>' + b.title + '</strong>';
+              if (url) {
+                html += ' <button onclick="window.openPDF(\'' + url + '\', \'' + b.title + '\', \'' + JSON.stringify(b).replace(/'/g, "&#39;") + '\')" style="background:var(--gold);color:#000;border:none;padding:2px 8px;border-radius:5px;cursor:pointer;font-weight:600;font-size:0.65rem;">📖 পড়ুন</button>';
+              }
+              html += '<br>';
+            });
+            addBotMessage(html, 'normal', true);
+            return true;
+          } else {
+            addBotMessage('❌ "' + bookName + '" নামে কোনো বই পাওয়া যায়নি। "বই" লিখে সব বই দেখুন।', 'error');
+            return true;
+          }
+        }
+      }
+      return false;
+    }
+
+    // ==================== SHOW FUNCTIONS ====================
+    function showPopularAyat() {
+      var popular = [
+        { sura: '1', aya: '1', name: 'সূরা ফাতিহা' },
+        { sura: '2', aya: '255', name: 'আয়াতুল কুরসি' },
+        { sura: '36', aya: '1', name: 'সূরা ইয়াসিন' },
+        { sura: '112', aya: '1', name: 'সূরা ইখলাস' },
+        { sura: '55', aya: '1', name: 'সূরা রহমান' }
+      ];
+      var html = '<strong>⭐ জনপ্রিয় আয়াত</strong><br><br>';
+      popular.forEach(function(p, i) {
+        html += '<button onclick="window.selectAya(\'' + p.sura + '\',\'' + p.aya + '\')" style="display:block;width:100%;margin:2px 0;padding:4px 8px;border:2px solid var(--primary);border-radius:8px;cursor:pointer;background:var(--white);text-align:left;font-family:var(--font-ui);font-weight:600;font-size:0.75rem;">' + (i+1) + '. ' + p.name + '<br><small style="color:var(--gray-dark);font-weight:400;">সূরা ' + p.sura + ', আয়াত ' + p.aya + '</small></button>';
+      });
+      html += '<div class="home-btn-container"><button class="home-btn" onclick="window.goHome()">🏠 হোমে যান</button></div>';
+      addBotMessage(html, 'normal', true);
+    }
+
+    window.selectAya = function(sura, aya) {
+      var result = state.quranData.find(function(a) { return a.sura === sura && a.aya === aya; });
+      if (result) {
+        state.currentAya = result;
+        state.currentAyaIndex = state.quranData.indexOf(result);
+        displayAyaResult(result);
+      } else {
+        addBotMessage('❌ সূরা ' + sura + ', আয়াত ' + aya + ' পাওয়া যায়নি।', 'error');
+      }
+    };
+
+    function displayAyaResult(aya) {
+      // Find Arabic - try exact match first, then fallback
+      var arabic = state.arabicData.find(function(a) { 
+        return a.sura === aya.sura && String(a.VerseIDAr) === String(aya.aya);
+      });
+      
+      // If not found, try to find by index
+      if (!arabic) {
+        var idx = state.arabicData.findIndex(function(a) { 
+          return a.sura === aya.sura && a.VerseIDAr === aya.aya; 
+        });
+        if (idx === -1) {
+          // Try to get from fallback
+          var fb = fallbackArabicData.find(function(a) { 
+            return a.sura === aya.sura && String(a.VerseIDAr) === String(aya.aya); 
+          });
+          if (fb) arabic = fb;
+        }
+      }
+      
+      var idx = state.currentAyaIndex !== -1 ? state.currentAyaIndex : 0;
+      var html = '<strong>সূরা ' + aya.sura + ', আয়াত ' + aya.aya + ' (সূরা ' + getSurahName(parseInt(aya.sura)) + ')</strong>';
+      
+      if (arabic && arabic.ayat) {
+        html += '<div class="arabic-text">' + arabic.ayat + '</div>';
+      } else {
+        html += '<div class="arabic-text" style="color:var(--gray-dark);font-size:0.8rem;">⚠️ আরবি পাঠ্য উপলব্ধ নেই</div>';
+      }
+      
+      html += '<div style="padding:0.3rem 0.5rem;background:#f8f9fa;border-radius:var(--rounded);border-left:4px solid var(--primary);margin:0.2rem 0;">' + aya.text + '</div>';
+      html += '<div class="ayat-navigation">';
+      html += '<button class="ayat-nav-btn" onclick="window.navigateAyat(-1)" ' + (idx <= 0 ? 'disabled' : '') + '>◀ আগের</button>';
+      html += '<button class="ayat-nav-btn gold" onclick="window.navigateAyat(1)" ' + (idx >= state.quranData.length - 1 ? 'disabled' : '') + '>পরবর্তী ▶</button>';
+      html += '</div>';
+      html += '<div style="display:flex;gap:0.2rem;flex-wrap:wrap;margin-top:0.2rem;justify-content:center;">';
+      html += '<button onclick="window.showTafsir(\'' + aya.sura + '\',\'' + aya.aya + '\')" style="background:var(--primary);color:#fff;border:none;padding:3px 8px;border-radius:5px;cursor:pointer;font-weight:600;font-family:var(--font-ui);font-size:0.65rem;">📖 তাফসীর</button>';
+      html += '<button onclick="window.playAudio(\'' + aya.sura + '\',\'' + aya.aya + '\')" style="background:var(--secondary);color:#fff;border:none;padding:3px 8px;border-radius:5px;cursor:pointer;font-weight:600;font-family:var(--font-ui);font-size:0.65rem;">🎧 শুনুন</button>';
+      html += '<button onclick="window.copyAya(\'' + aya.sura + '\',\'' + aya.aya + '\')" style="background:var(--gold);color:#000;border:none;padding:3px 8px;border-radius:5px;cursor:pointer;font-weight:600;font-family:var(--font-ui);font-size:0.65rem;">📋 কপি</button>';
+      html += '</div>';
+      html += '<div class="home-btn-container"><button class="home-btn" onclick="window.goHome()">🏠 হোমে যান</button></div>';
+      addBotMessage(html, 'normal', true);
+    }
+
+    window.navigateAyat = function(direction) {
+      var idx = state.currentAyaIndex;
+      if (idx === -1) {
+        if (state.currentAya) idx = state.quranData.indexOf(state.currentAya);
+        if (idx === -1) { addBotMessage('❌ কোনো আয়াত নির্বাচিত নেই।', 'error'); return; }
+      }
+      var newIdx = idx + direction;
+      if (newIdx < 0 || newIdx >= state.quranData.length) {
+        addBotMessage('❌ এই দিকে আর কোনো আয়াত নেই।', 'info'); return;
+      }
+      state.currentAyaIndex = newIdx;
+      state.currentAya = state.quranData[newIdx];
+      displayAyaResult(state.currentAya);
+    };
+
+    function showTafsirModal(sura, aya) {
+      var tafsir = state.tafsirData[sura + ':' + aya];
+      var arabic = state.arabicData.find(function(a) { return a.sura === sura && a.VerseIDAr === aya; });
+      var bengali = state.quranData.find(function(a) { return a.sura === sura && a.aya === aya; });
+      var html = '';
+      if (arabic && arabic.ayat) html += '<div class="verse-arabic">' + arabic.ayat + '</div>';
+      if (bengali) html += '<div class="verse-translation"><strong>বাংলা অনুবাদ:</strong><br>' + bengali.text + '</div>';
+      if (tafsir && tafsir.text) html += '<div class="tafsir-text"><strong>তাফসীর:</strong><br>' + tafsir.text + '</div>';
+      else html += '<div class="tafsir-text"><p>এই আয়াতের তাফসীর এখনও যোগ করা হয়নি।</p></div>';
+      html += '<div class="tafsir-source"><strong>উৎস:</strong> ইবনে কাসিরের তাফসীর</div>';
+      dom.tafsirTitle.textContent = 'সূরা ' + sura + ', আয়াত ' + aya + ' - তাফসীর';
+      dom.tafsirBody.innerHTML = html;
+      dom.tafsirModal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    window.showTafsir = showTafsirModal;
+
+    function closeTafsirModal() {
+      dom.tafsirModal.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    function playAudio(sura, aya) {
+      var url = 'https://cdn.islamic.network/quran/audio/128/ar.alafasy/' + sura + '/' + aya + '.mp3';
+      var audio = new Audio(url);
+      audio.playbackRate = parseFloat(state.audioSettings.speed || 1);
+      audio.play().then(function() {
+        addBotMessage('🎧 আয়াত তিলাওয়াত শোনা হচ্ছে...', 'info');
+      }).catch(function() {
+        addBotMessage('❌ অডিও প্লে করতে সমস্যা হয়েছে।', 'error');
+      });
+    }
+
+    window.playAudio = playAudio;
+
+    function copyAyaText(sura, aya) {
+      var ayaData = state.quranData.find(function(a) { return a.sura === sura && a.aya === aya; });
+      var arabic = state.arabicData.find(function(a) { return a.sura === sura && a.VerseIDAr === aya; });
+      var text = 'সূরা ' + sura + ', আয়াত ' + aya + '\n\n';
+      if (arabic && arabic.ayat) text += arabic.ayat + '\n\n';
+      if (ayaData) text += ayaData.text;
+      navigator.clipboard.writeText(text).then(function() {
+        addBotMessage('✅ কপি করা হয়েছে!', 'success');
+      }).catch(function() {
+        addBotMessage('❌ কপি করতে সমস্যা হয়েছে।', 'error');
+      });
+    }
+
+    window.copyAya = copyAyaText;
+
+    function showPrayerTimes() {
+      var times = { fajr: '04:30 AM', sunrise: '06:00 AM', dhuhr: '12:15 PM', asr: '04:00 PM', maghrib: '06:30 PM', isha: '08:00 PM' };
+      var html = '<div class="prayer-card"><strong>🕌 আজকের সালাতের সময়সূচী (ঢাকা)</strong><div class="prayer-grid">';
+      var items = { 'ফজর': times.fajr, 'সূর্যোদয়': times.sunrise, 'জোহর': times.dhuhr, 'আসর': times.asr, 'মাগরিব': times.maghrib, 'ইশা': times.isha };
+      for (var key in items) {
+        html += '<div class="prayer-item"><span class="name">' + key + '</span><span class="time">' + items[key] + '</span></div>';
+      }
+      html += '</div><div style="margin-top:0.15rem;font-size:0.6rem;color:var(--gray-dark);">⚠️ আনুমানিক সময়</div></div>';
+      html += '<div class="home-btn-container"><button class="home-btn" onclick="window.goHome()">🏠 হোমে যান</button></div>';
+      addBotMessage(html, 'normal', true);
+    }
+
+    function showRandomHadith() {
+      var hadith = state.hadithData[Math.floor(Math.random() * state.hadithData.length)];
+      var html = '<div class="hadith-card"><div class="hadith-number">📜 হাদিস</div><div class="hadith-text">' + hadith.text + '</div><div class="hadith-translation"><strong>অনুবাদ:</strong> ' + hadith.translation + '</div><div class="hadith-source">📚 ' + hadith.source + ' | 🗣️ ' + hadith.narrator + '</div></div>';
+      html += '<div class="knowledge-nav"><button class="knowledge-nav-btn" onclick="window.showRandomHadith()">🎲 র্যান্ডম</button></div>';
+      html += '<div class="home-btn-container"><button class="home-btn" onclick="window.goHome()">🏠 হোমে যান</button></div>';
+      addBotMessage(html, 'normal', true);
+    }
+
+    window.showRandomHadith = showRandomHadith;
+
+    function showKnowledgeBase() {
+      var item = state.knowledgeBase[state.knowledgeIndex % state.knowledgeBase.length];
+      var total = state.knowledgeBase.length;
+      var html = '<div class="knowledge-card"><div class="kb-number">📚 জ্ঞান ' + (state.knowledgeIndex + 1) + '/' + total + '</div><div class="kb-title">' + item.title + '</div><div class="kb-content">' + item.content.replace(/\n/g, '<br>') + '</div><div class="kb-source">📖 ' + item.source + '</div></div>';
+      html += '<div class="knowledge-nav"><button class="knowledge-nav-btn" onclick="window.navKnowledge(-1)" ' + (state.knowledgeIndex === 0 ? 'disabled' : '') + '>◀ আগের</button><button class="knowledge-nav-btn gold" onclick="window.navKnowledge(1)" ' + (state.knowledgeIndex === total - 1 ? 'disabled' : '') + '>পরবর্তী ▶</button></div>';
+      html += '<div class="home-btn-container"><button class="home-btn" onclick="window.goHome()">🏠 হোমে যান</button></div>';
+      addBotMessage(html, 'normal', true);
+    }
+
+    window.navKnowledge = function(direction) {
+      state.knowledgeIndex = (state.knowledgeIndex + direction + state.knowledgeBase.length) % state.knowledgeBase.length;
+      showKnowledgeBase();
+    };
+
+    function showBlogPosts() {
+      if (!state.blogPosts || state.blogPosts.length === 0) {
+        addBotMessage('📝 বর্তমানে কোন ব্লগ পোস্ট নেই।', 'info');
+        return;
+      }
+      var html = '<strong>📝 সাম্প্রতিক ব্লগ পোস্ট</strong><br><br>';
+      state.blogPosts.slice(0, 5).forEach(function(post, i) {
+        var pid = post.id || 'post-' + i;
+        var expanded = state.expandedPosts[pid] || false;
+        html += '<div class="blog-post-card" style="background:var(--white);border-radius:var(--rounded);padding:0.4rem;margin:0.3rem 0;box-shadow:var(--shadow-sm);">';
+        html += '<div style="font-weight:700;color:var(--primary);font-size:0.85rem;">' + (i+1) + '. ' + post.title + '</div>';
+        if (!expanded) html += '<div style="font-size:0.75rem;color:var(--text-light);">' + (post.summary || post.content.substring(0, 150) + '...') + '</div>';
+        if (expanded && post.content) html += '<div style="font-size:0.75rem;margin:0.15rem 0;">' + post.content.replace(/\n/g, '<br>') + '</div>';
+        html += '<div style="font-size:0.6rem;color:var(--gray-dark);">📅 ' + (post.published ? new Date(post.published).toLocaleDateString('bn-BD') : '') + ' | ✍️ ' + post.author + '</div>';
+        html += '<div style="display:flex;gap:0.2rem;flex-wrap:wrap;margin-top:0.15rem;">';
+        if (!expanded && post.content && post.content.length > 100) {
+          html += '<button class="book-btn preview" onclick="window.toggleBlogPost(\'' + pid + '\')">📖 পড়ুন</button>';
+        } else if (expanded) {
+          html += '<button class="book-btn download" onclick="window.toggleBlogPost(\'' + pid + '\')">⬆️ সংক্ষেপ</button>';
+        }
+        if (post.link && post.link !== '#') html += '<button class="book-btn buy" onclick="window.open(\'' + post.link + '\',\'_blank\')">🔗 লিংক</button>';
+        html += '</div></div>';
+      });
+      html += '<div class="home-btn-container"><button class="home-btn" onclick="window.goHome()">🏠 হোমে যান</button></div>';
+      addBotMessage(html, 'normal', true);
+    }
+
+    window.toggleBlogPost = function(pid) {
+      state.expandedPosts[pid] = !state.expandedPosts[pid];
+      showBlogPosts();
+    };
+
+    function showGuide() {
+      var html = '<strong>📖 ব্যবহার গাইড</strong><br><br>';
+      html += '<div class="knowledge-card"><div class="kb-content">';
+      html += '• <strong>🏠 হোম:</strong> প্রধান মেনু দেখতে<br>';
+      html += '• <strong>আয়াত:</strong> "সূরা:আয়াত" লিখুন, যেমন <em>2:255</em><br>';
+      html += '• <strong>বই পড়া:</strong> "বই পড় [নাম]" বা "ইবনে কাসীর পড়ুন"<br>';
+      html += '• <strong>বই খোঁজা:</strong> "বই" লিখুন, ক্যাটাগরি অনুযায়ী ফিল্টার করুন<br>';
+      html += '• <strong>পিডিএফ পড়া:</strong> "পড়ুন" বাটনে ক্লিক করুন<br>';
+      html += '• <strong>টাইমার:</strong> "টাইমার" লিখুন, পড়ার সময় ট্র্যাক করুন<br>';
+      html += '• <strong>যাকাত:</strong> "যাকাত" লিখুন, সম্পদ দিয়ে গণনা করুন<br>';
+      html += '• <strong>হাদিস/ব্লগ/কুইজ:</strong> সংশ্লিষ্ট শব্দ লিখুন<br>';
+      html += '• <strong>ভয়েস:</strong> 🎤 বাটনে চাপুন এবং কথা বলুন<br>';
+      html += '• <strong>সূরা তালিকা:</strong> 📖 সূরা বাটনে চাপুন';
+      html += '</div></div>';
+      html += '<div class="home-btn-container"><button class="home-btn" onclick="window.goHome()">🏠 হোমে যান</button></div>';
+      addBotMessage(html, 'normal', true);
+    }
+
+    function startQuiz() {
+      var questions = [
+        { q: "কুরআনের প্রথম সূরার নাম কি?", o: ["আল-ফাতিহা","আল-বাকারা","আল-ইখলাস","ইয়াসিন"], c: 0 },
+        { q: "কুরআনে মোট কয়টি সূরা আছে?", o: ["114","100","125","99"], c: 0 },
+        { q: "আয়াতুল কুরসি কোন সূরায় আছে?", o: ["সূরা বাকারা","সূরা ইখলাস","সূরা ফাতিহা","সূরা ইয়াসিন"], c: 0 },
+        { q: "ইসলামের ৫টি স্তম্ভের প্রথমটি কি?", o: ["কালিমা","সালাত","জাকাত","রোজা"], c: 0 }
+      ];
+      state.quizState = { questions: questions, current: 0, score: 0, total: questions.length };
+      askQuizQuestion();
+    }
+
+    function askQuizQuestion() {
+      if (!state.quizState || state.quizState.current >= state.quizState.total) {
+        if (state.quizState) showQuizResult();
+        return;
+      }
+      var q = state.quizState.questions[state.quizState.current];
+      var html = '<div class="quiz-card"><div class="quiz-progress">🧠 প্রশ্ন ' + (state.quizState.current + 1) + '/' + state.quizState.total + '</div><div class="question">' + q.q + '</div>';
+      q.o.forEach(function(opt, i) {
+        var letter = String.fromCharCode(65 + i);
+        html += '<button class="option-btn" onclick="window.answerQuizOption(' + i + ')">' + letter + '. ' + opt + '</button>';
+      });
+      html += '</div>';
+      addBotMessage(html, 'normal', true);
+    }
+
+    window.answerQuizOption = function(selected) {
+      if (!state.quizState) return;
+      var q = state.quizState.questions[state.quizState.current];
+      var correct = selected === q.c;
+      if (correct) { state.quizState.score++; addBotMessage('✅ সঠিক উত্তর! 🎉', 'success'); }
+      else { addBotMessage('❌ ভুল উত্তর! সঠিক: ' + q.o[q.c], 'error'); }
+      state.quizState.current++;
+      setTimeout(askQuizQuestion, 1500);
+    };
+
+    function showQuizResult() {
+      if (!state.quizState) return;
+      var pct = Math.round((state.quizState.score / state.quizState.total) * 100);
+      var msg = pct >= 80 ? '🎉 অসাধারণ!' : pct >= 60 ? '👍 ভালো!' : '📚 আরও পড়ুন!';
+      var html = '<div class="quiz-card"><div class="result">📊 কুইজ রেজাল্ট</div><div style="text-align:center;padding:0.1rem 0;">স্কোর: ' + state.quizState.score + '/' + state.quizState.total + '</div><div style="text-align:center;padding:0.1rem 0;">পার্সেন্টেজ: ' + pct + '%</div><div style="text-align:center;padding:0.1rem 0;">' + msg + '</div><button onclick="window.startQuiz()" style="display:block;width:100%;padding:0.25rem;background:var(--gold-gradient);border:none;border-radius:var(--rounded);cursor:pointer;font-weight:600;font-family:var(--font-ui);color:var(--dark);font-size:0.75rem;">🔄 আবার চেষ্টা করুন</button></div>';
+      html += '<div class="home-btn-container"><button class="home-btn" onclick="window.goHome()">🏠 হোমে যান</button></div>';
+      addBotMessage(html, 'normal', true);
+      state.quizState = null;
     }
 
     // ==================== QUERY PROCESSING ====================
     function processQuery(query) {
       if (state.isLoading) return;
-      
       var trimmed = query.trim();
-      if (!trimmed) {
-        addBotMessage('❌ অনুগ্রহ করে একটি প্রশ্ন লিখুন।', 'error');
-        return;
-      }
+      if (!trimmed) { addBotMessage('❌ অনুগ্রহ করে একটি প্রশ্ন লিখুন।', 'error'); return; }
 
       addUserMessage(trimmed);
       dom.input.value = '';
@@ -3558,77 +3862,67 @@
         state.isLoading = false;
 
         try {
+          var lower = trimmed.toLowerCase();
           var normalized = convertNumbers(trimmed);
-          var lowerQuery = trimmed.toLowerCase();
-          
-          if (/^(\d+)[:\.\/,](\d+)$/.test(normalized) || /^সূরা\s*(\d+)\s*আয়াত\s*(\d+)$/i.test(normalized)) {
-            handleSurahAya(normalized);
-          } else if (lowerQuery.indexOf('হাদিস') !== -1 || lowerQuery.indexOf('hadith') !== -1 || lowerQuery.indexOf('হাদীস') !== -1) {
-            showRandomHadith();
-          } else if (lowerQuery.indexOf('ব্লগ') !== -1 || lowerQuery.indexOf('blog') !== -1 || lowerQuery.indexOf('পোস্ট') !== -1) {
-            showBlogPosts();
-          } else if (lowerQuery.indexOf('বই') !== -1 || lowerQuery.indexOf('book') !== -1 || lowerQuery.indexOf('পিডিএফ') !== -1 || lowerQuery.indexOf('pdf') !== -1) {
-            showBookCorner();
-          } else if (lowerQuery.indexOf('যাকাত') !== -1 || lowerQuery.indexOf('zakat') !== -1 || lowerQuery.indexOf('যাকাত ক্যালকুলেটর') !== -1) {
-            showZakatCalculator();
-          } else if (lowerQuery.indexOf('সালাত') !== -1 || lowerQuery.indexOf('নামাজ') !== -1 || lowerQuery.indexOf('ওয়াক্ত') !== -1 || lowerQuery.indexOf('prayer') !== -1) {
-            showPrayerTimes();
-          } else if (lowerQuery.indexOf('কুইজ') !== -1 || lowerQuery.indexOf('quiz') !== -1 || lowerQuery.indexOf('প্রশ্ন') !== -1) {
-            startQuiz();
-          } else if (lowerQuery.indexOf('জ্ঞান') !== -1 || lowerQuery.indexOf('knowledge') !== -1 || lowerQuery.indexOf('শিখা') !== -1) {
-            showKnowledgeBase();
-          } else if (lowerQuery.indexOf('গাইড') !== -1 || lowerQuery.indexOf('guide') !== -1 || lowerQuery.indexOf('সাহায্য') !== -1 || lowerQuery.indexOf('help') !== -1) {
-            showGuide();
-          } else if (lowerQuery.indexOf('হোম') !== -1 || lowerQuery.indexOf('home') !== -1 || lowerQuery.indexOf('মেনু') !== -1) {
-            goHome();
-          } else if (trimmed.length >= 2) {
+
+          // Check for book commands first
+          if (handleBookCommand(trimmed)) {
+            return;
+          }
+
+          // Check other commands
+          var commandMap = {
+            'হোম': goHome, 'home': goHome, 'মেনু': goHome, 'menu': goHome,
+            'বই': showBookCorner, 'book': showBookCorner, 'পিডিএফ': showBookCorner, 'pdf': showBookCorner,
+            'বই সেকশন': showBookCorner, 'বই পড়': showBookCorner, 'বই পড়': showBookCorner,
+            'যাকাত': showZakatCalculator, 'zakat': showZakatCalculator, 'যাকাত ক্যালকুলেটর': showZakatCalculator,
+            'টাইমার': showTimer, 'timer': showTimer, 'সময়': showTimer, 'পড়ার সময়': showTimer,
+            'নামাজ': showPrayerTimes, 'সালাত': showPrayerTimes, 'prayer': showPrayerTimes,
+            'সময়সূচী': showPrayerTimes, 'ওয়াক্ত': showPrayerTimes,
+            'হাদিস': showRandomHadith, 'hadith': showRandomHadith, 'হাদীস': showRandomHadith,
+            'ব্লগ': showBlogPosts, 'blog': showBlogPosts, 'পোস্ট': showBlogPosts, 'post': showBlogPosts,
+            'কুইজ': startQuiz, 'quiz': startQuiz, 'প্রশ্ন': startQuiz,
+            'জ্ঞান': showKnowledgeBase, 'knowledge': showKnowledgeBase,
+            'গাইড': showGuide, 'guide': showGuide, 'সাহায্য': showGuide, 'help': showGuide,
+            'আয়াত': showPopularAyat, 'popular': showPopularAyat, 'জনপ্রিয়': showPopularAyat
+          };
+
+          for (var cmd in commandMap) {
+            if (lower.indexOf(cmd) !== -1) {
+              commandMap[cmd]();
+              return;
+            }
+          }
+
+          // Surah:Ayah pattern
+          if (/^(\d+)[:\.\/,](\d+)$/.test(normalized)) {
+            var parts = normalized.match(/^(\d+)[:\.\/,](\d+)$/);
+            selectAya(parts[1], parts[2]);
+            return;
+          }
+
+          // Keyword search
+          if (trimmed.length >= 2) {
             handleKeywordSearch(trimmed);
-          } else if (/সালাম|assalam|hello|hi|হ্যালো|নমস্কার|আদাব/i.test(trimmed)) {
-            handleGreeting();
+          } else if (/সালাম|assalam|hello|hi|হ্যালো/.test(lower)) {
+            addBotMessage('ওয়া আলাইকুম আসসালাম! "গাইড" লিখে সাহায্য নিন।', 'info');
           } else {
             addBotMessage('🤔 "' + trimmed + '" - আমি এই প্রশ্নের উত্তর দিতে পারছি না।\n\n"হোম" লিখে মেনু দেখুন বা "গাইড" লিখে সাহায্য নিন।', 'info');
           }
         } catch (error) {
           console.error('Query error:', error);
-          addBotMessage('❌ প্রক্রিয়াকরণে সমস্যা হয়েছে। আবার চেষ্টা করুন।', 'error');
+          addBotMessage('❌ প্রক্রিয়াকরণে সমস্যা হয়েছে।', 'error');
         }
-      }, 800);
+      }, 600);
     }
 
-    // ==================== SURAH AYA HANDLER ====================
-    function handleSurahAya(query) {
-      var match = query.match(/^(\d+)[:\.\/,](\d+)$/) || 
-                   query.match(/^সূরা\s*(\d+)\s*আয়াত\s*(\d+)$/i);
-      
-      if (match) {
-        var sura = match[1];
-        var aya = match[2];
-        var result = state.quranData.find(function(a) { return a.sura === sura && a.aya === aya; });
-        
-        if (result) {
-          state.currentAya = result;
-          state.currentAyaIndex = state.quranData.indexOf(result);
-          displayAyaResult(result);
-          
-          if (state.audioSettings.autoPlay) {
-            setTimeout(function() { playAudio(sura, aya); }, 1000);
-          }
-        } else {
-          addBotMessage('❌ সূরা ' + sura + ', আয়াত ' + aya + ' পাওয়া যায়নি।', 'error');
-        }
-      }
-    }
-
-    // ==================== KEYWORD SEARCH ====================
     function handleKeywordSearch(query) {
       var words = query.toLowerCase().split(/\s+/);
       var results = [];
-      
       state.quranData.forEach(function(aya) {
         var text = aya.text.toLowerCase();
         var matchCount = 0;
         var highlighted = aya.text;
-        
         words.forEach(function(word) {
           var regex = new RegExp(word, 'gi');
           var matches = text.match(regex);
@@ -3637,518 +3931,28 @@
             highlighted = highlighted.replace(regex, function(m) { return '<span class="search-highlight">' + m + '</span>'; });
           }
         });
-        
         if (matchCount > 0) {
           results.push({ sura: aya.sura, aya: aya.aya, text: aya.text, matchCount: matchCount, highlighted: highlighted });
         }
       });
-      
       results.sort(function(a, b) { return b.matchCount - a.matchCount; });
-      var top = results.slice(0, 8);
+      var top = results.slice(0, 6);
       state.currentSearchResults = top;
-      
       if (top.length === 0) {
         addBotMessage('❌ "' + query + '" এর জন্য কোন ফলাফল পাওয়া যায়নি।', 'error');
         return;
       }
-      
       var html = '<strong>"' + query + '" এর জন্য ' + top.length + 'টি আয়াত পাওয়া গেছে</strong><br><br>';
       top.forEach(function(r, i) {
-        html += '<div class="search-result-item"><div class="search-result-sura">' + (i+1) + '. সূরা ' + r.sura + ', আয়াত ' + r.aya + ' (' + r.matchCount + 'টি মিল)</div><div class="search-result-text">' + r.highlighted + '</div><button onclick="window.selectAyaFromSearch(' + i + ')" style="margin-top:4px;background:var(--gold);color:#000;border:none;padding:3px 10px;border-radius:5px;cursor:pointer;font-weight:600;font-size:0.75rem;">নির্বাচন</button></div>';
+        html += '<div class="search-result-item"><div class="search-result-sura">' + (i+1) + '. সূরা ' + r.sura + ', আয়াত ' + r.aya + ' (' + r.matchCount + 'টি মিল)</div><div class="search-result-text">' + r.highlighted + '</div><button onclick="window.selectAyaFromSearch(' + i + ')" style="margin-top:3px;background:var(--gold);color:#000;border:none;padding:2px 8px;border-radius:5px;cursor:pointer;font-weight:600;font-size:0.7rem;">নির্বাচন</button></div>';
       });
-      
       addBotMessage(html, 'normal', true);
     }
 
     window.selectAyaFromSearch = function(index) {
       var result = state.currentSearchResults[index];
-      if (result) {
-        var aya = state.quranData.find(function(a) { return a.sura === result.sura && a.aya === result.aya; });
-        if (aya) {
-          state.currentAya = aya;
-          state.currentAyaIndex = state.quranData.indexOf(aya);
-          displayAyaResult(aya);
-        }
-      }
+      if (result) selectAya(result.sura, result.aya);
     };
-
-    // ==================== DISPLAY AYA RESULT ====================
-    function displayAyaResult(aya) {
-      var arabic = state.arabicData.find(function(a) { return a.sura === aya.sura && a.VerseIDAr === aya.aya; });
-      var currentIndex = state.currentAyaIndex !== -1 ? state.currentAyaIndex : 0;
-      
-      var html = '<strong>সূরা ' + aya.sura + ', আয়াত ' + aya.aya + ' (সূরা ' + getSurahName(parseInt(aya.sura)) + ')</strong>';
-      
-      if (arabic && arabic.ayat) {
-        html += '<div class="arabic-text" style="font-family:var(--font-arabic);font-size:var(--arabic-font-size);text-align:right;direction:rtl;padding:0.6rem;background:var(--light-green);border-radius:var(--rounded);margin:0.3rem 0;line-height:2.2;">' + arabic.ayat + '</div>';
-      }
-      
-      html += '<div style="padding:0.4rem 0.6rem;background:#f8f9fa;border-radius:var(--rounded);border-left:4px solid var(--primary);margin:0.3rem 0;">' + aya.text + '</div>';
-      
-      html += '<div class="ayat-navigation">';
-      html += '<button class="ayat-nav-btn" onclick="window.navigateAyat(-1)" ' + (currentIndex <= 0 ? 'disabled' : '') + '>◀ আগের</button>';
-      html += '<button class="ayat-nav-btn gold" onclick="window.navigateAyat(1)" ' + (currentIndex >= state.quranData.length - 1 ? 'disabled' : '') + '>পরবর্তী ▶</button>';
-      html += '</div>';
-      
-      html += '<div style="display:flex;gap:0.25rem;flex-wrap:wrap;margin-top:0.3rem;justify-content:center;">';
-      html += '<button onclick="window.showTafsir(\'' + aya.sura + '\',\'' + aya.aya + '\')" style="background:var(--primary);color:#fff;border:none;padding:3px 8px;border-radius:5px;cursor:pointer;font-weight:600;font-family:var(--font-ui);font-size:0.7rem;">📖 তাফসীর</button>';
-      html += '<button onclick="window.playAudio(\'' + aya.sura + '\',\'' + aya.aya + '\')" style="background:var(--secondary);color:#fff;border:none;padding:3px 8px;border-radius:5px;cursor:pointer;font-weight:600;font-family:var(--font-ui);font-size:0.7rem;">🎧 শুনুন</button>';
-      html += '<button onclick="window.copyAya(\'' + aya.sura + '\',\'' + aya.aya + '\')" style="background:var(--gold);color:#000;border:none;padding:3px 8px;border-radius:5px;cursor:pointer;font-weight:600;font-family:var(--font-ui);font-size:0.7rem;">📋 কপি</button>';
-      html += '</div>';
-      
-      html += '<div class="home-btn-container"><button class="home-btn" onclick="window.goHome()">🏠 হোমে যান</button></div>';
-      
-      addBotMessage(html, 'normal', true);
-    }
-
-    window.navigateAyat = function(direction) {
-      var currentIndex = state.currentAyaIndex;
-      if (currentIndex === -1) {
-        if (state.currentAya) {
-          currentIndex = state.quranData.indexOf(state.currentAya);
-        }
-        if (currentIndex === -1) {
-          addBotMessage('❌ নেভিগেট করার জন্য কোনো আয়াত নির্বাচিত নেই।', 'error');
-          return;
-        }
-      }
-      
-      var newIndex = currentIndex + direction;
-      if (newIndex < 0 || newIndex >= state.quranData.length) {
-        addBotMessage('❌ এই দিকে আর কোনো আয়াত নেই।', 'info');
-        return;
-      }
-      
-      state.currentAyaIndex = newIndex;
-      state.currentAya = state.quranData[newIndex];
-      displayAyaResult(state.currentAya);
-    };
-
-    // ==================== TAFSIR ====================
-    function showTafsirModal(sura, aya) {
-      var tafsir = state.tafsirData[sura + ':' + aya];
-      var arabic = state.arabicData.find(function(a) { return a.sura === sura && a.VerseIDAr === aya; });
-      var bengali = state.quranData.find(function(a) { return a.sura === sura && a.aya === aya; });
-      
-      var html = '';
-      if (arabic && arabic.ayat) {
-        html += '<div class="verse-arabic">' + arabic.ayat + '</div>';
-      }
-      if (bengali && bengali.text) {
-        html += '<div class="verse-translation"><strong>বাংলা অনুবাদ:</strong><br>' + bengali.text + '</div>';
-      }
-      if (tafsir && tafsir.text) {
-        html += '<div class="tafsir-text"><strong>তাফসীর:</strong><br>' + tafsir.text + '</div>';
-      } else {
-        html += '<div class="tafsir-text"><p>এই আয়াতের তাফসীর এখনও যোগ করা হয়নি।</p></div>';
-      }
-      html += '<div class="tafsir-source"><strong>উৎস:</strong> ইবনে কাসিরের তাফসীর</div>';
-      
-      dom.tafsirTitle.textContent = 'সূরা ' + sura + ', আয়াত ' + aya + ' - তাফসীর';
-      dom.tafsirBody.innerHTML = html;
-      dom.tafsirModal.classList.add('active');
-      document.body.style.overflow = 'hidden';
-    }
-
-    function closeTafsirModal() {
-      dom.tafsirModal.classList.remove('active');
-      document.body.style.overflow = '';
-    }
-
-    window.showTafsir = showTafsirModal;
-
-    // ==================== AUDIO ====================
-    function playAudio(sura, aya) {
-      var url = 'https://cdn.islamic.network/quran/audio/128/ar.alafasy/' + sura + '/' + aya + '.mp3';
-      var audio = new Audio(url);
-      audio.playbackRate = parseFloat(state.audioSettings.speed);
-      audio.play().then(function() {
-        addBotMessage('🎧 আয়াত তিলাওয়াত শোনা হচ্ছে...', 'info');
-      }).catch(function() {
-        addBotMessage('❌ অডিও প্লে করতে সমস্যা হয়েছে।', 'error');
-      });
-    }
-
-    window.playAudio = playAudio;
-
-    // ==================== COPY ====================
-    function copyAyaText(sura, aya) {
-      var ayaData = state.quranData.find(function(a) { return a.sura === sura && a.aya === aya; });
-      var arabic = state.arabicData.find(function(a) { return a.sura === sura && a.VerseIDAr === aya; });
-      var text = 'সূরা ' + sura + ', আয়াত ' + aya + '\n\n';
-      if (arabic && arabic.ayat) text += arabic.ayat + '\n\n';
-      if (ayaData) text += ayaData.text;
-      
-      navigator.clipboard.writeText(text).then(function() {
-        addBotMessage('✅ কপি করা হয়েছে!', 'success');
-      }).catch(function() {
-        addBotMessage('❌ কপি করতে সমস্যা হয়েছে।', 'error');
-      });
-    }
-
-    window.copyAya = copyAyaText;
-
-    // ==================== SHOW FUNCTIONS ====================
-    function showPopularAyat() {
-      var popular = [
-        { sura: '1', aya: '1', name: 'সূরা ফাতিহা' },
-        { sura: '2', aya: '255', name: 'আয়াতুল কুরসি' },
-        { sura: '36', aya: '1', name: 'সূরা ইয়াসিন' },
-        { sura: '112', aya: '1', name: 'সূরা ইখলাস' },
-        { sura: '55', aya: '1', name: 'সূরা রহমান' }
-      ];
-      
-      var html = '<strong>⭐ জনপ্রিয় আয়াত</strong><br><br>';
-      popular.forEach(function(p, i) {
-        html += '<button onclick="window.selectAya(\'' + p.sura + '\',\'' + p.aya + '\')" style="display:block;width:100%;margin:2px 0;padding:3px 6px;border:2px solid var(--primary);border-radius:8px;cursor:pointer;background:var(--white);text-align:left;font-family:var(--font-ui);font-weight:600;font-size:0.75rem;">' + (i+1) + '. ' + p.name + '<br><small style="color:var(--gray-dark);font-weight:400;">সূরা ' + p.sura + ', আয়াত ' + p.aya + '</small></button>';
-      });
-      html += '<div class="home-btn-container"><button class="home-btn" onclick="window.goHome()">🏠 হোমে যান</button></div>';
-      addBotMessage(html, 'normal', true);
-    }
-
-    function showPrayerTimes() {
-      var times = {
-        fajr: '04:30 AM',
-        sunrise: '06:00 AM',
-        dhuhr: '12:15 PM',
-        asr: '04:00 PM',
-        maghrib: '06:30 PM',
-        isha: '08:00 PM'
-      };
-      
-      var html = '<div class="prayer-card">';
-      html += '<strong>🕌 আজকের সালাতের সময়সূচী (ঢাকা)</strong>';
-      html += '<div class="prayer-grid">';
-      html += '<div class="prayer-item"><span class="name">ফজর</span><span class="time">' + times.fajr + '</span></div>';
-      html += '<div class="prayer-item"><span class="name">সূর্যোদয়</span><span class="time">' + times.sunrise + '</span></div>';
-      html += '<div class="prayer-item"><span class="name">জোহর</span><span class="time">' + times.dhuhr + '</span></div>';
-      html += '<div class="prayer-item"><span class="name">আসর</span><span class="time">' + times.asr + '</span></div>';
-      html += '<div class="prayer-item"><span class="name">মাগরিব</span><span class="time">' + times.maghrib + '</span></div>';
-      html += '<div class="prayer-item"><span class="name">ইশা</span><span class="time">' + times.isha + '</span></div>';
-      html += '</div>';
-      html += '<div style="margin-top:0.2rem;font-size:0.65rem;color:var(--gray-dark);">⚠️ নোট: এটি আনুমানিক সময়। স্থানীয় মসজিদ দেখুন।</div>';
-      html += '</div>';
-      html += '<div class="home-btn-container"><button class="home-btn" onclick="window.goHome()">🏠 হোমে যান</button></div>';
-      addBotMessage(html, 'normal', true);
-    }
-
-    function showRandomHadith() {
-      var total = state.hadithData.length;
-      var hadith = state.hadithData[Math.floor(Math.random() * total)];
-      var html = '<div class="hadith-card">';
-      html += '<div class="hadith-number">📜 হাদিস #' + (state.hadithData.indexOf(hadith) + 1) + '/' + total + '</div>';
-      html += '<div class="hadith-text">' + hadith.text + '</div>';
-      html += '<div class="hadith-translation"><strong>অনুবাদ:</strong> ' + hadith.translation + '</div>';
-      if (hadith.explanation) {
-        html += '<div style="font-size:0.75rem;margin:0.15rem 0;color:var(--text-light);"><strong>ব্যাখ্যা:</strong> ' + hadith.explanation + '</div>';
-      }
-      html += '<div class="hadith-source">📚 ' + hadith.source + ' | 🗣️ ' + hadith.narrator + '</div>';
-      html += '</div>';
-      
-      html += '<div class="knowledge-nav">';
-      html += '<button class="knowledge-nav-btn" onclick="window.showRandomHadith()">🎲 র্যান্ডম</button>';
-      html += '</div>';
-      
-      html += '<div class="home-btn-container"><button class="home-btn" onclick="window.goHome()">🏠 হোমে যান</button></div>';
-      
-      addBotMessage(html, 'normal', true);
-    }
-
-    window.showRandomHadith = showRandomHadith;
-
-    function showKnowledgeBase() {
-      var total = state.knowledgeBase.length;
-      if (total === 0) {
-        addBotMessage('📚 কোন জ্ঞান উপলব্ধ নেই।', 'info');
-        return;
-      }
-
-      var item = state.knowledgeBase[state.knowledgeIndex];
-      var html = '<div class="knowledge-card">';
-      html += '<div class="kb-number">📚 জ্ঞান ' + (state.knowledgeIndex + 1) + '/' + total + '</div>';
-      html += '<div class="kb-title">' + item.title + '</div>';
-      html += '<div class="kb-content">' + item.content.replace(/\n/g, '<br>') + '</div>';
-      html += '<div class="kb-source">📖 ' + item.source + '</div>';
-      html += '</div>';
-      
-      html += '<div class="knowledge-nav">';
-      html += '<button class="knowledge-nav-btn" onclick="window.navKnowledge(-1)" ' + (state.knowledgeIndex === 0 ? 'disabled' : '') + '>◀ আগের</button>';
-      html += '<button class="knowledge-nav-btn gold" onclick="window.navKnowledge(1)" ' + (state.knowledgeIndex === total - 1 ? 'disabled' : '') + '>পরবর্তী ▶</button>';
-      html += '</div>';
-      
-      html += '<div class="home-btn-container"><button class="home-btn" onclick="window.goHome()">🏠 হোমে যান</button></div>';
-      
-      addBotMessage(html, 'normal', true);
-    }
-
-    window.navKnowledge = function(direction) {
-      var total = state.knowledgeBase.length;
-      state.knowledgeIndex = Math.max(0, Math.min(total - 1, state.knowledgeIndex + direction));
-      showKnowledgeBase();
-    };
-
-    function showBlogPosts() {
-      if (!state.blogPosts || state.blogPosts.length === 0) {
-        addBotMessage('📝 বর্তমানে কোন ব্লগ পোস্ট নেই।', 'info');
-        return;
-      }
-
-      var html = '<strong>📝 সাম্প্রতিক ব্লগ পোস্ট</strong><br><br>';
-      state.blogPosts.slice(0, 5).forEach(function(post, i) {
-        var postId = post.id || 'post-' + i;
-        var isExpanded = state.expandedPosts[postId] || false;
-        
-        html += '<div class="blog-post-card" id="blog-post-' + postId + '">';
-        html += '<div class="post-title" onclick="window.toggleBlogPost(\'' + postId + '\')">' + (i+1) + '. ' + post.title + '</div>';
-        
-        if (!isExpanded) {
-          html += '<div class="post-excerpt">' + (post.summary || post.content.substring(0, 200) + '...') + '</div>';
-        }
-        
-        if (isExpanded && post.content) {
-          html += '<div class="post-full-content">' + post.content.replace(/\n/g, '<br>') + '</div>';
-        }
-        
-        html += '<div class="post-meta">📅 ' + (post.published ? new Date(post.published).toLocaleDateString('bn-BD') : '') + ' | ✍️ ' + post.author + '</div>';
-        html += '<div class="action-buttons">';
-        
-        if (!isExpanded && post.content && post.content.length > 100) {
-          html += '<button class="action-btn primary" onclick="window.toggleBlogPost(\'' + postId + '\')">📖 পড়ুন</button>';
-        } else if (isExpanded) {
-          html += '<button class="action-btn outline" onclick="window.toggleBlogPost(\'' + postId + '\')">⬆️ সংক্ষেপ</button>';
-        }
-        
-        if (post.link && post.link !== '#') {
-          html += '<button class="action-btn gold" onclick="window.open(\'' + post.link + '\',\'_blank\')">🔗 লিংক</button>';
-        }
-        html += '<button class="action-btn outline" onclick="window.copyBlogPost(\'' + postId + '\')">📋 কপি</button>';
-        html += '</div>';
-        html += '</div>';
-      });
-      html += '<div class="home-btn-container"><button class="home-btn" onclick="window.goHome()">🏠 হোমে যান</button></div>';
-      addBotMessage(html, 'normal', true);
-    }
-
-    function toggleBlogPostImpl(postId) {
-      var post = null;
-      for (var i = 0; i < state.blogPosts.length; i++) {
-        var p = state.blogPosts[i];
-        var pId = p.id || 'post-' + i;
-        if (pId === postId) {
-          post = p;
-          break;
-        }
-      }
-      if (!post) return;
-      
-      state.expandedPosts[postId] = !state.expandedPosts[postId];
-      var messages = dom.messages.querySelectorAll('.message.bot');
-      for (var j = messages.length - 1; j >= 0; j--) {
-        if (messages[j].innerHTML.indexOf('সাম্প্রতিক ব্লগ পোস্ট') !== -1) {
-          messages[j].remove();
-          showBlogPosts();
-          return;
-        }
-      }
-      showBlogPosts();
-    }
-
-    function copyBlogPostImpl(postId) {
-      var post = null;
-      for (var i = 0; i < state.blogPosts.length; i++) {
-        var p = state.blogPosts[i];
-        var pId = p.id || 'post-' + i;
-        if (pId === postId) {
-          post = p;
-          break;
-        }
-      }
-      if (!post) return;
-      
-      var text = post.title + '\n\n' + post.content;
-      navigator.clipboard.writeText(text).then(function() {
-        addBotMessage('✅ পোস্ট কপি করা হয়েছে!', 'success');
-      }).catch(function() {
-        addBotMessage('❌ কপি করতে সমস্যা হয়েছে।', 'error');
-      });
-    }
-
-    window.toggleBlogPost = toggleBlogPostImpl;
-    window.copyBlogPost = copyBlogPostImpl;
-
-    function showGuide() {
-      var html = '<strong>📖 ব্যবহার গাইড</strong><br><br>';
-      html += '<div class="knowledge-card"><div class="kb-content">';
-      html += '• <strong>🏠 হোম:</strong> প্রধান মেনু দেখতে<br>';
-      html += '• <strong>আয়াত পড়তে:</strong> সূরা:আয়াত লিখুন, যেমন <em>2:255</em><br>';
-      html += '• <strong>তাফসীর:</strong> আয়াত দেখার পর 📖 তাফসীর বাটনে চাপুন<br>';
-      html += '• <strong>হাদিস:</strong> "হাদিস" লিখুন<br>';
-      html += '• <strong>ব্লগ:</strong> "ব্লগ" লিখুন<br>';
-      html += '• <strong>বই:</strong> "বই" বা "পিডিএফ" লিখুন<br>';
-      html += '• <strong>যাকাত:</strong> "যাকাত" লিখুন বা 💰 যাকাত বাটনে চাপুন<br>';
-      html += '• <strong>নামাজের সময়:</strong> "নামাজ" লিখুন<br>';
-      html += '• <strong>কুইজ:</strong> "কুইজ" লিখুন<br>';
-      html += '• <strong>জ্ঞান:</strong> "জ্ঞান" লিখুন<br>';
-      html += '• <strong>ভয়েস:</strong> হেডারের 🎤 বাটনে চাপুন<br>';
-      html += '• <strong>সূরা তালিকা:</strong> হেডারের 📖 সূরা বাটনে চাপুন';
-      html += '</div></div>';
-      html += '<div class="home-btn-container"><button class="home-btn" onclick="window.goHome()">🏠 হোমে যান</button></div>';
-      addBotMessage(html, 'normal', true);
-    }
-
-    function startQuiz() {
-      var questions = [
-        { q: "কুরআনের প্রথম সূরার নাম কি?", o: ["আল-ফাতিহা","আল-বাকারা","আল-ইখলাস","ইয়াসিন"], c: 0, e: "আল-ফাতিহা অর্থ 'উন্মোচনকারী', ৭ আয়াত।" },
-        { q: "কুরআনে মোট কয়টি সূরা আছে?", o: ["114","100","125","99"], c: 0, e: "মোট ১১৪টি সূরা, ৮৬টি মাক্কী, ২৮টি মাদানী।" },
-        { q: "আয়াতুল কুরসি কোন সূরায় আছে?", o: ["সূরা বাকারা","সূরা ইখলাস","সূরা ফাতিহা","সূরা ইয়াসিন"], c: 0, e: "সূরা বাকারার ২৫৫ নম্বর আয়াত।" },
-        { q: "ইসলামের ৫টি স্তম্ভের মধ্যে প্রথমটি কি?", o: ["কালিমা","সালাত","জাকাত","রোজা"], c: 0, e: "কালিমা শাহাদাত হলো ইসলামের প্রথম স্তম্ভ।" }
-      ];
-      
-      state.quizState = {
-        questions: questions,
-        current: 0,
-        score: 0,
-        total: questions.length
-      };
-      
-      askQuizQuestion();
-    }
-
-    function askQuizQuestion() {
-      if (!state.quizState) return;
-      
-      if (state.quizState.current >= state.quizState.total) {
-        showQuizResult();
-        return;
-      }
-      
-      var q = state.quizState.questions[state.quizState.current];
-      var html = '<div class="quiz-card">';
-      html += '<div class="quiz-progress">🧠 প্রশ্ন ' + (state.quizState.current + 1) + '/' + state.quizState.total + '</div>';
-      html += '<div class="question">' + q.q + '</div>';
-      q.o.forEach(function(opt, i) {
-        var letter = String.fromCharCode(65 + i);
-        html += '<button class="option-btn" onclick="window.answerQuizOption(' + i + ')">' + letter + '. ' + opt + '</button>';
-      });
-      html += '</div>';
-      addBotMessage(html, 'normal', true);
-    }
-
-    function answerQuizOptionImpl(selected) {
-      if (!state.quizState) return;
-      
-      var q = state.quizState.questions[state.quizState.current];
-      var correct = selected === q.c;
-      
-      if (correct) {
-        state.quizState.score++;
-        addBotMessage('✅ সঠিক উত্তর! 🎉<br><br>' + q.e, 'success');
-      } else {
-        addBotMessage('❌ ভুল উত্তর! সঠিক: ' + q.o[q.c] + '<br><br>' + q.e, 'error');
-      }
-      
-      state.quizState.current++;
-      setTimeout(askQuizQuestion, 2000);
-    }
-
-    function showQuizResult() {
-      if (!state.quizState) return;
-      
-      var pct = Math.round((state.quizState.score / state.quizState.total) * 100);
-      var msg = pct >= 80 ? '🎉 অসাধারণ!' : pct >= 60 ? '👍 ভালো!' : '📚 আরও পড়ুন!';
-      
-      var html = '<div class="quiz-card">';
-      html += '<div class="result">📊 কুইজ রেজাল্ট</div>';
-      html += '<div style="text-align:center;padding:0.15rem 0;">স্কোর: ' + state.quizState.score + '/' + state.quizState.total + '</div>';
-      html += '<div style="text-align:center;padding:0.15rem 0;">পার্সেন্টেজ: ' + pct + '%</div>';
-      html += '<div style="text-align:center;padding:0.15rem 0;">' + msg + '</div>';
-      html += '<button onclick="window.startQuiz()" style="display:block;width:100%;padding:0.3rem;background:var(--gold-gradient);border:none;border-radius:var(--rounded);cursor:pointer;font-weight:600;font-family:var(--font-ui);color:var(--dark);font-size:0.8rem;">🔄 আবার চেষ্টা করুন</button>';
-      html += '</div>';
-      html += '<div class="home-btn-container"><button class="home-btn" onclick="window.goHome()">🏠 হোমে যান</button></div>';
-      addBotMessage(html, 'normal', true);
-      
-      state.quizState = null;
-    }
-
-    window.answerQuizOption = answerQuizOptionImpl;
-    window.startQuiz = startQuiz;
-
-    function handleGreeting() {
-      var responses = [
-        'ওয়া আলাইকুম আসসালাম! "গাইড" লিখে সাহায্য নিন বা "হোম" লিখে মেনু দেখুন।',
-        'আসসালামু আলাইকুম! কেমন আছেন? কীভাবে সাহায্য করতে পারি?'
-      ];
-      addBotMessage(responses[Math.floor(Math.random() * responses.length)]);
-    }
-
-    // ==================== VOICE RECOGNITION ====================
-    function initVoice() {
-      if (!('webkitSpeechRecognition' in window || 'SpeechRecognition' in window)) {
-        addBotMessage('❌ আপনার ব্রাউজার ভয়েস সাপোর্ট করে না।', 'error');
-        return;
-      }
-      
-      var SR = window.SpeechRecognition || window.webkitSpeechRecognition;
-      state.recognition = new SR();
-      state.recognition.lang = 'bn-BD';
-      state.recognition.continuous = false;
-      state.recognition.interimResults = false;
-      
-      state.recognition.onstart = function() {
-        state.isVoiceActive = true;
-        dom.voiceBtn.innerHTML = '🔴 রেকর্ডিং';
-        addBotMessage('🎤 কথা বলুন...', 'info');
-      };
-      
-      state.recognition.onresult = function(e) {
-        var text = e.results[0][0].transcript;
-        dom.input.value = text;
-        processQuery(text);
-      };
-      
-      state.recognition.onerror = function(e) {
-        addBotMessage('❌ ভয়েস ত্রুটি: ' + e.error, 'error');
-        state.isVoiceActive = false;
-        dom.voiceBtn.innerHTML = '🎤 ভয়েস';
-      };
-      
-      state.recognition.onend = function() {
-        state.isVoiceActive = false;
-        dom.voiceBtn.innerHTML = '🎤 ভয়েস';
-      };
-    }
-
-    function toggleVoice() {
-      if (!state.recognition) initVoice();
-      if (!state.recognition) return;
-      
-      if (state.isVoiceActive) {
-        state.recognition.stop();
-      } else {
-        try {
-          state.recognition.start();
-        } catch (e) {
-          addBotMessage('❌ মাইক্রোফোন এক্সেস সমস্যা।', 'error');
-        }
-      }
-    }
-
-    // ==================== THEME ====================
-    function toggleTheme() {
-      state.isDark = !state.isDark;
-      document.documentElement.setAttribute('data-theme', state.isDark ? 'dark' : 'light');
-      localStorage.setItem('quranTheme', state.isDark ? 'dark' : 'light');
-      dom.themeIcon.textContent = state.isDark ? '☀️' : '🌙';
-    }
-
-    function loadTheme() {
-      var saved = localStorage.getItem('quranTheme');
-      if (saved === 'dark') {
-        state.isDark = true;
-        document.documentElement.setAttribute('data-theme', 'dark');
-        dom.themeIcon.textContent = '☀️';
-      }
-    }
 
     // ==================== SETTINGS ====================
     function loadSettings() {
@@ -4156,11 +3960,9 @@
       if (saved) {
         try {
           var settings = JSON.parse(saved);
-          
           var bengaliSize = document.getElementById('bengali-font-size');
           var arabicSize = document.getElementById('arabic-font-size');
           var audioSpeed = document.getElementById('audio-speed');
-          
           if (settings.bengaliSize) {
             bengaliSize.value = settings.bengaliSize;
             document.getElementById('bengali-font-size-value').textContent = settings.bengaliSize + 'px';
@@ -4173,22 +3975,17 @@
             audioSpeed.value = settings.audioSpeed;
             document.getElementById('audio-speed-value').textContent = settings.audioSpeed + 'x';
           }
-          
           document.getElementById('bengali-font-family').value = settings.bengaliFont || 'Kalpurush, Hind Siliguri, sans-serif';
           document.getElementById('arabic-font-family').value = settings.arabicFont || 'Amiri, Scheherazade New, serif';
           document.getElementById('auto-play-audio').checked = settings.autoPlayAudio || false;
-          document.getElementById('show-transliteration').checked = settings.showTransliteration || false;
-          
           state.audioSettings.speed = parseFloat(settings.audioSpeed) || 1;
           state.audioSettings.autoPlay = settings.autoPlayAudio || false;
-          state.displaySettings.showTransliteration = settings.showTransliteration || false;
           state.fontSettings.bengaliSize = parseInt(settings.bengaliSize) || 18;
-          state.fontSettings.arabicSize = parseInt(settings.arabicSize) || 20;
+          state.fontSettings.arabicSize = parseInt(settings.arabicSize) || 22;
           state.fontSettings.bengaliFont = settings.bengaliFont || 'Kalpurush, Hind Siliguri, sans-serif';
           state.fontSettings.arabicFont = settings.arabicFont || 'Amiri, Scheherazade New, serif';
-          
           applySettings();
-        } catch (e) {}
+        } catch(e) {}
       }
     }
 
@@ -4199,19 +3996,15 @@
         audioSpeed: document.getElementById('audio-speed').value,
         bengaliFont: document.getElementById('bengali-font-family').value,
         arabicFont: document.getElementById('arabic-font-family').value,
-        autoPlayAudio: document.getElementById('auto-play-audio').checked,
-        showTransliteration: document.getElementById('show-transliteration').checked
+        autoPlayAudio: document.getElementById('auto-play-audio').checked
       };
       localStorage.setItem('quranChatSettings', JSON.stringify(settings));
-      
       state.audioSettings.speed = parseFloat(settings.audioSpeed);
       state.audioSettings.autoPlay = settings.autoPlayAudio;
-      state.displaySettings.showTransliteration = settings.showTransliteration;
       state.fontSettings.bengaliSize = parseInt(settings.bengaliSize);
       state.fontSettings.arabicSize = parseInt(settings.arabicSize);
       state.fontSettings.bengaliFont = settings.bengaliFont;
       state.fontSettings.arabicFont = settings.arabicFont;
-      
       applySettings();
     }
 
@@ -4221,27 +4014,18 @@
       root.style.setProperty('--arabic-font-size', state.fontSettings.arabicSize + 'px');
       root.style.setProperty('--font-bengali', state.fontSettings.bengaliFont);
       root.style.setProperty('--font-arabic', state.fontSettings.arabicFont);
-      
-      var chat = document.getElementById('chatbot-fullpage');
-      if (chat) {
-        chat.style.setProperty('--bengali-font-size', state.fontSettings.bengaliSize + 'px');
-        chat.style.setProperty('--arabic-font-size', state.fontSettings.arabicSize + 'px');
-        chat.style.setProperty('--font-bengali', state.fontSettings.bengaliFont);
-        chat.style.setProperty('--font-arabic', state.fontSettings.arabicFont);
-      }
     }
 
     function resetSettings() {
       document.getElementById('bengali-font-size').value = 18;
       document.getElementById('bengali-font-size-value').textContent = '18px';
-      document.getElementById('arabic-font-size').value = 20;
-      document.getElementById('arabic-font-size-value').textContent = '20px';
+      document.getElementById('arabic-font-size').value = 22;
+      document.getElementById('arabic-font-size-value').textContent = '22px';
       document.getElementById('audio-speed').value = 1;
       document.getElementById('audio-speed-value').textContent = '1.0x';
       document.getElementById('bengali-font-family').value = 'Kalpurush, Hind Siliguri, sans-serif';
       document.getElementById('arabic-font-family').value = 'Amiri, Scheherazade New, serif';
       document.getElementById('auto-play-audio').checked = false;
-      document.getElementById('show-transliteration').checked = false;
       saveSettings();
       addBotMessage('✅ সেটিংস রিসেট করা হয়েছে!', 'success');
     }
@@ -4273,16 +4057,13 @@
         "আল-মাউন","আল-কাওসার","আল-কাফিরুন","আন-নাসর","আল-মাসাদ",
         "আল-ইখলাস","আল-ফালাক","আন-নাস"
       ];
-      
       var html = '';
       names.forEach(function(name, i) {
         var num = i + 1;
         var count = getSurahAyahCount(num);
         html += '<div class="sura-item" data-sura="' + num + '"><strong>' + num + '</strong><br>' + name + '<small>' + count + '</small></div>';
       });
-      
       dom.suraGrid.innerHTML = html;
-      
       dom.suraGrid.querySelectorAll('.sura-item').forEach(function(el) {
         el.addEventListener('click', function() {
           var sura = this.getAttribute('data-sura');
@@ -4298,8 +4079,7 @@
       var items = dom.suraGrid.querySelectorAll('.sura-item');
       var q = query.toLowerCase();
       items.forEach(function(item) {
-        var text = item.textContent.toLowerCase();
-        item.style.display = text.indexOf(q) !== -1 ? '' : 'none';
+        item.style.display = item.textContent.toLowerCase().indexOf(q) !== -1 ? '' : 'none';
       });
     }
 
@@ -4324,47 +4104,83 @@
       document.body.style.overflow = '';
     }
 
-    // ==================== GLOBAL EXPOSURE ====================
-    window.selectAya = function(sura, aya) {
-      var result = state.quranData.find(function(a) { return a.sura === sura && a.aya === aya; });
-      if (result) {
-        state.currentAya = result;
-        state.currentAyaIndex = state.quranData.indexOf(result);
-        displayAyaResult(result);
-        if (state.audioSettings.autoPlay) {
-          setTimeout(function() { playAudio(sura, aya); }, 1000);
-        }
+    // ==================== VOICE ====================
+    function initVoice() {
+      if (!('webkitSpeechRecognition' in window || 'SpeechRecognition' in window)) {
+        addBotMessage('❌ আপনার ব্রাউজার ভয়েস সাপোর্ট করে না।', 'error');
+        return;
       }
-    };
+      var SR = window.SpeechRecognition || window.webkitSpeechRecognition;
+      state.recognition = new SR();
+      state.recognition.lang = 'bn-BD';
+      state.recognition.continuous = false;
+      state.recognition.interimResults = false;
+      state.recognition.onstart = function() {
+        state.isVoiceActive = true;
+        dom.voiceBtn.innerHTML = '🔴 রেকর্ডিং';
+        addBotMessage('🎤 কথা বলুন...', 'info');
+      };
+      state.recognition.onresult = function(e) {
+        var text = e.results[0][0].transcript;
+        dom.input.value = text;
+        processQuery(text);
+      };
+      state.recognition.onerror = function(e) {
+        addBotMessage('❌ ভয়েস ত্রুটি: ' + e.error, 'error');
+        state.isVoiceActive = false;
+        dom.voiceBtn.innerHTML = '🎤 ভয়েস';
+      };
+      state.recognition.onend = function() {
+        state.isVoiceActive = false;
+        dom.voiceBtn.innerHTML = '🎤 ভয়েস';
+      };
+    }
 
+    function toggleVoice() {
+      if (!state.recognition) initVoice();
+      if (!state.recognition) return;
+      if (state.isVoiceActive) { state.recognition.stop(); }
+      else { try { state.recognition.start(); } catch(e) { addBotMessage('❌ মাইক্রোফোন এক্সেস সমস্যা।', 'error'); } }
+    }
+
+    // ==================== THEME ====================
+    function toggleTheme() {
+      state.isDark = !state.isDark;
+      document.documentElement.setAttribute('data-theme', state.isDark ? 'dark' : 'light');
+      localStorage.setItem('quranTheme', state.isDark ? 'dark' : 'light');
+      dom.themeIcon.textContent = state.isDark ? '☀️' : '🌙';
+    }
+
+    function loadTheme() {
+      var saved = localStorage.getItem('quranTheme');
+      if (saved === 'dark') {
+        state.isDark = true;
+        document.documentElement.setAttribute('data-theme', 'dark');
+        dom.themeIcon.textContent = '☀️';
+      }
+    }
+
+    // ==================== INIT ====================
     window.goHome = goHome;
     window.handleQuickAction = handleQuickAction;
-    window.openPDF = openPDF;
-    window.calculateZakat = window.calculateZakat;
 
-    // ==================== EVENT BINDING ====================
     function init() {
-      // Start clock
       updateClock();
       setInterval(updateClock, 1000);
-
       loadQuranData();
       loadSettings();
       loadTheme();
       loadSuraList();
 
-      // Event delegation for quick action buttons
+      // Event listeners
       dom.messages.addEventListener('click', function(e) {
         var target = e.target.closest('.quick-action-premium');
         if (target) {
           var action = target.getAttribute('data-action');
-          if (action) {
-            handleQuickAction(action);
-          }
+          if (action) handleQuickAction(action);
         }
       });
 
-      // Welcome section quick action buttons
       document.querySelectorAll('#welcome-section .quick-action-premium').forEach(function(btn) {
         btn.addEventListener('click', function() {
           var action = this.getAttribute('data-action');
@@ -4372,97 +4188,67 @@
         });
       });
 
-      dom.sendBtn.addEventListener('click', function() {
-        processQuery(dom.input.value);
-      });
-
+      dom.sendBtn.addEventListener('click', function() { processQuery(dom.input.value); });
       dom.input.addEventListener('keypress', function(e) {
-        if (e.key === 'Enter') {
-          e.preventDefault();
-          processQuery(dom.input.value);
+        if (e.key === 'Enter') { e.preventDefault(); processQuery(dom.input.value); }
+      });
+      dom.clearBtn.addEventListener('click', function() {
+        dom.messages.innerHTML = '';
+        if (dom.welcomeSection) {
+          dom.welcomeSection.style.display = 'block';
+          state.welcomeVisible = true;
         }
+        dom.input.focus();
       });
-
-      dom.clearBtn.addEventListener('click', clearChat);
-
-      dom.homeBtn.addEventListener('click', function() {
-        goHome();
-      });
-
+      dom.homeBtn.addEventListener('click', goHome);
       dom.tafsirBtn.addEventListener('click', function() {
-        if (state.currentAya) {
-          showTafsirModal(state.currentAya.sura, state.currentAya.aya);
-        } else {
-          addBotMessage('⚠️ প্রথমে একটি আয়াত নির্বাচন করুন বা সূরা:আয়াত লিখুন।', 'error');
-        }
+        if (state.currentAya) showTafsirModal(state.currentAya.sura, state.currentAya.aya);
+        else addBotMessage('⚠️ প্রথমে একটি আয়াত নির্বাচন করুন।', 'error');
       });
-
       dom.voiceBtn.addEventListener('click', toggleVoice);
       dom.themeToggle.addEventListener('click', toggleTheme);
-
       dom.suraPanelBtn.addEventListener('click', openSuraPanel);
       dom.closeSura.addEventListener('click', closeSuraPanel);
-      dom.suraSearch.addEventListener('input', function(e) {
-        filterSuraList(e.target.value);
-      });
-
+      dom.suraSearch.addEventListener('input', function(e) { filterSuraList(e.target.value); });
       dom.settingsPanelBtn.addEventListener('click', openSettingsPanel);
       dom.closeSettings.addEventListener('click', closeSettingsPanel);
 
-      // Settings range sliders
-      var bengaliRange = document.getElementById('bengali-font-size');
-      var arabicRange = document.getElementById('arabic-font-size');
-      var audioRange = document.getElementById('audio-speed');
-      
-      bengaliRange.addEventListener('input', function() {
+      // Settings
+      document.getElementById('bengali-font-size').addEventListener('input', function() {
         document.getElementById('bengali-font-size-value').textContent = this.value + 'px';
         saveSettings();
       });
-      
-      arabicRange.addEventListener('input', function() {
+      document.getElementById('arabic-font-size').addEventListener('input', function() {
         document.getElementById('arabic-font-size-value').textContent = this.value + 'px';
         saveSettings();
       });
-      
-      audioRange.addEventListener('input', function() {
+      document.getElementById('audio-speed').addEventListener('input', function() {
         document.getElementById('audio-speed-value').textContent = this.value + 'x';
         saveSettings();
       });
-
-      document.querySelectorAll('#bengali-font-family, #arabic-font-family, #auto-play-audio, #show-transliteration').forEach(function(el) {
+      document.querySelectorAll('#bengali-font-family, #arabic-font-family, #auto-play-audio').forEach(function(el) {
         el.addEventListener('change', saveSettings);
       });
-
       document.getElementById('reset-settings').addEventListener('click', resetSettings);
 
+      // Tafsir Modal
       dom.closeTafsir.addEventListener('click', closeTafsirModal);
       dom.tafsirModal.addEventListener('click', function(e) {
         if (e.target === dom.tafsirModal) closeTafsirModal();
       });
 
-      // PDF Viewer controls
+      // PDF Viewer
       dom.pdfCloseBtn.addEventListener('click', closePDFViewer);
       dom.pdfPrevBtn.addEventListener('click', function() {
-        if (state.pdfDoc && state.pdfPageNum > 1) {
-          state.pdfPageNum--;
-          renderPDFPage();
-        }
+        if (state.pdfDoc && state.pdfPageNum > 1) { state.pdfPageNum--; renderPDFPage(); }
       });
       dom.pdfNextBtn.addEventListener('click', function() {
-        if (state.pdfDoc && state.pdfPageNum < state.pdfTotalPages) {
-          state.pdfPageNum++;
-          renderPDFPage();
-        }
+        if (state.pdfDoc && state.pdfPageNum < state.pdfTotalPages) { state.pdfPageNum++; renderPDFPage(); }
       });
-      
-      // PDF Fullscreen toggle - FIXED
       dom.pdfFullscreenBtn.addEventListener('click', function(e) {
         e.preventDefault();
-        e.stopPropagation();
         togglePdfFullscreen();
       });
-      
-      // PDF Zoom controls
       dom.pdfZoomInBtn.addEventListener('click', function() {
         state.pdfScale = Math.min(3.0, state.pdfScale + 0.2);
         if (state.pdfDoc) renderPDFPage();
@@ -4471,48 +4257,22 @@
         state.pdfScale = Math.max(0.5, state.pdfScale - 0.2);
         if (state.pdfDoc) renderPDFPage();
       });
-
-      // PDF Buy button
-      if (dom.pdfBuyBtn) {
-        dom.pdfBuyBtn.style.display = 'none';
-      }
-
+      dom.pdfBuyBtn.style.display = 'none';
       dom.pdfViewer.addEventListener('click', function(e) {
-        if (e.target === dom.pdfViewer && !state.isPdfFullscreen) {
-          closePDFViewer();
-        }
+        if (e.target === dom.pdfViewer && !state.isPdfFullscreen) closePDFViewer();
       });
 
-      // Keyboard shortcuts for PDF viewer
+      // Keyboard shortcuts
       document.addEventListener('keydown', function(e) {
         if (dom.pdfViewer.classList.contains('active')) {
-          if (e.key === 'f' || e.key === 'F') {
-            e.preventDefault();
-            togglePdfFullscreen();
-          }
-          if (e.key === 'ArrowLeft') {
-            e.preventDefault();
-            if (state.pdfDoc && state.pdfPageNum > 1) {
-              state.pdfPageNum--;
-              renderPDFPage();
-            }
-          }
-          if (e.key === 'ArrowRight') {
-            e.preventDefault();
-            if (state.pdfDoc && state.pdfPageNum < state.pdfTotalPages) {
-              state.pdfPageNum++;
-              renderPDFPage();
-            }
-          }
+          if (e.key === 'f' || e.key === 'F') { e.preventDefault(); togglePdfFullscreen(); }
+          if (e.key === 'ArrowLeft') { e.preventDefault(); if (state.pdfDoc && state.pdfPageNum > 1) { state.pdfPageNum--; renderPDFPage(); } }
+          if (e.key === 'ArrowRight') { e.preventDefault(); if (state.pdfDoc && state.pdfPageNum < state.pdfTotalPages) { state.pdfPageNum++; renderPDFPage(); } }
           if (e.key === 'Escape') {
-            if (state.isPdfFullscreen) {
-              togglePdfFullscreen();
-            } else {
-              closePDFViewer();
-            }
+            if (state.isPdfFullscreen) togglePdfFullscreen();
+            else closePDFViewer();
           }
         }
-        
         if (e.key === 'Escape') {
           closeTafsirModal();
           closeSuraPanel();
@@ -4521,7 +4281,7 @@
       });
 
       dom.input.focus();
-      console.log('🤖 কুরআন বট ৫.২ লোড হয়েছে!');
+      console.log('🤖 কুরআন বট ৬.১ লোড হয়েছে!');
     }
 
     if (document.readyState === 'loading') {
