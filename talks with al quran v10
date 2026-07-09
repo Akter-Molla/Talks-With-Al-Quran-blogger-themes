@@ -1,0 +1,5271 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html>
+<html b:version='2' class='v2' expr:dir='data:blog.languageDirection' xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
+<head>
+  <meta charset='utf-8'/>
+  <meta content='width=device-width, initial-scale=1.0' name='viewport'/>
+  <title><data:blog.pageTitle/></title>
+  <meta content='Al Quran Pro - Islamic Chatbot Theme' name='theme-name'/>
+  <meta content='Akter Molla' name='theme-author'/>
+  <meta content='7.0' name='theme-version'/>
+  
+  <!-- Fonts -->
+  <link href='https://fonts.maateen.me/kalpurush/font.css' rel='stylesheet'/>
+  <link href='https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&amp;display=swap' rel='stylesheet'/>
+  <link href='https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&amp;display=swap' rel='stylesheet'/>
+  <link href='https://fonts.googleapis.com/css2?family=Scheherazade+New:wght@400;700&amp;display=swap' rel='stylesheet'/>
+  <link href='https://fonts.googleapis.com/css2?family=Lateef:wght@400;700&amp;display=swap' rel='stylesheet'/>
+  
+  <b:skin><![CDATA[
+  /* ============================================
+     CSS VARIABLES
+     ============================================ */
+  :root {
+    --primary: #0d2b1a;
+    --primary-light: #1a4a2a;
+    --primary-dark: #061a0e;
+    --secondary: #2d5a27;
+    --accent: #8e6e53;
+    --gold: #d4af37;
+    --gold-light: #f0d080;
+    --gold-gradient: linear-gradient(135deg, #d4af37, #f0d080, #d4af37);
+    --light-green: #e8f5e8;
+    --white: #ffffff;
+    --dark: #1a1a1a;
+    --text: #1a3a1a;
+    --text-light: #4a6a4a;
+    --light-bg: #f5faf5;
+    --gray-light: #f0f5f0;
+    --gray-medium: #dce4dc;
+    --gray-dark: #6a7a6a;
+    --shadow-glow: 0 0 60px rgba(212, 175, 55, 0.15);
+    
+    --bengali-font-size: 17px;
+    --arabic-font-size: 22px;
+    --font-bengali: 'Kalpurush', 'Hind Siliguri', sans-serif;
+    --font-arabic: 'Amiri', 'Scheherazade New', serif;
+    --font-ui: 'Hind Siliguri', sans-serif;
+    
+    --shadow-sm: 0 2px 12px rgba(0, 0, 0, 0.06);
+    --shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+    --shadow-hover: 0 8px 40px rgba(0, 0, 0, 0.12);
+    --shadow-large: 0 16px 60px rgba(0, 0, 0, 0.15);
+    
+    --rounded: 14px;
+    --rounded-lg: 24px;
+    --rounded-xl: 32px;
+    --rounded-full: 50px;
+    --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    --transition-slow: all 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
+    --header-gradient: linear-gradient(135deg, #0d2b1a, #1a4a2a);
+  }
+
+  /* Dark Mode */
+  [data-theme="dark"] {
+    --primary: #3a9a5f;
+    --primary-light: #4ab070;
+    --primary-dark: #1a3a2a;
+    --secondary: #4a8a5f;
+    --accent: #b8957a;
+    --gold: #e8c96a;
+    --gold-light: #f0d97a;
+    --light-green: #1a2a1a;
+    --white: #1a1a1a;
+    --dark: #f0f0f0;
+    --text: #e0e8e0;
+    --text-light: #a0b0a0;
+    --light-bg: #121212;
+    --gray-light: #2a2a2a;
+    --gray-medium: #3a4a3a;
+    --gray-dark: #8a9a8a;
+    --shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
+    --shadow-hover: 0 8px 40px rgba(0, 0, 0, 0.5);
+    --shadow-large: 0 16px 60px rgba(0, 0, 0, 0.6);
+    --shadow-glow: 0 0 60px rgba(232, 201, 106, 0.06);
+  }
+
+  /* ============================================
+     RESET & BASE
+     ============================================ */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: var(--font-bengali);
+    color: var(--text);
+    background: var(--light-bg);
+    line-height: 1.7;
+    overflow: hidden;
+    font-size: var(--bengali-font-size);
+    transition: background-color 0.4s ease, color 0.4s ease;
+    height: 100vh;
+    width: 100vw;
+  }
+
+  ::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--gray-light);
+    border-radius: 10px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--gold-gradient);
+    border-radius: 10px;
+  }
+
+  /* ============================================
+     FULL PAGE CHATBOT
+     ============================================ */
+  .chatbot-fullpage {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    background: var(--white);
+    z-index: 1000;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+  }
+
+  /* ============================================
+     HEADER
+     ============================================ */
+  .chatbot-header-premium {
+    background: var(--header-gradient);
+    padding: 0.5rem 1.2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    min-height: 56px;
+    flex-shrink: 0;
+    position: relative;
+    z-index: 10;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.15);
+  }
+
+  .chatbot-header-premium::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: var(--gold-gradient);
+  }
+
+  .header-brand {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    color: var(--white);
+  }
+
+  .header-brand .brand-icon {
+    font-size: 1.6rem;
+    animation: pulseGlow 3s ease-in-out infinite;
+  }
+
+  @keyframes pulseGlow {
+    0%, 100% { filter: drop-shadow(0 0 5px rgba(212, 175, 55, 0.3)); }
+    50% { filter: drop-shadow(0 0 20px rgba(212, 175, 55, 0.6)); }
+  }
+
+  .header-brand .brand-text {
+    font-size: 1.1rem;
+    font-weight: 700;
+  }
+
+  .header-brand .brand-text span {
+    color: var(--gold-light);
+  }
+
+  .header-controls {
+    display: flex;
+    gap: 0.3rem;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  .control-btn {
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.08);
+    color: var(--white);
+    padding: 0.25rem 0.6rem;
+    border-radius: var(--rounded-full);
+    cursor: pointer;
+    transition: var(--transition);
+    font-size: 0.6rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.2rem;
+    backdrop-filter: blur(8px);
+    font-family: var(--font-ui);
+  }
+
+  .control-btn:hover {
+    background: rgba(255,255,255,0.2);
+    transform: translateY(-2px);
+  }
+
+  .control-btn.active {
+    background: var(--gold-gradient);
+    color: var(--dark);
+    border-color: var(--gold);
+  }
+
+  /* Digital Clock */
+  .digital-clock {
+    color: var(--white);
+    font-size: 0.7rem;
+    font-weight: 600;
+    background: rgba(255,255,255,0.08);
+    padding: 0.15rem 0.6rem;
+    border-radius: var(--rounded-full);
+    border: 1px solid rgba(255,255,255,0.1);
+    font-family: 'Courier New', monospace;
+    min-width: 70px;
+    text-align: center;
+  }
+
+  .digital-clock .clock-time {
+    font-size: 0.85rem;
+  }
+
+  .digital-clock .clock-am-pm {
+    font-size: 0.55rem;
+    opacity: 0.7;
+  }
+
+  /* ============================================
+     CHAT BODY
+     ============================================ */
+  .chat-body-main {
+    flex: 1;
+    overflow-y: auto;
+    padding: 0.8rem 1.2rem;
+    background: var(--light-bg);
+    scroll-behavior: smooth;
+    min-height: 0;
+    background-image: radial-gradient(circle at 10% 20%, rgba(212, 175, 55, 0.03) 0%, transparent 50%);
+  }
+
+  /* ============================================
+     WELCOME SECTION - EYE CATCHY
+     ============================================ */
+  .welcome-section {
+    text-align: center;
+    padding: 1rem 0 0.5rem;
+    animation: fadeInUp 0.8s ease;
+  }
+
+  .welcome-section .welcome-icon {
+    font-size: 4.5rem;
+    margin-bottom: 0.3rem;
+    display: inline-block;
+    animation: floatIcon 4s ease-in-out infinite;
+  }
+
+  @keyframes floatIcon {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-12px) rotate(5deg); }
+  }
+
+  .welcome-section .welcome-glow {
+    position: relative;
+    display: inline-block;
+  }
+
+  .welcome-section .welcome-glow::before {
+    content: '';
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    right: -20px;
+    bottom: -20px;
+    background: radial-gradient(circle, rgba(212, 175, 55, 0.15), transparent 70%);
+    border-radius: 50%;
+    z-index: -1;
+    animation: glowPulse 3s ease-in-out infinite;
+  }
+
+  @keyframes glowPulse {
+    0%, 100% { transform: scale(1); opacity: 0.5; }
+    50% { transform: scale(1.3); opacity: 1; }
+  }
+
+  .welcome-section h1 {
+    font-size: 2.4rem;
+    color: var(--primary);
+    margin-bottom: 0.1rem;
+    font-weight: 700;
+  }
+
+  .welcome-section h1 span {
+    background: var(--gold-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .welcome-section .welcome-sub {
+    font-size: 1.1rem;
+    color: var(--text-light);
+    max-width: 550px;
+    margin: 0.1rem auto;
+  }
+
+  .welcome-section .feature-badge {
+    display: inline-block;
+    background: var(--gold-gradient);
+    color: var(--dark);
+    padding: 0.2rem 1.2rem;
+    border-radius: var(--rounded-full);
+    font-size: 0.75rem;
+    font-weight: 600;
+    margin-top: 0.2rem;
+    box-shadow: 0 4px 20px rgba(212, 175, 55, 0.3);
+  }
+
+  .welcome-section .data-status {
+    font-size: 0.75rem;
+    color: var(--text-light);
+    margin-top: 0.2rem;
+    min-height: 1.2rem;
+  }
+
+  .welcome-section .data-status.error {
+    color: #c62828;
+    font-weight: 600;
+  }
+
+  .welcome-section .data-status.hidden {
+    opacity: 0;
+  }
+
+  /* ============================================
+     QUICK ACTIONS GRID
+     ============================================ */
+  .quick-actions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(85px, 1fr));
+    gap: 0.4rem;
+    max-width: 820px;
+    margin: 0.8rem auto 0.3rem;
+  }
+
+  .quick-action-premium {
+    background: var(--white);
+    border: 2px solid var(--gray-medium);
+    padding: 0.5rem 0.2rem;
+    border-radius: var(--rounded);
+    cursor: pointer;
+    transition: var(--transition);
+    font-family: var(--font-ui);
+    font-weight: 600;
+    font-size: 0.55rem;
+    color: var(--text);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.1rem;
+    box-shadow: var(--shadow-sm);
+    min-height: 60px;
+  }
+
+  .quick-action-premium .qa-icon {
+    font-size: 1.4rem;
+  }
+
+  .quick-action-premium .qa-label {
+    font-size: 0.5rem;
+    line-height: 1.2;
+  }
+
+  .quick-action-premium:hover {
+    border-color: var(--gold);
+    background: rgba(212, 175, 55, 0.05);
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-hover);
+  }
+
+  .quick-action-premium.primary {
+    border-color: var(--gold);
+    background: var(--gold-gradient);
+    color: var(--dark);
+  }
+
+  .quick-action-premium.primary:hover {
+    box-shadow: 0 4px 25px rgba(212, 175, 55, 0.4);
+  }
+
+  /* ============================================
+     MESSAGES
+     ============================================ */
+  .message {
+    margin-bottom: 0.6rem;
+    padding: 0.5rem 0.9rem;
+    border-radius: 1rem;
+    max-width: 90%;
+    word-wrap: break-word;
+    line-height: 1.7;
+    position: relative;
+    animation: messageSlide 0.35s ease;
+    font-size: 0.9rem;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+  }
+
+  @keyframes messageSlide {
+    from { opacity: 0; transform: translateY(18px) scale(0.96); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+  }
+
+  .message.user {
+    background: linear-gradient(135deg, #e8f0fe, #d4e0fa);
+    margin-left: auto;
+    border-bottom-right-radius: 0.3rem;
+    color: #0d47a1;
+    border: 1px solid #bbdefb;
+  }
+
+  [data-theme="dark"] .message.user {
+    background: linear-gradient(135deg, #1a2a4a, #0d1a3a);
+    color: #90caf9;
+    border-color: #1a3a5a;
+  }
+
+  .message.bot {
+    background: linear-gradient(135deg, var(--light-green), #e8f5e8);
+    margin-right: auto;
+    border-bottom-left-radius: 0.3rem;
+    color: var(--text);
+    border: 1px solid #c8e6c9;
+  }
+
+  [data-theme="dark"] .message.bot {
+    background: linear-gradient(135deg, #1a2a1a, #0d1a0d);
+    border-color: #2a4a2a;
+  }
+
+  .message.bot.error {
+    background: linear-gradient(135deg, #ffebee, #ffcdd2);
+    border-color: #ef9a9a;
+    color: #c62828;
+  }
+
+  .message.bot.success {
+    background: linear-gradient(135deg, #e8f5e9, #c8e6c9);
+    border-color: #81c784;
+    color: #2e7d32;
+  }
+
+  .message.bot.info {
+    background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+    border-color: #64b5f6;
+    color: #0d47a1;
+  }
+
+  .message-timestamp {
+    font-size: 0.45rem;
+    color: var(--gray-dark);
+    margin-top: 0.1rem;
+    opacity: 0.5;
+  }
+
+  /* ============================================
+     BOOK CORNER
+     ============================================ */
+  .book-category-tabs {
+    display: flex;
+    gap: 0.3rem;
+    flex-wrap: wrap;
+    margin: 0.2rem 0 0.4rem;
+    justify-content: center;
+  }
+
+  .book-category-tab {
+    padding: 0.15rem 0.6rem;
+    border: 2px solid var(--gray-medium);
+    border-radius: var(--rounded-full);
+    background: var(--white);
+    cursor: pointer;
+    font-family: var(--font-ui);
+    font-size: 0.55rem;
+    font-weight: 600;
+    transition: var(--transition);
+    color: var(--text);
+  }
+
+  .book-category-tab:hover {
+    border-color: var(--primary);
+    background: rgba(26, 71, 42, 0.05);
+  }
+
+  .book-category-tab.active {
+    border-color: var(--gold);
+    background: var(--gold-gradient);
+    color: var(--dark);
+  }
+
+  .book-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 0.6rem;
+    margin: 0.4rem 0;
+  }
+
+  .book-card {
+    background: var(--white);
+    border-radius: var(--rounded);
+    padding: 0.6rem;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+    border: 2px solid var(--gray-light);
+    text-align: center;
+  }
+
+  .book-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-hover);
+    border-color: var(--gold);
+  }
+
+  .book-card .book-icon {
+    font-size: 2rem;
+    margin-bottom: 0.15rem;
+    display: block;
+  }
+
+  .book-card .book-title {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--primary);
+    line-height: 1.2;
+  }
+
+  .book-card .book-author {
+    font-size: 0.6rem;
+    color: var(--gray-dark);
+  }
+
+  .book-card .book-price {
+    font-size: 0.65rem;
+    font-weight: 700;
+    color: var(--gold);
+    margin: 0.1rem 0;
+  }
+
+  .book-card .book-desc {
+    font-size: 0.55rem;
+    color: var(--text-light);
+    margin: 0.1rem 0;
+    line-height: 1.3;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .book-card .book-actions {
+    display: flex;
+    gap: 0.2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 0.2rem;
+  }
+
+  .book-card .book-btn {
+    padding: 0.15rem 0.5rem;
+    border: none;
+    border-radius: var(--rounded-full);
+    cursor: pointer;
+    font-weight: 600;
+    font-family: var(--font-ui);
+    font-size: 0.5rem;
+    transition: var(--transition);
+  }
+
+  .book-card .book-btn.preview {
+    background: var(--gold-gradient);
+    color: var(--dark);
+  }
+
+  .book-card .book-btn.preview:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-sm);
+  }
+
+  .book-card .book-btn.download {
+    background: var(--primary);
+    color: var(--white);
+  }
+
+  .book-card .book-btn.download:hover {
+    background: var(--primary-light);
+    transform: translateY(-2px);
+  }
+
+  .book-card .book-btn.buy {
+    background: #2196F3;
+    color: var(--white);
+  }
+
+  .book-card .book-btn.buy:hover {
+    background: #1976D2;
+    transform: translateY(-2px);
+  }
+
+  .book-card .book-btn.share {
+    background: #4CAF50;
+    color: var(--white);
+  }
+
+  .book-card .book-btn.share:hover {
+    background: #388E3C;
+    transform: translateY(-2px);
+  }
+
+  .book-card .book-badge {
+    display: inline-block;
+    font-size: 0.4rem;
+    background: var(--gold-gradient);
+    color: var(--dark);
+    padding: 0.05rem 0.4rem;
+    border-radius: var(--rounded-full);
+    font-weight: 700;
+    margin-bottom: 0.1rem;
+  }
+
+  /* ============================================
+     PDF VIEWER MODAL
+     ============================================ */
+  .pdf-viewer-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.92);
+    z-index: 10000;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+  }
+
+  .pdf-viewer-overlay.active {
+    display: flex !important;
+    animation: fadeIn 0.3s ease;
+  }
+
+  .pdf-viewer-overlay.fullscreen {
+    padding: 0;
+  }
+
+  .pdf-viewer-overlay.fullscreen .pdf-viewer-content {
+    width: 100vw !important;
+    height: 100vh !important;
+    max-width: 100vw !important;
+    max-height: 100vh !important;
+    border-radius: 0 !important;
+  }
+
+  .pdf-viewer-content {
+    background: var(--white);
+    border-radius: var(--rounded-xl);
+    width: 95%;
+    max-width: 1100px;
+    max-height: 94vh;
+    display: flex;
+    flex-direction: column;
+    box-shadow: var(--shadow-large);
+    animation: scaleIn 0.3s ease;
+    overflow: hidden;
+  }
+
+  .pdf-viewer-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.6rem 1.2rem;
+    background: var(--header-gradient);
+    color: white;
+    flex-shrink: 0;
+  }
+
+  .pdf-viewer-header h3 {
+    color: white;
+    font-size: 0.95rem;
+    margin: 0;
+    flex: 1;
+    margin-right: 0.5rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .pdf-viewer-header .viewer-controls {
+    display: flex;
+    gap: 0.3rem;
+    align-items: center;
+  }
+
+  .pdf-viewer-header .viewer-btn {
+    background: rgba(255,255,255,0.15);
+    border: none;
+    color: white;
+    cursor: pointer;
+    padding: 0.25rem 0.5rem;
+    border-radius: var(--rounded);
+    transition: var(--transition);
+    font-size: 0.7rem;
+    font-family: var(--font-ui);
+  }
+
+  .pdf-viewer-header .viewer-btn:hover {
+    background: rgba(255,255,255,0.3);
+  }
+
+  .pdf-viewer-header .viewer-btn.close {
+    font-size: 1rem;
+    padding: 0.05rem 0.45rem;
+  }
+
+  .pdf-viewer-header .viewer-btn.close:hover {
+    background: rgba(255, 0, 0, 0.3);
+  }
+
+  .pdf-viewer-header .viewer-btn.active {
+    background: var(--gold-gradient);
+    color: var(--dark);
+  }
+
+  .pdf-viewer-body {
+    flex: 1;
+    overflow-y: auto;
+    padding: 0.5rem;
+    background: #f0f0f0;
+    min-height: 350px;
+    max-height: 70vh;
+    position: relative;
+  }
+
+  .pdf-viewer-body canvas {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    box-shadow: var(--shadow);
+    border-radius: var(--rounded-sm);
+  }
+
+  .pdf-viewer-body iframe {
+    width: 100%;
+    height: 100%;
+    min-height: 500px;
+    border: none;
+    border-radius: 8px;
+  }
+
+  .pdf-viewer-body .pdf-loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+    font-size: 1rem;
+    color: var(--gray-dark);
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .pdf-viewer-body .pdf-loading .spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid var(--gray-light);
+    border-top: 4px solid var(--gold);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+  }
+
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+  .pdf-viewer-body .pdf-error {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+    font-size: 1rem;
+    color: #c62828;
+    flex-direction: column;
+    gap: 0.5rem;
+    text-align: center;
+    padding: 1rem;
+  }
+
+  .pdf-viewer-body .pdf-error .error-icon {
+    font-size: 3rem;
+  }
+
+  .pdf-viewer-footer {
+    padding: 0.4rem 1rem;
+    background: var(--gray-light);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.3rem;
+    flex-shrink: 0;
+  }
+
+  .pdf-viewer-footer .page-info {
+    font-size: 0.7rem;
+    color: var(--gray-dark);
+  }
+
+  .pdf-viewer-footer .page-controls {
+    display: flex;
+    gap: 0.3rem;
+  }
+
+  .pdf-viewer-footer .page-btn {
+    padding: 0.15rem 0.5rem;
+    border: 1px solid var(--gray-medium);
+    border-radius: var(--rounded);
+    background: var(--white);
+    cursor: pointer;
+    font-family: var(--font-ui);
+    font-size: 0.6rem;
+    transition: var(--transition);
+  }
+
+  .pdf-viewer-footer .page-btn:hover:not(:disabled) {
+    background: var(--primary);
+    color: var(--white);
+    border-color: var(--primary);
+  }
+
+  .pdf-viewer-footer .page-btn:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+  }
+
+  .pdf-viewer-footer .zoom-controls {
+    display: flex;
+    gap: 0.2rem;
+    align-items: center;
+  }
+
+  .pdf-viewer-footer .zoom-controls .zoom-label {
+    font-size: 0.6rem;
+    color: var(--gray-dark);
+    min-width: 35px;
+    text-align: center;
+  }
+
+  .pdf-viewer-footer .zoom-controls .zoom-btn {
+    padding: 0.1rem 0.35rem;
+    border: 1px solid var(--gray-medium);
+    border-radius: var(--rounded);
+    background: var(--white);
+    cursor: pointer;
+    font-family: var(--font-ui);
+    font-size: 0.6rem;
+    transition: var(--transition);
+  }
+
+  .pdf-viewer-footer .zoom-controls .zoom-btn:hover {
+    background: var(--primary);
+    color: var(--white);
+    border-color: var(--primary);
+  }
+
+  /* ============================================
+     OTHER CARDS
+     ============================================ */
+  .tool-card {
+    background: var(--white);
+    border-radius: var(--rounded);
+    padding: 0.6rem 0.8rem;
+    margin: 0.4rem 0;
+    border-bottom: 3px solid var(--gold);
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+  }
+
+  .tool-card:hover {
+    box-shadow: var(--shadow-hover);
+  }
+
+  .tool-card .tool-title {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 0.1rem;
+  }
+
+  .tool-card .tool-content {
+    font-size: 0.8rem;
+    line-height: 1.8;
+    color: var(--text);
+  }
+
+  /* ============================================
+     HADITH CARD
+     ============================================ */
+  .hadith-card {
+    background: var(--white);
+    border-radius: var(--rounded);
+    padding: 0.5rem 0.7rem;
+    margin: 0.3rem 0;
+    border-right: 4px solid var(--gold);
+    box-shadow: var(--shadow-sm);
+  }
+
+  .hadith-card .hadith-text {
+    font-size: 0.85rem;
+    line-height: 1.8;
+    font-style: italic;
+    color: var(--text);
+  }
+
+  .hadith-card .hadith-translation {
+    margin: 0.1rem 0;
+    font-size: 0.75rem;
+  }
+
+  .hadith-card .hadith-source {
+    font-size: 0.6rem;
+    color: var(--gray-dark);
+    margin-top: 0.1rem;
+  }
+
+  .hadith-card .hadith-number {
+    font-size: 0.55rem;
+    color: var(--gold);
+    font-weight: 600;
+    margin-bottom: 0.1rem;
+  }
+
+  /* ============================================
+     KNOWLEDGE CARD
+     ============================================ */
+  .knowledge-card {
+    background: var(--white);
+    border-radius: var(--rounded);
+    padding: 0.5rem 0.7rem;
+    margin: 0.3rem 0;
+    border-bottom: 3px solid var(--gold);
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+  }
+
+  .knowledge-card:hover {
+    box-shadow: var(--shadow-hover);
+  }
+
+  .knowledge-card .kb-title {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--primary);
+  }
+
+  .knowledge-card .kb-content {
+    font-size: 0.75rem;
+    line-height: 1.8;
+    color: var(--text);
+    margin-top: 0.1rem;
+  }
+
+  .knowledge-card .kb-source {
+    font-size: 0.55rem;
+    color: var(--gray-dark);
+    margin-top: 0.1rem;
+  }
+
+  .knowledge-card .kb-number {
+    font-size: 0.55rem;
+    color: var(--gold);
+    font-weight: 600;
+  }
+
+  .knowledge-nav {
+    display: flex;
+    gap: 0.3rem;
+    flex-wrap: wrap;
+    margin-top: 0.3rem;
+    justify-content: center;
+  }
+
+  .knowledge-nav-btn {
+    padding: 0.2rem 0.6rem;
+    border: none;
+    border-radius: var(--rounded-full);
+    cursor: pointer;
+    font-weight: 600;
+    font-family: var(--font-ui);
+    font-size: 0.6rem;
+    transition: var(--transition);
+    background: var(--primary);
+    color: var(--white);
+  }
+
+  .knowledge-nav-btn:hover {
+    background: var(--primary-light);
+    transform: translateY(-2px);
+  }
+
+  .knowledge-nav-btn.gold {
+    background: var(--gold-gradient);
+    color: var(--dark);
+  }
+
+  .knowledge-nav-btn:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+    transform: none !important;
+  }
+
+  /* ============================================
+     PRAYER CARD
+     ============================================ */
+  .prayer-card {
+    background: var(--white);
+    border-radius: var(--rounded);
+    padding: 0.5rem 0.7rem;
+    margin: 0.3rem 0;
+    box-shadow: var(--shadow-sm);
+  }
+
+  .prayer-card .prayer-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.1rem;
+  }
+
+  .prayer-card .prayer-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.05rem 0.2rem;
+    border-bottom: 1px solid var(--gray-light);
+  }
+
+  .prayer-card .prayer-item .name {
+    font-weight: 600;
+    color: var(--primary);
+    font-size: 0.75rem;
+  }
+
+  .prayer-card .prayer-item .time {
+    color: var(--text-light);
+    font-size: 0.75rem;
+  }
+
+  /* ============================================
+     TIME TRACKER / TIMER
+     ============================================ */
+  .time-tracker-card {
+    background: var(--white);
+    border-radius: var(--rounded);
+    padding: 0.5rem 0.7rem;
+    margin: 0.3rem 0;
+    box-shadow: var(--shadow-sm);
+    border-left: 4px solid var(--gold);
+    text-align: center;
+  }
+
+  .time-tracker-card .time-display {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--primary);
+    font-family: 'Courier New', monospace;
+  }
+
+  .time-tracker-card .time-label {
+    font-size: 0.6rem;
+    color: var(--gray-dark);
+    margin-top: 0.05rem;
+  }
+
+  .time-tracker-card .time-controls {
+    display: flex;
+    gap: 0.3rem;
+    justify-content: center;
+    margin-top: 0.3rem;
+  }
+
+  .time-tracker-card .time-btn {
+    padding: 0.15rem 0.6rem;
+    border: 2px solid var(--primary);
+    border-radius: var(--rounded-full);
+    background: var(--white);
+    cursor: pointer;
+    font-family: var(--font-ui);
+    font-size: 0.6rem;
+    font-weight: 600;
+    transition: var(--transition);
+    color: var(--primary);
+  }
+
+  .time-tracker-card .time-btn:hover {
+    background: var(--primary);
+    color: var(--white);
+  }
+
+  .time-tracker-card .time-btn.gold {
+    border-color: var(--gold);
+    background: var(--gold-gradient);
+    color: var(--dark);
+  }
+
+  .time-tracker-card .time-btn.gold:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-sm);
+  }
+
+  /* ============================================
+     ZAKAT CALCULATOR
+     ============================================ */
+  .zakat-card {
+    background: var(--white);
+    border-radius: var(--rounded);
+    padding: 0.6rem 0.8rem;
+    margin: 0.3rem 0;
+    box-shadow: var(--shadow-sm);
+    border-bottom: 3px solid var(--gold);
+  }
+
+  .zakat-card .zakat-title {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--primary);
+    text-align: center;
+    margin-bottom: 0.3rem;
+  }
+
+  .zakat-card .zakat-input-group {
+    margin: 0.2rem 0;
+  }
+
+  .zakat-card .zakat-input-group label {
+    display: block;
+    font-weight: 600;
+    font-size: 0.7rem;
+    color: var(--text);
+  }
+
+  .zakat-card .zakat-input-group input {
+    width: 100%;
+    padding: 0.25rem 0.4rem;
+    border: 2px solid var(--gray-medium);
+    border-radius: var(--rounded);
+    font-family: var(--font-ui);
+    font-size: 0.8rem;
+    transition: var(--transition);
+  }
+
+  .zakat-card .zakat-input-group input:focus {
+    border-color: var(--primary);
+    outline: none;
+  }
+
+  .zakat-card .zakat-result {
+    text-align: center;
+    padding: 0.3rem;
+    background: var(--light-green);
+    border-radius: var(--rounded);
+    margin-top: 0.3rem;
+  }
+
+  .zakat-card .zakat-result .amount {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--primary);
+  }
+
+  .zakat-card .zakat-btn {
+    width: 100%;
+    padding: 0.3rem;
+    background: var(--gold-gradient);
+    border: none;
+    border-radius: var(--rounded);
+    font-weight: 700;
+    font-family: var(--font-ui);
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: var(--transition);
+    color: var(--dark);
+    margin-top: 0.2rem;
+  }
+
+  .zakat-card .zakat-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow);
+  }
+
+  /* ============================================
+     QUIZ CARD
+     ============================================ */
+  .quiz-card {
+    background: var(--white);
+    border-radius: var(--rounded);
+    padding: 0.5rem 0.7rem;
+    margin: 0.3rem 0;
+    box-shadow: var(--shadow-sm);
+  }
+
+  .quiz-card .question {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--primary);
+    margin-bottom: 0.2rem;
+  }
+
+  .quiz-card .option-btn {
+    display: block;
+    width: 100%;
+    padding: 0.25rem 0.4rem;
+    margin: 0.05rem 0;
+    border: 2px solid var(--gray-medium);
+    border-radius: var(--rounded);
+    background: var(--white);
+    cursor: pointer;
+    transition: var(--transition);
+    font-family: var(--font-ui);
+    font-size: 0.75rem;
+    text-align: left;
+  }
+
+  .quiz-card .option-btn:hover {
+    border-color: var(--primary);
+    background: rgba(26, 71, 42, 0.05);
+  }
+
+  .quiz-card .option-btn.correct {
+    border-color: #4caf50;
+    background: #e8f5e9;
+  }
+
+  .quiz-card .option-btn.wrong {
+    border-color: #f44336;
+    background: #ffebee;
+  }
+
+  .quiz-card .result {
+    text-align: center;
+    padding: 0.3rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+  }
+
+  .quiz-progress {
+    font-size: 0.65rem;
+    color: var(--gray-dark);
+    text-align: center;
+    margin-bottom: 0.2rem;
+  }
+
+  /* ============================================
+     HOME BUTTON
+     ============================================ */
+  .home-btn-container {
+    text-align: center;
+    margin: 0.5rem 0;
+  }
+
+  .home-btn {
+    padding: 0.3rem 1.5rem;
+    background: var(--primary);
+    color: var(--white);
+    border: none;
+    border-radius: var(--rounded-full);
+    font-weight: 700;
+    font-family: var(--font-ui);
+    font-size: 0.75rem;
+    cursor: pointer;
+    transition: var(--transition);
+  }
+
+  .home-btn:hover {
+    background: var(--primary-light);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow);
+  }
+
+  /* ============================================
+     AYAT NAVIGATION
+     ============================================ */
+  .ayat-navigation {
+    display: flex;
+    gap: 0.3rem;
+    justify-content: center;
+    margin: 0.2rem 0;
+  }
+
+  .ayat-nav-btn {
+    padding: 0.15rem 0.6rem;
+    border: 2px solid var(--primary);
+    border-radius: var(--rounded-full);
+    background: var(--white);
+    cursor: pointer;
+    font-weight: 600;
+    font-family: var(--font-ui);
+    font-size: 0.65rem;
+    transition: var(--transition);
+  }
+
+  .ayat-nav-btn:hover:not(:disabled) {
+    background: var(--primary);
+    color: var(--white);
+  }
+
+  .ayat-nav-btn:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+  }
+
+  .ayat-nav-btn.gold {
+    background: var(--gold-gradient);
+    border-color: var(--gold);
+    color: var(--dark);
+  }
+
+  /* ============================================
+     ARABIC TEXT
+     ============================================ */
+  .arabic-text {
+    font-family: var(--font-arabic);
+    font-size: var(--arabic-font-size);
+    text-align: right;
+    direction: rtl;
+    padding: 0.5rem;
+    background: var(--light-green);
+    border-radius: var(--rounded);
+    margin: 0.2rem 0;
+    line-height: 2.2;
+    word-wrap: break-word;
+  }
+
+  .verse-arabic {
+    font-size: 1.2rem;
+    text-align: right;
+    direction: rtl;
+    padding: 0.6rem;
+    background: var(--light-green);
+    border-radius: var(--rounded);
+    border-right: 4px solid var(--gold);
+    font-family: var(--font-arabic);
+    line-height: 2.2;
+    margin-bottom: 0.5rem;
+  }
+
+  .verse-translation {
+    padding: 0.3rem 0.5rem;
+    background: #f8f9fa;
+    border-radius: var(--rounded);
+    border-left: 4px solid var(--primary);
+    margin-bottom: 0.5rem;
+  }
+
+  .tafsir-text {
+    padding: 0.5rem;
+    background: #fffde7;
+    border-radius: var(--rounded);
+    border-left: 4px solid var(--gold);
+    line-height: 1.8;
+  }
+
+  .tafsir-source {
+    margin-top: 0.5rem;
+    font-style: italic;
+    color: var(--gray-dark);
+    font-size: 0.65rem;
+    border-top: 1px solid var(--gray-medium);
+    padding-top: 0.5rem;
+  }
+
+  /* ============================================
+     SEARCH
+     ============================================ */
+  .search-highlight {
+    background: var(--gold);
+    color: var(--dark);
+    padding: 0.05rem 0.2rem;
+    border-radius: 3px;
+    font-weight: 600;
+  }
+
+  .search-result-item {
+    background: var(--white);
+    padding: 0.3rem 0.5rem;
+    margin: 0.2rem 0;
+    border-radius: var(--rounded);
+    border-left: 3px solid var(--gold);
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+  }
+
+  .search-result-item:hover {
+    box-shadow: var(--shadow);
+    transform: translateX(3px);
+  }
+
+  .search-result-item .search-result-sura {
+    font-weight: 600;
+    color: var(--primary);
+    margin-bottom: 0.05rem;
+    font-size: 0.75rem;
+  }
+
+  .search-result-item .search-result-text {
+    color: var(--text);
+    line-height: 1.6;
+    font-size: 0.75rem;
+  }
+
+  /* ============================================
+     TAFSIR MODAL
+     ============================================ */
+  .tafsir-modal-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(8px);
+    z-index: 9999;
+    justify-content: center;
+    align-items: center;
+    padding: 1.2rem;
+  }
+
+  .tafsir-modal-overlay.active {
+    display: flex;
+    animation: fadeIn 0.3s ease;
+  }
+
+  .tafsir-modal-content {
+    background: var(--white);
+    border-radius: var(--rounded-xl);
+    max-width: 700px;
+    width: 100%;
+    max-height: 85vh;
+    display: flex;
+    flex-direction: column;
+    box-shadow: var(--shadow-large);
+    animation: scaleIn 0.3s ease;
+    overflow: hidden;
+  }
+
+  .tafsir-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.6rem 1rem;
+    background: var(--header-gradient);
+    color: white;
+  }
+
+  .tafsir-modal-header h3 {
+    color: white;
+    font-size: 0.95rem;
+    margin: 0;
+  }
+
+  .tafsir-modal-header .close-modal {
+    background: rgba(255,255,255,0.15);
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 1rem;
+    padding: 0.1rem 0.4rem;
+    border-radius: var(--rounded);
+    transition: var(--transition);
+  }
+
+  .tafsir-modal-header .close-modal:hover {
+    background: rgba(255,255,255,0.3);
+    transform: rotate(90deg);
+  }
+
+  .tafsir-modal-body {
+    padding: 0.8rem;
+    overflow-y: auto;
+    flex: 1;
+    line-height: 1.8;
+    color: var(--text);
+  }
+
+  /* ============================================
+     SETTINGS PANEL
+     ============================================ */
+  .settings-panel-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(8px);
+    z-index: 9998;
+    justify-content: flex-end;
+    animation: fadeIn 0.3s ease;
+  }
+
+  .settings-panel-overlay.active {
+    display: flex;
+  }
+
+  .settings-panel-content {
+    background: var(--white);
+    width: 380px;
+    max-width: 92vw;
+    height: 100vh;
+    padding: 1rem;
+    overflow-y: auto;
+    animation: slideInRight 0.3s ease;
+  }
+
+  @keyframes slideInRight {
+    from { transform: translateX(100%); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+  }
+
+  .settings-panel-content .settings-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.8rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--gray-medium);
+  }
+
+  .settings-panel-content .settings-header h2 {
+    font-size: 1.1rem;
+    color: var(--primary);
+    margin: 0;
+  }
+
+  .settings-panel-content .settings-header .close-settings {
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    color: var(--gray-dark);
+    transition: var(--transition);
+    padding: 0.1rem;
+  }
+
+  .settings-panel-content .settings-header .close-settings:hover {
+    color: var(--primary);
+    transform: rotate(90deg);
+  }
+
+  .settings-panel-content .setting-group {
+    margin-bottom: 0.8rem;
+  }
+
+  .settings-panel-content .setting-group label {
+    display: block;
+    font-weight: 600;
+    color: var(--primary);
+    margin-bottom: 0.1rem;
+    font-size: 0.8rem;
+  }
+
+  .settings-panel-content .setting-group .range-container {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .settings-panel-content .setting-group input[type="range"] {
+    flex: 1;
+    height: 4px;
+    -webkit-appearance: none;
+    appearance: none;
+    background: var(--gray-medium);
+    border-radius: 3px;
+    outline: none;
+    transition: var(--transition);
+  }
+
+  .settings-panel-content .setting-group input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--gold-gradient);
+    cursor: pointer;
+    box-shadow: var(--shadow-sm);
+  }
+
+  .settings-panel-content .setting-group input[type="range"]::-webkit-slider-thumb:hover {
+    transform: scale(1.1);
+  }
+
+  .settings-panel-content .setting-group .range-value {
+    min-width: 35px;
+    text-align: center;
+    font-weight: 700;
+    color: var(--primary);
+    font-size: 0.85rem;
+    background: var(--light-green);
+    padding: 0.05rem 0.3rem;
+    border-radius: var(--rounded);
+  }
+
+  .settings-panel-content .setting-group .range-labels {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.55rem;
+    color: var(--gray-dark);
+    margin-top: 0.05rem;
+  }
+
+  .settings-panel-content .setting-group select {
+    width: 100%;
+    padding: 0.3rem 0.4rem;
+    border: 2px solid var(--gray-medium);
+    border-radius: var(--rounded);
+    font-family: var(--font-ui);
+    font-size: 0.8rem;
+    transition: var(--transition);
+    background: var(--white);
+    color: var(--text);
+  }
+
+  .settings-panel-content .setting-group select:focus {
+    border-color: var(--primary);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(26, 71, 42, 0.08);
+  }
+
+  .settings-panel-content .setting-group .setting-desc {
+    font-size: 0.6rem;
+    color: var(--gray-dark);
+    margin-top: 0.1rem;
+    line-height: 1.3;
+  }
+
+  .settings-panel-content .setting-group .checkbox-group {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+  }
+
+  .settings-panel-content .setting-group .checkbox-group input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    accent-color: var(--primary);
+    cursor: pointer;
+  }
+
+  .settings-panel-content .setting-group .checkbox-group label {
+    margin-bottom: 0;
+    cursor: pointer;
+    font-size: 0.8rem;
+  }
+
+  .settings-panel-content .btn-reset {
+    width: 100%;
+    padding: 0.4rem;
+    background: var(--primary);
+    color: var(--white);
+    border: none;
+    border-radius: var(--rounded);
+    font-weight: 600;
+    font-family: var(--font-ui);
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: var(--transition);
+  }
+
+  .settings-panel-content .btn-reset:hover {
+    background: var(--primary-light);
+    transform: translateY(-2px);
+  }
+
+  /* ============================================
+     SURA LIST PANEL
+     ============================================ */
+  .sura-panel-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(8px);
+    z-index: 9998;
+    justify-content: flex-start;
+    animation: fadeIn 0.3s ease;
+  }
+
+  .sura-panel-overlay.active {
+    display: flex;
+  }
+
+  .sura-panel-content {
+    background: var(--white);
+    width: 340px;
+    max-width: 90vw;
+    height: 100vh;
+    padding: 0.8rem;
+    overflow-y: auto;
+    animation: slideInLeft 0.3s ease;
+  }
+
+  @keyframes slideInLeft {
+    from { transform: translateX(-100%); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+  }
+
+  .sura-panel-content .sura-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--gray-medium);
+  }
+
+  .sura-panel-content .sura-header h2 {
+    font-size: 1rem;
+    color: var(--primary);
+    margin: 0;
+  }
+
+  .sura-panel-content .sura-header .close-sura {
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    color: var(--gray-dark);
+    transition: var(--transition);
+    padding: 0.1rem;
+  }
+
+  .sura-panel-content .sura-header .close-sura:hover {
+    color: var(--primary);
+    transform: rotate(90deg);
+  }
+
+  .sura-panel-content .sura-search {
+    width: 100%;
+    padding: 0.3rem 0.5rem;
+    border: 2px solid var(--gray-medium);
+    border-radius: var(--rounded-full);
+    font-family: var(--font-ui);
+    font-size: 0.75rem;
+    transition: var(--transition);
+    background: var(--white);
+    color: var(--text);
+    margin-bottom: 0.5rem;
+  }
+
+  .sura-panel-content .sura-search:focus {
+    border-color: var(--primary);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(26, 71, 42, 0.08);
+  }
+
+  .sura-panel-content .sura-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(50px, 1fr));
+    gap: 0.2rem;
+  }
+
+  .sura-panel-content .sura-grid .sura-item {
+    background: var(--light-green);
+    border: 2px solid transparent;
+    border-radius: var(--rounded);
+    padding: 0.2rem 0.05rem;
+    text-align: center;
+    cursor: pointer;
+    transition: var(--transition);
+    font-weight: 600;
+    color: var(--primary);
+    font-size: 0.55rem;
+    font-family: var(--font-ui);
+  }
+
+  .sura-panel-content .sura-grid .sura-item:hover {
+    background: var(--primary);
+    color: var(--white);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow);
+  }
+
+  .sura-panel-content .sura-grid .sura-item small {
+    display: block;
+    font-weight: 400;
+    font-size: 0.4rem;
+    opacity: 0.6;
+    margin-top: 1px;
+  }
+
+  /* ============================================
+     CHAT INPUT AREA
+     ============================================ */
+  .chat-input-area {
+    padding: 0.35rem 0.8rem;
+    background: var(--white);
+    border-top: 1px solid var(--gray-medium);
+    display: flex;
+    gap: 0.3rem;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-shrink: 0;
+    min-height: 48px;
+  }
+
+  .chat-input-area .input-wrapper {
+    flex: 1;
+    position: relative;
+    min-width: 70px;
+  }
+
+  .chat-input-area input {
+    width: 100%;
+    padding: 0.35rem 0.7rem;
+    border: 2px solid var(--gray-medium);
+    border-radius: var(--rounded-full);
+    outline: none;
+    font-family: var(--font-ui);
+    font-size: 0.85rem;
+    background: var(--white);
+    color: var(--text);
+    transition: var(--transition);
+  }
+
+  .chat-input-area input:focus {
+    border-color: var(--gold);
+    box-shadow: 0 0 0 4px rgba(212, 175, 55, 0.15);
+  }
+
+  .chat-input-area input:disabled {
+    background: var(--gray-light);
+    cursor: not-allowed;
+  }
+
+  .chat-input-area .input-actions {
+    display: flex;
+    gap: 0.25rem;
+    flex-wrap: wrap;
+  }
+
+  .input-btn {
+    padding: 0.25rem 0.6rem;
+    border: none;
+    border-radius: var(--rounded-full);
+    cursor: pointer;
+    transition: var(--transition);
+    font-weight: 600;
+    font-family: var(--font-ui);
+    font-size: 0.7rem;
+    display: flex;
+    align-items: center;
+    gap: 0.1rem;
+    min-height: 32px;
+  }
+
+  .input-btn.send {
+    background: var(--gold-gradient);
+    color: var(--dark);
+    box-shadow: 0 3px 15px rgba(212, 175, 55, 0.3);
+  }
+
+  .input-btn.send:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 25px rgba(212, 175, 55, 0.4);
+  }
+
+  .input-btn.secondary {
+    background: var(--primary);
+    color: var(--white);
+  }
+
+  .input-btn.secondary:hover:not(:disabled) {
+    background: var(--primary-light);
+    transform: translateY(-2px);
+  }
+
+  .input-btn.outline {
+    background: transparent;
+    border: 1px solid var(--gray-medium);
+    color: var(--text);
+  }
+
+  .input-btn.outline:hover:not(:disabled) {
+    border-color: var(--primary);
+    background: rgba(26, 71, 42, 0.05);
+    transform: translateY(-2px);
+  }
+
+  .input-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none !important;
+  }
+
+  /* ============================================
+     TYPING INDICATOR
+     ============================================ */
+  .typing-indicator {
+    display: flex;
+    gap: 0.2rem;
+    padding: 0.25rem 0.4rem;
+    background: var(--gray-light);
+    border-radius: var(--rounded);
+    align-items: center;
+    margin-bottom: 0.4rem;
+    max-width: 45px;
+  }
+
+  .typing-indicator span {
+    width: 5px;
+    height: 5px;
+    background: var(--primary);
+    border-radius: 50%;
+    animation: typingBounce 1.4s infinite;
+  }
+
+  .typing-indicator span:nth-child(2) {
+    animation-delay: 0.2s;
+  }
+  .typing-indicator span:nth-child(3) {
+    animation-delay: 0.4s;
+  }
+
+  @keyframes typingBounce {
+    0%, 60%, 100% { transform: translateY(0); opacity: 0.4; }
+    30% { transform: translateY(-6px); opacity: 1; }
+  }
+
+  /* ============================================
+     BLOG POST CARD
+     ============================================ */
+  .blog-post-card {
+    background: var(--white);
+    border-radius: var(--rounded);
+    padding: 0.4rem;
+    margin: 0.3rem 0;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+  }
+
+  .blog-post-card:hover {
+    box-shadow: var(--shadow-hover);
+  }
+
+  .blog-post-card .post-title {
+    font-weight: 700;
+    color: var(--primary);
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: var(--transition);
+  }
+
+  .blog-post-card .post-title:hover {
+    color: var(--gold);
+  }
+
+  .blog-post-card .post-excerpt {
+    font-size: 0.75rem;
+    color: var(--text-light);
+  }
+
+  .blog-post-card .post-full-content {
+    font-size: 0.75rem;
+    margin: 0.15rem 0;
+    line-height: 1.8;
+  }
+
+  .blog-post-card .post-meta {
+    font-size: 0.55rem;
+    color: var(--gray-dark);
+    margin-top: 0.1rem;
+  }
+
+  .blog-post-card .action-buttons {
+    display: flex;
+    gap: 0.2rem;
+    flex-wrap: wrap;
+    margin-top: 0.1rem;
+  }
+
+  .blog-post-card .action-btn {
+    padding: 0.1rem 0.5rem;
+    border: none;
+    border-radius: var(--rounded-full);
+    cursor: pointer;
+    font-weight: 600;
+    font-family: var(--font-ui);
+    font-size: 0.5rem;
+    transition: var(--transition);
+  }
+
+  .blog-post-card .action-btn.primary {
+    background: var(--gold-gradient);
+    color: var(--dark);
+  }
+
+  .blog-post-card .action-btn.outline {
+    background: transparent;
+    border: 1px solid var(--gray-medium);
+    color: var(--text);
+  }
+
+  .blog-post-card .action-btn.gold {
+    background: var(--gold-gradient);
+    color: var(--dark);
+  }
+
+  .blog-post-card .action-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-sm);
+  }
+
+  /* ============================================
+     ANIMATIONS
+     ============================================ */
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes scaleIn {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+  }
+
+  /* ============================================
+     RESPONSIVE DESIGN
+     ============================================ */
+  @media (max-width: 768px) {
+    .chatbot-header-premium { padding: 0.3rem 0.6rem; min-height: 44px; }
+    .header-brand .brand-text { font-size: 0.8rem; }
+    .control-btn { font-size: 0.5rem; padding: 0.1rem 0.35rem; }
+    .digital-clock { font-size: 0.5rem; min-width: 55px; padding: 0.05rem 0.3rem; }
+    .digital-clock .clock-time { font-size: 0.65rem; }
+    .chat-body-main { padding: 0.4rem 0.6rem; }
+    .chat-input-area { padding: 0.25rem 0.5rem; min-height: 40px; }
+    .input-btn { font-size: 0.6rem; padding: 0.2rem 0.4rem; min-height: 26px; }
+    .welcome-section h1 { font-size: 1.6rem; }
+    .welcome-section .welcome-icon { font-size: 3rem; }
+    .quick-actions-grid { grid-template-columns: repeat(auto-fit, minmax(70px, 1fr)); gap: 0.2rem; }
+    .quick-action-premium { padding: 0.3rem 0.15rem; font-size: 0.5rem; min-height: 50px; }
+    .quick-action-premium .qa-icon { font-size: 1.1rem; }
+    .book-grid { grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); }
+    .pdf-viewer-content { width: 98%; max-height: 95vh; }
+    .pdf-viewer-body iframe { min-height: 350px; }
+    .settings-panel-content { width: 100%; max-width: 100%; padding: 0.6rem; }
+    .sura-panel-content { width: 100%; max-width: 100%; padding: 0.6rem; }
+  }
+
+  @media (max-width: 480px) {
+    .header-brand .brand-text { font-size: 0.65rem; }
+    .header-brand .brand-icon { font-size: 1rem; }
+    .control-btn { font-size: 0.4rem; padding: 0.05rem 0.2rem; }
+    .digital-clock { font-size: 0.4rem; min-width: 45px; }
+    .welcome-section h1 { font-size: 1.2rem; }
+    .quick-actions-grid { grid-template-columns: 1fr 1fr; gap: 0.15rem; }
+    .quick-action-premium { font-size: 0.45rem; padding: 0.15rem 0.1rem; min-height: 44px; }
+    .book-grid { grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); }
+    .pdf-viewer-body iframe { min-height: 250px; }
+  }
+
+  /* High Contrast Mode */
+  @media (prefers-contrast: high) {
+    :root {
+      --primary: #000000;
+      --gold: #ffd700;
+      --text: #000000;
+      --light-bg: #ffffff;
+    }
+    .chatbot-header-premium { border-bottom: 3px solid #000; }
+  }
+
+  /* Reduced Motion */
+  @media (prefers-reduced-motion: reduce) {
+    * {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+  ]]></b:skin>
+</head>
+
+<body>
+  <!-- ============================================
+       BLOGGER SECTION (Required)
+       ============================================ -->
+  <b:section class='main' id='main-section' maxwidgets='1' showaddelement='yes'>
+    <b:widget id='Blog1' locked='true' title='Blog Posts' type='Blog' version='2' visible='true'>
+      <b:widget-settings>
+        <b:widget-setting name='showDateHeader'>false</b:widget-setting>
+        <b:widget-setting name='commentLabel'>$type={blogger}</b:widget-setting>
+        <b:widget-setting name='style.textcolor'>#ffffff</b:widget-setting>
+        <b:widget-setting name='showShareButtons'>true</b:widget-setting>
+        <b:widget-setting name='showCommentLink'>true</b:widget-setting>
+        <b:widget-setting name='style.urlcolor'>#ffffff</b:widget-setting>
+        <b:widget-setting name='showAuthor'>true</b:widget-setting>
+        <b:widget-setting name='style.linkcolor'>#ffffff</b:widget-setting>
+        <b:widget-setting name='style.unittype'>TextAndImage</b:widget-setting>
+        <b:widget-setting name='style.bgcolor'>#ffffff</b:widget-setting>
+        <b:widget-setting name='timestampLabel'>&#8226;</b:widget-setting>
+        <b:widget-setting name='reactionsLabel'/>
+        <b:widget-setting name='showAuthorProfile'>false</b:widget-setting>
+        <b:widget-setting name='style.layout'>1x1</b:widget-setting>
+        <b:widget-setting name='showLabels'>true</b:widget-setting>
+        <b:widget-setting name='showLocation'>false</b:widget-setting>
+        <b:widget-setting name='postLabelsLabel'>Tags:</b:widget-setting>
+        <b:widget-setting name='showTimestamp'>true</b:widget-setting>
+        <b:widget-setting name='postsPerAd'>1</b:widget-setting>
+        <b:widget-setting name='showBacklinks'>false</b:widget-setting>
+        <b:widget-setting name='style.bordercolor'>#ffffff</b:widget-setting>
+        <b:widget-setting name='showInlineAds'>false</b:widget-setting>
+        <b:widget-setting name='showReactions'>false</b:widget-setting>
+      </b:widget-settings>
+      
+      <b:includable id='main'>
+        <div style='display:none;'>
+          <b:loop values='data:posts' var='post'>
+            <h2><data:post.title/></h2>
+            <div><data:post.body/></div>
+          </b:loop>
+        </div>
+      </b:includable>
+      
+      <b:includable id='aboutPostAuthor'>
+        <div class='author-name'>
+          <a class='g-profile' expr:href='data:post.author.profileUrl' rel='author' title='author profile'>
+            <span><data:post.author.name/></span>
+          </a>
+        </div>
+        <div>
+          <span class='author-desc'><data:post.author.aboutMe/></span>
+        </div>
+      </b:includable>
+      
+      <b:includable id='addComments'>
+        <a expr:href='data:post.commentsUrl' expr:onclick='data:post.commentsUrlOnclick'>
+          <b:message name='messages.postAComment'/>
+        </a>
+      </b:includable>
+      
+      <b:includable id='blogThisShare'>
+        <b:with value='&quot;window.open(this.href, \&quot;_blank\&quot;, \&quot;height=270,width=475\&quot;); return false;&quot;' var='onclick'>
+          <b:include name='platformShare'/>
+        </b:with>
+      </b:includable>
+      
+      <b:includable id='bylineByName' var='byline'>
+        <b:switch var='data:byline.name'>
+          <b:case value='share'/>
+            <b:include cond='data:post.shareUrl' name='postShareButtons'/>
+          <b:case value='comments'/>
+            <b:include cond='data:post.allowComments' name='postCommentsLink'/>
+          <b:case value='location'/>
+            <b:include cond='data:post.location' name='postLocation'/>
+          <b:case value='timestamp'/>
+            <b:include cond='not data:view.isPage' name='postTimestamp'/>
+          <b:case value='author'/>
+            <b:include name='postAuthor'/>
+          <b:case value='labels'/>
+            <b:include cond='data:post.labels' name='postLabels'/>
+          <b:case value='icons'/>
+            <b:include cond='data:post.emailPostUrl' name='emailPostIcon'/>
+        </b:switch>
+      </b:includable>
+      
+      <b:includable id='bylineRegion' var='regionItems'>
+        <b:loop values='data:regionItems' var='byline'>
+          <b:include data='byline' name='bylineByName'/>
+        </b:loop>
+      </b:includable>
+      
+      <b:includable id='commentAuthorAvatar'>
+        <div class='avatar-image-container'>
+          <img class='author-avatar' expr:src='data:comment.authorAvatarSrc' height='35' width='35'/>
+        </div>
+      </b:includable>
+      
+      <b:includable id='commentDeleteIcon' var='comment'>
+        <span expr:class='&quot;item-control &quot; + data:comment.adminClass'>
+          <b:if cond='data:showCmtPopup'>
+            <div class='goog-toggle-button'>
+              <div class='goog-inline-block comment-action-icon'/>
+            </div>
+          <b:else/>
+            <a class='comment-delete' expr:href='data:comment.deleteUrl' expr:title='data:messages.deleteComment'>
+              <img src='https://resources.blogblog.com/img/icon_delete13.gif'/>
+            </a>
+          </b:if>
+        </span>
+      </b:includable>
+      
+      <b:includable id='commentForm' var='post'>
+        <div class='comment-form'>
+          <a name='comment-form'/>
+          <h4 id='comment-post-message'><data:messages.postAComment/></h4>
+          <b:if cond='data:this.messages.blogComment != &quot;&quot;'>
+            <p><data:this.messages.blogComment/></p>
+          </b:if>
+          <b:include data='post' name='commentFormIframeSrc'/>
+          <iframe allowtransparency='allowtransparency' class='blogger-iframe-colorize blogger-comment-from-post' expr:height='data:cmtIframeInitialHeight ?: &quot;90px&quot;' frameborder='0' id='comment-editor' name='comment-editor' src='' width='100%'/>
+          <data:post.cmtfpIframe/>
+          <script type='text/javascript'>
+            BLOG_CMT_createIframe(&#39;<data:post.appRpcRelayPath/>&#39;);
+          </script>
+        </div>
+      </b:includable>
+      
+      <b:includable id='commentFormIframeSrc' var='post'>
+        <a expr:href='data:post.commentFormIframeSrc' id='comment-editor-src'/>
+      </b:includable>
+      
+      <b:includable id='commentItem' var='comment'>
+        <div class='comment' expr:id='&quot;c&quot; + data:comment.id'>
+          <b:include cond='data:blog.enabledCommentProfileImages' name='commentAuthorAvatar'/>
+          <div class='comment-block'>
+            <div class='comment-author'>
+              <b:if cond='data:comment.authorUrl'>
+                <b:message name='messages.authorSaidWithLink'>
+                  <b:param expr:value='data:comment.author' name='authorName'/>
+                  <b:param expr:value='data:comment.authorUrl' name='authorUrl'/>
+                </b:message>
+              <b:else/>
+                <b:message name='messages.authorSaid'>
+                  <b:param expr:value='data:comment.author' name='authorName'/>
+                </b:message>
+              </b:if>
+            </div>
+            <div expr:class='&quot;comment-body&quot; + (data:comment.isDeleted ? &quot; deleted&quot; : &quot;&quot;)'>
+              <data:comment.body/>
+            </div>
+            <div class='comment-footer'>
+              <span class='comment-timestamp'>
+                <a expr:href='data:comment.url' title='comment permalink'>
+                  <data:comment.timestamp/>
+                </a>
+                <b:include data='comment' name='commentDeleteIcon'/>
+              </span>
+            </div>
+          </div>
+        </div>
+      </b:includable>
+      
+      <b:includable id='commentList' var='comments'>
+        <div id='comments-block'>
+          <b:loop values='data:comments' var='comment'>
+            <b:include data='comment' name='commentItem'/>
+          </b:loop>
+        </div>
+      </b:includable>
+      
+      <b:includable id='commentPicker' var='post'>
+        <b:if cond='data:post.showThreadedComments'>
+          <b:include data='post' name='threadedComments'/>
+        <b:else/>
+          <b:include data='post' name='comments'/>
+        </b:if>
+      </b:includable>
+      
+      <b:includable id='comments' var='post'>
+        <section expr:class='&quot;comments&quot; + (data:post.embedCommentForm ? &quot; embed&quot; : &quot;&quot;)' expr:data-num-comments='data:post.numberOfComments' id='comments'>
+          <a name='comments'/>
+          <b:if cond='data:post.allowComments'>
+            <b:include name='commentsTitle'/>
+            <div expr:id='data:widget.instanceId + &quot;_comments-block-wrapper&quot;'>
+              <b:include cond='data:post.comments' data='post.comments' name='commentList'/>
+            </div>
+            <b:if cond='data:post.commentPagingRequired'>
+              <div class='paging-control-container'>
+                <b:if cond='data:post.hasOlderLinks'>
+                  <a expr:class='data:post.oldLinkClass' expr:href='data:post.oldestLinkUrl'>
+                    <data:messages.oldest/>
+                  </a>
+                  <a expr:class='data:post.oldLinkClass' expr:href='data:post.olderLinkUrl'>
+                    <data:messages.older/>
+                  </a>
+                </b:if>
+                <span class='comment-range-text'>
+                  <data:post.commentRangeText/>
+                </span>
+                <b:if cond='data:post.hasNewerLinks'>
+                  <a expr:class='data:post.newLinkClass' expr:href='data:post.newerLinkUrl'>
+                    <data:messages.newer/>
+                  </a>
+                  <a expr:class='data:post.newLinkClass' expr:href='data:post.newestLinkUrl'>
+                    <data:messages.newest/>
+                  </a>
+                </b:if>
+              </div>
+            </b:if>
+            <div class='footer'>
+              <b:if cond='data:post.embedCommentForm'>
+                <b:if cond='data:post.allowNewComments'>
+                  <b:include data='post' name='commentForm'/>
+                <b:else/>
+                  <data:post.noNewCommentsText/>
+                </b:if>
+              <b:else/>
+                <b:if cond='data:post.allowComments'>
+                  <b:include data='post' name='addComments'/>
+                </b:if>
+              </b:if>
+            </div>
+          </b:if>
+          <b:if cond='data:showCmtPopup'>
+            <div id='comment-popup'>
+              <iframe allowtransparency='allowtransparency' frameborder='0' id='comment-actions' name='comment-actions' scrolling='no'>
+              </iframe>
+            </div>
+          </b:if>
+        </section>
+      </b:includable>
+      
+      <b:includable id='commentsLink'>
+        <a class='comment-link' expr:href='data:post.commentsUrl' expr:onclick='data:post.commentsUrlOnclick'>
+          <b:if cond='data:post.numberOfComments &gt; 0'>
+            <b:message name='messages.numberOfComments'>
+              <b:param expr:value='data:post.numberOfComments' name='numComments'/>
+            </b:message>
+          <b:else/>
+            <data:messages.postAComment/>
+          </b:if>
+        </a>
+      </b:includable>
+      
+      <b:includable id='commentsLinkIframe'>
+        <!-- G+ comments, no longer available -->
+      </b:includable>
+      
+      <b:includable id='commentsTitle'>
+        <h3 class='title'><data:messages.comments/></h3>
+      </b:includable>
+      
+      <b:includable id='defaultAdUnit'>
+        <ins class='adsbygoogle' data-ad-format='auto' expr:data-ad-client='data:adClientId ?: data:blog.adsenseClientId' expr:data-ad-host='data:blog.adsenseHostId' expr:style='data:style ?: &quot;display: block;&quot;'>
+          <b:attr cond='not data:blog.analytics4' expr:value='data:blog.analyticsAccountNumber' name='data-analytics-uacct'/>
+        </ins>
+        <script>
+          (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+      </b:includable>
+      
+      <b:includable id='emailPostIcon'>
+        <span class='byline post-icons'>
+          <span class='item-action'>
+            <a expr:href='data:post.emailPostUrl' expr:title='data:messages.emailPost'>
+              <b:include data='{ iconClass: &quot;touch-icon sharing-icon&quot; }' name='emailIcon'/>
+            </a>
+          </span>
+        </span>
+      </b:includable>
+      
+      <b:includable id='facebookShare'>
+        <b:with value='&quot;window.open(this.href, \&quot;_blank\&quot;, \&quot;height=430,width=640\&quot;); return false;&quot;' var='onclick'>
+          <b:include name='platformShare'/>
+        </b:with>
+      </b:includable>
+      
+      <b:includable id='feedLinks'>
+        <b:if cond='!data:view.isPost'>
+          <b:if cond='data:feedLinks'>
+            <div class='blog-feeds'>
+              <b:include data='feedLinks' name='feedLinksBody'/>
+            </div>
+          </b:if>
+        <b:else/>
+          <div class='post-feeds'>
+            <b:loop values='data:posts' var='post'>
+              <b:if cond='data:post.allowComments and data:post.feedLinks'>
+                <b:include data='post.feedLinks' name='feedLinksBody'/>
+              </b:if>
+            </b:loop>
+          </div>
+        </b:if>
+      </b:includable>
+      
+      <b:includable id='feedLinksBody' var='links'>
+        <div class='feed-links'>
+          <data:messages.subscribeTo/>
+          <b:loop values='data:links' var='f'>
+            <a class='feed-link' expr:href='data:f.url' expr:type='data:f.mimeType' target='_blank'>
+              <data:f.name/> (<data:f.feedType/>)
+            </a>
+          </b:loop>
+        </div>
+      </b:includable>
+      
+      <b:includable id='footerBylines'>
+        <b:if cond='data:widgets.Blog.first.footerBylines'>
+          <b:loop index='i' values='data:widgets.Blog.first.footerBylines' var='region'>
+            <b:if cond='not data:region.items.empty'>
+              <div expr:class='&quot;post-footer-line post-footer-line-&quot; + (data:i + 1)'>
+                <b:with value='&quot;footer-&quot; + (data:i + 1)' var='regionName'>
+                  <b:include data='region.items' name='bylineRegion'/>
+                </b:with>
+              </div>
+            </b:if>
+          </b:loop>
+        </b:if>
+      </b:includable>
+      
+      <b:includable id='googlePlusShare'>
+      </b:includable>
+      
+      <b:includable id='headerByline'>
+        <b:if cond='data:widgets.Blog.first.headerByline'>
+          <div class='post-header'>
+            <div class='post-header-line-1'>
+              <b:with value='&quot;header-1&quot;' var='regionName'>
+                <b:include data='data:widgets.Blog.first.headerByline.items' name='bylineRegion'/>
+              </b:with>
+            </div>
+          </div>
+        </b:if>
+      </b:includable>
+      
+      <b:includable id='homePageLink'>
+        <a class='home-link' expr:href='data:blog.homepageUrl'>
+          <data:messages.home/>
+        </a>
+      </b:includable>
+      
+      <b:includable id='iframeComments' var='post'>
+        <!-- G+ comments, no longer available -->
+      </b:includable>
+      
+      <b:includable id='inlineAd' var='post'>
+        <b:if cond='!data:view.isPreview'>
+          <b:if cond='data:this.adCode or data:this.adClientId or data:blog.adsenseClientId'>
+            <div class='inline-ad'>
+              <b:if cond='data:this.adCode != &quot;&quot;'>
+                <data:this.adCode/>
+              <b:else/>
+                <b:include cond='data:this.adClientId or data:blog.adsenseClientId' name='defaultAdUnit'/>
+              </b:if>
+            </div>
+          </b:if>
+        <b:else/>
+          <div class='inline-ad'>
+            <div class='inline-ad-placeholder'>
+              <span><b:message name='messages.adsGoHere'/></span>
+            </div>
+          </div>
+        </b:if>
+      </b:includable>
+      
+      <b:includable id='linkShare'>
+        <b:with value='&quot;window.prompt(\&quot;Copy to clipboard: Ctrl+C, Enter\&quot;, \&quot;&quot; + data:originalUrl + &quot;\&quot;); return false;&quot;' var='onclick'>
+          <b:include name='platformShare'/>
+        </b:with>
+      </b:includable>
+      
+      <b:includable id='nextPageLink'>
+        <a class='blog-pager-older-link' expr:href='data:olderPageUrl' expr:id='data:widget.instanceId + &quot;_blog-pager-older-link&quot;' expr:title='data:messages.olderPosts'>
+          <data:messages.olderPosts/>
+        </a>
+      </b:includable>
+      
+      <b:includable id='otherSharingButton'>
+        <span class='sharing-platform-button sharing-element-other' expr:aria-label='data:messages.shareToOtherApps.escaped' expr:data-url='data:originalUrl' expr:title='data:messages.shareToOtherApps.escaped' role='menuitem' tabindex='-1'>
+          <b:with value='{key: &quot;sharingOther&quot;}' var='platform'>
+            <b:include name='sharingPlatformIcon'/>
+          </b:with>
+          <span class='platform-sharing-text'>
+            <data:messages.shareOtherApps.escaped/>
+          </span>
+        </span>
+      </b:includable>
+      
+      <b:includable id='platformShare'>
+        <a expr:class='&quot;goog-inline-block sharing-&quot; + data:platform.key' expr:data-url='data:originalUrl' expr:href='data:shareUrl + &quot;&amp;target=&quot; + data:platform.target' expr:onclick='data:onclick ? data:onclick : &quot;&quot;' expr:title='data:platform.shareMessage' target='_blank'>
+          <span class='share-button-link-text'>
+            <data:platform.shareMessage/>
+          </span>
+        </a>
+      </b:includable>
+      
+      <b:includable id='post' var='post'>
+        <div class='post'>
+          <b:include data='post' name='postMeta'/>
+          <b:include data='post' name='postTitle'/>
+          <b:include name='headerByline'/>
+          <b:if cond='data:view.isSingleItem'>
+            <b:include data='post' name='postBody'/>
+          <b:else/>
+            <b:include data='post' name='postBodySnippet'/>
+            <b:include data='post' name='postJumpLink'/>
+          </b:if>
+          <b:include data='post' name='postFooter'/>
+        </div>
+      </b:includable>
+      
+      <b:includable id='postAuthor'>
+        <span class='byline post-author vcard'>
+          <span class='post-author-label'>
+            <data:byline.label/>
+          </span>
+          <span class='fn'>
+            <b:if cond='data:post.author.profileUrl'>
+              <meta expr:content='data:post.author.profileUrl'/>
+              <a class='g-profile' expr:href='data:post.author.profileUrl' rel='author' title='author profile'>
+                <span><data:post.author.name/></span>
+              </a>
+            <b:else/>
+              <span><data:post.author.name/></span>
+            </b:if>
+          </span>
+        </span>
+      </b:includable>
+      
+      <b:includable id='postBody' var='post'>
+        <div class='post-body entry-content float-container' expr:id='&quot;post-body-&quot; + data:post.id'>
+          <data:post.body/>
+        </div>
+      </b:includable>
+      
+      <b:includable id='postBodySnippet' var='post'>
+        <b:include data='post' name='postBody'/>
+      </b:includable>
+      
+      <b:includable id='postCommentsAndAd' var='post'>
+        <article class='post-outer-container'>
+          <div class='post-outer'>
+            <b:include data='post' name='post'/>
+          </div>
+          <b:include cond='data:view.isSingleItem' data='post' name='commentPicker'/>
+          <b:include cond='data:view.isSingleItem and data:post.includeAd' data='post' name='inlineAd'/>
+        </article>
+        <b:include cond='data:view.isMultipleItems and data:post.includeAd' data='post' name='inlineAd'/>
+      </b:includable>
+      
+      <b:includable id='postCommentsLink'>
+        <b:if cond='data:view.isMultipleItems'>
+          <span class='byline post-comment-link container'>
+            <b:include cond='data:post.commentSource != 1' name='commentsLink'/>
+          </span>
+        </b:if>
+      </b:includable>
+      
+      <b:includable id='postFooter' var='post'>
+        <div class='post-footer'>
+          <b:include name='footerBylines'/>
+          <b:include data='post' name='postFooterAuthorProfile'/>
+        </div>
+      </b:includable>
+      
+      <b:includable id='postFooterAuthorProfile' var='post'>
+        <b:if cond='data:post.author.aboutMe and data:view.isPost'>
+          <div class='author-profile'>
+            <b:if cond='data:post.author.authorPhoto.url'>
+              <img class='author-image' expr:src='data:post.author.authorPhoto.url' width='50px'/>
+              <div class='author-about'>
+                <b:include data='post' name='aboutPostAuthor'/>
+              </div>
+            <b:else/>
+              <b:include data='post' name='aboutPostAuthor'/>
+            </b:if>
+          </div>
+        </b:if>
+      </b:includable>
+      
+      <b:includable id='postHeader' var='post'>
+        <b:include name='headerByline'/>
+      </b:includable>
+      
+      <b:includable id='postJumpLink' var='post'>
+        <div class='jump-link flat-button'>
+          <a expr:href='data:post.url fragment &quot;more&quot;' expr:title='data:post.title'>
+            <b:eval expr='data:blog.jumpLinkMessage'/>
+          </a>
+        </div>
+      </b:includable>
+      
+      <b:includable id='postLabels'>
+        <span class='byline post-labels'>
+          <span class='byline-label'>
+            <data:byline.label/>
+          </span>
+          <b:loop index='i' values='data:post.labels' var='label'>
+            <a expr:href='data:label.url' rel='tag'>
+              <data:label.name/>
+            </a>
+          </b:loop>
+        </span>
+      </b:includable>
+      
+      <b:includable id='postLocation'>
+        <span class='byline post-location'>
+          <data:byline.label/>
+          <a expr:href='data:post.location.mapsUrl' target='_blank'>
+            <data:post.location.name/>
+          </a>
+        </span>
+      </b:includable>
+      
+      <b:includable id='postMeta' var='post'>
+        <b:include data='post' name='postMetadataJSON'/>
+      </b:includable>
+      
+      <b:includable id='postMetadataJSONImage'>
+        &quot;image&quot;: {
+          &quot;@type&quot;: &quot;ImageObject&quot;,
+          <b:if cond='data:post.featuredImage.isResizable'>
+            &quot;url&quot;: &quot;<b:eval expr='resizeImage(data:post.featuredImage, 1200, &quot;1200:630&quot;)'/>&quot;,
+            &quot;height&quot;: 630,
+            &quot;width&quot;: 1200
+          <b:else/>
+            &quot;url&quot;: &quot;https://blogger.googleusercontent.com/img/b/U2hvZWJveA/AVvXsEgfMvYAhAbdHksiBA24JKmb2Tav6K0GviwztID3Cq4VpV96HaJfy0viIu8z1SSw_G9n5FQHZWSRao61M3e58ImahqBtr7LiOUS6m_w59IvDYwjmMcbq3fKW4JSbacqkbxTo8B90dWp0Cese92xfLMPe_tg11g/w1200/&quot;,
+            &quot;height&quot;: 348,
+            &quot;width&quot;: 1200
+          </b:if>
+        },
+      </b:includable>
+      
+      <b:includable id='postMetadataJSONPublisher'>
+        &quot;publisher&quot;: {
+          &quot;@type&quot;: &quot;Organization&quot;,
+          &quot;name&quot;: &quot;Blogger&quot;,
+          &quot;logo&quot;: {
+            &quot;@type&quot;: &quot;ImageObject&quot;,
+            &quot;url&quot;: &quot;https://blogger.googleusercontent.com/img/b/U2hvZWJveA/AVvXsEgfMvYAhAbdHksiBA24JKmb2Tav6K0GviwztID3Cq4VpV96HaJfy0viIu8z1SSw_G9n5FQHZWSRao61M3e58ImahqBtr7LiOUS6m_w59IvDYwjmMcbq3fKW4JSbacqkbxTo8B90dWp0Cese92xfLMPe_tg11g/h60/&quot;,
+            &quot;width&quot;: 206,
+            &quot;height&quot;: 60
+          }
+        },
+      </b:includable>
+      
+      <b:includable id='postPagination'>
+        <div class='blog-pager container' id='blog-pager'>
+          <b:include cond='data:newerPageUrl' name='previousPageLink'/>
+          <b:include cond='data:olderPageUrl' name='nextPageLink'/>
+          <b:include cond='data:view.url != data:blog.homepageUrl' name='homePageLink'/>
+        </div>
+      </b:includable>
+      
+      <b:includable id='postReactions'>
+        <!-- Reaction feature no longer available -->
+      </b:includable>
+      
+      <b:includable id='postShareButtons'>
+        <div class='byline post-share-buttons goog-inline-block'>
+          <b:with value='data:sharingId ?: ((data:widget.instanceId ?: &quot;sharing&quot;) + &quot;-&quot; + (data:regionName ?: &quot;byline&quot;) + &quot;-&quot; + data:post.id)' var='sharingId'>
+            <b:include data='{
+              sharingId: data:sharingId,
+              originalUrl: data:post.url,
+              platforms: data:this.sharing.platforms,
+              shareUrl: data:post.shareUrl,
+              shareTitle: data:post.title
+            }' name='sharingButtons'/>
+          </b:with>
+        </div>
+      </b:includable>
+      
+      <b:includable id='postTimestamp'>
+        <span class='byline post-timestamp'>
+          <data:byline.label/>
+          <b:if cond='data:post.url'>
+            <meta expr:content='data:post.url.canonical'/>
+            <a class='timestamp-link' expr:href='data:post.url' rel='bookmark' title='permanent link'>
+              <time class='published' expr:datetime='data:post.date.iso8601' expr:title='data:post.date.iso8601'>
+                <data:post.date/>
+              </time>
+            </a>
+          </b:if>
+        </span>
+      </b:includable>
+      
+      <b:includable id='postTitle' var='post'>
+        <a expr:name='data:post.id'/>
+        <b:if cond='data:post.title != &quot;&quot;'>
+          <h3 class='post-title entry-title'>
+            <b:if cond='data:post.link or (data:post.url and data:view.url != data:post.url)'>
+              <a expr:href='data:post.link ?: data:post.url'>
+                <data:post.title/>
+              </a>
+            <b:else/>
+              <data:post.title/>
+            </b:if>
+          </h3>
+        </b:if>
+      </b:includable>
+      
+      <b:includable id='previousPageLink'>
+        <a class='blog-pager-newer-link' expr:href='data:newerPageUrl' expr:id='data:widget.instanceId + &quot;_blog-pager-newer-link&quot;' expr:title='data:messages.newerPosts'>
+          <data:messages.newerPosts/>
+        </a>
+      </b:includable>
+      
+      <b:includable id='sharingButton'>
+        <span expr:aria-label='data:platform.shareMessage' expr:class='&quot;sharing-platform-button sharing-element-&quot; + data:platform.key' expr:data-href='data:shareUrl + &quot;&amp;target=&quot; + data:platform.target' expr:data-url='data:originalUrl' expr:title='data:platform.shareMessage' role='menuitem' tabindex='-1'>
+          <b:include name='sharingPlatformIcon'/>
+          <span class='platform-sharing-text'>
+            <data:platform.name/>
+          </span>
+        </span>
+      </b:includable>
+      
+      <b:includable id='sharingButtonContent'>
+        <div class='flat-icon-button ripple'>
+          <b:include name='shareIcon'/>
+        </div>
+      </b:includable>
+      
+      <b:includable id='sharingButtons'>
+        <div class='sharing' expr:aria-owns='&quot;sharing-popup-&quot; + data:sharingId' expr:data-title='data:shareTitle'>
+          <button class='sharing-button touch-icon-button' expr:aria-controls='&quot;sharing-popup-&quot; + data:sharingId' expr:aria-label='data:messages.share.escaped' expr:id='&quot;sharing-button-&quot; + data:sharingId' role='button'>
+            <b:include name='sharingButtonContent'/>
+          </button>
+          <b:include name='sharingButtonsMenu'/>
+        </div>
+      </b:includable>
+      
+      <b:includable id='sharingButtonsMenu'>
+        <div class='share-buttons-container'>
+          <ul aria-hidden='true' class='share-buttons hidden' expr:aria-label='data:messages.share.escaped' expr:id='&quot;sharing-popup-&quot; + data:sharingId' role='menu'>
+            <b:loop values='(data:platforms ?: data:blog.sharing.platforms) filter (p =&gt; p.key not in {&quot;blogThis&quot;})' var='platform'>
+              <li>
+                <b:include name='sharingButton'/>
+              </li>
+            </b:loop>
+            <li aria-hidden='true' class='hidden'>
+              <b:include name='otherSharingButton'/>
+            </li>
+          </ul>
+        </div>
+      </b:includable>
+      
+      <b:includable id='sharingPlatformIcon'>
+        <b:include data='{ iconClass: (&quot;touch-icon sharing-&quot; + data:platform.key) }' expr:name='data:platform.key + &quot;Icon&quot;'/>
+      </b:includable>
+      
+      <b:includable id='threadedCommentForm' var='post'>
+        <div class='comment-form'>
+          <a name='comment-form'/>
+          <h4 id='comment-post-message'><data:messages.postAComment/></h4>
+          <b:if cond='data:this.messages.blogComment != &quot;&quot;'>
+            <p><data:this.messages.blogComment/></p>
+          </b:if>
+          <b:include data='post' name='commentFormIframeSrc'/>
+          <iframe allowtransparency='allowtransparency' class='blogger-iframe-colorize blogger-comment-from-post' expr:height='data:cmtIframeInitialHeight ?: &quot;90px&quot;' frameborder='0' id='comment-editor' name='comment-editor' src='' width='100%'/>
+          <data:post.cmtfpIframe/>
+          <script type='text/javascript'>
+            BLOG_CMT_createIframe(&#39;<data:post.appRpcRelayPath/>&#39;);
+          </script>
+        </div>
+      </b:includable>
+      
+      <b:includable id='threadedCommentJs' var='post'>
+        <script async='async' expr:src='data:post.commentSrc' type='text/javascript'/>
+        <b:template-script inline='true' name='threaded_comments'/>
+        <script type='text/javascript'>
+          blogger.widgets.blog.initThreadedComments(
+            <data:post.commentJso/>,
+            <data:post.commentMsgs/>,
+            <data:post.commentConfig/>
+          );
+        </script>
+      </b:includable>
+      
+      <b:includable id='threadedComments' var='post'>
+        <section class='comments threaded' expr:data-embed='data:post.embedCommentForm' expr:data-num-comments='data:post.numberOfComments' id='comments'>
+          <a name='comments'/>
+          <b:include name='commentsTitle'/>
+          <div class='comments-content'>
+            <b:if cond='data:post.embedCommentForm'>
+              <b:include data='post' name='threadedCommentJs'/>
+            </b:if>
+            <div id='comment-holder'>
+              <data:post.commentHtml/>
+            </div>
+          </div>
+          <p class='comment-footer'>
+            <b:if cond='data:post.allowNewComments'>
+              <b:include data='post' name='threadedCommentForm'/>
+            <b:else/>
+              <data:post.noNewCommentsText/>
+            </b:if>
+            <b:if cond='data:post.showManageComments'>
+              <b:include data='post' name='manageComments'/>
+            </b:if>
+          </p>
+          <b:if cond='data:showCmtPopup'>
+            <div id='comment-popup'>
+              <iframe allowtransparency='allowtransparency' frameborder='0' id='comment-actions' name='comment-actions' scrolling='no'>
+              </iframe>
+            </div>
+          </b:if>
+        </section>
+      </b:includable>
+      
+      <b:includable id='tooltipCss'>
+        <style>
+          .post-body a.b-tooltip-container {
+            position: relative;
+            display: inline-block;
+          }
+          .post-body a.b-tooltip-container .b-tooltip {
+            display: block !important;
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translate(-20%, 1px);
+            visibility: hidden;
+            opacity: 0;
+            z-index: 1;
+            transition: opacity 0.2s ease-in-out;
+          }
+          .post-body a.b-tooltip-container .b-tooltip iframe {
+            width: 200px;
+            height: 198px;
+            max-width: none;
+            border: none;
+            border-radius: 20px;
+            box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, 0.2);
+          }
+          @media (hover: hover) {
+            .post-body a.b-tooltip-container:hover .b-tooltip {
+              visibility: visible;
+              opacity: 1;
+            }
+          }
+        </style>
+      </b:includable>
+    </b:widget>
+  </b:section>
+
+  <!-- ============================================
+       CHATBOT UI
+       ============================================ -->
+  <div class='chatbot-fullpage' id='chatbot-fullpage'>
+    
+    <!-- Header -->
+    <header class='chatbot-header-premium'>
+      <div class='header-brand'>
+        <span class='brand-icon'>🕌</span>
+        <span class='brand-text'>কুরআন <span>বট</span></span>
+      </div>
+      <div class='header-controls'>
+        <div class='digital-clock' id='digital-clock'>
+          <span class='clock-time' id='clock-time'>00:00:00</span>
+          <span class='clock-am-pm' id='clock-am-pm'>AM</span>
+        </div>
+        <button class='control-btn' id='home-btn' title='হোমে যান / Go Home'>🏠 হোম</button>
+        <button class='control-btn' id='sura-panel-btn' title='সূরা তালিকা / Surah List'>📖 সূরা</button>
+        <button class='control-btn' id='voice-btn' title='ভয়েস / Voice'>🎤 ভয়েস</button>
+        <button class='control-btn' id='settings-panel-btn' title='সেটিংস / Settings'>⚙️ সেটিংস</button>
+        <button class='control-btn' id='theme-toggle' title='থিম পরিবর্তন / Toggle Theme'>
+          <span id='theme-icon'>🌙</span>
+        </button>
+      </div>
+    </header>
+
+    <!-- Chat Body -->
+    <div class='chat-body-main' id='chat-body'>
+      <!-- Welcome Section -->
+      <div class='welcome-section' id='welcome-section'>
+        <div class='welcome-glow'>
+          <div class='welcome-icon'>🤲</div>
+        </div>
+        <h1>আসসালামু <span>আলাইকুম</span></h1>
+        <p class='welcome-sub'>কুরআন, তাফসীর, হাদিস, বই ও ইসলামিক টুলস</p>
+        <span class='feature-badge'>✨ ১৮+ ফিচার সমৃদ্ধ</span>
+        <div class='data-status' id='data-status'>🔄 লোড হচ্ছে...</div>
+        
+        <div class='quick-actions-grid'>
+          <button class='quick-action-premium primary' data-action='start'>
+            <span class='qa-icon'>💬</span>
+            <span class='qa-label'>চ্যাট</span>
+          </button>
+          <button class='quick-action-premium' data-action='popular'>
+            <span class='qa-icon'>⭐</span>
+            <span class='qa-label'>আয়াত</span>
+          </button>
+          <button class='quick-action-premium' data-action='prayer'>
+            <span class='qa-icon'>🕌</span>
+            <span class='qa-label'>সময়</span>
+          </button>
+          <button class='quick-action-premium' data-action='hadith'>
+            <span class='qa-icon'>📜</span>
+            <span class='qa-label'>হাদিস</span>
+          </button>
+          <button class='quick-action-premium' data-action='blog'>
+            <span class='qa-icon'>📝</span>
+            <span class='qa-label'>ব্লগ</span>
+          </button>
+          <button class='quick-action-premium' data-action='books'>
+            <span class='qa-icon'>📚</span>
+            <span class='qa-label'>বই</span>
+          </button>
+          <button class='quick-action-premium' data-action='zakat'>
+            <span class='qa-icon'>💰</span>
+            <span class='qa-label'>যাকাত</span>
+          </button>
+          <button class='quick-action-premium' data-action='timer'>
+            <span class='qa-icon'>⏱️</span>
+            <span class='qa-label'>টাইমার</span>
+          </button>
+          <button class='quick-action-premium' data-action='quiz'>
+            <span class='qa-icon'>🧠</span>
+            <span class='qa-label'>কুইজ</span>
+          </button>
+          <button class='quick-action-premium' data-action='help'>
+            <span class='qa-icon'>🆘</span>
+            <span class='qa-label'>সাহায্য</span>
+          </button>
+        </div>
+      </div>
+      
+      <!-- Messages Container -->
+      <div id='messages-container'/>
+    </div>
+
+    <!-- Input Area -->
+    <div class='chat-input-area'>
+      <div class='input-wrapper'>
+        <input aria-label='কুরআন বট প্রশ্ন ইনপুট' autofocus='autofocus' id='chat-input' placeholder='আয়াত, হাদিস, বই, প্রশ্ন লিখুন...' type='text'/>
+      </div>
+      <div class='input-actions'>
+        <button class='input-btn send' id='send-btn'>📤</button>
+        <button class='input-btn secondary' id='tafsir-btn'>📖</button>
+        <button class='input-btn outline' id='clear-btn'>🗑️</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================
+       TAFSIR MODAL
+       ============================================ -->
+  <div class='tafsir-modal-overlay' id='tafsir-modal'>
+    <div class='tafsir-modal-content'>
+      <div class='tafsir-modal-header'>
+        <h3 id='tafsir-modal-title'>তাফসীর</h3>
+        <button class='close-modal' id='close-tafsir-modal'>✕</button>
+      </div>
+      <div class='tafsir-modal-body' id='tafsir-modal-body'/>
+    </div>
+  </div>
+
+  <!-- ============================================
+       PDF VIEWER MODAL
+       ============================================ -->
+  <div class='pdf-viewer-overlay' id='pdf-viewer'>
+    <div class='pdf-viewer-content'>
+      <div class='pdf-viewer-header'>
+        <h3 id='pdf-title'>পিডিএফ বই</h3>
+        <div class='viewer-controls'>
+          <button class='viewer-btn' id='pdf-buy-btn' title='বই কিনুন / Buy Book'>🛒</button>
+          <button class='viewer-btn' id='pdf-share-btn' title='শেয়ার করুন / Share'>📤</button>
+          <button class='viewer-btn' id='pdf-download-btn' title='ডাউনলোড / Download'>⬇️</button>
+          <button class='viewer-btn' id='pdf-fullscreen-btn' title='পূর্ণ পর্দা / Fullscreen'>⛶</button>
+          <button class='viewer-btn close' id='pdf-close-btn'>✕</button>
+        </div>
+      </div>
+      <div class='pdf-viewer-body' id='pdf-viewer-body'>
+        <div class='pdf-loading'>
+          <div class='spinner'/>
+          <span>পিডিএফ লোড হচ্ছে...</span>
+        </div>
+      </div>
+      <div class='pdf-viewer-footer'>
+        <span class='page-info' id='pdf-page-info'>পৃষ্ঠা ১ / ১</span>
+        <div class='page-controls'>
+          <button class='page-btn' id='pdf-prev-btn'>◀ আগে</button>
+          <button class='page-btn' id='pdf-next-btn'>পরে ▶</button>
+        </div>
+        <div class='zoom-controls'>
+          <button class='zoom-btn' id='pdf-zoom-out-btn'>🔍−</button>
+          <span class='zoom-label' id='pdf-zoom-label'>100%</span>
+          <button class='zoom-btn' id='pdf-zoom-in-btn'>🔍+</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================
+       SETTINGS PANEL
+       ============================================ -->
+  <div class='settings-panel-overlay' id='settings-panel'>
+    <div class='settings-panel-content'>
+      <div class='settings-header'>
+        <h2>⚙️ সেটিংস</h2>
+        <button class='close-settings' id='close-settings'>✕</button>
+      </div>
+      
+      <!-- Bengali Font Size -->
+      <div class='setting-group'>
+        <label for='bengali-font-size'>বাংলা ফন্ট সাইজ</label>
+        <div class='range-container'>
+          <input id='bengali-font-size' max='40' min='10' type='range' value='18'/>
+          <span class='range-value' id='bengali-font-size-value'>18px</span>
+        </div>
+        <div class='range-labels'>
+          <span>ছোট</span>
+          <span>বড়</span>
+        </div>
+        <div class='setting-desc'>বাংলা টেক্সটের ফন্ট সাইজ</div>
+      </div>
+      
+      <!-- Arabic Font Size -->
+      <div class='setting-group'>
+        <label for='arabic-font-size'>আরবি ফন্ট সাইজ</label>
+        <div class='range-container'>
+          <input id='arabic-font-size' max='50' min='12' type='range' value='22'/>
+          <span class='range-value' id='arabic-font-size-value'>22px</span>
+        </div>
+        <div class='range-labels'>
+          <span>ছোট</span>
+          <span>বড়</span>
+        </div>
+        <div class='setting-desc'>আরবি টেক্সটের ফন্ট সাইজ</div>
+      </div>
+      
+      <!-- Bengali Font Family -->
+      <div class='setting-group'>
+        <label for='bengali-font-family'>বাংলা ফন্ট</label>
+        <select id='bengali-font-family'>
+          <option value='Kalpurush, Hind Siliguri, sans-serif'>কালপুরুষ</option>
+          <option value='Hind Siliguri, sans-serif'>হিন্দ সিলিগুড়ি</option>
+          <option value='SolaimanLipi, sans-serif'>সোলাইমান লিপি</option>
+          <option value='Siyam Rupali, sans-serif'>সিয়াম রুপালি</option>
+          <option value='Noto Sans Bengali, sans-serif'>নোটো সান্স</option>
+        </select>
+        <div class='setting-desc'>বাংলা টেক্সটের ফন্ট শৈলী</div>
+      </div>
+      
+      <!-- Arabic Font Family -->
+      <div class='setting-group'>
+        <label for='arabic-font-family'>আরবি ফন্ট</label>
+        <select id='arabic-font-family'>
+          <option value='Amiri, Scheherazade New, serif'>আমিরি</option>
+          <option value='Scheherazade New, serif'>শেহেরাজাদে</option>
+          <option value='Lateef, serif'>লতিফ</option>
+          <option value='KFGQPC Uthman Taha Naskh, serif'>উসমানি নাসখ</option>
+          <option value='Noto Naskh Arabic, serif'>নোটো নাসখ</option>
+        </select>
+        <div class='setting-desc'>আরবি টেক্সটের ফন্ট শৈলী</div>
+      </div>
+      
+      <!-- Audio Speed -->
+      <div class='setting-group'>
+        <label for='audio-speed'>অডিও স্পিড</label>
+        <div class='range-container'>
+          <input id='audio-speed' max='2' min='0.5' step='0.1' type='range' value='1'/>
+          <span class='range-value' id='audio-speed-value'>1.0x</span>
+        </div>
+        <div class='range-labels'>
+          <span>ধীর</span>
+          <span>দ্রুত</span>
+        </div>
+        <div class='setting-desc'>কুরআন তিলাওয়াতের গতি</div>
+      </div>
+      
+      <!-- Auto Play Audio -->
+      <div class='setting-group'>
+        <div class='checkbox-group'>
+          <input id='auto-play-audio' type='checkbox'/>
+          <label for='auto-play-audio'>অটো অডিও প্লে</label>
+        </div>
+        <div class='setting-desc'>আয়াত দেখার সাথে অটো অডিও চালাবে</div>
+      </div>
+      
+      <!-- Show Transliteration -->
+      <div class='setting-group'>
+        <div class='checkbox-group'>
+          <input id='show-transliteration' type='checkbox'/>
+          <label for='show-transliteration'>ট্রান্সলিটারেশন দেখান</label>
+        </div>
+        <div class='setting-desc'>আরবি টেক্সটের ইংরেজি উচ্চারণ</div>
+      </div>
+      
+      <button class='btn-reset' id='reset-settings'>🔄 ডিফল্ট সেটিংস</button>
+    </div>
+  </div>
+
+  <!-- ============================================
+       SURA LIST PANEL
+       ============================================ -->
+  <div class='sura-panel-overlay' id='sura-panel'>
+    <div class='sura-panel-content'>
+      <div class='sura-header'>
+        <h2>📖 সূরা সমূহ</h2>
+        <button class='close-sura' id='close-sura'>✕</button>
+      </div>
+      <input class='sura-search' id='sura-search' placeholder='সূরা খুঁজুন...' type='text'/>
+      <div class='sura-grid' id='sura-grid'/>
+    </div>
+  </div>
+
+  <!-- ============================================
+       JAVASCRIPT - COMPLETE APPLICATION
+       ============================================ -->
+  <script>
+  //<![CDATA[
+  // ============================================================
+  // COMPLETE QURAN CHATBOT APPLICATION - VERSION 7.0
+  // All Features: Quran, Tafsir, Hadith, Books, PDF, Timer, Zakat, Quiz, Voice
+  // ============================================================
+  
+  (function() {
+    'use strict';
+
+    // ============================================================
+    // 1. EMBEDDED DATA (No External Loading Needed)
+    // ============================================================
+    
+    // 1.1 Quran Data (Bangla Translation)
+    var EMBEDDED_QURAN = [
+      // Surah 1: Al-Fatiha
+      {sura:'1', aya:'1', text:'সব প্রশংসা আল্লাহর, যিনি সকল সৃষ্টির পালনকর্তা।'},
+      {sura:'1', aya:'2', text:'যিনি পরম করুণাময়, অতি দয়ালু।'},
+      {sura:'1', aya:'3', text:'যিনি বিচার দিনের মালিক।'},
+      {sura:'1', aya:'4', text:'আমরা শুধু আপনারই ইবাদত করি এবং শুধু আপনারই সাহায্য প্রার্থনা করি।'},
+      {sura:'1', aya:'5', text:'আমাদেরকে সরল পথ দেখান।'},
+      {sura:'1', aya:'6', text:'সেই পথ, যাদেরকে আপনি অনুগ্রহ করেছেন।'},
+      {sura:'1', aya:'7', text:'তাদের পথ নয়, যাদের প্রতি您的 ক্রোধ হয়েছে এবং যারা পথভ্রষ্ট হয়েছে।'},
+      
+      // Surah 2: Al-Baqarah
+      {sura:'2', aya:'1', text:'আলিফ-লাম-মীম।'},
+      {sura:'2', aya:'2', text:'এই কিতাব, যাতে কোন সন্দেহ নেই, মুত্তাকীদের জন্য পথনির্দেশ।'},
+      {sura:'2', aya:'3', text:'যারা গায়েবের প্রতি ঈমান আনে এবং নামাজ কায়েম করে এবং আমি তাদেরকে যা দিয়েছি তা থেকে ব্যয় করে।'},
+      {sura:'2', aya:'4', text:'এবং যারা ঈমান আনে যা আপনার প্রতি নাযিল করা হয়েছে এবং যা আপনার আগে নাযিল করা হয়েছে এবং তারা আখিরাতের প্রতি নিশ্চিত বিশ্বাস রাখে।'},
+      {sura:'2', aya:'5', text:'তারাই তাদের পালনকর্তার পথপ্রাপ্ত এবং তারাই সফলকাম।'},
+      {sura:'2', aya:'255', text:'আল্লাহ ছাড়া কোন উপাস্য নেই, তিনি চিরঞ্জীব, চিরস্থায়ী। তাঁর নিদ্রা বা তন্দ্রা আসে না। আকাশমণ্ডলী ও পৃথিবীর সব কিছু তাঁরই। কে এমন আছে যে তাঁর অনুমতি ছাড়া তাঁর কাছে সুপারিশ করবে? তিনি জানেন যা তাদের সামনে এবং যা তাদের পিছনে। তারা তাঁর জ্ঞান থেকে শুধু তাই জানতে পারে, যা তিনি চান। তাঁর আসন আসমানসমূহ ও পৃথিবীকে পরিবেষ্টিত করে আছে। আর এগুলোর সংরক্ষণ তাঁকে ক্লান্ত করে না। তিনি সর্বোচ্চ ও মহামহিম।'},
+      
+      // Surah 3: Al-Imran
+      {sura:'3', aya:'1', text:'আলিফ-লাম-মীম।'},
+      {sura:'3', aya:'2', text:'আল্লাহ, তিনি ছাড়া কোন উপাস্য নেই, চিরঞ্জীব, চিরস্থায়ী।'},
+      
+      // Surah 4: An-Nisa
+      {sura:'4', aya:'1', text:'হে মানুষ! তোমরা তোমাদের পালনকর্তাকে ভয় কর, যিনি তোমাদেরকে এক ব্যক্তি থেকে সৃষ্টি করেছেন এবং তার থেকে তার সঙ্গিনী সৃষ্টি করেছেন এবং তাদের থেকে বহু পুরুষ ও নারী ছড়িয়ে দিয়েছেন।'},
+      {sura:'4', aya:'2', text:'এবং অনাথদের তাদের সম্পদ দাও এবং অপবিত্রকে পবিত্রের সাথে বদলিও না।'},
+      {sura:'4', aya:'3', text:'আর যদি তোমরা ভয় কর যে, এতিমদের প্রতি তোমরা ন্যায় বিচার করতে পারবে না, তবে তোমরা যে স্ত্রীদের পছন্দ কর তাদের মধ্যে দুজন, তিনজন বা চারজনকে বিবাহ কর।'},
+      {sura:'4', aya:'4', text:'এবং স্ত্রীদেরকে তাদের মহর দাও।'},
+      {sura:'4', aya:'5', text:'আর তোমরা তোমাদের সম্পদ, যা আল্লাহ তোমাদের জীবিকা উপায় করেছেন, নির্বোধদের হাতে অর্পণ করো না।'},
+      
+      // Surah 5: Al-Maidah
+      {sura:'5', aya:'1', text:'হে মুমিনগণ! তোমরা অঙ্গীকারসমূহ পূর্ণ কর।'},
+      {sura:'5', aya:'2', text:'হে মুমিনগণ! আল্লাহর নিদর্শনসমূহ, সম্মানিত মাস, কুরবানী, গলায় মালা পরিহিত এবং নিজ রবের অনুগ্রহ ও সন্তুষ্টি কামনায় সম্মানিত গৃহের দিকে আগমনকারীদের জন্যে সম্মান প্রদর্শন কর।'},
+      {sura:'5', aya:'3', text:'তোমাদের জন্যে হারাম করা হয়েছে মৃত জন্তু, রক্ত, শূকরের গোশত এবং যে জন্তুকে আল্লাহ ছাড়া অন্য কারো নামে উৎসর্গ করা হয়, গলায় দমবন্ধ হয়ে মৃত, আঘাতে মৃত, উঁচু জায়গা থেকে পড়ে মৃত, শিং এর আঘাতে মৃত, এবং হিংস্র জন্তু যা আংশিক খেয়েছে, যা তোমরা যবেহ কর তবে ভিন্ন, এবং যা বেদীতে উৎসর্গ করা হয়।'},
+      
+      // Surah 10: Yunus
+      {sura:'10', aya:'1', text:'আলিফ-লাম-রা। এগুলো প্রজ্ঞাপূর্ণ কিতাবের আয়াত।'},
+      {sura:'10', aya:'2', text:'মানুষের জন্যে কি আশ্চর্য হল যে, আমি তাদেরই একজনকে ওহী পাঠালাম যে, মানুষদেরকে সতর্ক কর এবং মুমিনদেরকে সুসংবাদ দাও যে, তাদের পালনকর্তার কাছে তাদের জন্যে সত্য সৎকর্মের পুরস্কার রয়েছে।'},
+      
+      // Surah 36: Ya-Sin
+      {sura:'36', aya:'1', text:'ইয়াসিন।'},
+      {sura:'36', aya:'2', text:'প্রজ্ঞাপূর্ণ কুরআনের শপথ।'},
+      {sura:'36', aya:'3', text:'নিশ্চয় আপনি রাসূলগণের একজন।'},
+      {sura:'36', aya:'4', text:'সরল পথে রয়েছেন।'},
+      {sura:'36', aya:'5', text:'এটি পরাক্রমশালী, পরম দয়ালুর নাযিলকৃত।'},
+      
+      // Surah 55: Ar-Rahman
+      {sura:'55', aya:'1', text:'পরম করুণাময়।'},
+      {sura:'55', aya:'2', text:'তিনি কুরআন শিক্ষা দিয়েছেন।'},
+      {sura:'55', aya:'3', text:'তিনি মানুষকে সৃষ্টি করেছেন।'},
+      {sura:'55', aya:'4', text:'তিনি তাকে বাক্য শক্তি শিক্ষা দিয়েছেন।'},
+      {sura:'55', aya:'5', text:'সূর্য ও চন্দ্র নির্দিষ্ট হিসাবে চলমান।'},
+      {sura:'55', aya:'6', text:'এবং বৃক্ষ ও বৃক্ষরাজি সিজদা করে।'},
+      
+      // Surah 112: Al-Ikhlas
+      {sura:'112', aya:'1', text:'বলুন, তিনি আল্লাহ, এক।'},
+      {sura:'112', aya:'2', text:'আল্লাহ অমুখাপেক্ষী।'},
+      {sura:'112', aya:'3', text:'তিনি কাউকে জন্ম দেননি এবং তাঁকেও জন্ম দেওয়া হয়নি।'},
+      {sura:'112', aya:'4', text:'আর তাঁর সমতুল্য কেউ নেই।'}
+    ];
+
+    // 1.2 Arabic Data
+    var EMBEDDED_ARABIC = [
+      {sura:'1', VerseIDAr:'1', ayat:'بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ'},
+      {sura:'1', VerseIDAr:'2', ayat:'الْحَمْدُ لِلَّهِ رَبِّ الْعَالَمِينَ'},
+      {sura:'1', VerseIDAr:'3', ayat:'الرَّحْمَٰنِ الرَّحِيمِ'},
+      {sura:'1', VerseIDAr:'4', ayat:'مَالِكِ يَوْمِ الدِّينِ'},
+      {sura:'1', VerseIDAr:'5', ayat:'إِيَّاكَ نَعْبُدُ وَإِيَّاكَ نَسْتَعِينُ'},
+      {sura:'1', VerseIDAr:'6', ayat:'اهْدِنَا الصِّرَاطَ الْمُسْتَقِيمَ'},
+      {sura:'1', VerseIDAr:'7', ayat:'صِرَاطَ الَّذِينَ أَنْعَمْتَ عَلَيْهِمْ غَيْرِ الْمَغْضُوبِ عَلَيْهِمْ وَلَا الضَّالِّينَ'},
+      {sura:'2', VerseIDAr:'1', ayat:'الم'},
+      {sura:'2', VerseIDAr:'2', ayat:'ذَٰلِكَ الْكِتَابُ لَا رَيْبَ ۛ فِيهِ ۛ هُدًى لِلْمُتَّقِينَ'},
+      {sura:'2', VerseIDAr:'3', ayat:'الَّذِينَ يُؤْمِنُونَ بِالْغَيْبِ وَيُقِيمُونَ الصَّلَاةَ وَمِمَّا رَزَقْنَاهُمْ يُنفِقُونَ'},
+      {sura:'2', VerseIDAr:'4', ayat:'وَالَّذِينَ يُؤْمِنُونَ بِمَا أُنزِلَ إِلَيْكَ وَمَا أُنزِلَ مِن قَبْلِكَ وَبِالْآخِرَةِ هُمْ يُوقِنُونَ'},
+      {sura:'2', VerseIDAr:'255', ayat:'اللَّهُ لَا إِلَٰهَ إِلَّا هُوَ الْحَيُّ الْقَيُّومُ ۚ لَا تَأْخُذُهُ سِنَةٌ وَلَا نَوْمٌ ۚ لَهُ مَا فِي السَّمَاوَاتِ وَمَا فِي الْأَرْضِ ۗ مَنْ ذَا الَّذِي يَشْفَعُ عِنْدَهُ إِلَّا بِإِذْنِهِ ۚ يَعْلَمُ مَا بَيْنَ أَيْدِيهِمْ وَمَا خَلْفَهُمْ ۖ وَلَا يُحِيطُونَ بِشَيْءٍ مِنْ عِلْمِهِ إِلَّا بِمَا شَاءَ ۚ وَسِعَ كُرْسِيُّهُ السَّمَاوَاتِ وَالْأَرْضَ ۖ وَلَا يَئُودُهُ حِفْظُهُمَا ۚ وَهُوَ الْعَلِيُّ الْعَظِيمُ'},
+      {sura:'3', VerseIDAr:'1', ayat:'الم'},
+      {sura:'3', VerseIDAr:'2', ayat:'اللَّهُ لَا إِلَٰهَ إِلَّا هُوَ الْحَيُّ الْقَيُّومُ'},
+      {sura:'4', VerseIDAr:'1', ayat:'يَا أَيُّهَا النَّاسُ اتَّقُوا رَبَّكُمُ الَّذِي خَلَقَكُمْ مِنْ نَفْسٍ وَاحِدَةٍ وَخَلَقَ مِنْهَا زَوْجَهَا وَبَثَّ مِنْهُمَا رِجَالًا كَثِيرًا وَنِسَاءً ۚ وَاتَّقُوا اللَّهَ الَّذِي تَسَاءَلُونَ بِهِ وَالْأَرْحَامَ ۚ إِنَّ اللَّهَ كَانَ عَلَيْكُمْ رَقِيبًا'},
+      {sura:'5', VerseIDAr:'1', ayat:'يَا أَيُّهَا الَّذِينَ آمَنُوا أَوْفُوا بِالْعُقُودِ ۚ أُحِلَّتْ لَكُمْ بَهِيمَةُ الْأَنْعَامِ إِلَّا مَا يُتْلَىٰ عَلَيْكُمْ غَيْرَ مُحِلِّي الصَّيْدِ وَأَنْتُمْ حُرُمٌ ۗ إِنَّ اللَّهَ يَحْكُمُ مَا يُرِيدُ'},
+      {sura:'10', VerseIDAr:'1', ayat:'الر ۚ تِلْكَ آيَاتُ الْكِتَابِ الْحَكِيمِ'},
+      {sura:'36', VerseIDAr:'1', ayat:'يس'},
+      {sura:'36', VerseIDAr:'2', ayat:'وَالْقُرْآنِ الْحَكِيمِ'},
+      {sura:'36', VerseIDAr:'3', ayat:'إِنَّكَ لَمِنَ الْمُرْسَلِينَ'},
+      {sura:'36', VerseIDAr:'4', ayat:'عَلَىٰ صِرَاطٍ مُسْتَقِيمٍ'},
+      {sura:'36', VerseIDAr:'5', ayat:'تَنزِيلَ الْعَزِيزِ الرَّحِيمِ'},
+      {sura:'55', VerseIDAr:'1', ayat:'الرَّحْمَٰنُ'},
+      {sura:'55', VerseIDAr:'2', ayat:'عَلَّمَ الْقُرْآنَ'},
+      {sura:'55', VerseIDAr:'3', ayat:'خَلَقَ الْإِنسَانَ'},
+      {sura:'55', VerseIDAr:'4', ayat:'عَلَّمَهُ الْبَيَانَ'},
+      {sura:'55', VerseIDAr:'5', ayat:'الشَّمْسُ وَالْقَمَرُ بِحُسْبَانٍ'},
+      {sura:'55', VerseIDAr:'6', ayat:'وَالنَّجْمُ وَالشَّجَرُ يَسْجُدَانِ'},
+      {sura:'112', VerseIDAr:'1', ayat:'قُلْ هُوَ اللَّهُ أَحَدٌ'},
+      {sura:'112', VerseIDAr:'2', ayat:'اللَّهُ الصَّمَدُ'},
+      {sura:'112', VerseIDAr:'3', ayat:'لَمْ يَلِدْ وَلَمْ يُولَدْ'},
+      {sura:'112', VerseIDAr:'4', ayat:'وَلَمْ يَكُنْ لَهُ كُفُوًا أَحَدٌ'}
+    ];
+
+    // 1.3 Tafsir Data (Ibn Kathir)
+    var EMBEDDED_TAFSIR = {
+      '1:1': 'বিসমিল্লাহির রহমানির রহিম - পরম করুণাময় ও অতি দয়ালু আল্লাহর নামে শুরু করছি। এই আয়াতটি কুরআনের প্রথম আয়াত এবং প্রতিটি সূরার শুরুতে ব্যবহৃত হয়। এটি আল্লাহর গুণাবলী প্রকাশ করে। "বিসমিল্লাহ" অর্থ আল্লাহর নামে, "রহমান" অর্থ পরম করুণাময়, "রহিম" অর্থ অতি দয়ালু।',
+      '1:2': 'আলহামদু লিল্লাহি রাব্বিল আলামিন - সব প্রশংসা আল্লাহর, যিনি সকল সৃষ্টির পালনকর্তা। "আলহামদ" অর্থ প্রশংসা, "রাব্ব" অর্থ পালনকর্তা, "আলামিন" অর্থ সমস্ত সৃষ্টি। এই আয়াতে আল্লাহর প্রশংসা ও তাঁর সৃষ্টিকর্তার গুণ বর্ণিত হয়েছে।',
+      '1:3': 'আর-রহমানির রহিম - যিনি পরম করুণাময়, অতি দয়ালু। এটি আল্লাহর দুটি বিশেষ গুণ। রহমান অর্থ দুনিয়ার সব জীবের প্রতি করুণাময়, রহিম অর্থ আখিরাতে মুমিনদের প্রতি বিশেষ দয়ালু।',
+      '1:4': 'মালিকি ইয়াওমিদ দিন - যিনি বিচার দিনের মালিক। "মালিক" অর্থ রাজা বা মালিক, "ইয়াওমিদ দিন" অর্থ বিচারের দিন। এই আয়াতটি কিয়ামতের দিন আল্লাহর কর্তৃত্ব প্রতিষ্ঠা করে।',
+      '1:5': 'ইয়্যাকা নাবুদু ওয়া ইয়্যাকা নাস্তাইন - আমরা শুধু আপনারই ইবাদত করি এবং শুধু আপনারই সাহায্য প্রার্থনা করি। এটি ইবাদত ও সাহায্য চাওয়ার ক্ষেত্রে একত্ববাদের ঘোষণা।',
+      '2:255': 'আয়াতুল কুরসি - এটি কুরআনের সর্বশ্রেষ্ঠ আয়াত। এতে আল্লাহর মহিমা, ক্ষমতা ও কর্তৃত্ব বর্ণিত হয়েছে। আল্লাহ ছাড়া কোন উপাস্য নেই, তিনি চিরঞ্জীব ও চিরস্থায়ী। তাঁর জ্ঞান আসমান ও জমিনকে পরিবেষ্টিত করে আছে। এই আয়াতে আল্লাহর ৫টি গুণ বর্ণিত হয়েছে: ১. আল-হাইয়্যু (চিরঞ্জীব), ২. আল-কাইয়্যুম (চিরস্থায়ী), ৩. লা তা'খুযুহু সিনাতুন (তন্দ্রা আসে না), ৪. লা নাওম (নিদ্রা আসে না), ৫. ওয়াসি'আ কুরসিয়্যুহু (আসন পরিবেষ্টিত)।',
+      '112:1-4': 'সূরা ইখলাস - এই সূরায় আল্লাহর একত্ববাদের ঘোষণা রয়েছে। তিনি এক, অদ্বিতীয়, অমুখাপেক্ষী, তিনি কাউকে জন্ম দেননি এবং তাঁকেও কেউ জন্ম দেয়নি এবং তাঁর সমতুল্য কেউ নেই। এটি কুরআনের এক-তৃতীয়াংশের সমান। এই সূরার ৪টি আয়াতে আল্লাহর ৪টি গুণ বর্ণিত হয়েছে: ১. আহাদ (এক), ২. সামাদ (অমুখাপেক্ষী), ৩. লাম ইয়ালিদ (কাউকে জন্ম দেননি), ৪. লাম ইউলাদ (তাঁকেও কেউ জন্ম দেয়নি)।'
+    };
+
+    // 1.4 Hardcoded Books
+    var HARDCoded_BOOKS = [
+      {
+        id: 'hc1',
+        title: 'তাফসীর ইবনে কাসীর (১ম খণ্ড)',
+        titleEn: 'Tafsir Ibn Kathir Vol 1',
+        author: 'ইবনে কাসীর',
+        icon: '📖',
+        driveId: '1ABC123_DEF456_GHI789',
+        description: 'বিখ্যাত তাফসীর গ্রন্থ ইবনে কাসীরের প্রথম খণ্ড',
+        category: 'তাফসীর',
+        price: '৳ ৫০০',
+        buyLink: '#'
+      },
+      {
+        id: 'hc2',
+        title: 'সহিহ বুখারী (সংক্ষিপ্ত)',
+        titleEn: 'Sahih Bukhari Summary',
+        author: 'ইমাম বুখারী',
+        icon: '📕',
+        driveId: '2DEF456_GHI789_JKL012',
+        description: 'সহিহ বুখারী হাদিস গ্রন্থের সংক্ষিপ্ত সংস্করণ',
+        category: 'হাদিস',
+        price: '৳ ৩৫০',
+        buyLink: '#'
+      },
+      {
+        id: 'hc3',
+        title: 'কুরআনের বিজ্ঞান',
+        titleEn: 'Quran Science',
+        author: 'ড. জাকির নায়েক',
+        icon: '📘',
+        driveId: '3GHI789_JKL012_MNO345',
+        description: 'কুরআনে বিজ্ঞানের বিস্ময়কর তথ্য',
+        category: 'বিজ্ঞান',
+        price: '৳ ২৮০',
+        buyLink: '#'
+      },
+      {
+        id: 'hc4',
+        title: 'নামাজ শিক্ষা',
+        titleEn: 'Salah Learning',
+        author: 'শাইখ মুহাম্মদ',
+        icon: '📙',
+        driveId: '4JKL012_MNO345_PQR678',
+        description: 'সঠিকভাবে নামাজ পড়ার পদ্ধতি ও গুরুত্ব',
+        category: 'ইবাদত',
+        price: '৳ ১৫০',
+        buyLink: '#'
+      },
+      {
+        id: 'hc5',
+        title: 'রমজানের ফযিলত',
+        titleEn: 'Ramadan Virtues',
+        author: 'আল্লামা ইউসুফ',
+        icon: '📗',
+        driveId: '5MNO345_PQR678_STU901',
+        description: 'রমজান মাসের গুরুত্ব ও ফযিলত',
+        category: 'রমজান',
+        price: '৳ ২২০',
+        buyLink: '#'
+      },
+      {
+        id: 'hc6',
+        title: 'ইসলামের ইতিহাস',
+        titleEn: 'Islamic History',
+        author: 'ড. খালিদ',
+        icon: '📚',
+        driveId: '6PQR678_STU901_VWX234',
+        description: 'ইসলামের সংক্ষিপ্ত ইতিহাস ও গুরুত্বপূর্ণ ঘটনা',
+        category: 'ইতিহাস',
+        price: '৳ ৪৫০',
+        buyLink: '#'
+      },
+      {
+        id: 'hc7',
+        title: 'আল-কুরআনের সংক্ষিপ্ত তাফসীর',
+        titleEn: 'Short Quran Tafsir',
+        author: 'ড. মুহাম্মদ',
+        icon: '📖',
+        driveId: '7STU901_VWX234_YZA345',
+        description: 'কুরআনের সংক্ষিপ্ত ও সহজ তাফসীর',
+        category: 'তাফসীর',
+        price: '৳ ২৫০',
+        buyLink: '#'
+      },
+      {
+        id: 'hc8',
+        title: 'ইসলামিক আইন',
+        titleEn: 'Islamic Law',
+        author: 'শাইখ আহমাদ',
+        icon: '📜',
+        driveId: '8VWX234_YZA345_BCD456',
+        description: 'ইসলামিক আইন ও ফিকহের মৌলিক বিষয়',
+        category: 'ফিকহ',
+        price: '৳ ৩২০',
+        buyLink: '#'
+      }
+    ];
+
+    // 1.5 Hadith Data
+    var HADITH_DATA = [
+      {
+        text: 'من كان يؤمن بالله واليوم الآخر فليقل خيرا أو ليصمت',
+        translation: 'যে আল্লাহ ও পরকালে বিশ্বাস করে, সে যেন ভালো কথা বলে অথবা চুপ থাকে।',
+        source: 'সহিহ বুখারী',
+        narrator: 'আবু হুরায়রা (রা.)',
+        explanation: 'মুমিনের জবান সর্বদা পবিত্র ও কল্যাণকর হয়। ভালো কথা বলা বা চুপ থাকা - এই দুটি হলো মুমিনের বৈশিষ্ট্য।'
+      },
+      {
+        text: 'لا يؤمن أحدكم حتى يحب لأخيه ما يحب لنفسه',
+        translation: 'তোমাদের কেউ মুমিন হতে পারবে না, যতক্ষণ না সে তার ভাইয়ের জন্য তা পছন্দ করে যা সে নিজের জন্য পছন্দ করে।',
+        source: 'সহিহ বুখারী',
+        narrator: 'আনাস (রা.)',
+        explanation: 'মুমিনের পারস্পরিক ভালোবাসা ও সহানুভূতির গুরুত্ব। নিজের জন্য যা ভালো মনে হয় তা অন্যদের জন্যও কামনা করা।'
+      },
+      {
+        text: 'إنما الأعمال بالنيات وإنما لكل امرئ ما نوى',
+        translation: 'নিশ্চয়ই সকল কাজের মূল্য নির্ভর করে নিয়তের উপর। আর প্রত্যেক ব্যক্তি তাই পায় যা সে নিয়ত করে।',
+        source: 'সহিহ বুখারী',
+        narrator: 'ওমর (রা.)',
+        explanation: 'সকল আমলের গ্রহণযোগ্যতা নিয়তের উপর নির্ভর করে। নিয়ত ভালো হলে কাজও ভালো হয়।'
+      },
+      {
+        text: 'أفضل الجهاد كلمة حق عند سلطان جائر',
+        translation: 'সর্বোত্তম জিহাদ হলো ন্যায়পরায়ণ শাসকের সামনে সত্য কথা বলা।',
+        source: 'আবু দাউদ',
+        narrator: 'আবু সাঈদ (রা.)',
+        explanation: 'সত্য কথা বলার গুরুত্ব ও সাহসিকতা। অন্যায়ের বিরুদ্ধে সত্য কথা বলা মহান জিহাদ।'
+      },
+      {
+        text: 'الدعاء هو العبادة',
+        translation: 'দোয়া হলো ইবাদাত।',
+        source: 'তিরমিজি',
+        narrator: 'আনাস (রা.)',
+        explanation: 'দোয়ার গুরুত্ব ও ফযীলত। দোয়া হলো ইবাদাতের সারাংশ।'
+      },
+      {
+        text: 'الحياء من الإيمان',
+        translation: 'লজ্জা ঈমানের অংশ।',
+        source: 'সহিহ বুখারী',
+        narrator: 'আবু হুরায়রা (রা.)',
+        explanation: 'লজ্জাশীলতা ঈমানের গুরুত্বপূর্ণ অংশ। বেহায়াপনা ঈমানের বিপরীত।'
+      },
+      {
+        text: 'من قرأ حرفا من كتاب الله فله به حسنة والحسنة بعشر أمثالها',
+        translation: 'যে ব্যক্তি আল্লাহর কিতাব থেকে একটি অক্ষর পড়ে, তার জন্য একটি নেকি এবং প্রতিটি নেকি দশগুণ।',
+        source: 'তিরমিজি',
+        narrator: 'আব্দুল্লাহ ইবনে মাসউদ (রা.)',
+        explanation: 'কুরআন তিলাওয়াতের ফযীলত অপরিসীম। প্রতিটি অক্ষর পড়ার জন্য দশ নেকি।'
+      },
+      {
+        text: 'إن الله يحب إذا عمل أحدكم عملا أن يتقنه',
+        translation: 'নিশ্চয়ই আল্লাহ পছন্দ করেন যখন তোমাদের কেউ কোনো কাজ করে, সে তা নিখুঁতভাবে করে।',
+        source: 'আল-বায়হাকী',
+        narrator: 'আয়িশা (রা.)',
+        explanation: 'কাজের প্রতি সততা ও নিপুণতার গুরুত্ব। আল্লাহ পছন্দ করেন সুন্দর ও নিখুঁত কাজ।'
+      }
+    ];
+
+    // 1.6 Knowledge Base
+    var KNOWLEDGE_BASE = [
+      {
+        title: 'ঈমানের ৬টি স্তম্ভ',
+        content: '১. আল্লাহতে বিশ্বাস\n২. ফেরেশতাদের প্রতি বিশ্বাস\n৩. আসমানী কিতাবসমূহে বিশ্বাস\n৪. রাসূলগণের প্রতি বিশ্বাস\n৫. আখিরাত বা শেষ বিচারের দিনে বিশ্বাস\n৬. তাকদীর বা ভাগ্যের ভালো-মন্দের প্রতি বিশ্বাস',
+        source: 'কুরআন ও সুন্নাহ'
+      },
+      {
+        title: 'ইসলামের ৫টি স্তম্ভ',
+        content: '১. কালিমা শাহাদাত (ঈমান আনা)\n২. সালাত (নামাজ) প্রতিষ্ঠা করা\n৩. জাকাত প্রদান করা\n৪. রমজান মাসে সিয়াম (রোজা) রাখা\n৫. সাওম (হজ্জ) পালন করা',
+        source: 'সহিহ হাদিস'
+      },
+      {
+        title: 'নামাজের ফরজসমূহ',
+        content: 'নামাজের ৭টি ফরজ:\n১. তাকবীরে তাহরীমা\n২. কিয়াম (দাঁড়ানো)\n৩. কিরাআত (পড়া)\n৪. রুকু\n৫. সিজদা\n৬. শেষ বৈঠক\n৭. সালাম ফেরানো',
+        source: 'ফিকহ'
+      },
+      {
+        title: 'কুরআনের নামসমূহ',
+        content: 'কুরআনের ৫টি নাম:\n১. আল-কুরআন\n২. আল-ফুরকান\n৩. আয-যিকর\n৪. আল-কিতাব\n৫. আত-তানযীল',
+        source: 'কুরআন'
+      },
+      {
+        title: 'মহানবী (সা.)-এর নামসমূহ',
+        content: 'মহানবী (সা.)-এর প্রসিদ্ধ নাম:\n১. মুহাম্মদ\n২. আহমাদ\n৩. মুস্তাফা\n৪. হাবীবুল্লাহ\n৫. খাতামুল আম্বিয়া (নবীগণের শেষ)',
+        source: 'সীরাহ'
+      },
+      {
+        title: 'পবিত্র কুরআনের মর্যাদা',
+        content: 'কুরআন হলো আল্লাহর সর্বশেষ ও পূর্ণাঙ্গ কিতাব। এটি মানবজাতির জন্য পথনির্দেশক। এতে ১১৪টি সূরা ও ৬২৩৬টি আয়াত রয়েছে। কুরআন কিয়ামত পর্যন্ত অপরিবর্তিত থাকবে।',
+        source: 'কুরআন'
+      }
+    ];
+
+    // 1.7 Blog Posts (Sample)
+    var SAMPLE_BLOG_POSTS = [
+      {
+        id: 'post1',
+        title: 'কুরআনের গুরুত্ব ও ফযিলত',
+        content: 'কুরআন হলো মানবজাতির জন্য আল্লাহর সর্বশেষ ও পূর্ণাঙ্গ কিতাব। এটি সমগ্র মানবতার জন্য পথনির্দেশক। কুরআন তিলাওয়াত করা, শেখা ও শিক্ষা দেওয়া সর্বশ্রেষ্ঠ ইবাদত।',
+        summary: 'কুরআন হলো মানবজাতির জন্য আল্লাহর সর্বশেষ ও পূর্ণাঙ্গ কিতাব...',
+        published: new Date().toISOString(),
+        link: '#',
+        author: 'Admin'
+      },
+      {
+        id: 'post2',
+        title: 'নামাজের গুরুত্ব ও সঠিক পদ্ধতি',
+        content: 'নামাজ ইসলামের দ্বিতীয় স্তম্ভ। এটি মুমিনের মিরাজ। সঠিকভাবে নামাজ পড়ার নিয়ম ও গুরুত্ব অপরিসীম। নামাজ মানুষকে অশ্লীল ও খারাপ কাজ থেকে বিরত রাখে।',
+        summary: 'নামাজ ইসলামের দ্বিতীয় স্তম্ভ। এটি মুমিনের মিরাজ...',
+        published: new Date().toISOString(),
+        link: '#',
+        author: 'Admin'
+      },
+      {
+        id: 'post3',
+        title: 'রমজান মাসের ফযিলত',
+        content: 'রমজান হলো আত্মশুদ্ধির মাস। এই মাসে কুরআন নাযিল হয়েছে। রমজানের রোজা ইসলামের তৃতীয় স্তম্ভ। এই মাসে আল্লাহর রহমত বর্ষিত হয়।',
+        summary: 'রমজান হলো আত্মশুদ্ধির মাস। এই মাসে কুরআন নাযিল হয়েছে...',
+        published: new Date().toISOString(),
+        link: '#',
+        author: 'Admin'
+      }
+    ];
+
+    // ============================================================
+    // 2. STATE MANAGEMENT
+    // ============================================================
+    var state = {
+      quranData: [],
+      arabicData: [],
+      tafsirData: {},
+      hadithData: [],
+      knowledgeBase: [],
+      blogPosts: [],
+      allBooks: [],
+      blogBooks: [],
+      
+      currentAya: null,
+      currentAyaIndex: -1,
+      currentSearchResults: [],
+      
+      isLoading: false,
+      isVoiceActive: false,
+      recognition: null,
+      welcomeVisible: true,
+      dataLoaded: true,
+      booksLoaded: true,
+      
+      audioSettings: { speed: 1, autoPlay: false },
+      fontSettings: {
+        bengaliSize: 18,
+        arabicSize: 22,
+        bengaliFont: 'Kalpurush, Hind Siliguri, sans-serif',
+        arabicFont: 'Amiri, Scheherazade New, serif'
+      },
+      
+      isDark: false,
+      quizState: null,
+      expandedPosts: {},
+      knowledgeIndex: 0,
+      activeCategory: 'সব',
+      
+      // PDF State
+      pdfDoc: null,
+      pdfPageNum: 1,
+      pdfTotalPages: 0,
+      pdfScale: 1.2,
+      currentPdfUrl: '',
+      currentBookData: null,
+      isPdfFullscreen: false,
+      readingStartTime: null,
+      readingTotalTime: 0,
+      
+      // Timer State
+      timerRunning: false,
+      timerSeconds: 0,
+      timerInterval: null
+    };
+
+    // ============================================================
+    // 3. DOM REFS
+    // ============================================================
+    var dom = {
+      body: document.getElementById('chat-body'),
+      messages: document.getElementById('messages-container'),
+      input: document.getElementById('chat-input'),
+      sendBtn: document.getElementById('send-btn'),
+      clearBtn: document.getElementById('clear-btn'),
+      tafsirBtn: document.getElementById('tafsir-btn'),
+      voiceBtn: document.getElementById('voice-btn'),
+      themeToggle: document.getElementById('theme-toggle'),
+      themeIcon: document.getElementById('theme-icon'),
+      homeBtn: document.getElementById('home-btn'),
+      suraPanelBtn: document.getElementById('sura-panel-btn'),
+      settingsPanelBtn: document.getElementById('settings-panel-btn'),
+      suraPanel: document.getElementById('sura-panel'),
+      settingsPanel: document.getElementById('settings-panel'),
+      closeSura: document.getElementById('close-sura'),
+      closeSettings: document.getElementById('close-settings'),
+      suraSearch: document.getElementById('sura-search'),
+      suraGrid: document.getElementById('sura-grid'),
+      tafsirModal: document.getElementById('tafsir-modal'),
+      closeTafsir: document.getElementById('close-tafsir-modal'),
+      tafsirBody: document.getElementById('tafsir-modal-body'),
+      tafsirTitle: document.getElementById('tafsir-modal-title'),
+      welcomeSection: document.getElementById('welcome-section'),
+      dataStatus: document.getElementById('data-status'),
+      clock: document.getElementById('clock-time'),
+      clockAmPm: document.getElementById('clock-am-pm'),
+      pdfViewer: document.getElementById('pdf-viewer'),
+      pdfBody: document.getElementById('pdf-viewer-body'),
+      pdfTitle: document.getElementById('pdf-title'),
+      pdfPageInfo: document.getElementById('pdf-page-info'),
+      pdfPrevBtn: document.getElementById('pdf-prev-btn'),
+      pdfNextBtn: document.getElementById('pdf-next-btn'),
+      pdfDownloadBtn: document.getElementById('pdf-download-btn'),
+      pdfFullscreenBtn: document.getElementById('pdf-fullscreen-btn'),
+      pdfCloseBtn: document.getElementById('pdf-close-btn'),
+      pdfZoomInBtn: document.getElementById('pdf-zoom-in-btn'),
+      pdfZoomOutBtn: document.getElementById('pdf-zoom-out-btn'),
+      pdfZoomLabel: document.getElementById('pdf-zoom-label'),
+      pdfBuyBtn: document.getElementById('pdf-buy-btn'),
+      pdfShareBtn: document.getElementById('pdf-share-btn')
+    };
+
+    // ============================================================
+    // 4. UTILITY FUNCTIONS
+    // ============================================================
+    function getTimestamp() {
+      return new Date().toLocaleTimeString('bn-BD', {
+        hour: '2-digit',
+        minute: '2-digit',
+        hour12: true
+      });
+    }
+
+    function scrollToBottom() {
+      dom.body.scrollTop = dom.body.scrollHeight;
+    }
+
+    function setDataStatus(text, isError) {
+      if (!dom.dataStatus) return;
+      dom.dataStatus.textContent = text || '';
+      dom.dataStatus.classList.toggle('error', !!isError);
+      dom.dataStatus.classList.remove('hidden');
+    }
+
+    function fadeDataStatus() {
+      if (!dom.dataStatus) return;
+      setTimeout(function() {
+        dom.dataStatus.classList.add('hidden');
+      }, 2500);
+    }
+
+    function getSurahName(num) {
+      var names = [
+        'আল-ফাতিহা', 'আল-বাকারা', 'আল-ইমরান', 'আন-নিসা', 'আল-মায়িদাহ',
+        'আল-আন\'আম', 'আল-আ\'রাফ', 'আল-আনফাল', 'আত-তাওবাহ', 'ইউনুস',
+        'হুদ', 'ইউসুফ', 'আর-রাদ', 'ইবরাহিম', 'আল-হিজর', 'আন-নাহল',
+        'আল-ইসরা', 'আল-কাহফ', 'মারইয়াম', 'তাহা', 'আল-আম্বিয়া',
+        'আল-হাজ্জ', 'আল-মুমিনুন', 'আন-নূর', 'আল-ফুরকান', 'আশ-শু\'আরা',
+        'আন-নামল', 'আল-কাসাস', 'আল-আনকাবুত', 'আর-রুম', 'লুকমান',
+        'আস-সাজদাহ', 'আল-আহযাব', 'সাবা', 'ফাতির', 'ইয়াসিন',
+        'আস-সাফফাত', 'সাদ', 'আয-যুমার', 'গাফির', 'ফুসসিলাত',
+        'আশ-শুরা', 'আয-যুখরুফ', 'আদ-দুখান', 'আল-জাসিয়াহ', 'আল-আহকাফ',
+        'মুহাম্মদ', 'আল-ফাতহ', 'আল-হুজুরাত', 'কাফ', 'আয-যারিয়াত',
+        'আত-তুর', 'আন-নাজম', 'আল-কামার', 'আর-রহমান', 'আল-ওয়াকিয়াহ',
+        'আল-হাদীদ', 'আল-মুজাদিলাহ', 'আল-হাশর', 'আল-মুমতাহিনাহ', 'আস-সাফ',
+        'আল-জুমু\'আহ', 'আল-মুনাফিকুন', 'আত-তাগাবুন', 'আত-তালাক', 'আত-তাহরীম',
+        'আল-মুলক', 'আল-কালাম', 'আল-হাক্কাহ', 'আল-মা\'আরিজ', 'নূহ',
+        'আল-জিন', 'আল-মুজাম্মিল', 'আল-মুদ্দাস্সির', 'আল-কিয়ামাহ', 'আল-ইনসান',
+        'আল-মুরসালাত', 'আন-নাবা', 'আন-নাজি\'আত', 'আবাসা', 'আত-তাকভীর',
+        'আল-ইনফিতার', 'আল-মুতাফফিফীন', 'আল-ইনশিকাক', 'আল-বুরূজ', 'আত-তারিক',
+        'আল-আ\'লা', 'আল-গাশিয়াহ', 'আল-ফাজর', 'আল-বালাদ', 'আশ-শামস',
+        'আল-লাইল', 'আদ-দুহা', 'আল-ইনশিরাহ', 'আত-তীন', 'আল-আলাক',
+        'আল-কাদর', 'আল-বাইয়্যিনাহ', 'আয-যিলযাল', 'আল-আদিয়াত', 'আল-কারি\'আহ',
+        'আত-তাকাসুর', 'আল-আসর', 'আল-হুমাজাহ', 'আল-ফীল', 'কুরাইশ',
+        'আল-মাউন', 'আল-কাওসার', 'আল-কাফিরুন', 'আন-নাসর', 'আল-মাসাদ',
+        'আল-ইখলাস', 'আল-ফালাক', 'আন-নাস'
+      ];
+      return names[num - 1] || 'সূরা ' + num;
+    }
+
+    function getDriveViewUrl(driveId) {
+      if (!driveId) return null;
+      return 'https://drive.google.com/file/d/' + driveId + '/view';
+    }
+
+    function getDriveEmbedUrl(driveId) {
+      if (!driveId) return null;
+      return 'https://drive.google.com/file/d/' + driveId + '/preview';
+    }
+
+    function getDriveDownloadUrl(driveId) {
+      if (!driveId) return null;
+      return 'https://drive.google.com/uc?export=download&id=' + driveId;
+    }
+
+    function formatTime(seconds) {
+      var mins = Math.floor(seconds / 60);
+      var secs = seconds % 60;
+      return mins + ' মিনিট ' + secs + ' সেকেন্ড';
+    }
+
+    function findBookByName(name) {
+      if (!state.allBooks || state.allBooks.length === 0) return null;
+      var searchName = name.toLowerCase().trim();
+      searchName = searchName.replace(/বই|পড়|পড়|read|book|খুল|দেখ|show|পিডিএফ|pdf|খোলো|দেখাও|পড়ো/gi, '').trim();
+      
+      for (var i = 0; i < state.allBooks.length; i++) {
+        var book = state.allBooks[i];
+        var titleMatch = book.title && book.title.toLowerCase().indexOf(searchName) !== -1;
+        var titleEnMatch = book.titleEn && book.titleEn.toLowerCase().indexOf(searchName) !== -1;
+        if (titleMatch || titleEnMatch) return book;
+      }
+      
+      return null;
+    }
+
+    // ============================================================
+    // 5. MESSAGE FUNCTIONS
+    // ============================================================
+    function addMessage(text, isUser, type, isHTML) {
+      isUser = isUser || false;
+      type = type || 'normal';
+      isHTML = isHTML || false;
+      
+      if (dom.welcomeSection && state.welcomeVisible) {
+        dom.welcomeSection.style.display = 'none';
+        state.welcomeVisible = false;
+      }
+
+      var div = document.createElement('div');
+      div.className = 'message ' + (isUser ? 'user' : 'bot');
+      if (!isUser && type !== 'normal') {
+        div.classList.add(type);
+      }
+      
+      if (isHTML) {
+        div.innerHTML = text + '<div class="message-timestamp">' + getTimestamp() + '</div>';
+      } else {
+        div.textContent = text;
+        div.innerHTML += '<div class="message-timestamp">' + getTimestamp() + '</div>';
+      }
+      
+      dom.messages.appendChild(div);
+      scrollToBottom();
+      return div;
+    }
+
+    function addUserMessage(text) {
+      return addMessage(text, true);
+    }
+
+    function addBotMessage(text, type, isHTML) {
+      type = type || 'normal';
+      isHTML = isHTML || false;
+      return addMessage(text, false, type, isHTML);
+    }
+
+    function showTyping() {
+      var div = document.createElement('div');
+      div.id = 'typing-indicator';
+      div.className = 'typing-indicator';
+      div.innerHTML = '<span></span><span></span><span></span>';
+      dom.messages.appendChild(div);
+      scrollToBottom();
+    }
+
+    function removeTyping() {
+      var el = document.getElementById('typing-indicator');
+      if (el) el.remove();
+    }
+
+    // ============================================================
+    // 6. CLOCK
+    // ============================================================
+    function updateClock() {
+      var now = new Date();
+      var hours = now.getHours();
+      var ampm = hours >= 12 ? 'PM' : 'AM';
+      hours = hours % 12;
+      hours = hours ? hours : 12;
+      var minutes = String(now.getMinutes()).padStart(2, '0');
+      var seconds = String(now.getSeconds()).padStart(2, '0');
+      if (dom.clock) dom.clock.textContent = hours + ':' + minutes + ':' + seconds;
+      if (dom.clockAmPm) dom.clockAmPm.textContent = ampm;
+    }
+
+    // ============================================================
+    // 7. DATA LOADING
+    // ============================================================
+    function loadData() {
+      // Load Quran Data
+      state.quranData = EMBEDDED_QURAN;
+      state.arabicData = EMBEDDED_ARABIC;
+      state.tafsirData = EMBEDDED_TAFSIR;
+      
+      // Load Hadith
+      state.hadithData = HADITH_DATA;
+      
+      // Load Knowledge Base
+      state.knowledgeBase = KNOWLEDGE_BASE;
+      
+      // Load Books
+      state.allBooks = HARDCoded_BOOKS;
+      
+      // Load Blog Posts
+      state.blogPosts = SAMPLE_BLOG_POSTS;
+      
+      // Try to load from Blogger
+      loadBloggerData();
+      
+      state.dataLoaded = true;
+      state.booksLoaded = true;
+      setDataStatus('✅ ডেটা প্রস্তুত (' + state.quranData.length + ' আয়াত, ' + state.hadithData.length + ' হাদিস)', false);
+      setTimeout(fadeDataStatus, 1500);
+    }
+
+    function loadBloggerData() {
+      var blogUrl = window.location.origin;
+      
+      // Load Blog Posts
+      var feedUrl = blogUrl + '/feeds/posts/default?alt=json&max-results=10';
+      fetch(feedUrl)
+        .then(function(response) {
+          if (!response.ok) throw new Error('Blog feed not available');
+          return response.json();
+        })
+        .then(function(data) {
+          if (data && data.feed && data.feed.entry) {
+            state.blogPosts = data.feed.entry.map(function(entry) {
+              var content = entry.content ? entry.content.$t || '' : '';
+              var summary = entry.summary ? entry.summary.$t || '' : '';
+              content = content.replace(/<[^>]*>/g, '').trim();
+              summary = summary.replace(/<[^>]*>/g, '').trim() || content.substring(0, 200) + '...';
+              return {
+                title: entry.title.$t || '',
+                content: content,
+                summary: summary,
+                published: entry.published ? entry.published.$t || '' : '',
+                link: entry.link ? entry.link.find(function(l) { return l.rel === 'alternate'; })?.href || '' : '',
+                author: entry.author ? entry.author[0]?.name?.$t || '' : '',
+                id: entry.id ? entry.id.$t || '' : 'post-' + Math.random().toString(36).substr(2, 9)
+              };
+            });
+            console.log('✅ Blog posts loaded:', state.blogPosts.length);
+          }
+        })
+        .catch(function(error) {
+          console.log('Blog feed not available, using sample data');
+        });
+
+      // Load Blogger Books
+      var bookFeedUrl = blogUrl + '/feeds/posts/default/-/book?alt=json&max-results=20';
+      fetch(bookFeedUrl)
+        .then(function(response) {
+          if (!response.ok) throw new Error('Book feed not available');
+          return response.json();
+        })
+        .then(function(data) {
+          if (data && data.feed && data.feed.entry) {
+            var blogBooks = data.feed.entry.map(function(entry) {
+              var content = entry.content ? entry.content.$t || '' : '';
+              var summary = entry.summary ? entry.summary.$t || '' : '';
+              content = content.replace(/<[^>]*>/g, '').trim();
+              summary = summary.replace(/<[^>]*>/g, '').trim() || content.substring(0, 150) + '...';
+              
+              var category = 'বই';
+              if (entry.category && entry.category.length > 0) {
+                var labels = entry.category.map(function(c) { return c.term; });
+                var bookLabel = labels.find(function(l) { return l.toLowerCase() !== 'book'; });
+                if (bookLabel) category = bookLabel;
+              }
+              
+              return {
+                id: entry.id ? entry.id.$t || '' : 'book-' + Math.random().toString(36).substr(2, 9),
+                title: entry.title.$t || 'নামহীন বই',
+                titleEn: entry.title.$t || '',
+                author: 'ব্লগার',
+                icon: '📖',
+                driveId: '',
+                description: summary,
+                category: category,
+                price: 'ফ্রী',
+                buyLink: null,
+                isBloggerBook: true,
+                link: entry.link ? entry.link.find(function(l) { return l.rel === 'alternate'; })?.href || '' : ''
+              };
+            });
+            state.allBooks = HARDCoded_BOOKS.concat(blogBooks);
+            state.booksLoaded = true;
+            console.log('✅ Blogger books loaded:', blogBooks.length);
+          }
+        })
+        .catch(function(error) {
+          console.log('Book feed not available, using sample books');
+        });
+    }
+
+    // ============================================================
+    // 8. PDF VIEWER
+    // ============================================================
+    function loadPDF(pdfUrl, title, bookDataItem) {
+      if (!pdfUrl || pdfUrl === '#') {
+        addBotMessage('❌ এই বইয়ের PDF লিংক উপলব্ধ নেই।', 'error');
+        return;
+      }
+      
+      state.currentPdfUrl = pdfUrl;
+      state.currentBookData = bookDataItem || null;
+      dom.pdfTitle.textContent = title || 'পিডিএফ বই';
+      
+      dom.pdfBody.innerHTML = '<div class="pdf-loading"><div class="spinner"/><span>পিডিএফ লোড হচ্ছে...</span></div>';
+      dom.pdfViewer.classList.add('active');
+      document.body.style.overflow = 'hidden';
+      state.readingStartTime = Date.now();
+
+      dom.pdfDownloadBtn.onclick = function() { window.open(pdfUrl, '_blank'); };
+      
+      if (dom.pdfBuyBtn && bookDataItem && bookDataItem.buyLink && bookDataItem.buyLink !== '#') {
+        dom.pdfBuyBtn.style.display = 'inline-block';
+        dom.pdfBuyBtn.onclick = function() { window.open(bookDataItem.buyLink, '_blank'); };
+      } else {
+        dom.pdfBuyBtn.style.display = 'none';
+      }
+
+      dom.pdfShareBtn.onclick = function() {
+        if (navigator.share) {
+          navigator.share({
+            title: title,
+            text: '📚 ' + title + ' - ইসলামিক বই',
+            url: pdfUrl
+          });
+        } else {
+          navigator.clipboard.writeText(title + ' - ' + pdfUrl).then(function() {
+            addBotMessage('✅ লিংক কপি করা হয়েছে!', 'success');
+          });
+        }
+      };
+
+      // Check for Google Drive ID
+      var driveId = null;
+      var idMatch = pdfUrl.match(/[\/?]id=([a-zA-Z0-9_-]+)/) || pdfUrl.match(/\/d\/([a-zA-Z0-9_-]+)/);
+      if (idMatch) driveId = idMatch[1];
+      
+      if (driveId) {
+        var embedUrl = getDriveEmbedUrl(driveId);
+        dom.pdfBody.innerHTML = '<iframe src="' + embedUrl + '" style="width:100%;height:100%;min-height:500px;border:none;border-radius:8px;" allowfullscreen></iframe>';
+        dom.pdfPageInfo.textContent = '📄 Google Drive PDF Viewer';
+        dom.pdfPrevBtn.disabled = true;
+        dom.pdfNextBtn.disabled = true;
+        updateZoomLabel();
+        return;
+      }
+
+      // Direct PDF link
+      dom.pdfBody.innerHTML = '<iframe src="' + pdfUrl + '" style="width:100%;height:100%;min-height:500px;border:none;border-radius:8px;" allowfullscreen></iframe>';
+      dom.pdfPageInfo.textContent = '📄 PDF Viewer';
+      dom.pdfPrevBtn.disabled = true;
+      dom.pdfNextBtn.disabled = true;
+      updateZoomLabel();
+    }
+
+    function updateZoomLabel() {
+      if (dom.pdfZoomLabel) {
+        dom.pdfZoomLabel.textContent = Math.round(state.pdfScale * 100) + '%';
+      }
+    }
+
+    function togglePdfFullscreen() {
+      state.isPdfFullscreen = !state.isPdfFullscreen;
+      dom.pdfViewer.classList.toggle('fullscreen', state.isPdfFullscreen);
+    }
+
+    function closePDFViewer() {
+      if (state.readingStartTime) {
+        var elapsed = Math.floor((Date.now() - state.readingStartTime) / 1000);
+        if (elapsed > 10) {
+          state.readingTotalTime += elapsed;
+          addBotMessage('📚 আপনি ' + formatTime(elapsed) + ' পড়েছেন। মোট: ' + formatTime(state.readingTotalTime), 'info');
+        }
+        state.readingStartTime = null;
+      }
+      dom.pdfViewer.classList.remove('active', 'fullscreen');
+      state.isPdfFullscreen = false;
+      document.body.style.overflow = '';
+      state.pdfDoc = null;
+      state.pdfPageNum = 1;
+      state.pdfTotalPages = 0;
+      state.currentBookData = null;
+    }
+
+    // ============================================================
+    // 9. BOOK CORNER
+    // ============================================================
+    function showBookCorner() {
+      var books = state.allBooks.length > 0 ? state.allBooks : HARDCoded_BOOKS;
+      var categories = ['সব', ...new Set(books.map(function(b) { return b.category || 'বই'; }))];
+      
+      var html = '<div class="tool-card">';
+      html += '<div class="tool-title">📚 পিডিএফ বই কর্নার</div>';
+      html += '<div class="tool-content">';
+      html += '<p>ইসলামিক বইসমূহ পড়ুন, শেয়ার করুন ও ডাউনলোড করুন</p>';
+      html += '<p style="font-size:0.55rem;color:var(--gray-dark);">💡 বইয়ের নাম লিখেও খুঁজতে পারেন</p>';
+      html += '<div class="book-category-tabs">';
+      categories.forEach(function(cat) {
+        var active = cat === state.activeCategory ? ' active' : '';
+        html += '<button class="book-category-tab' + active + '" onclick="window.filterBooks(\'' + cat + '\')">' + cat + '</button>';
+      });
+      html += '</div>';
+      html += '<div class="book-grid" id="book-grid">';
+      
+      var filtered = state.activeCategory === 'সব' ? books : books.filter(function(b) { return (b.category || 'বই') === state.activeCategory; });
+      
+      filtered.forEach(function(book) {
+        var viewUrl = book.driveId ? getDriveViewUrl(book.driveId) : null;
+        var downloadUrl = book.driveId ? getDriveDownloadUrl(book.driveId) : null;
+        var icon = book.icon || '📖';
+        
+        html += '<div class="book-card">';
+        html += '<span class="book-icon">' + icon + '</span>';
+        if (book.isBloggerBook) html += '<span class="book-badge">📝 ব্লগার বই</span>';
+        html += '<div class="book-title">' + (book.title || 'নামহীন বই') + '</div>';
+        html += '<div class="book-author">✍️ ' + (book.author || 'অজানা') + '</div>';
+        html += '<div class="book-price">' + (book.price || 'ফ্রী') + '</div>';
+        html += '<div class="book-desc">' + (book.description || '') + '</div>';
+        html += '<div class="book-actions">';
+        if (viewUrl) {
+          html += '<button class="book-btn preview" onclick="window.openPDF(\'' + viewUrl + '\', \'' + (book.title || 'পিডিএফ') + '\', \'' + JSON.stringify(book).replace(/'/g, "&#39;") + '\')">📖 পড়ুন</button>';
+          html += '<a class="book-btn download" href="' + downloadUrl + '" download target="_blank">⬇️ ডাউনলোড</a>';
+        } else {
+          html += '<span style="font-size:0.5rem;color:var(--gray-dark);">🔗 লিংক নেই</span>';
+        }
+        if (book.buyLink && book.buyLink !== '#') {
+          html += '<a class="book-btn buy" href="' + book.buyLink + '" target="_blank">🛒 কিনুন</a>';
+        }
+        if (book.link && book.isBloggerBook) {
+          html += '<a class="book-btn share" href="' + book.link + '" target="_blank">🔗 পোস্ট</a>';
+        }
+        html += '</div></div>';
+      });
+      
+      html += '</div></div></div>';
+      html += '<div class="home-btn-container"><button class="home-btn" onclick="window.goHome()">🏠 হোমে যান</button></div>';
+      addBotMessage(html, 'normal', true);
+    }
+
+    window.filterBooks = function(category) {
+      state.activeCategory = category;
+      var grid = document.getElementById('book-grid');
+      if (!grid) return;
+      
+      var books = state.allBooks.length > 0 ? state.allBooks : HARDCoded_BOOKS;
+      var filtered = category === 'সব' ? books : books.filter(function(b) { return (b.category || 'বই') === category; });
+      
+      grid.innerHTML = '';
+      filtered.forEach(function(book) {
+        var viewUrl = book.driveId ? getDriveViewUrl(book.driveId) : null;
+        var downloadUrl = book.driveId ? getDriveDownloadUrl(book.driveId) : null;
+        var icon = book.icon || '📖';
+        
+        var card = document.createElement('div');
+        card.className = 'book-card';
+        card.innerHTML = 
+          '<span class="book-icon">' + icon + '</span>' +
+          (book.isBloggerBook ? '<span class="book-badge">📝 ব্লগার বই</span>' : '') +
+          '<div class="book-title">' + (book.title || 'নামহীন বই') + '</div>' +
+          '<div class="book-author">✍️ ' + (book.author || 'অজানা') + '</div>' +
+          '<div class="book-price">' + (book.price || 'ফ্রী') + '</div>' +
+          '<div class="book-desc">' + (book.description || '') + '</div>' +
+          '<div class="book-actions">' +
+          (viewUrl ? 
+            '<button class="book-btn preview" onclick="window.openPDF(\'' + viewUrl + '\', \'' + (book.title || 'পিডিএফ') + '\', \'' + JSON.stringify(book).replace(/'/g, "&#39;") + '\')">📖 পড়ুন</button>' +
+            '<a class="book-btn download" href="' + downloadUrl + '" download target="_blank">⬇️ ডাউনলোড</a>' : 
+            '<span style="font-size:0.5rem;color:var(--gray-dark);">🔗 লিংক নেই</span>') +
+          (book.buyLink && book.buyLink !== '#' ? '<a class="book-btn buy" href="' + book.buyLink + '" target="_blank">🛒 কিনুন</a>' : '') +
+          (book.link && book.isBloggerBook ? '<a class="book-btn share" href="' + book.link + '" target="_blank">🔗 পোস্ট</a>' : '') +
+          '</div>';
+        grid.appendChild(card);
+      });
+      
+      document.querySelectorAll('.book-category-tab').forEach(function(tab) {
+        tab.classList.toggle('active', tab.textContent === category);
+      });
+    };
+
+    window.openPDF = function(url, title, bookDataStr) {
+      var bookDataItem = null;
+      try {
+        if (bookDataStr) bookDataItem = JSON.parse(bookDataStr);
+      } catch(e) {}
+      loadPDF(url, title, bookDataItem);
+    };
+
+    // ============================================================
+    // 10. COMMAND HANDLERS
+    // ============================================================
+    function goHome() {
+      dom.messages.innerHTML = '';
+      state.currentAya = null;
+      state.currentAyaIndex = -1;
+      state.currentSearchResults = [];
+      state.quizState = null;
+      if (dom.welcomeSection) {
+        dom.welcomeSection.style.display = 'block';
+        state.welcomeVisible = true;
+      }
+      dom.input.value = '';
+      dom.input.focus();
+    }
+
+    function handleQuickAction(action) {
+      if (dom.welcomeSection && state.welcomeVisible) {
+        dom.welcomeSection.style.display = 'none';
+        state.welcomeVisible = false;
+      }
+      
+      switch(action) {
+        case 'start': 
+          addBotMessage('💬 চ্যাট শুরু হয়েছে! "সাহায্য" লিখে সাহায্য নিন।', 'info'); 
+          break;
+        case 'popular': 
+          showPopularAyat(); 
+          break;
+        case 'prayer': 
+          showPrayerTimes(); 
+          break;
+        case 'hadith': 
+          showRandomHadith(); 
+          break;
+        case 'blog': 
+          showBlogPosts(); 
+          break;
+        case 'books': 
+          showBookCorner(); 
+          break;
+        case 'zakat': 
+          showZakatCalculator(); 
+          break;
+        case 'timer': 
+          showTimer(); 
+          break;
+        case 'quiz': 
+          startQuiz(); 
+          break;
+        case 'help': 
+          showHelp(); 
+          break;
+        default: 
+          addBotMessage('❓ অজ্ঞাত কমান্ড', 'error');
+      }
+    }
+
+    function handleBookCommand(query) {
+      var bookPatterns = [
+        /বই[\s]*(পড়|পড়|খুল|দেখ|শো|read|open|show|খোলো|দেখাও|পড়ো)[\s]*(.+)/i,
+        /পিডিএফ[\s]*(পড়|পড়|খুল|দেখ|শো|read|open|show|খোলো|দেখাও|পড়ো)[\s]*(.+)/i,
+        /(পড়|পড়|খুল|দেখ|শো|read|open|show|খোলো|দেখাও|পড়ো)[\s]*(বই|পিডিএফ|pdf|book)[\s]*(.+)/i,
+        /বই[\s]*(.+)/i,
+        /book[\s]*(.+)/i,
+        /pdf[\s]*(.+)/i
+      ];
+      
+      var bookName = null;
+      for (var i = 0; i < bookPatterns.length; i++) {
+        var match = query.match(bookPatterns[i]);
+        if (match) {
+          bookName = match[match.length - 1];
+          break;
+        }
+      }
+      
+      if (!bookName) {
+        var cleaned = query.replace(/বই|পিডিএফ|pdf|book|পড়|পড়|খুল|দেখ|শো|read|open|show|দেখা|পড়া|খোলো|দেখাও|পড়ো/gi, '').trim();
+        if (cleaned.length > 1) bookName = cleaned;
+      }
+      
+      if (bookName && bookName.length > 1) {
+        var book = findBookByName(bookName);
+        if (book) {
+          var viewUrl = book.driveId ? getDriveViewUrl(book.driveId) : null;
+          if (viewUrl) {
+            addBotMessage('📖 "' + book.title + '" বইটি খোলা হচ্ছে...', 'info');
+            loadPDF(viewUrl, book.title, book);
+            return true;
+          } else {
+            addBotMessage('❌ "' + book.title + '" বইটির PDF লিংক উপলব্ধ নেই।', 'error');
+            return true;
+          }
+        } else {
+          addBotMessage('❌ "' + bookName + '" নামে কোনো বই পাওয়া যায়নি। "বই" লিখে সব বই দেখুন।', 'error');
+          return true;
+        }
+      }
+      return false;
+    }
+
+    // ============================================================
+    // 11. SHOW FUNCTIONS
+    // ============================================================
+    
+    // 11.1 Help
+    function showHelp() {
+      var html = '<strong>🆘 সাহায্য / Help</strong><br><br>';
+      html += '<div class="knowledge-card"><div class="kb-content">';
+      html += '📖 <strong>বই পড়া:</strong> "বই পড় [নাম]" বা "read book [name]"<br>';
+      html += '🕌 <strong>কুরআন:</strong> "2:255" বা "সূরা ২ আয়াত ২৫৫"<br>';
+      html += '📜 <strong>হাদিস:</strong> "হাদিস" বা "hadith"<br>';
+      html += '📝 <strong>ব্লগ:</strong> "ব্লগ" বা "blog"<br>';
+      html += '💰 <strong>যাকাত:</strong> "যাকাত" বা "zakat"<br>';
+      html += '⏱️ <strong>টাইমার:</strong> "টাইমার" বা "timer"<br>';
+      html += '🧠 <strong>কুইজ:</strong> "কুইজ" বা "quiz"<br>';
+      html += '🏠 <strong>হোম:</strong> "হোম", "home", "হোমে যাও"<br>';
+      html += '📚 <strong>জ্ঞান:</strong> "জ্ঞান" বা "knowledge"<br>';
+      html += '🕌 <strong>নামাজ:</strong> "নামাজ", "prayer"<br>';
+      html += '⭐ <strong>আয়াত:</strong> "আয়াত" বা "popular"<br>';
+      html += '💡 বাংলা ও ইংরেজি উভয় ভাষায় কাজ করে';
+      html += '</div></div>';
+      html += '<div class="home-btn-container"><button class="home-btn" onclick="window.goHome()">🏠 হোমে যান</button></div>';
+      addBotMessage(html, 'normal', true);
+    }
+
+    // 11.2 Popular Ayat
+    function showPopularAyat() {
+      var popular = [
+        {sura:'1', aya:'1', name:'সূরা ফাতিহা'},
+        {sura:'2', aya:'255', name:'আয়াতুল কুরসি'},
+        {sura:'36', aya:'1', name:'সূরা ইয়াসিন'},
+        {sura:'112', aya:'1', name:'সূরা ইখলাস'},
+        {sura:'55', aya:'1', name:'সূরা রহমান'}
+      ];
+      
+      var html = '<strong>⭐ জনপ্রিয় আয়াত</strong><br><br>';
+      popular.forEach(function(p, i) {
+        html += '<button onclick="window.selectAya(\'' + p.sura + '\',\'' + p.aya + '\')" style="display:block;width:100%;margin:2px 0;padding:4px 8px;border:2px solid var(--primary);border-radius:8px;cursor:pointer;background:var(--white);text-align:left;font-family:var(--font-ui);font-weight:600;font-size:0.7rem;">' + (i+1) + '. ' + p.name + '<br><small style="color:var(--gray-dark);font-weight:400;">সূরা ' + p.sura + ', আয়াত ' + p.aya + '</small></button>';
+      });
+      html += '<div class="home-btn-container"><button class="home-btn" onclick="window.goHome()">🏠 হোমে যান</button></div>';
+      addBotMessage(html, 'normal', true);
+    }
+
+    // 11.3 Select Aya
+    window.selectAya = function(sura, aya) {
+      var suraStr = String(sura);
+      var ayaStr = String(aya);
+      var result = state.quranData.find(function(a) {
+        return String(a.sura) === suraStr && String(a.aya) === ayaStr;
+      });
+      
+      if (result) {
+        state.currentAya = result;
+        state.currentAyaIndex = state.quranData.indexOf(result);
+        displayAyaResult(result);
+      } else {
+        addBotMessage('❌ সূরা ' + sura + ', আয়াত ' + aya + ' পাওয়া যায়নি।', 'error');
+      }
+    };
+
+    function displayAyaResult(aya) {
+      var arabic = state.arabicData.find(function(a) {
+        return String(a.sura) === String(aya.sura) && String(a.VerseIDAr) === String(aya.aya);
+      });
+      
+      var idx = state.currentAyaIndex !== -1 ? state.currentAyaIndex : 0;
+      var html = '<strong>সূরা ' + aya.sura + ', আয়াত ' + aya.aya + ' (সূরা ' + getSurahName(parseInt(aya.sura)) + ')</strong>';
+      
+      if (arabic && arabic.ayat) {
+        html += '<div class="arabic-text">' + arabic.ayat + '</div>';
+      } else {
+        html += '<div class="arabic-text" style="color:var(--gray-dark);font-size:0.8rem;">⚠️ আরবি পাঠ্য উপলব্ধ নেই</div>';
+      }
+      
+      html += '<div style="padding:0.3rem 0.5rem;background:#f8f9fa;border-radius:var(--rounded);border-left:4px solid var(--primary);margin:0.2rem 0;">' + aya.text + '</div>';
+      
+      html += '<div class="ayat-navigation">';
+      html += '<button class="ayat-nav-btn" onclick="window.navigateAyat(-1)" ' + (idx <= 0 ? 'disabled' : '') + '>◀ আগের</button>';
+      html += '<button class="ayat-nav-btn gold" onclick="window.navigateAyat(1)" ' + (idx >= state.quranData.length - 1 ? 'disabled' : '') + '>পরবর্তী ▶</button>';
+      html += '</div>';
+      
+      html += '<div style="display:flex;gap:0.2rem;flex-wrap:wrap;margin-top:0.2rem;justify-content:center;">';
+      html += '<button onclick="window.showTafsir(\'' + aya.sura + '\',\'' + aya.aya + '\')" style="background:var(--primary);color:#fff;border:none;padding:3px 8px;border-radius:5px;cursor:pointer;font-weight:600;font-family:var(--font-ui);font-size:0.6rem;">📖 তাফসীর</button>';
+      html += '<button onclick="window.playAudio(\'' + aya.sura + '\',\'' + aya.aya + '\')" style="background:var(--secondary);color:#fff;border:none;padding:3px 8px;border-radius:5px;cursor:pointer;font-weight:600;font-family:var(--font-ui);font-size:0.6rem;">🎧 শুনুন</button>';
+      html += '<button onclick="window.copyAya(\'' + aya.sura + '\',\'' + aya.aya + '\')" style="background:var(--gold);color:#000;border:none;padding:3px 8px;border-radius:5px;cursor:pointer;font-weight:600;font-family:var(--font-ui);font-size:0.6rem;">📋 কপি</button>';
+      html += '</div>';
+      
+      html += '<div class="home-btn-container"><button class="home-btn" onclick="window.goHome()">🏠 হোমে যান</button></div>';
+      addBotMessage(html, 'normal', true);
+    }
+
+    window.navigateAyat = function(direction) {
+      var idx = state.currentAyaIndex;
+      if (idx === -1) {
+        if (state.currentAya) idx = state.quranData.indexOf(state.currentAya);
+        if (idx === -1) {
+          addBotMessage('❌ কোনো আয়াত নির্বাচিত নেই।', 'error');
+          return;
+        }
+      }
+      
+      var newIdx = idx + direction;
+      if (newIdx < 0 || newIdx >= state.quranData.length) {
+        addBotMessage('❌ এই দিকে আর কোনো আয়াত নেই।', 'info');
+        return;
+      }
+      
+      state.currentAyaIndex = newIdx;
+      state.currentAya = state.quranData[newIdx];
+      displayAyaResult(state.currentAya);
+    };
+
+    // 11.4 Tafsir
+    function showTafsirModal(sura, aya) {
+      var key = sura + ':' + aya;
+      var tafsir = state.tafsirData[key];
+      var arabic = state.arabicData.find(function(a) {
+        return String(a.sura) === String(sura) && String(a.VerseIDAr) === String(aya);
+      });
+      var bengali = state.quranData.find(function(a) {
+        return String(a.sura) === String(sura) && String(a.aya) === String(aya);
+      });
+      
+      var html = '';
+      if (arabic && arabic.ayat) html += '<div class="verse-arabic">' + arabic.ayat + '</div>';
+      if (bengali) html += '<div class="verse-translation"><strong>বাংলা অনুবাদ:</strong><br>' + bengali.text + '</div>';
+      if (tafsir) {
+        html += '<div class="tafsir-text"><strong>তাফসীর:</strong><br>' + tafsir + '</div>';
+      } else {
+        html += '<div class="tafsir-text"><p>এই আয়াতের তাফসীর এখনও যোগ করা হয়নি।</p></div>';
+      }
+      html += '<div class="tafsir-source"><strong>উৎস:</strong> ইবনে কাসিরের তাফসীর</div>';
+      
+      dom.tafsirTitle.textContent = 'সূরা ' + sura + ', আয়াত ' + aya + ' - তাফসীর';
+      dom.tafsirBody.innerHTML = html;
+      dom.tafsirModal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    window.showTafsir = showTafsirModal;
+
+    function closeTafsirModal() {
+      dom.tafsirModal.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    // 11.5 Audio
+    function playAudio(sura, aya) {
+      var url = 'https://cdn.islamic.network/quran/audio/128/ar.alafasy/' + sura + '/' + aya + '.mp3';
+      var audio = new Audio(url);
+      audio.playbackRate = parseFloat(state.audioSettings.speed || 1);
+      audio.play().then(function() {
+        addBotMessage('🎧 আয়াত তিলাওয়াত শোনা হচ্ছে...', 'info');
+      }).catch(function() {
+        addBotMessage('❌ অডিও প্লে করতে সমস্যা হয়েছে।', 'error');
+      });
+    }
+
+    window.playAudio = playAudio;
+
+    // 11.6 Copy Aya
+    function copyAyaText(sura, aya) {
+      var ayaData = state.quranData.find(function(a) {
+        return String(a.sura) === String(sura) && String(a.aya) === String(aya);
+      });
+      var arabic = state.arabicData.find(function(a) {
+        return String(a.sura) === String(sura) && String(a.VerseIDAr) === String(aya);
+      });
+      
+      var text = 'সূরা ' + sura + ', আয়াত ' + aya + '\n\n';
+      if (arabic && arabic.ayat) text += arabic.ayat + '\n\n';
+      if (ayaData) text += ayaData.text;
+      
+      navigator.clipboard.writeText(text).then(function() {
+        addBotMessage('✅ কপি করা হয়েছে!', 'success');
+      }).catch(function() {
+        addBotMessage('❌ কপি করতে সমস্যা হয়েছে।', 'error');
+      });
+    }
+
+    window.copyAya = copyAyaText;
+
+    // 11.7 Prayer Times
+    function showPrayerTimes() {
+      var times = {
+        fajr: '04:30 AM',
+        sunrise: '06:00 AM',
+        dhuhr: '12:15 PM',
+        asr: '04:00 PM',
+        maghrib: '06:30 PM',
+        isha: '08:00 PM'
+      };
+      
+      var html = '<div class="prayer-card"><strong>🕌 আজকের সালাতের সময়সূচী (ঢাকা)</strong><div class="prayer-grid">';
+      var items = {
+        'ফজর': times.fajr,
+        'সূর্যোদয়': times.sunrise,
+        'জোহর': times.dhuhr,
+        'আসর': times.asr,
+        'মাগরিব': times.maghrib,
+        'ইশা': times.isha
+      };
+      
+      for (var key in items) {
+        html += '<div class="prayer-item"><span class="name">' + key + '</span><span class="time">' + items[key] + '</span></div>';
+      }
+      
+      html += '</div><div style="margin-top:0.15rem;font-size:0.55rem;color:var(--gray-dark);">⚠️ আনুমানিক সময়</div></div>';
+      html += '<div class="home-btn-container"><button class="home-btn" onclick="window.goHome()">🏠 হোমে যান</button></div>';
+      addBotMessage(html, 'normal', true);
+    }
+
+    // 11.8 Hadith
+    function showRandomHadith() {
+      var hadith = state.hadithData[Math.floor(Math.random() * state.hadithData.length)];
+      var html = '<div class="hadith-card">';
+      html += '<div class="hadith-number">📜 হাদিস</div>';
+      html += '<div class="hadith-text">' + hadith.text + '</div>';
+      html += '<div class="hadith-translation"><strong>অনুবাদ:</strong> ' + hadith.translation + '</div>';
+      if (hadith.explanation) {
+        html += '<div style="font-size:0.7rem;color:var(--text-light);margin:0.1rem 0;"><strong>ব্যাখ্যা:</strong> ' + hadith.explanation + '</div>';
+      }
+      html += '<div class="hadith-source">📚 ' + hadith.source + ' | 🗣️ ' + hadith.narrator + '</div>';
+      html += '</div>';
+      html += '<div class="knowledge-nav"><button class="knowledge-nav-btn" onclick="window.showRandomHadith()">🎲 র্যান্ডম</button></div>';
+      html += '<div class="home-btn-container"><button class="home-btn" onclick="window.goHome()">🏠 হোমে যান</button></div>';
+      addBotMessage(html, 'normal', true);
+    }
+
+    window.showRandomHadith = showRandomHadith;
+
+    // 11.9 Knowledge Base
+    function showKnowledgeBase() {
+      var item = state.knowledgeBase[state.knowledgeIndex % state.knowledgeBase.length];
+      var total = state.knowledgeBase.length;
+      
+      var html = '<div class="knowledge-card">';
+      html += '<div class="kb-number">📚 জ্ঞান ' + (state.knowledgeIndex + 1) + '/' + total + '</div>';
+      html += '<div class="kb-title">' + item.title + '</div>';
+      html += '<div class="kb-content">' + item.content.replace(/\n/g, '<br>') + '</div>';
+      html += '<div class="kb-source">📖 ' + item.source + '</div>';
+      html += '</div>';
+      
+      html += '<div class="knowledge-nav">';
+      html += '<button class="knowledge-nav-btn" onclick="window.navKnowledge(-1)" ' + (state.knowledgeIndex === 0 ? 'disabled' : '') + '>◀ আগের</button>';
+      html += '<button class="knowledge-nav-btn gold" onclick="window.navKnowledge(1)" ' + (state.knowledgeIndex === total - 1 ? 'disabled' : '') + '>পরবর্তী ▶</button>';
+      html += '</div>';
+      
+      html += '<div class="home-btn-container"><button class="home-btn" onclick="window.goHome()">🏠 হোমে যান</button></div>';
+      addBotMessage(html, 'normal', true);
+    }
+
+    window.navKnowledge = function(direction) {
+      state.knowledgeIndex = (state.knowledgeIndex + direction + state.knowledgeBase.length) % state.knowledgeBase.length;
+      showKnowledgeBase();
+    };
+
+    // 11.10 Blog Posts
+    function showBlogPosts() {
+      if (!state.blogPosts || state.blogPosts.length === 0) {
+        addBotMessage('📝 বর্তমানে কোন ব্লগ পোস্ট নেই।', 'info');
+        return;
+      }
+      
+      var html = '<strong>📝 সাম্প্রতিক ব্লগ পোস্ট</strong><br><br>';
+      
+      state.blogPosts.slice(0, 5).forEach(function(post, i) {
+        var pid = post.id || 'post-' + i;
+        var expanded = state.expandedPosts[pid] || false;
+        
+        html += '<div class="blog-post-card" id="blog-post-' + pid + '">';
+        html += '<div class="post-title" onclick="window.toggleBlogPost(\'' + pid + '\')">' + (i+1) + '. ' + post.title + '</div>';
+        
+        if (!expanded) {
+          html += '<div class="post-excerpt">' + (post.summary || post.content.substring(0, 150) + '...') + '</div>';
+        }
+        
+        if (expanded && post.content) {
+          html += '<div class="post-full-content">' + post.content.replace(/\n/g, '<br>') + '</div>';
+        }
+        
+        html += '<div class="post-meta">📅 ' + (post.published ? new Date(post.published).toLocaleDateString('bn-BD') : '') + ' | ✍️ ' + post.author + '</div>';
+        html += '<div class="action-buttons">';
+        
+        if (!expanded && post.content && post.content.length > 100) {
+          html += '<button class="action-btn primary" onclick="window.toggleBlogPost(\'' + pid + '\')">📖 পড়ুন</button>';
+        } else if (expanded) {
+          html += '<button class="action-btn outline" onclick="window.toggleBlogPost(\'' + pid + '\')">⬆️ সংক্ষেপ</button>';
+        }
+        
+        if (post.link && post.link !== '#') {
+          html += '<button class="action-btn gold" onclick="window.open(\'' + post.link + '\',\'_blank\')">🔗 লিংক</button>';
+        }
+        html += '</div></div>';
+      });
+      
+      html += '<div class="home-btn-container"><button class="home-btn" onclick="window.goHome()">🏠 হোমে যান</button></div>';
+      addBotMessage(html, 'normal', true);
+    }
+
+    window.toggleBlogPost = function(pid) {
+      state.expandedPosts[pid] = !state.expandedPosts[pid];
+      showBlogPosts();
+    };
+
+    // ============================================================
+    // 12. TIMER
+    // ============================================================
+    function showTimer() {
+      var html = '<div class="time-tracker-card">';
+      html += '<div class="time-display" id="timer-display">00:00:00</div>';
+      html += '<div class="time-label">⏱️ পড়ার সময় ট্র্যাকার</div>';
+      html += '<div class="time-controls">';
+      html += '<button class="time-btn gold" onclick="window.toggleTimer()" id="timer-toggle-btn">▶️ শুরু</button>';
+      html += '<button class="time-btn" onclick="window.resetTimer()">🔄 রিসেট</button>';
+      html += '</div>';
+      html += '<div style="margin-top:0.2rem;font-size:0.6rem;color:var(--gray-dark);">মোট পড়ার সময়: <span id="total-reading-time">' + formatTime(state.readingTotalTime) + '</span></div>';
+      html += '</div>';
+      html += '<div class="home-btn-container"><button class="home-btn" onclick="window.goHome()">🏠 হোমে যান</button></div>';
+      addBotMessage(html, 'normal', true);
+    }
+
+    window.toggleTimer = function() {
+      var btn = document.getElementById('timer-toggle-btn');
+      var display = document.getElementById('timer-display');
+      if (!btn || !display) return;
+      
+      state.timerRunning = !state.timerRunning;
+      
+      if (state.timerRunning) {
+        btn.textContent = '⏹️ থামুন';
+        state.timerInterval = setInterval(function() {
+          state.timerSeconds++;
+          var h = String(Math.floor(state.timerSeconds / 3600)).padStart(2, '0');
+          var m = String(Math.floor((state.timerSeconds % 3600) / 60)).padStart(2, '0');
+          var s = String(state.timerSeconds % 60).padStart(2, '0');
+          display.textContent = h + ':' + m + ':' + s;
+        }, 1000);
+        addBotMessage('⏱️ সময় গণনা শুরু হয়েছে!', 'info');
+      } else {
+        btn.textContent = '▶️ শুরু';
+        clearInterval(state.timerInterval);
+        state.readingTotalTime += state.timerSeconds;
+        var totalDisplay = document.getElementById('total-reading-time');
+        if (totalDisplay) totalDisplay.textContent = formatTime(state.readingTotalTime);
+        addBotMessage('⏱️ থামানো হয়েছে। পড়েছেন: ' + formatTime(state.timerSeconds), 'info');
+        state.timerSeconds = 0;
+        display.textContent = '00:00:00';
+      }
+    };
+
+    window.resetTimer = function() {
+      clearInterval(state.timerInterval);
+      state.timerRunning = false;
+      state.timerSeconds = 0;
+      var btn = document.getElementById('timer-toggle-btn');
+      var display = document.getElementById('timer-display');
+      if (btn) btn.textContent = '▶️ শুরু';
+      if (display) display.textContent = '00:00:00';
+      state.readingTotalTime = 0;
+      var totalDisplay = document.getElementById('total-reading-time');
+      if (totalDisplay) totalDisplay.textContent = '0 মিনিট 0 সেকেন্ড';
+      addBotMessage('⏱️ টাইমার রিসেট করা হয়েছে!', 'info');
+    };
+
+    // ============================================================
+    // 13. ZAKAT CALCULATOR
+    // ============================================================
+    function showZakatCalculator() {
+      var html = '<div class="zakat-card">';
+      html += '<div class="zakat-title">💰 যাকাত ক্যালকুলেটর</div>';
+      html += '<div class="zakat-input-group">';
+      html += '<label>মোট সম্পদের পরিমাণ (টাকা):</label>';
+      html += '<input type="number" id="zakat-wealth" value="100000"/>';
+      html += '</div>';
+      html += '<div class="zakat-input-group">';
+      html += '<label>যাকাতের হার (%):</label>';
+      html += '<input type="number" id="zakat-rate" value="2.5" step="0.1"/>';
+      html += '</div>';
+      html += '<button class="zakat-btn" onclick="window.calculateZakat()">🧮 যাকাত গণনা করুন</button>';
+      html += '<div class="zakat-result"><div>আপনার যাকাতের পরিমাণ:</div><div class="amount" id="zakat-amount">প্রয়োজনীয় ইনপুট দিন</div></div>';
+      html += '<div style="margin-top:0.2rem;font-size:0.55rem;color:var(--gray-dark);">⚠️ নিসাব: ৫২,৫০০ টাকা</div>';
+      html += '</div>';
+      html += '<div class="home-btn-container"><button class="home-btn" onclick="window.goHome()">🏠 হোমে যান</button></div>';
+      addBotMessage(html, 'normal', true);
+    }
+
+    window.calculateZakat = function() {
+      var wealth = parseFloat(document.getElementById('zakat-wealth').value) || 0;
+      var rate = parseFloat(document.getElementById('zakat-rate').value) || 2.5;
+      var result = document.getElementById('zakat-amount');
+      
+      if (wealth <= 0) {
+        result.textContent = '⚠️ সঠিক সম্পদের পরিমাণ দিন';
+        result.style.color = '#c62828';
+        return;
+      }
+      
+      if (wealth < 52500) {
+        result.textContent = '⚠️ সম্পদ নিসাবের কম';
+        result.style.color = '#f57c00';
+        return;
+      }
+      
+      var zakat = (wealth * rate) / 100;
+      result.textContent = '💰 ' + zakat.toFixed(2) + ' টাকা';
+      result.style.color = 'var(--primary)';
+      addBotMessage('✅ যাকাত গণনা সম্পন্ন! পরিমাণ: ' + zakat.toFixed(2) + ' টাকা', 'success');
+    };
+
+    // ============================================================
+    // 14. QUIZ
+    // ============================================================
+    var QUIZ_QUESTIONS = [
+      {q:"কুরআনের প্রথম সূরার নাম কি?", o:["আল-ফাতিহা","আল-বাকারা","আল-ইখলাস","ইয়াসিন"], c:0},
+      {q:"কুরআনে মোট কয়টি সূরা আছে?", o:["114","100","125","99"], c:0},
+      {q:"আয়াতুল কুরসি কোন সূরায় আছে?", o:["সূরা বাকারা","সূরা ইখলাস","সূরা ফাতিহা","সূরা ইয়াসিন"], c:0},
+      {q:"ইসলামের ৫টি স্তম্ভের প্রথমটি কি?", o:["কালিমা","সালাত","জাকাত","রোজা"], c:0},
+      {q:"মহানবী (সা.)-এর জন্মস্থান কোথায়?", o:["মক্কা","মদিনা","তায়েফ","বাগদাদ"], c:0},
+      {q:"কুরআন কত সালে নাযিল হতে শুরু করে?", o:["৬১০","৬২২","৬৩০","৫৭০"], c:0},
+      {q:"জিবরাইল (আ.) কে কি বলা হয়?", o:["রূহুল কুদুস","মালিকুল মাওত","ইসরাফিল","মিকাইল"], c:0}
+    ];
+
+    function startQuiz() {
+      state.quizState = {
+        questions: QUIZ_QUESTIONS.slice(0, 5),
+        current: 0,
+        score: 0,
+        total: 5
+      };
+      askQuizQuestion();
+    }
+
+    function askQuizQuestion() {
+      if (!state.quizState || state.quizState.current >= state.quizState.total) {
+        if (state.quizState) showQuizResult();
+        return;
+      }
+      
+      var q = state.quizState.questions[state.quizState.current];
+      var html = '<div class="quiz-card">';
+      html += '<div class="quiz-progress">🧠 প্রশ্ন ' + (state.quizState.current + 1) + '/' + state.quizState.total + '</div>';
+      html += '<div class="question">' + q.q + '</div>';
+      
+      q.o.forEach(function(opt, i) {
+        var letter = String.fromCharCode(65 + i);
+        html += '<button class="option-btn" onclick="window.answerQuizOption(' + i + ')">' + letter + '. ' + opt + '</button>';
+      });
+      
+      html += '</div>';
+      addBotMessage(html, 'normal', true);
+    }
+
+    window.answerQuizOption = function(selected) {
+      if (!state.quizState) return;
+      
+      var q = state.quizState.questions[state.quizState.current];
+      var correct = selected === q.c;
+      
+      if (correct) {
+        state.quizState.score++;
+        addBotMessage('✅ সঠিক উত্তর! 🎉', 'success');
+      } else {
+        addBotMessage('❌ ভুল উত্তর! সঠিক: ' + q.o[q.c], 'error');
+      }
+      
+      state.quizState.current++;
+      setTimeout(askQuizQuestion, 1500);
+    };
+
+    function showQuizResult() {
+      if (!state.quizState) return;
+      
+      var pct = Math.round((state.quizState.score / state.quizState.total) * 100);
+      var msg = pct >= 80 ? '🎉 অসাধারণ!' : pct >= 60 ? '👍 ভালো!' : '📚 আরও পড়ুন!';
+      
+      var html = '<div class="quiz-card">';
+      html += '<div class="result">📊 কুইজ রেজাল্ট</div>';
+      html += '<div style="text-align:center;padding:0.1rem 0;">স্কোর: ' + state.quizState.score + '/' + state.quizState.total + '</div>';
+      html += '<div style="text-align:center;padding:0.1rem 0;">পার্সেন্টেজ: ' + pct + '%</div>';
+      html += '<div style="text-align:center;padding:0.1rem 0;">' + msg + '</div>';
+      html += '<button onclick="window.startQuiz()" style="display:block;width:100%;padding:0.25rem;background:var(--gold-gradient);border:none;border-radius:var(--rounded);cursor:pointer;font-weight:600;font-family:var(--font-ui);color:var(--dark);font-size:0.7rem;">🔄 আবার চেষ্টা করুন</button>';
+      html += '</div>';
+      html += '<div class="home-btn-container"><button class="home-btn" onclick="window.goHome()">🏠 হোমে যান</button></div>';
+      addBotMessage(html, 'normal', true);
+      
+      state.quizState = null;
+    }
+
+    // ============================================================
+    // 15. QUERY PROCESSING
+    // ============================================================
+    function processQuery(query) {
+      if (state.isLoading) return;
+      var trimmed = query.trim();
+      if (!trimmed) {
+        addBotMessage('❌ অনুগ্রহ করে একটি প্রশ্ন লিখুন।', 'error');
+        return;
+      }
+
+      addUserMessage(trimmed);
+      dom.input.value = '';
+      dom.input.focus();
+
+      showTyping();
+      state.isLoading = true;
+
+      setTimeout(function() {
+        removeTyping();
+        state.isLoading = false;
+
+        try {
+          var lower = trimmed.toLowerCase();
+
+          // Check for book command
+          if (handleBookCommand(trimmed)) return;
+
+          // Command Map - Bangla & English
+          var commandMap = {
+            'হোম': goHome, 'home': goHome, 'মেনু': goHome, 'menu': goHome,
+            'হোমে যাও': goHome, 'go home': goHome,
+            'সাহায্য': showHelp, 'help': showHelp, 'গাইড': showHelp, 'guide': showHelp,
+            'বই': showBookCorner, 'book': showBookCorner, 'পিডিএফ': showBookCorner, 'pdf': showBookCorner,
+            'বই সেকশন': showBookCorner, 'বই পড়': showBookCorner, 'বই পড়': showBookCorner,
+            'যাকাত': showZakatCalculator, 'zakat': showZakatCalculator,
+            'টাইমার': showTimer, 'timer': showTimer, 'সময়': showTimer,
+            'পড়ার সময়': showTimer, 'reading time': showTimer,
+            'নামাজ': showPrayerTimes, 'সালাত': showPrayerTimes, 'prayer': showPrayerTimes,
+            'ওয়াক্ত': showPrayerTimes, 'সময়সূচী': showPrayerTimes,
+            'হাদিস': showRandomHadith, 'hadith': showRandomHadith, 'হাদীস': showRandomHadith,
+            'ব্লগ': showBlogPosts, 'blog': showBlogPosts, 'পোস্ট': showBlogPosts, 'post': showBlogPosts,
+            'কুইজ': startQuiz, 'quiz': startQuiz, 'প্রশ্ন': startQuiz,
+            'জ্ঞান': showKnowledgeBase, 'knowledge': showKnowledgeBase,
+            'আয়াত': showPopularAyat, 'popular': showPopularAyat, 'জনপ্রিয়': showPopularAyat
+          };
+
+          for (var cmd in commandMap) {
+            if (lower.indexOf(cmd) !== -1) {
+              commandMap[cmd]();
+              return;
+            }
+          }
+
+          // Surah:Ayah patterns
+          var surahAyahMatch = null;
+          
+          // Format: 2:255 or 2.255 or 2/255
+          var colonMatch = trimmed.match(/^(\d+)[:\.\/,](\d+)$/);
+          if (colonMatch) surahAyahMatch = colonMatch;
+          
+          // Format: সূরা ২ আয়াত ২৫৫
+          if (!surahAyahMatch) {
+            var bengaliMatch = trimmed.match(/সূরা\s*(\d+)\s*আয়াত\s*(\d+)/i);
+            if (bengaliMatch) surahAyahMatch = bengaliMatch;
+          }
+          
+          // Format: Surah 2 Ayah 255
+          if (!surahAyahMatch) {
+            var englishMatch = trimmed.match(/surah\s*(\d+)\s*ayah\s*(\d+)/i);
+            if (englishMatch) surahAyahMatch = englishMatch;
+          }
+          
+          // Format: Just a number (treat as surah:1)
+          if (!surahAyahMatch) {
+            var singleNum = trimmed.match(/^(\d+)$/);
+            if (singleNum && parseInt(singleNum[1]) <= 114 && parseInt(singleNum[1]) >= 1) {
+              surahAyahMatch = [null, singleNum[1], '1'];
+            }
+          }
+          
+          if (surahAyahMatch) {
+            var sura = surahAyahMatch[1];
+            var aya = surahAyahMatch[2];
+            selectAya(sura, aya);
+            return;
+          }
+
+          // Keyword search (minimum 2 characters)
+          if (trimmed.length >= 2) {
+            handleKeywordSearch(trimmed);
+          } else if (/সালাম|assalam|hello|hi|হ্যালো/.test(lower)) {
+            addBotMessage('ওয়া আলাইকুম আসসালাম! "সাহায্য" লিখে সাহায্য নিন।', 'info');
+          } else {
+            addBotMessage('🤔 "' + trimmed + '" - আমি এই প্রশ্নের উত্তর দিতে পারছি না।\n\n"সাহায্য" লিখে সাহায্য নিন।', 'info');
+          }
+        } catch (error) {
+          console.error('Query error:', error);
+          addBotMessage('❌ প্রক্রিয়াকরণে সমস্যা হয়েছে।', 'error');
+        }
+      }, 600);
+    }
+
+    // ============================================================
+    // 16. KEYWORD SEARCH
+    // ============================================================
+    function handleKeywordSearch(query) {
+      var words = query.toLowerCase().split(/\s+/);
+      var results = [];
+      
+      state.quranData.forEach(function(aya) {
+        var text = aya.text.toLowerCase();
+        var matchCount = 0;
+        var highlighted = aya.text;
+        
+        words.forEach(function(word) {
+          var regex = new RegExp(word, 'gi');
+          var matches = text.match(regex);
+          if (matches) {
+            matchCount += matches.length;
+            highlighted = highlighted.replace(regex, function(m) {
+              return '<span class="search-highlight">' + m + '</span>';
+            });
+          }
+        });
+        
+        if (matchCount > 0) {
+          results.push({
+            sura: aya.sura,
+            aya: aya.aya,
+            text: aya.text,
+            matchCount: matchCount,
+            highlighted: highlighted
+          });
+        }
+      });
+      
+      results.sort(function(a, b) { return b.matchCount - a.matchCount; });
+      var top = results.slice(0, 6);
+      state.currentSearchResults = top;
+      
+      if (top.length === 0) {
+        addBotMessage('❌ "' + query + '" এর জন্য কোন ফলাফল পাওয়া যায়নি।', 'error');
+        return;
+      }
+      
+      var html = '<strong>"' + query + '" এর জন্য ' + top.length + 'টি আয়াত পাওয়া গেছে</strong><br><br>';
+      
+      top.forEach(function(r, i) {
+        html += '<div class="search-result-item">';
+        html += '<div class="search-result-sura">' + (i+1) + '. সূরা ' + r.sura + ', আয়াত ' + r.aya + ' (' + r.matchCount + 'টি মিল)</div>';
+        html += '<div class="search-result-text">' + r.highlighted + '</div>';
+        html += '<button onclick="window.selectAyaFromSearch(' + i + ')" style="margin-top:3px;background:var(--gold);color:#000;border:none;padding:2px 8px;border-radius:5px;cursor:pointer;font-weight:600;font-size:0.65rem;">নির্বাচন</button>';
+        html += '</div>';
+      });
+      
+      addBotMessage(html, 'normal', true);
+    }
+
+    window.selectAyaFromSearch = function(index) {
+      var result = state.currentSearchResults[index];
+      if (result) {
+        selectAya(result.sura, result.aya);
+      }
+    };
+
+    // ============================================================
+    // 17. SETTINGS
+    // ============================================================
+    function loadSettings() {
+      var saved = localStorage.getItem('quranChatSettings');
+      if (saved) {
+        try {
+          var settings = JSON.parse(saved);
+          
+          var bengaliSize = document.getElementById('bengali-font-size');
+          var arabicSize = document.getElementById('arabic-font-size');
+          var audioSpeed = document.getElementById('audio-speed');
+          
+          if (settings.bengaliSize) {
+            bengaliSize.value = settings.bengaliSize;
+            document.getElementById('bengali-font-size-value').textContent = settings.bengaliSize + 'px';
+          }
+          if (settings.arabicSize) {
+            arabicSize.value = settings.arabicSize;
+            document.getElementById('arabic-font-size-value').textContent = settings.arabicSize + 'px';
+          }
+          if (settings.audioSpeed) {
+            audioSpeed.value = settings.audioSpeed;
+            document.getElementById('audio-speed-value').textContent = settings.audioSpeed + 'x';
+          }
+          
+          document.getElementById('bengali-font-family').value = settings.bengaliFont || 'Kalpurush, Hind Siliguri, sans-serif';
+          document.getElementById('arabic-font-family').value = settings.arabicFont || 'Amiri, Scheherazade New, serif';
+          document.getElementById('auto-play-audio').checked = settings.autoPlayAudio || false;
+          
+          state.audioSettings.speed = parseFloat(settings.audioSpeed) || 1;
+          state.audioSettings.autoPlay = settings.autoPlayAudio || false;
+          state.fontSettings.bengaliSize = parseInt(settings.bengaliSize) || 18;
+          state.fontSettings.arabicSize = parseInt(settings.arabicSize) || 22;
+          state.fontSettings.bengaliFont = settings.bengaliFont || 'Kalpurush, Hind Siliguri, sans-serif';
+          state.fontSettings.arabicFont = settings.arabicFont || 'Amiri, Scheherazade New, serif';
+          
+          applySettings();
+        } catch(e) {}
+      }
+    }
+
+    function saveSettings() {
+      var settings = {
+        bengaliSize: document.getElementById('bengali-font-size').value,
+        arabicSize: document.getElementById('arabic-font-size').value,
+        audioSpeed: document.getElementById('audio-speed').value,
+        bengaliFont: document.getElementById('bengali-font-family').value,
+        arabicFont: document.getElementById('arabic-font-family').value,
+        autoPlayAudio: document.getElementById('auto-play-audio').checked
+      };
+      
+      localStorage.setItem('quranChatSettings', JSON.stringify(settings));
+      
+      state.audioSettings.speed = parseFloat(settings.audioSpeed);
+      state.audioSettings.autoPlay = settings.autoPlayAudio;
+      state.fontSettings.bengaliSize = parseInt(settings.bengaliSize);
+      state.fontSettings.arabicSize = parseInt(settings.arabicSize);
+      state.fontSettings.bengaliFont = settings.bengaliFont;
+      state.fontSettings.arabicFont = settings.arabicFont;
+      
+      applySettings();
+    }
+
+    function applySettings() {
+      var root = document.documentElement;
+      root.style.setProperty('--bengali-font-size', state.fontSettings.bengaliSize + 'px');
+      root.style.setProperty('--arabic-font-size', state.fontSettings.arabicSize + 'px');
+      root.style.setProperty('--font-bengali', state.fontSettings.bengaliFont);
+      root.style.setProperty('--font-arabic', state.fontSettings.arabicFont);
+    }
+
+    function resetSettings() {
+      document.getElementById('bengali-font-size').value = 18;
+      document.getElementById('bengali-font-size-value').textContent = '18px';
+      document.getElementById('arabic-font-size').value = 22;
+      document.getElementById('arabic-font-size-value').textContent = '22px';
+      document.getElementById('audio-speed').value = 1;
+      document.getElementById('audio-speed-value').textContent = '1.0x';
+      document.getElementById('bengali-font-family').value = 'Kalpurush, Hind Siliguri, sans-serif';
+      document.getElementById('arabic-font-family').value = 'Amiri, Scheherazade New, serif';
+      document.getElementById('auto-play-audio').checked = false;
+      saveSettings();
+      addBotMessage('✅ সেটিংস রিসেট করা হয়েছে!', 'success');
+    }
+
+    // ============================================================
+    // 18. SURA LIST
+    // ============================================================
+    function loadSuraList() {
+      var names = [
+        'আল-ফাতিহা','আল-বাকারা','আল-ইমরান','আন-নিসা','আল-মায়িদাহ',
+        'আল-আন\'আম','আল-আ\'রাফ','আল-আনফাল','আত-তাওবাহ','ইউনুস',
+        'হুদ','ইউসুফ','আর-রাদ','ইবরাহিম','আল-হিজর','আন-নাহল',
+        'আল-ইসরা','আল-কাহফ','মারইয়াম','তাহা','আল-আম্বিয়া',
+        'আল-হাজ্জ','আল-মুমিনুন','আন-নূর','আল-ফুরকান','আশ-শু\'আরা',
+        'আন-নামল','আল-কাসাস','আল-আনকাবুত','আর-রুম','লুকমান',
+        'আস-সাজদাহ','আল-আহযাব','সাবা','ফাতির','ইয়াসিন',
+        'আস-সাফফাত','সাদ','আয-যুমার','গাফির','ফুসসিলাত',
+        'আশ-শুরা','আয-যুখরুফ','আদ-দুখান','আল-জাসিয়াহ','আল-আহকাফ',
+        'মুহাম্মদ','আল-ফাতহ','আল-হুজুরাত','কাফ','আয-যারিয়াত',
+        'আত-তুর','আন-নাজম','আল-কামার','আর-রহমান','আল-ওয়াকিয়াহ',
+        'আল-হাদীদ','আল-মুজাদিলাহ','আল-হাশর','আল-মুমতাহিনাহ','আস-সাফ',
+        'আল-জুমু\'আহ','আল-মুনাফিকুন','আত-তাগাবুন','আত-তালাক','আত-তাহরীম',
+        'আল-মুলক','আল-কালাম','আল-হাক্কাহ','আল-মা\'আরিজ','নূহ',
+        'আল-জিন','আল-মুজাম্মিল','আল-মুদ্দাস্সির','আল-কিয়ামাহ','আল-ইনসান',
+        'আল-মুরসালাত','আন-নাবা','আন-নাজি\'আত','আবাসা','আত-তাকভীর',
+        'আল-ইনফিতার','আল-মুতাফফিফীন','আল-ইনশিকাক','আল-বুরূজ','আত-তারিক',
+        'আল-আ\'লা','আল-গাশিয়াহ','আল-ফাজর','আল-বালাদ','আশ-শামস',
+        'আল-লাইল','আদ-দুহা','আল-ইনশিরাহ','আত-তীন','আল-আলাক',
+        'আল-কাদর','আল-বাইয়্যিনাহ','আয-যিলযাল','আল-আদিয়াত','আল-কারি\'আহ',
+        'আত-তাকাসুর','আল-আসর','আল-হুমাজাহ','আল-ফীল','কুরাইশ',
+        'আল-মাউন','আল-কাওসার','আল-কাফিরুন','আন-নাসর','আল-মাসাদ',
+        'আল-ইখলাস','আল-ফালাক','আন-নাস'
+      ];
+      
+      var html = '';
+      names.forEach(function(name, i) {
+        var num = i + 1;
+        html += '<div class="sura-item" data-sura="' + num + '">';
+        html += '<strong>' + num + '</strong><br>' + name + '<small>' + getSurahName(num) + '</small>';
+        html += '</div>';
+      });
+      
+      dom.suraGrid.innerHTML = html;
+      
+      dom.suraGrid.querySelectorAll('.sura-item').forEach(function(el) {
+        el.addEventListener('click', function() {
+          var sura = this.getAttribute('data-sura');
+          dom.input.value = sura + ':1';
+          dom.input.focus();
+          closeSuraPanel();
+          processQuery(sura + ':1');
+        });
+      });
+    }
+
+    function filterSuraList(query) {
+      var items = dom.suraGrid.querySelectorAll('.sura-item');
+      var q = query.toLowerCase();
+      items.forEach(function(item) {
+        var text = item.textContent.toLowerCase();
+        item.style.display = text.indexOf(q) !== -1 ? '' : 'none';
+      });
+    }
+
+    // ============================================================
+    // 19. PANEL CONTROLS
+    // ============================================================
+    function openSuraPanel() {
+      dom.suraPanel.classList.add('active');
+      document.body.style.overflow = 'hidden';
+      dom.suraSearch.focus();
+    }
+
+    function closeSuraPanel() {
+      dom.suraPanel.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    function openSettingsPanel() {
+      dom.settingsPanel.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeSettingsPanel() {
+      dom.settingsPanel.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    // ============================================================
+    // 20. VOICE RECOGNITION
+    // ============================================================
+    function initVoice() {
+      if (!('webkitSpeechRecognition' in window || 'SpeechRecognition' in window)) {
+        addBotMessage('❌ আপনার ব্রাউজার ভয়েস সাপোর্ট করে না।', 'error');
+        return;
+      }
+      
+      var SR = window.SpeechRecognition || window.webkitSpeechRecognition;
+      state.recognition = new SR();
+      state.recognition.lang = 'bn-BD';
+      state.recognition.continuous = false;
+      state.recognition.interimResults = false;
+      
+      state.recognition.onstart = function() {
+        state.isVoiceActive = true;
+        dom.voiceBtn.innerHTML = '🔴 রেকর্ডিং';
+        addBotMessage('🎤 কথা বলুন...', 'info');
+      };
+      
+      state.recognition.onresult = function(e) {
+        var text = e.results[0][0].transcript;
+        dom.input.value = text;
+        processQuery(text);
+      };
+      
+      state.recognition.onerror = function(e) {
+        addBotMessage('❌ ভয়েস ত্রুটি: ' + e.error, 'error');
+        state.isVoiceActive = false;
+        dom.voiceBtn.innerHTML = '🎤 ভয়েস';
+      };
+      
+      state.recognition.onend = function() {
+        state.isVoiceActive = false;
+        dom.voiceBtn.innerHTML = '🎤 ভয়েস';
+      };
+    }
+
+    function toggleVoice() {
+      if (!state.recognition) initVoice();
+      if (!state.recognition) return;
+      
+      if (state.isVoiceActive) {
+        state.recognition.stop();
+      } else {
+        try {
+          state.recognition.start();
+        } catch(e) {
+          addBotMessage('❌ মাইক্রোফোন এক্সেস সমস্যা।', 'error');
+        }
+      }
+    }
+
+    // ============================================================
+    // 21. THEME
+    // ============================================================
+    function toggleTheme() {
+      state.isDark = !state.isDark;
+      document.documentElement.setAttribute('data-theme', state.isDark ? 'dark' : 'light');
+      localStorage.setItem('quranTheme', state.isDark ? 'dark' : 'light');
+      dom.themeIcon.textContent = state.isDark ? '☀️' : '🌙';
+    }
+
+    function loadTheme() {
+      var saved = localStorage.getItem('quranTheme');
+      if (saved === 'dark') {
+        state.isDark = true;
+        document.documentElement.setAttribute('data-theme', 'dark');
+        dom.themeIcon.textContent = '☀️';
+      }
+    }
+
+    // ============================================================
+    // 22. INITIALIZATION
+    // ============================================================
+    window.goHome = goHome;
+    window.handleQuickAction = handleQuickAction;
+    window.showHelp = showHelp;
+    window.startQuiz = startQuiz;
+    window.selectAya = selectAya;
+    window.showTafsir = showTafsir;
+    window.playAudio = playAudio;
+    window.copyAya = copyAyaText;
+    window.showRandomHadith = showRandomHadith;
+    window.navKnowledge = navKnowledge;
+    window.toggleBlogPost = toggleBlogPost;
+    window.toggleTimer = toggleTimer;
+    window.resetTimer = resetTimer;
+    window.calculateZakat = calculateZakat;
+    window.answerQuizOption = answerQuizOption;
+    window.filterBooks = filterBooks;
+    window.openPDF = openPDF;
+    window.selectAyaFromSearch = selectAyaFromSearch;
+
+    function init() {
+      // Start clock
+      updateClock();
+      setInterval(updateClock, 1000);
+      
+      // Load data
+      loadData();
+      
+      // Load settings
+      loadSettings();
+      loadTheme();
+      
+      // Load Sura list
+      loadSuraList();
+
+      // ===== Event Listeners =====
+      
+      // Quick action buttons in messages
+      dom.messages.addEventListener('click', function(e) {
+        var target = e.target.closest('.quick-action-premium');
+        if (target) {
+          var action = target.getAttribute('data-action');
+          if (action) handleQuickAction(action);
+        }
+      });
+
+      // Welcome section quick action buttons
+      document.querySelectorAll('#welcome-section .quick-action-premium').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+          var action = this.getAttribute('data-action');
+          handleQuickAction(action);
+        });
+      });
+
+      // Send button
+      dom.sendBtn.addEventListener('click', function() {
+        processQuery(dom.input.value);
+      });
+
+      // Enter key
+      dom.input.addEventListener('keypress', function(e) {
+        if (e.key === 'Enter') {
+          e.preventDefault();
+          processQuery(dom.input.value);
+        }
+      });
+
+      // Clear chat
+      dom.clearBtn.addEventListener('click', function() {
+        dom.messages.innerHTML = '';
+        if (dom.welcomeSection) {
+          dom.welcomeSection.style.display = 'block';
+          state.welcomeVisible = true;
+        }
+        dom.input.focus();
+      });
+
+      // Home button
+      dom.homeBtn.addEventListener('click', goHome);
+
+      // Tafsir button
+      dom.tafsirBtn.addEventListener('click', function() {
+        if (state.currentAya) {
+          showTafsirModal(state.currentAya.sura, state.currentAya.aya);
+        } else {
+          addBotMessage('⚠️ প্রথমে একটি আয়াত নির্বাচন করুন।', 'error');
+        }
+      });
+
+      // Voice button
+      dom.voiceBtn.addEventListener('click', toggleVoice);
+
+      // Theme toggle
+      dom.themeToggle.addEventListener('click', toggleTheme);
+
+      // Sura panel
+      dom.suraPanelBtn.addEventListener('click', openSuraPanel);
+      dom.closeSura.addEventListener('click', closeSuraPanel);
+      dom.suraSearch.addEventListener('input', function(e) {
+        filterSuraList(e.target.value);
+      });
+
+      // Settings panel
+      dom.settingsPanelBtn.addEventListener('click', openSettingsPanel);
+      dom.closeSettings.addEventListener('click', closeSettingsPanel);
+
+      // Settings controls
+      document.getElementById('bengali-font-size').addEventListener('input', function() {
+        document.getElementById('bengali-font-size-value').textContent = this.value + 'px';
+        saveSettings();
+      });
+      
+      document.getElementById('arabic-font-size').addEventListener('input', function() {
+        document.getElementById('arabic-font-size-value').textContent = this.value + 'px';
+        saveSettings();
+      });
+      
+      document.getElementById('audio-speed').addEventListener('input', function() {
+        document.getElementById('audio-speed-value').textContent = this.value + 'x';
+        saveSettings();
+      });
+
+      document.querySelectorAll('#bengali-font-family, #arabic-font-family, #auto-play-audio').forEach(function(el) {
+        el.addEventListener('change', saveSettings);
+      });
+
+      document.getElementById('reset-settings').addEventListener('click', resetSettings);
+
+      // Tafsir modal
+      dom.closeTafsir.addEventListener('click', closeTafsirModal);
+      dom.tafsirModal.addEventListener('click', function(e) {
+        if (e.target === dom.tafsirModal) closeTafsirModal();
+      });
+
+      // PDF Viewer
+      dom.pdfCloseBtn.addEventListener('click', closePDFViewer);
+      dom.pdfPrevBtn.addEventListener('click', function() {
+        if (state.pdfDoc && state.pdfPageNum > 1) {
+          state.pdfPageNum--;
+          renderPDFPage();
+        }
+      });
+      dom.pdfNextBtn.addEventListener('click', function() {
+        if (state.pdfDoc && state.pdfPageNum < state.pdfTotalPages) {
+          state.pdfPageNum++;
+          renderPDFPage();
+        }
+      });
+      dom.pdfFullscreenBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        togglePdfFullscreen();
+      });
+      dom.pdfZoomInBtn.addEventListener('click', function() {
+        state.pdfScale = Math.min(3.0, state.pdfScale + 0.2);
+        if (state.pdfDoc) renderPDFPage();
+      });
+      dom.pdfZoomOutBtn.addEventListener('click', function() {
+        state.pdfScale = Math.max(0.5, state.pdfScale - 0.2);
+        if (state.pdfDoc) renderPDFPage();
+      });
+      dom.pdfBuyBtn.style.display = 'none';
+      dom.pdfViewer.addEventListener('click', function(e) {
+        if (e.target === dom.pdfViewer && !state.isPdfFullscreen) {
+          closePDFViewer();
+        }
+      });
+
+      // Keyboard shortcuts
+      document.addEventListener('keydown', function(e) {
+        if (dom.pdfViewer.classList.contains('active')) {
+          if (e.key === 'f' || e.key === 'F') {
+            e.preventDefault();
+            togglePdfFullscreen();
+          }
+          if (e.key === 'ArrowLeft') {
+            e.preventDefault();
+            if (state.pdfDoc && state.pdfPageNum > 1) {
+              state.pdfPageNum--;
+              renderPDFPage();
+            }
+          }
+          if (e.key === 'ArrowRight') {
+            e.preventDefault();
+            if (state.pdfDoc && state.pdfPageNum < state.pdfTotalPages) {
+              state.pdfPageNum++;
+              renderPDFPage();
+            }
+          }
+          if (e.key === 'Escape') {
+            if (state.isPdfFullscreen) {
+              togglePdfFullscreen();
+            } else {
+              closePDFViewer();
+            }
+          }
+        }
+        
+        if (e.key === 'Escape') {
+          closeTafsirModal();
+          closeSuraPanel();
+          closeSettingsPanel();
+        }
+      });
+
+      dom.input.focus();
+      console.log('🤖 কুরআন বট ৭.০ লোড হয়েছে!');
+      console.log('📚 মোট বই:', state.allBooks.length);
+      console.log('📖 মোট আয়াত:', state.quranData.length);
+      console.log('📜 মোট হাদিস:', state.hadithData.length);
+    }
+
+    function renderPDFPage() {
+      // Placeholder for PDF.js rendering - not needed for Google Drive embed
+    }
+
+    // ============================================================
+    // 23. START APPLICATION
+    // ============================================================
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', init);
+    } else {
+      init();
+    }
+
+  })();
+  //]]>
+  </script>
+</body>
+</html>
