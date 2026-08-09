@@ -432,7 +432,7 @@
     display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.6); backdrop-filter: blur(8px); z-index: 9999; justify-content: center; align-items: center; padding: 1.2rem;
   }
   .tafsir-modal-overlay.active { display: flex; animation: fadeIn 0.3s ease; }
-  .tafsir-modal-content { background: var(--white); border-radius: var(--rounded); max-width: 700px; width: 100%; max-height: 85vh; display: flex; flex-direction: column; box-shadow: var(--shadow-large); animation: scaleIn 0.3s ease; overflow: hidden; }
+  .tafsir-modal-content { background: var(--white); border-radius: var(--rounded); max-width: 1200px; width: 100%; max-height: 85vh; display: flex; flex-direction: column; box-shadow: var(--shadow-large); animation: scaleIn 0.3s ease; overflow: hidden; }
   .tafsir-modal-header { display: flex; justify-content: space-between; align-items: center; padding: 0.6rem 1rem; background: var(--header-gradient); color: white; }
   .tafsir-modal-header h3 { color: white; font-size: 0.95rem; margin: 0; }
   .tafsir-modal-header .close-modal { background: rgba(255,255,255,0.15); border: none; color: white; cursor: pointer; font-size: 1rem; padding: 0.1rem 0.4rem; border-radius: var(--rounded); transition: var(--transition); }
@@ -946,7 +946,7 @@
     <header class='chatbot-header-premium'>
       <div class='header-brand'>
         <span class='brand-icon'>🕌</span>
-        <span class='brand-text'>ক&#2497;রআন <span>বট</span></span>
+        <span class='brand-text'>আল ক&#2497;রআন <span>ও ত&#2494;ফস&#2496;র চ&#2509;য&#2494;টবট</span></span>
       </div>
       <div class='header-controls'>
         <div class='digital-clock' id='digital-clock'>
@@ -968,7 +968,7 @@
       <!-- Welcome Section -->
       <div class='welcome-section' id='welcome-section'>
         <h1>আসস&#2494;ল&#2494;ম&#2497; <span>আল&#2494;ইক&#2497;ম</span></h1>
-        <p class='welcome-sub'>আপন&#2494;র ব&#2495;শ&#2509;বস&#2509;ত ক&#2497;রআন, ত&#2494;ফস&#2496;র ও ইসল&#2494;ম&#2495;ক জ&#2494;ন&#2494;ন&#2503;র সঙ&#2509;গ&#2495;</p>
+        <p class='welcome-sub'>কথ&#2494; বল&#2497;ন আল ক&#2507;রআন&#2503;র স&#2494;থ&#2503;</p>
         <div class='data-status' id='data-status'>🔄 ক&#2497;রআন ড&#2503;ট&#2494; ল&#2507;ড হচ&#2509;ছ&#2503;...</div>
 
         <div class='qa-section-label main-feature-label'>📖 ক&#2497;রআন অন&#2497;সন&#2509;ধ&#2494;ন</div>
@@ -1156,23 +1156,24 @@
         <div style='text-align:center;margin-bottom:1rem;'>
           <div style='font-size:4rem;'>🕌</div>
           <h2 style='color:var(--primary);'>আল ক&#2497;রআন বট</h2>
-          <p style='color:var(--text-light);'>স&#2434;স&#2509;করণ ১০.০</p>
+          <p style='color:var(--text-light);'>স&#2434;স&#2509;করণ ১০.১.২</p>
         </div>
         
         <div style='background:var(--light-green);padding:0.8rem;border-radius:var(--rounded);margin-bottom:0.8rem;'>
           <h3 style='color:var(--primary);'>📖 ড&#2503;ট&#2494; উৎস</h3>
           <ul style='list-style:none;padding:0;'>
-            <li>&#9989; ক&#2497;রআন ব&#2494;&#2434;ল&#2494; অন&#2497;ব&#2494;দ - সম&#2509;প&#2498;র&#2509;ণ ১১৪ স&#2498;র&#2494; (GitHub)</li>
-            <li>&#9989; ক&#2497;রআন আরব&#2495; ট&#2503;ক&#2509;সট - উসম&#2494;ন&#2495; স&#2509;ক&#2509;র&#2495;প&#2509;ট (GitHub)</li>
-            <li>&#9989; ত&#2494;ফস&#2496;র ইবন&#2503; ক&#2494;স&#2496;র (ব&#2494;&#2434;ল&#2494;)</li>
+            <li>&#9989; ক&#2497;রআন ব&#2494;&#2434;ল&#2494; অন&#2497;ব&#2494;দ - সম&#2509;প&#2498;র&#2509;ণ ১১৪ স&#2498;র&#2494; (GitHub-alQuranBD)</li>
+            <li>&#9989; ক&#2497;রআন আরব&#2495; ট&#2503;ক&#2509;সট - উসম&#2494;ন&#2495; স&#2509;ক&#2509;র&#2495;প&#2509;ট (GitHub-alQuranBD)</li>
+            <li>&#9989; ত&#2494;ফস&#2496;র ইবন&#2503; ক&#2494;স&#2496;র (ব&#2494;&#2434;ল&#2494;-GitHub-alQuranBD)</li>
             <li>&#9989; সহ&#2495;হ ব&#2497;খ&#2494;র&#2496;, ম&#2497;সল&#2495;ম সহ ২৫ট&#2495; হ&#2494;দ&#2495;স</li>
             <li>&#9989; ইসল&#2494;ম&#2495;ক জ&#2509;ঞ&#2494;ন ও তথ&#2509;য</li>
           </ul>
         </div>
 
         <div style='background:var(--gray-light);padding:0.8rem;border-radius:var(--rounded);margin-bottom:0.8rem;'>
-          <h3 style='color:var(--primary);'>👨&#8205;💻 ড&#2503;ভ&#2503;লপ&#2494;র</h3>
+          <h3 style='color:var(--primary);'>👨&#8205;💻 ড&#2503;ভ&#2503;ল&#2494;প&#2494;র</h3>
           <p><strong>আক&#2509;ত&#2494;র ম&#2507;ল&#2509;ল&#2494;</strong></p>
+          <p><strong>ফ&#2503;সব&#2497;ক আইড&#2495;:https://www.facebook.com/akter.molla</strong></p>
           <p style='font-size:0.85rem;color:var(--text-light);'>ইসল&#2494;ম&#2495;ক ট&#2503;কন&#2507;লজ&#2495; ড&#2503;ভ&#2503;লপ&#2494;র</p>
         </div>
 
