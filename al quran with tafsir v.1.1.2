@@ -4,11 +4,73 @@
 <head>
   <meta charset='utf-8'/>
   <meta content='width=device-width, initial-scale=1.0' name='viewport'/>
-  <title><data:blog.pageTitle/></title>
-  <meta content='Al Quran Pro - Islamic Chatbot Theme' name='theme-name'/>
-  <meta content='Akter Molla' name='theme-author'/>
-  <meta content='10.0' name='theme-version'/>
-  
+<!-- =========================================================
+     TALKS WITH AL QURAN - SEO & BRAND META
+     ========================================================= -->
+
+<!-- Dynamic SEO Title -->
+<b:if cond='data:blog.pageType == &quot;index&quot;'>
+  <title>Talks With Al Quran | কথ&#2494; বল&#2497;ন আল ক&#2507;রআন&#2503;র স&#2494;থ&#2503;</title>
+<b:else/>
+  <title><data:blog.pageTitle/> | Talks With Al Quran</title>
+</b:if>
+
+<!-- Theme Information -->
+<meta content='Al Quran Pro - Islamic Chatbot Theme' name='theme-name'/>
+<meta content='Akter Molla' name='theme-author'/>
+<meta content='10.0' name='theme-version'/>
+
+<!-- Primary SEO Description -->
+<meta content='কথা বলুন আল কোরআনের সাথে — Talks With Al Quran। কুরআনের আয়াত, বাংলা অনুবাদ, আরবি আয়াত, তাফসীর ও ইসলামিক জ্ঞান সহজভাবে জানুন।' name='description'/>
+
+<!-- Brand Identity -->
+<meta content='Talks With Al Quran' name='application-name'/>
+<meta content='Talks With Al Quran' name='apple-mobile-web-app-title'/>
+
+<!-- Canonical URL -->
+<link expr:href='data:blog.canonicalUrl' rel='canonical'/>
+
+<!-- =========================================================
+     OPEN GRAPH
+     ========================================================= -->
+
+<meta content='website' property='og:type'/>
+<meta content='Talks With Al Quran' property='og:site_name'/>
+<meta content='Talks With Al Quran | কথা বলুন আল কোরআনের সাথে' property='og:title'/>
+<meta content='কথা বলুন আল কোরআনের সাথে — Talks With Al Quran। কুরআনের আয়াত, বাংলা অনুবাদ, আরবি আয়াত ও তাফসীর সহজভাবে জানুন।' property='og:description'/>
+<meta content='https://talkswithalquran.blogspot.com/' property='og:url'/>
+
+<!-- =========================================================
+     TWITTER / X
+     ========================================================= -->
+
+<meta content='summary_large_image' name='twitter:card'/>
+<meta content='Talks With Al Quran | কথা বলুন আল কোরআনের সাথে' name='twitter:title'/>
+<meta content='কথা বলুন আল কোরআনের সাথে — Talks With Al Quran। কুরআনের আয়াত, অনুবাদ ও তাফসীর সহজভাবে জানুন।' name='twitter:description'/>
+
+<!-- =========================================================
+     LANGUAGE
+     ========================================================= -->
+
+<meta content='bn-BD' http-equiv='content-language'/>
+
+<!-- =========================================================
+     GOOGLE WEBSITE STRUCTURED DATA
+     ========================================================= -->
+
+<script type='application/ld+json'>
+{
+  &quot;@context&quot;: &quot;https://schema.org&quot;,
+  &quot;@type&quot;: &quot;WebSite&quot;,
+  &quot;name&quot;: &quot;Talks With Al Quran&quot;,
+  &quot;alternateName&quot;: [
+    &quot;কথ&#2494; বল&#2497;ন আল ক&#2507;রআন&#2503;র স&#2494;থ&#2503;&quot;,
+    &quot;Talks with Al Quran&quot;,
+    &quot;talks with al quran&quot;
+  ],
+  &quot;url&quot;: &quot;https://talkswithalquran.blogspot.com/&quot;
+}
+</script>
   <link href='https://fonts.maateen.me/kalpurush/font.css' rel='stylesheet'/>
   <link href='https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&amp;display=swap' rel='stylesheet'/>
   <link href='https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&amp;display=swap' rel='stylesheet'/>
@@ -165,13 +227,13 @@
     align-items: center;
   }
   .app-tab-btn {
-    padding: 0.15rem 0.6rem;
+    padding: 0.25rem 0.7rem;
     border: 2px solid transparent;
     border-radius: var(--rounded-full);
     background: var(--white);
     cursor: pointer;
     font-family: var(--font-ui);
-    font-size: 0.55rem;
+    font-size: 1rem;
     font-weight: 700;
     transition: var(--transition);
     color: var(--text);
@@ -191,7 +253,7 @@
     color: var(--dark);
     box-shadow: 0 2px 10px rgba(212,175,55,0.3);
   }
-  .app-tab-btn .tab-icon { font-size: 0.7rem; }
+  .app-tab-btn .tab-icon { font-size: 0.8rem; }
 
   /* Tab Content Panels */
   .tab-content-panel {
@@ -267,16 +329,16 @@
     text-align: center;
     padding: 0.6rem 0.2rem;
   }
-  .welcome-section-compact h1 { font-size: 1.8rem; color: var(--primary); margin-bottom: 0.1rem; }
+  .welcome-section-compact h1 { font-size: 3rem; color: var(--primary); margin-bottom: 0.1rem; }
   .welcome-section-compact h1 span { background: var(--gold-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
-  .welcome-section-compact .welcome-sub { font-size: 0.85rem; color: var(--text-light); }
+  .welcome-section-compact .welcome-sub { font-size: 2rem; color: var(--text-light); }
 
   /* Quick feature grid inside chat panel */
   .quick-feature-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
     gap: 0.3rem;
-    max-width: 600px;
+    max-width: 1280px;
     margin: 0.4rem auto;
   }
   .quick-feature-grid .qf-btn {
@@ -288,8 +350,8 @@
     transition: var(--transition);
     text-align: center;
     font-family: var(--font-ui);
-    font-weight: 600;
-    font-size: 0.55rem;
+    font-weight: 800;
+    font-size: 1rem;
     color: var(--text);
     box-shadow: var(--shadow-sm);
   }
@@ -718,7 +780,7 @@
   .tafsir-modal-content, .pdf-viewer-content, .settings-panel-content, .sura-panel-content {
     background: var(--white);
     border-radius: var(--rounded);
-    max-width: 700px;
+    max-width: 1000px;
     width: 100%;
     max-height: 85vh;
     display: flex;
@@ -764,7 +826,7 @@
   }
 
   .settings-panel-content, .sura-panel-content {
-    max-width: 380px;
+    max-width: 800px;
     width: 100%;
     height: 100vh;
     padding: 0.8rem;
@@ -814,7 +876,7 @@
   .settings-panel-content .btn-reset:hover { background: var(--primary-light); transform: translateY(-2px); }
 
   .sura-panel-content .sura-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(40px, 1fr)); gap: 0.15rem; }
-  .sura-panel-content .sura-grid .sura-item { background: var(--light-green); border: 2px solid transparent; border-radius: var(--rounded); padding: 0.1rem 0.05rem; text-align: center; cursor: pointer; transition: var(--transition); font-weight: 600; color: var(--primary); font-size: 0.45rem; font-family: var(--font-ui); }
+  .sura-panel-content .sura-grid .sura-item { background: var(--light-green);font-size: 6rem; border: 2px solid transparent; border-radius: var(--rounded); padding: 0.1rem 0.05rem; text-align: center; cursor: pointer; transition: var(--transition); font-weight: 600; color: var(--primary); font-size: 0.45rem; font-family: var(--font-ui); }
   .sura-panel-content .sura-grid .sura-item:hover { background: var(--primary); color: var(--white); transform: translateY(-2px); }
   .sura-panel-content .sura-search { width: 100%; padding: 0.2rem 0.4rem; border: 2px solid var(--gray-medium); border-radius: var(--rounded-full); font-family: var(--font-ui); font-size: 0.65rem; background: var(--white); color: var(--text); margin-bottom: 0.3rem; }
   .sura-panel-content .sura-search:focus { border-color: var(--primary); outline: none; }
@@ -881,8 +943,8 @@
     .control-btn { font-size: 0.45rem; padding: 0.08rem 0.3rem; }
     .digital-clock { font-size: 0.45rem; min-width: 50px; padding: 0.05rem 0.25rem; }
     .digital-clock .clock-time { font-size: 0.6rem; }
-    .app-tab-btn { font-size: 0.45rem; padding: 0.1rem 0.35rem; }
-    .app-tab-btn .tab-icon { font-size: 0.55rem; }
+    .app-tab-btn { font-size: 0.55rem; padding: 0.15rem 0.45rem; }
+    .app-tab-btn .tab-icon { font-size: 0.65rem; }
     .tab-content-panel { padding: 0.3rem 0.5rem; }
     .quick-feature-grid { grid-template-columns: repeat(auto-fit, minmax(65px, 1fr)); gap: 0.2rem; }
     .quick-feature-grid .qf-btn { font-size: 0.45rem; padding: 0.2rem 0.05rem; }
@@ -898,10 +960,25 @@
     .header-brand .brand-icon { font-size: 0.9rem; }
     .control-btn { font-size: 0.35rem; padding: 0.05rem 0.2rem; }
     .digital-clock { font-size: 0.35rem; min-width: 40px; }
-    .app-tab-btn { font-size: 0.4rem; padding: 0.08rem 0.25rem; }
-    .app-tab-btn .tab-icon { font-size: 0.45rem; }
+    .app-tab-btn { font-size: 0.45rem; padding: 0.1rem 0.3rem; }
+    .app-tab-btn .tab-icon { font-size: 0.55rem; }
     .quick-feature-grid { grid-template-columns: 1fr 1fr; gap: 0.15rem; }
     .book-grid-panel { grid-template-columns: repeat(auto-fill, minmax(80px, 1fr)); }
+  }
+/* টাইপিং কার্সরের স্টাইল */
+  .typing-cursor {
+    display: inline-block;
+    width: 2px;
+    height: 1.1em;
+    background-color: #007bff;
+    margin-left: 2px;
+    vertical-align: middle;
+    animation: blinkCursor 0.7s infinite;
+  }
+
+  @keyframes blinkCursor {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
   }
   ]]></b:skin>
 </head>
@@ -1259,8 +1336,7 @@
     <!-- Header -->
     <header class='chatbot-header-premium'>
       <div class='header-brand'>
-        <span class='brand-icon'>🕌</span>
-        <span class='brand-text'>ক&#2497;রআন <span>বট</span></span>
+        <span class='brand-text'>Talks With Al Quran</span>
       </div>
       <div class='header-controls'>
         <div class='digital-clock' id='digital-clock'>
@@ -1292,14 +1368,15 @@
       <button class='app-tab-btn' data-tab='help'><span class='tab-icon'>🆘</span> স&#2494;হ&#2494;য&#2509;য</button>
     </div>
 
-    <!-- ========== TAB: CHAT ========== -->
-    <div class='tab-content-panel active' id='tab-chat'>
-      <div class='panel-scroll-area' id='chat-scroll-area'>
-        <div class='welcome-section-compact'>
-          <h1>আসস&#2494;ল&#2494;ম&#2497; <span>আল&#2494;ইক&#2497;ম</span></h1>
-          <p class='welcome-sub'>আপন&#2494;র ব&#2495;শ&#2509;বস&#2509;ত ক&#2497;রআন, ত&#2494;ফস&#2496;র ও ইসল&#2494;ম&#2495;ক জ&#2494;ন&#2494;ন&#2503;র সঙ&#2509;গ&#2495;</p>
-          <div class='data-status' id='data-status'>🔄 ক&#2497;রআন ড&#2503;ট&#2494; ল&#2507;ড হচ&#2509;ছ&#2503;...</div>
-          
+<!-- ========== TAB: CHAT ========== -->
+<div class='tab-content-panel active' id='tab-chat'>
+  <div class='panel-scroll-area' id='chat-scroll-area'>
+    <div class='welcome-section-compact'>
+      <h1 id='welcome-heading'/>
+      <p class='welcome-sub' id='welcome-sub'/>
+      <div class='data-status' id='data-status'>🔄 ক&#2497;রআন ড&#2503;ট&#2494; ল&#2507;ড হচ&#2509;ছ&#2503;...</div>
+
+
           <div class='quick-feature-grid'>
             <button class='qf-btn primary' data-action='quran'><span class='qf-icon'>📖</span>ক&#2497;রআন</button>
             <button class='qf-btn primary' data-action='popular'><span class='qf-icon'>&#11088;</span>জনপ&#2509;র&#2495;য&#2492;</button>
@@ -1665,7 +1742,7 @@
       {sura:'1', aya:'1', text:'সব প্রশংসা আল্লাহর, যিনি সকল সৃষ্টির পালনকর্তা।'},
       {sura:'1', aya:'2', text:'যিনি পরম করুণাময়, অতি দয়ালু।'},
       {sura:'1', aya:'3', text:'যিনি বিচার দিনের মালিক।'},
-      {sura:'1', aya:'4', text:'আমরা শুধু আপনারই ইবাদত করি এবং শুধু আপনারই সাহায্য প্রার্থনা করি।'},
+      {sura:'1', aya:'4', text:'আমরা শুধু আপনারই ইবাদত করি এবং শুধু您的ই সাহায্য প্রার্থনা করি।'},
       {sura:'1', aya:'5', text:'আমাদেরকে সরল পথ দেখান।'},
       {sura:'1', aya:'6', text:'সেই পথ, যাদেরকে আপনি অনুগ্রহ করেছেন।'},
       {sura:'1', aya:'7', text:'তাদের পথ নয়, যাদের প্রতি আপনার ক্রোধ হয়েছে এবং যারা পথভ্রষ্ট হয়েছে।'},
@@ -3613,5 +3690,44 @@
   })();
   //]]>
   </script>
+  <script type='text/javascript'>
+//<![CDATA[
+  const welcomeHeadingHTML = 'আসসালামু <span>আলাইকুম</span>';
+  const welcomeSubText = 'কথা বলুন আল কোরআনের সাথে — Talks With Al Quran\n\nআল কোরআনের আয়াত, বাংলা অনুবাদ, আরবি পাঠ ও তাফসীর সম্পর্কে সহজে জানার একটি অনলাইন প্ল্যাটফর্ম। Talks With Al Quran-এর মাধ্যমে কুরআনের বিভিন্ন বিষয় অনুসন্ধান করুন এবং আয়াতের অর্থ ও ব্যাখ্যা সম্পর্কে জানুন।';
+
+  let textIndex = 0;
+
+  function startTypingEffect() {
+    const headingEl = document.getElementById('welcome-heading');
+    const subEl = document.getElementById('welcome-sub');
+
+    if (!headingEl || !subEl) return;
+
+    // ১. প্রথমে হেডিং সেট করা
+    headingEl.innerHTML = welcomeHeadingHTML;
+
+    // ২. টাইপিং কার্সর তৈরি
+    const cursor = document.createElement('span');
+    cursor.className = 'typing-cursor';
+    subEl.appendChild(cursor);
+
+    // ৩. সাব-টেক্সট লেটার বাই লেটার টাইপ হওয়া
+    function typeParagraph() {
+      if (textIndex < welcomeSubText.length) {
+        cursor.insertAdjacentText('beforebegin', welcomeSubText.charAt(textIndex));
+        textIndex++;
+        setTimeout(typeParagraph, 100); // টাইপিং স্পিড (মিলিসেকেন্ড)
+      } else {
+        cursor.remove(); // টাইপিং শেষ হলে কার্সর রিমুভ হবে
+      }
+    }
+
+    setTimeout(typeParagraph, 400);
+  }
+
+  // পেজ লোড হলে কল হবে
+  document.addEventListener('DOMContentLoaded', startTypingEffect);
+//]]>
+</script>
 </body>
 </html>
