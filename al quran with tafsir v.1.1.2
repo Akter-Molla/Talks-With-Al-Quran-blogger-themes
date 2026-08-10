@@ -1366,6 +1366,7 @@
       <button class='app-tab-btn' data-tab='quiz'><span class='tab-icon'>🧠</span> ক&#2497;ইজ</button>
       <button class='app-tab-btn' data-tab='knowledge'><span class='tab-icon'>📚</span> জ&#2509;ঞ&#2494;ন</button>
       <button class='app-tab-btn' data-tab='help'><span class='tab-icon'>🆘</span> স&#2494;হ&#2494;য&#2509;য</button>
+      <button class='app-tab-btn' data-tab='guide'><span class='tab-icon'>📘</span> গ&#2494;ইড</button>
     </div>
 
 <!-- ========== TAB: CHAT ========== -->
@@ -1553,6 +1554,15 @@
         <div id='help-container'/>
       </div>
     </div>
+    <!-- ========== TAB: USER GUIDE ========== -->
+<div class='tab-content-panel' id='tab-guide'>
+  <div class='panel-scroll-area'>
+    <div class='panel-header'>
+      <h2>📘Talks With Al Quran ব&#2509;যবহ&#2494;র ন&#2495;র&#2509;দ&#2503;শ&#2495;ক&#2494;</h2>
+    </div>
+    <div id='guide-container'/>
+  </div>
+</div>
 
   </div>
 
@@ -1909,21 +1919,23 @@
     // ============================================================
     // 3. DOM REFS
     // ============================================================
-    var dom = {
-      tabButtons: document.querySelectorAll('.app-tab-btn'),
-      tabPanels: {
-        chat: document.getElementById('tab-chat'),
-        quran: document.getElementById('tab-quran'),
-        blog: document.getElementById('tab-blog'),
-        books: document.getElementById('tab-books'),
-        hadith: document.getElementById('tab-hadith'),
-        prayer: document.getElementById('tab-prayer'),
-        zakat: document.getElementById('tab-zakat'),
-        timer: document.getElementById('tab-timer'),
-        quiz: document.getElementById('tab-quiz'),
-        knowledge: document.getElementById('tab-knowledge'),
-        help: document.getElementById('tab-help')
-      },
+  var dom = {
+  tabButtons: document.querySelectorAll('.app-tab-btn'),
+  tabPanels: {
+    chat: document.getElementById('tab-chat'),
+    quran: document.getElementById('tab-quran'),
+    blog: document.getElementById('tab-blog'),
+    books: document.getElementById('tab-books'),
+    hadith: document.getElementById('tab-hadith'),
+    prayer: document.getElementById('tab-prayer'),
+    zakat: document.getElementById('tab-zakat'),
+    timer: document.getElementById('tab-timer'),
+    quiz: document.getElementById('tab-quiz'),
+    knowledge: document.getElementById('tab-knowledge'),
+    help: document.getElementById('tab-help'),
+    guide: document.getElementById('tab-guide')
+  },
+  guideContainer: document.getElementById('guide-container'),
       chatMessages: document.getElementById('chat-messages'),
       chatInput: document.getElementById('chat-input'),
       sendBtn: document.getElementById('send-btn'),
@@ -2118,6 +2130,7 @@
       
       // Render content when switching to certain tabs (only if data is loaded)
       if (state.dataLoaded) {
+		if (tabId === 'guide') renderGuide();
         if (tabId === 'blog') renderBlogPosts();
         if (tabId === 'books') renderBooks();
         if (tabId === 'hadith') renderHadith();
@@ -2843,8 +2856,35 @@
       html += '💡 বাংলা ও ইংরেজি উভয় ভাষায় কাজ করে';
       html += '</div></div>';
       dom.helpContainer.innerHTML = html;
-    }
-
+    };
+	// ইউজার গাইড - শুধু গাইড ট্যাব সক্রিয় থাকলেই কাজ করবে
+var GUIDE_SECTIONS = [
+  {icon:'💬', title:'চ্যাট ট্যাব', content:'সরাসরি টাইপ করে প্রশ্ন করুন। যেমন: "2:255" লিখে যেকোনো আয়াত দেখুন, অথবা "সূরা ২ আয়াত ২৫৫" লিখুন। কীওয়ার্ড লিখেও ফিচারে যেতে পারবেন — যেমন "হাদিস", "বই", "যাকাত" ইত্যাদি।'},
+  {icon:'📖', title:'কুরআন ট্যাব', content:'সূরা ও আয়াত নম্বর সিলেক্ট করে "দেখুন" চাপুন। উপরে ট্যাব থেকে "আয়াত" বা "তাফসীর" মোড বেছে নিতে পারবেন। নিচের আগের/পরবর্তী বাটন দিয়ে ধারাবাহিকভাবে আয়াত পড়া যায়।'},
+  {icon:'📝', title:'ব্লগ ট্যাব', content:'সার্চ বক্সে লিখে ব্লগ পোস্ট খুঁজুন। পোস্টের শিরোনামে ক্লিক করলে বা "পড়ুন" বাটনে ক্লিক করলে সম্পূর্ণ লেখা দেখা যাবে।'},
+  {icon:'📚', title:'বই ট্যাব', content:'ক্যাটাগরি বাটন দিয়ে বই ফিল্টার করুন। "পড়ুন" বাটনে ক্লিক করলে পিডিএফ ভিউয়ারে বইটি খুলবে, যেখানে ডাউনলোড ও ফুলস্ক্রিন অপশনও আছে।'},
+  {icon:'📜', title:'হাদিস ট্যাব', content:'"র‍্যান্ডম" বাটনে ক্লিক করে নতুন নতুন হাদিস দেখুন — আরবি টেক্সট, বাংলা অনুবাদ ও উৎসসহ।'},
+  {icon:'🕌', title:'নামাজের সময়', content:'দিনের পাঁচ ওয়াক্ত নামাজ ও সূর্যোদয়ের সময় এখানে দেখা যায়।'},
+  {icon:'💰', title:'যাকাত ক্যালকুলেটর', content:'মোট সম্পদের পরিমাণ ও হার লিখে "গণনা করুন" চাপলেই যাকাতের পরিমাণ বের হয়ে যাবে। নিসাবের নিচে থাকলে সতর্কবার্তা দেখাবে।'},
+  {icon:'⏱️', title:'টাইমার', content:'কুরআন বা বই পড়ার সময় ট্র্যাক করতে "শুরু" চাপুন, শেষে "থামুন" চাপলে মোট সময় যোগ হয়ে যাবে।'},
+  {icon:'🧠', title:'কুইজ', content:'"নতুন কুইজ" চাপলে ৫টি র‍্যান্ডম ইসলামিক প্রশ্ন আসবে। উত্তর দিলে সাথে সাথে সঠিক/ভুল দেখাবে এবং শেষে স্কোর ও ফলাফল দেখাবে।'},
+  {icon:'📚', title:'জ্ঞান ট্যাব', content:'ইসলামিক জ্ঞানের কার্ড একের পর এক দেখতে "আগের/পরবর্তী" বাটন ব্যবহার করুন।'},
+  {icon:'🎤', title:'ভয়েস সার্চ', content:'হেডারের 🎤 বাটনে চাপলে বাংলায় কথা বলে প্রশ্ন করতে পারবেন — কথা বলা শেষ হলে স্বয়ংক্রিয়ভাবে উত্তর আসবে।'},
+  {icon:'⚙️', title:'সেটিংস', content:'বাংলা/আরবি ফন্ট সাইজ, ফন্ট স্টাইল ও অডিও স্পিড কাস্টমাইজ করতে পারবেন। "ডিফল্ট সেটিংস" বাটনে সব আগের অবস্থায় ফিরে যাবে।'},
+  {icon:'📖', title:'সূরা তালিকা', content:'হেডারের "সূরা" বাটনে ক্লিক করলে ১১৪টি সূরার তালিকা দেখা যাবে, সার্চ বক্স দিয়ে নাম দিয়ে খুঁজেও নিতে পারবেন। যেকোনো সূরায় ক্লিক করলে সরাসরি সেই সূরার প্রথম আয়াতে চলে যাবে।'},
+  {icon:'🌙', title:'ডার্ক মোড', content:'হেডারের 🌙/☀️ বাটনে ক্লিক করে লাইট বা ডার্ক থিমের মধ্যে পরিবর্তন করতে পারবেন — এটি সবসময়ের জন্য মনে রাখা হয়।'}
+];
+function renderGuide() {
+  if (!dom.guideContainer || state.currentTab !== 'guide') return;
+  var html = '';
+  GUIDE_SECTIONS.forEach(function(sec) {
+    html += '<div class="knowledge-card">';
+    html += '<div class="kb-title">' + sec.icon + ' ' + sec.title + '</div>';
+    html += '<div class="kb-content">' + sec.content + '</div>';
+    html += '</div>';
+  });
+  dom.guideContainer.innerHTML = html;
+}
     // ============================================================
     // 10. PDF VIEWER
     // ============================================================
