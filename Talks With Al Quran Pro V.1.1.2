@@ -106,10 +106,11 @@
     --font-bengali: 'Kalpurush', 'Hind Siliguri', sans-serif;
     --font-arabic: 'Amiri', serif;
     --font-ui: 'Hind Siliguri', sans-serif;
-    --bengali-font-size: 17px;
-    --arabic-font-size: 22px;
+    --bengali-font-size: 18px;
+    --arabic-font-size: 24px;
     --font-english: 'Georgia', serif;
-    --english-font-size: 15px;
+    --english-font-size: 16px;
+    --tab-font-size: 16px;
   }
   [data-theme="dark"] {
     --primary: #3a9a5f;
@@ -187,7 +188,7 @@
     border-radius: var(--rounded-full);
     cursor: pointer;
     transition: var(--transition);
-    font-size: 0.6rem;
+    font-size: 0.7rem;
     font-weight: 600;
     display: flex;
     align-items: center;
@@ -199,7 +200,7 @@
   .control-btn.featured:hover { box-shadow: 0 4px 22px rgba(212,175,55,0.5); transform: translateY(-2px) scale(1.03); }
   .digital-clock {
     color: var(--white);
-    font-size: 0.7rem;
+    font-size: 0.8rem;
     font-weight: 600;
     background: rgba(255,255,255,0.08);
     padding: 0.15rem 0.6rem;
@@ -209,36 +210,36 @@
     min-width: 70px;
     text-align: center;
   }
-  .digital-clock .clock-time { font-size: 0.85rem; }
-  .digital-clock .clock-am-pm { font-size: 0.55rem; opacity: 0.7; }
+  .digital-clock .clock-time { font-size: 0.95rem; }
+  .digital-clock .clock-am-pm { font-size: 0.6rem; opacity: 0.7; }
   /* Tab System Styles */
   .app-tabs-container {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.2rem;
-    padding: 0.25rem 0.5rem;
+    gap: 0.3rem;
+    padding: 0.35rem 0.6rem;
     background: var(--gray-light);
     border-bottom: 2px solid var(--gray-medium);
     flex-shrink: 0;
     overflow-x: auto;
-    min-height: 36px;
+    min-height: 42px;
     align-items: center;
   }
   .app-tab-btn {
-    padding: 0.25rem 0.7rem;
+    padding: 0.35rem 0.9rem;
     border: 2px solid transparent;
     border-radius: var(--rounded-full);
     background: var(--white);
     cursor: pointer;
     font-family: var(--font-ui);
-    font-size: 1rem;
+    font-size: var(--tab-font-size);
     font-weight: 700;
     transition: var(--transition);
     color: var(--text);
     white-space: nowrap;
     display: flex;
     align-items: center;
-    gap: 0.2rem;
+    gap: 0.3rem;
     box-shadow: 0 1px 3px rgba(0,0,0,0.05);
   }
   .app-tab-btn:hover {
@@ -251,14 +252,14 @@
     color: var(--dark);
     box-shadow: 0 2px 10px rgba(212,175,55,0.3);
   }
-  .app-tab-btn .tab-icon { font-size: 0.8rem; }
+  .app-tab-btn .tab-icon { font-size: 1rem; }
   /* Tab Content Panels */
   .tab-content-panel {
     display: none;
     flex: 1;
     flex-direction: column;
     overflow-y: auto;
-    padding: 0.4rem 0.8rem;
+    padding: 0.5rem 0.9rem;
     background: var(--light-bg);
     min-height: 0;
   }
@@ -269,34 +270,34 @@
   .panel-scroll-area {
     flex: 1;
     overflow-y: auto;
-    padding-bottom: 0.3rem;
+    padding-bottom: 0.5rem;
   }
   .panel-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-bottom: 0.3rem;
-    margin-bottom: 0.4rem;
+    padding-bottom: 0.4rem;
+    margin-bottom: 0.5rem;
     border-bottom: 2px solid var(--gold);
     flex-shrink: 0;
   }
   .panel-header h2 {
-    font-size: 1.1rem;
+    font-size: 1.3rem;
     color: var(--primary);
     margin: 0;
     font-weight: 800;
   }
   .panel-header .panel-actions {
     display: flex;
-    gap: 0.3rem;
+    gap: 0.4rem;
   }
   .panel-header .panel-action-btn {
-    padding: 0.1rem 0.5rem;
+    padding: 0.15rem 0.6rem;
     border: none;
     border-radius: var(--rounded-full);
     background: var(--primary);
     color: var(--white);
-    font-size: 0.5rem;
+    font-size: 1.5rem;
     font-weight: 600;
     cursor: pointer;
     font-family: var(--font-ui);
@@ -314,36 +315,36 @@
   .chat-messages-area {
     flex: 1;
     overflow-y: auto;
-    padding: 0.2rem 0.1rem;
+    padding: 0.3rem 0.15rem;
     min-height: 100px;
   }
   /* Welcome inside chat panel */
   .welcome-section-compact {
     text-align: center;
-    padding: 0.6rem 0.2rem;
+    padding: 0.8rem 0.3rem;
   }
-  .welcome-section-compact h1 { font-size: 3rem; color: var(--primary); margin-bottom: 0.1rem; }
+  .welcome-section-compact h1 { font-size: 3.5rem; color: var(--primary); margin-bottom: 0.2rem; }
   .welcome-section-compact h1 span { background: var(--gold-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
-  .welcome-section-compact .welcome-sub { font-size: 2rem; color: var(--text-light); }
+  .welcome-section-compact .welcome-sub { font-size: 2.2rem; color: var(--text-light); }
   /* Quick feature grid inside chat panel */
   .quick-feature-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
-    gap: 0.3rem;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 0.4rem;
     max-width: 1280px;
-    margin: 0.4rem auto;
+    margin: 0.5rem auto;
   }
   .quick-feature-grid .qf-btn {
     background: var(--white);
     border: 2px solid var(--gray-medium);
     border-radius: var(--rounded);
-    padding: 0.3rem 0.1rem;
+    padding: 0.4rem 0.15rem;
     cursor: pointer;
     transition: var(--transition);
     text-align: center;
     font-family: var(--font-ui);
     font-weight: 800;
-    font-size: 1rem;
+    font-size: 1.1rem;
     color: var(--text);
     box-shadow: var(--shadow-sm);
   }
@@ -352,49 +353,49 @@
     transform: translateY(-3px);
     box-shadow: var(--shadow-hover);
   }
-  .quick-feature-grid .qf-btn .qf-icon { font-size: 1.1rem; display: block; margin-bottom: 0.1rem; }
+  .quick-feature-grid .qf-btn .qf-icon { font-size: 1.3rem; display: block; margin-bottom: 0.15rem; }
   .quick-feature-grid .qf-btn.primary { border-color: var(--gold); background: var(--gold-gradient); color: var(--dark); }
   /* Blog Panel Styles */
   .blog-post-card {
     background: var(--white);
     border-radius: var(--rounded);
-    padding: 0.4rem;
-    margin: 0.25rem 0;
+    padding: 0.6rem;
+    margin: 0.3rem 0;
     box-shadow: 0 2px 8px rgba(0,0,0,0.04);
     border-left: 3px solid var(--gold);
   }
   .blog-post-card .post-title {
     font-weight: 700;
     color: var(--primary);
-    font-size: 0.8rem;
+    font-size: 1rem;
     cursor: pointer;
   }
   .blog-post-card .post-summary {
-    font-size: 0.7rem;
+    font-size: 0.9rem;
     color: var(--text-light);
-    margin: 0.05rem 0;
-  }
-  .blog-post-card .post-content {
-    font-size: 0.7rem;
     margin: 0.1rem 0;
   }
+  .blog-post-card .post-content {
+    font-size: 0.9rem;
+    margin: 0.15rem 0;
+  }
   .blog-post-card .post-meta {
-    font-size: 0.5rem;
+    font-size: 0.65rem;
     color: var(--gray-dark);
   }
   .blog-search-box {
     display: flex;
-    gap: 0.3rem;
-    margin-bottom: 0.4rem;
+    gap: 0.4rem;
+    margin-bottom: 0.5rem;
     flex-wrap: wrap;
   }
   .blog-search-box input {
     flex: 1;
-    padding: 0.25rem 0.5rem;
+    padding: 0.35rem 0.6rem;
     border: 2px solid var(--gray-medium);
     border-radius: var(--rounded-full);
     font-family: var(--font-ui);
-    font-size: 0.7rem;
+    font-size: 0.85rem;
     background: var(--white);
     color: var(--text);
     min-width: 80px;
@@ -404,7 +405,7 @@
     outline: none;
   }
   .blog-search-box button {
-    padding: 0.2rem 0.6rem;
+    padding: 0.3rem 0.8rem;
     border: none;
     border-radius: var(--rounded-full);
     background: var(--gold-gradient);
@@ -412,7 +413,7 @@
     font-weight: 700;
     cursor: pointer;
     font-family: var(--font-ui);
-    font-size: 0.65rem;
+    font-size: 0.8rem;
     transition: var(--transition);
   }
   .blog-search-box button:hover {
@@ -422,14 +423,14 @@
   /* Book Panel Styles */
   .book-grid-panel {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-    gap: 0.4rem;
-    margin: 0.2rem 0;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 0.5rem;
+    margin: 0.3rem 0;
   }
   .book-card-panel {
     background: var(--white);
     border-radius: var(--rounded);
-    padding: 0.4rem;
+    padding: 0.6rem;
     box-shadow: var(--shadow-sm);
     transition: var(--transition);
     border: 2px solid var(--gray-light);
@@ -440,18 +441,18 @@
     box-shadow: var(--shadow-hover);
     border-color: var(--gold);
   }
-  .book-card-panel .book-icon { font-size: 1.6rem; display: block; }
-  .book-card-panel .book-title { font-size: 0.65rem; font-weight: 700; color: var(--primary); }
-  .book-card-panel .book-author { font-size: 0.5rem; color: var(--gray-dark); }
-  .book-card-panel .book-actions { display: flex; gap: 0.15rem; justify-content: center; margin-top: 0.1rem; flex-wrap: wrap; }
+  .book-card-panel .book-icon { font-size: 2rem; display: block; }
+  .book-card-panel .book-title { font-size: 0.85rem; font-weight: 700; color: var(--primary); }
+  .book-card-panel .book-author { font-size: 0.65rem; color: var(--gray-dark); }
+  .book-card-panel .book-actions { display: flex; gap: 0.2rem; justify-content: center; margin-top: 0.15rem; flex-wrap: wrap; }
   .book-card-panel .book-btn {
-    padding: 0.08rem 0.35rem;
+    padding: 0.12rem 0.45rem;
     border: none;
     border-radius: var(--rounded-full);
     cursor: pointer;
     font-weight: 600;
     font-family: var(--font-ui);
-    font-size: 0.45rem;
+    font-size: 0.6rem;
     transition: var(--transition);
   }
   .book-card-panel .book-btn.preview { background: var(--gold-gradient); color: var(--dark); }
@@ -460,18 +461,18 @@
   .book-card-panel .book-btn.download:hover { background: var(--primary-light); transform: translateY(-2px); }
   .book-category-filter {
     display: flex;
-    gap: 0.2rem;
+    gap: 0.3rem;
     flex-wrap: wrap;
-    margin-bottom: 0.3rem;
+    margin-bottom: 0.4rem;
   }
   .book-category-filter .cat-btn {
-    padding: 0.1rem 0.5rem;
+    padding: 0.15rem 0.6rem;
     border: 2px solid var(--gray-medium);
     border-radius: var(--rounded-full);
     background: var(--white);
     cursor: pointer;
     font-family: var(--font-ui);
-    font-size: 0.5rem;
+    font-size: 0.65rem;
     font-weight: 600;
     transition: var(--transition);
     color: var(--text);
@@ -488,25 +489,25 @@
   /* Quran-Tafsir Tab inside panel system */
   .qt-panel-controls {
     display: flex;
-    gap: 0.3rem;
+    gap: 0.4rem;
     flex-wrap: wrap;
-    margin-bottom: 0.4rem;
+    margin-bottom: 0.5rem;
     background: var(--white);
-    padding: 0.4rem;
+    padding: 0.5rem;
     border-radius: var(--rounded);
     box-shadow: var(--shadow-sm);
   }
   .qt-panel-controls select,
   .qt-panel-controls input {
-    padding: 0.25rem 0.5rem;
+    padding: 0.35rem 0.6rem;
     border: 2px solid var(--gray-medium);
     border-radius: var(--rounded);
     font-family: var(--font-ui);
-    font-size: 0.75rem;
+    font-size: 0.9rem;
     background: var(--white);
     color: var(--text);
     flex: 1;
-    min-width: 70px;
+    min-width: 80px;
   }
   .qt-panel-controls select:focus,
   .qt-panel-controls input:focus {
@@ -514,7 +515,7 @@
     outline: none;
   }
   .qt-panel-controls button {
-    padding: 0.25rem 0.8rem;
+    padding: 0.35rem 1rem;
     border: none;
     border-radius: var(--rounded-full);
     background: var(--gold-gradient);
@@ -522,7 +523,7 @@
     font-weight: 700;
     cursor: pointer;
     font-family: var(--font-ui);
-    font-size: 0.75rem;
+    font-size: 0.9rem;
     transition: var(--transition);
   }
   .qt-panel-controls button:hover {
@@ -531,19 +532,19 @@
   }
   .qt-panel-tabs {
     display: flex;
-    gap: 0.2rem;
-    margin-bottom: 0.3rem;
+    gap: 0.3rem;
+    margin-bottom: 0.4rem;
   }
   .qt-panel-tabs .qt-tab-btn {
     flex: 1;
-    padding: 0.3rem;
+    padding: 0.4rem;
     border: 2px solid var(--gray-medium);
     border-radius: var(--rounded);
     background: var(--white);
     cursor: pointer;
     font-family: var(--font-ui);
     font-weight: 600;
-    font-size: 0.7rem;
+    font-size: 0.9rem;
     color: var(--text);
     transition: var(--transition);
     text-align: center;
@@ -562,31 +563,31 @@
     min-height: 150px;
     background: var(--white);
     border-radius: var(--rounded);
-    padding: 0.6rem;
+    padding: 0.8rem;
     box-shadow: var(--shadow-sm);
     overflow-y: auto;
   }
   .qt-display-panel .qt-empty {
     text-align: center;
     color: var(--gray-dark);
-    padding: 1.5rem 0.3rem;
-    font-size: 0.85rem;
+    padding: 2rem 0.5rem;
+    font-size: 1rem;
   }
   .qt-nav-panel {
     display: flex;
-    gap: 0.3rem;
-    margin-top: 0.3rem;
+    gap: 0.4rem;
+    margin-top: 0.4rem;
   }
   .qt-nav-panel button {
     flex: 1;
-    padding: 0.25rem;
+    padding: 0.35rem;
     border: 2px solid var(--primary);
     border-radius: var(--rounded-full);
     background: var(--white);
     cursor: pointer;
     font-weight: 600;
     font-family: var(--font-ui);
-    font-size: 0.65rem;
+    font-size: 0.8rem;
     transition: var(--transition);
   }
   .qt-nav-panel button:hover:not(:disabled) {
@@ -608,23 +609,23 @@
 }
   /* Chat Input Area - only visible in chat tab */
   .chat-input-area {
-    padding: 0.3rem 0.6rem;
+    padding: 0.4rem 0.7rem;
     background: var(--white);
     border-top: 1px solid var(--gray-medium);
     display: flex;
-    gap: 0.3rem;
+    gap: 0.4rem;
     align-items: center;
     flex-wrap: wrap;
     flex-shrink: 0;
-    min-height: 42px;
+    min-height: 48px;
   }
   .chat-input-area .input-wrapper { flex: 1; position: relative; min-width: 60px; }
   .chat-input-area input {
-    width: 100%; padding: 0.3rem 0.6rem; border: 2px solid var(--gray-medium); border-radius: var(--rounded-full); outline: none; font-family: var(--font-ui); font-size: 0.8rem; background: var(--white); color: var(--text); transition: var(--transition);
+    width: 100%; padding: 0.4rem 0.8rem; border: 2px solid var(--gray-medium); border-radius: var(--rounded-full); outline: none; font-family: var(--font-ui); font-size: 0.95rem; background: var(--white); color: var(--text); transition: var(--transition);
   }
   .chat-input-area input:focus { border-color: var(--gold); box-shadow: 0 0 0 4px rgba(212,175,55,0.15); }
   .input-btn {
-    padding: 0.2rem 0.5rem; border: none; border-radius: var(--rounded-full); cursor: pointer; transition: var(--transition); font-weight: 600; font-family: var(--font-ui); font-size: 0.65rem; display: flex; align-items: center; gap: 0.1rem; min-height: 28px;
+    padding: 0.3rem 0.6rem; border: none; border-radius: var(--rounded-full); cursor: pointer; transition: var(--transition); font-weight: 600; font-family: var(--font-ui); font-size: 0.8rem; display: flex; align-items: center; gap: 0.15rem; min-height: 32px;
   }
   .input-btn.send { background: var(--gold-gradient); color: var(--dark); box-shadow: 0 3px 15px rgba(212,175,55,0.3); }
   .input-btn.send:hover:not(:disabled) { transform: translateY(-3px); box-shadow: 0 6px 25px rgba(212,175,55,0.4); }
@@ -634,14 +635,14 @@
   .input-btn.outline:hover:not(:disabled) { border-color: var(--primary); background: rgba(26,71,42,0.05); transform: translateY(-3px); }
   /* Message styles */
   .message {
-    margin-bottom: 0.3rem;
-    padding: 0.4rem 0.7rem;
+    margin-bottom: 0.4rem;
+    padding: 0.5rem 0.8rem;
     border-radius: 1rem;
     max-width: 92%;
     word-wrap: break-word;
-    line-height: 1.6;
+    line-height: 1.7;
     animation: messageSlide 0.35s ease;
-    font-size: 0.85rem;
+    font-size: 0.95rem;
     box-shadow: var(--shadow-sm);
   }
   @keyframes messageSlide { from { opacity: 0; transform: translateY(20px) scale(0.96); } to { opacity: 1; transform: translateY(0) scale(1); } }
@@ -664,36 +665,36 @@
   .message.bot.error { background: linear-gradient(135deg, #ffebee, #ffcdd2); border-color: #ef9a9a; color: #c62828; }
   .message.bot.success { background: linear-gradient(135deg, #e8f5e9, #c8e6c9); border-color: #81c784; color: #2e7d32; }
   .message.bot.info { background: linear-gradient(135deg, #e3f2fd, #bbdefb); border-color: #64b5f6; color: #0d47a1; }
-  .message-timestamp { font-size: 0.4rem; color: var(--gray-dark); margin-top: 0.05rem; opacity: 0.5; }
+  .message-timestamp { font-size: 0.5rem; color: var(--gray-dark); margin-top: 0.05rem; opacity: 0.5; }
   .typing-indicator {
-    display: flex; gap: 0.15rem; padding: 0.2rem 0.35rem; background: var(--gray-light); border-radius: var(--rounded); align-items: center; margin-bottom: 0.3rem; max-width: 40px;
+    display: flex; gap: 0.2rem; padding: 0.25rem 0.45rem; background: var(--gray-light); border-radius: var(--rounded); align-items: center; margin-bottom: 0.4rem; max-width: 50px;
   }
-  .typing-indicator span { width: 4px; height: 4px; background: var(--primary); border-radius: 50%; animation: typingBounce 1.4s infinite; }
+  .typing-indicator span { width: 5px; height: 5px; background: var(--primary); border-radius: 50%; animation: typingBounce 1.4s infinite; }
   .typing-indicator span:nth-child(2) { animation-delay: 0.2s; }
   .typing-indicator span:nth-child(3) { animation-delay: 0.4s; }
   @keyframes typingBounce { 0%,60%,100% { transform: translateY(0); opacity: 0.4; } 30% { transform: translateY(-6px); opacity: 1; } }
   /* Common utility styles */
-  .arabic-text { font-family: var(--font-arabic); font-size: var(--arabic-font-size); text-align: right; direction: rtl; padding: 0.4rem; background: var(--light-green); border-radius: var(--rounded); margin: 0.15rem 0; line-height: 2; word-wrap: break-word; }
-  .verse-arabic { font-size: 1.1rem; text-align: right; direction: rtl; padding: 0.4rem; background: var(--light-green); border-radius: var(--rounded); border-right: 4px solid var(--gold); font-family: var(--font-arabic); line-height: 2; margin-bottom: 0.2rem; }
-  .verse-translation { padding: 0.25rem 0.4rem; background: #f8f9fa; border-radius: var(--rounded); border-left: 4px solid var(--primary); margin-bottom: 0.2rem; font-size: 0.8rem; }
-  .verse-category { display: inline-block; padding: 0.08rem 0.4rem; background: var(--gold-gradient); color: var(--dark); border-radius: var(--rounded-full); font-size: 0.55rem; font-weight: 700; margin: 0.05rem 0; border: 1px solid var(--gold); }
-  .tafsir-text { padding: 0.35rem; background: #fffde7; border-radius: var(--rounded); border-left: 4px solid var(--gold); line-height: 1.8; font-size: 0.8rem; }
-  .tafsir-source { margin-top: 0.2rem; font-style: italic; color: var(--gray-dark); font-size: 0.6rem; border-top: 1px solid var(--gray-medium); padding-top: 0.2rem; }
-  .ayat-nav { display: flex; gap: 0.2rem; justify-content: center; margin: 0.15rem 0; }
-  .ayat-nav button { padding: 0.1rem 0.5rem; border: 2px solid var(--primary); border-radius: var(--rounded-full); background: var(--white); cursor: pointer; font-weight: 600; font-family: var(--font-ui); font-size: 0.55rem; transition: var(--transition); }
+  .arabic-text { font-family: var(--font-arabic); font-size: var(--arabic-font-size); text-align: right; direction: rtl; padding: 0.5rem; background: var(--light-green); border-radius: var(--rounded); margin: 0.2rem 0; line-height: 2; word-wrap: break-word; }
+  .verse-arabic { font-size: 2rem; text-align: right; direction: rtl; padding: 0.5rem; background: var(--light-green); border-radius: var(--rounded); border-right: 4px solid var(--gold); font-family: var(--font-arabic); line-height: 2; margin-bottom: 0.3rem; }
+  .verse-translation { padding: 0.35rem 0.5rem; background: #f8f9fa; border-radius: var(--rounded); border-left: 4px solid var(--primary); margin-bottom: 0.3rem; font-size: 0.95rem; }
+  .verse-category { display: inline-block; padding: 0.12rem 0.5rem; background: var(--gold-gradient); color: var(--dark); border-radius: var(--rounded-full); font-size: 0.7rem; font-weight: 700; margin: 0.1rem 0; border: 1px solid var(--gold); }
+  .tafsir-text { padding: 0.45rem; background: #fffde7; border-radius: var(--rounded); border-left: 4px solid var(--gold); line-height: 1.9; font-size: 0.95rem; }
+  .tafsir-source { margin-top: 0.25rem; font-style: italic; color: var(--gray-dark); font-size: 0.7rem; border-top: 1px solid var(--gray-medium); padding-top: 0.25rem; }
+  .ayat-nav { display: flex; gap: 0.3rem; justify-content: center; margin: 0.2rem 0; }
+  .ayat-nav button { padding: 0.15rem 0.6rem; border: 2px solid var(--primary); border-radius: var(--rounded-full); background: var(--white); cursor: pointer; font-weight: 600; font-family: var(--font-ui); font-size: 0.7rem; transition: var(--transition); }
   .ayat-nav button:hover:not(:disabled) { background: var(--primary); color: var(--white); }
   .ayat-nav button:disabled { opacity: 0.4; cursor: not-allowed; }
   .ayat-nav button.gold { background: var(--gold-gradient); border-color: var(--gold); color: var(--dark); }
   .search-highlight { background: var(--gold); color: var(--dark); padding: 0.05rem 0.15rem; border-radius: 3px; font-weight: 600; }
-  .search-result-item { background: var(--white); padding: 0.25rem 0.4rem; margin: 0.15rem 0; border-radius: var(--rounded); border-left: 3px solid var(--gold); box-shadow: var(--shadow-sm); }
-  .search-result-item .search-result-sura { font-weight: 600; color: var(--primary); margin-bottom: 0.05rem; font-size: 0.7rem; }
-  .search-result-item .search-result-text { color: var(--text); line-height: 1.6; font-size: 0.7rem; }
+  .search-result-item { background: var(--white); padding: 0.35rem 0.5rem; margin: 0.2rem 0; border-radius: var(--rounded); border-left: 3px solid var(--gold); box-shadow: var(--shadow-sm); }
+  .search-result-item .search-result-sura { font-weight: 600; color: var(--primary); margin-bottom: 0.1rem; font-size: 0.85rem; }
+  .search-result-item .search-result-text { color: var(--text); line-height: 1.7; font-size: 0.85rem; }
   .verse-category { cursor: pointer; border: none; }
 .verse-category:hover { transform: translateY(-1px); box-shadow: 0 2px 8px rgba(212,175,55,0.4); }
 .category-verse-item {
   background: var(--white);
-  padding: 0.4rem 0.6rem;
-  margin: 0.25rem 0;
+  padding: 0.5rem 0.7rem;
+  margin: 0.3rem 0;
   border-radius: var(--rounded);
   border-left: 3px solid var(--gold);
   box-shadow: var(--shadow-sm);
@@ -708,24 +709,24 @@
 .category-verse-item .cv-ref {
   font-weight: 700;
   color: var(--primary);
-  font-size: 0.75rem;
+  font-size: 0.9rem;
 }
 .category-verse-item .cv-text {
-  font-size: 0.75rem;
+  font-size: 0.9rem;
   color: var(--text);
-  margin-top: 0.1rem;
-  line-height: 1.6;
+  margin-top: 0.15rem;
+  line-height: 1.7;
 }
 .category-modal-count {
-  font-size: 0.65rem;
+  font-size: 0.8rem;
   color: var(--gray-dark);
-  margin-bottom: 0.4rem;
+  margin-bottom: 0.5rem;
   text-align: center;
 }
 .category-list-item {
   background: var(--white);
-  padding: 0.5rem 0.7rem;
-  margin: 0.25rem 0;
+  padding: 0.6rem 0.8rem;
+  margin: 0.3rem 0;
   border-radius: var(--rounded);
   border-left: 3px solid var(--primary);
   box-shadow: var(--shadow-sm);
@@ -743,78 +744,78 @@
 .category-list-item .cl-name {
   font-weight: 700;
   color: var(--primary);
-  font-size: 0.8rem;
+  font-size: 0.95rem;
 }
 .category-list-item .cl-count {
-  font-size: 0.6rem;
+  font-size: 0.75rem;
   color: var(--white);
   background: var(--gold-gradient);
-  padding: 0.1rem 0.5rem;
+  padding: 0.15rem 0.6rem;
   border-radius: var(--rounded-full);
   font-weight: 700;
   color: var(--dark);
 }
-  .hadith-card { background: var(--white); border-radius: var(--rounded); padding: 0.4rem 0.6rem; margin: 0.25rem 0; border-right: 4px solid var(--gold); box-shadow: var(--shadow-sm); }
-  .hadith-card .hadith-text { font-size: 0.8rem; line-height: 1.7; font-style: italic; color: var(--text); }
-  .hadith-card .hadith-translation { margin: 0.05rem 0; font-size: 0.7rem; }
-  .hadith-card .hadith-source { font-size: 0.55rem; color: var(--gray-dark); margin-top: 0.05rem; }
-  .prayer-card { background: var(--white); border-radius: var(--rounded); padding: 0.4rem 0.6rem; margin: 0.25rem 0; box-shadow: var(--shadow-sm); }
-  .prayer-card .prayer-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.05rem; }
-  .prayer-card .prayer-item { display: flex; justify-content: space-between; padding: 0.05rem 0.15rem; border-bottom: 1px solid var(--gray-light); }
-  .prayer-card .prayer-item .name { font-weight: 600; color: var(--primary); font-size: 0.7rem; }
-  .prayer-card .prayer-item .time { color: var(--text-light); font-size: 0.7rem; }
-  .zakat-card { background: var(--white); border-radius: var(--rounded); padding: 0.4rem 0.6rem; margin: 0.25rem 0; box-shadow: var(--shadow-sm); border-bottom: 3px solid var(--gold); }
-  .zakat-card .zakat-title { font-size: 0.9rem; font-weight: 700; color: var(--primary); text-align: center; margin-bottom: 0.15rem; }
-  .zakat-card .zakat-input-group { margin: 0.1rem 0; }
-  .zakat-card .zakat-input-group label { display: block; font-weight: 600; font-size: 0.65rem; color: var(--text); }
-  .zakat-card .zakat-input-group input { width: 100%; padding: 0.2rem 0.4rem; border: 2px solid var(--gray-medium); border-radius: var(--rounded); font-family: var(--font-ui); font-size: 0.75rem; }
+  .hadith-card { background: var(--white); border-radius: var(--rounded); padding: 0.5rem 0.7rem; margin: 0.3rem 0; border-right: 4px solid var(--gold); box-shadow: var(--shadow-sm); }
+  .hadith-card .hadith-text { font-size: 0.95rem; line-height: 1.8; font-style: italic; color: var(--text); }
+  .hadith-card .hadith-translation { margin: 0.1rem 0; font-size: 0.85rem; }
+  .hadith-card .hadith-source { font-size: 0.7rem; color: var(--gray-dark); margin-top: 0.1rem; }
+  .prayer-card { background: var(--white); border-radius: var(--rounded); padding: 0.5rem 0.7rem; margin: 0.3rem 0; box-shadow: var(--shadow-sm); }
+  .prayer-card .prayer-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.1rem; }
+  .prayer-card .prayer-item { display: flex; justify-content: space-between; padding: 0.1rem 0.2rem; border-bottom: 1px solid var(--gray-light); }
+  .prayer-card .prayer-item .name { font-weight: 600; color: var(--primary); font-size: 0.85rem; }
+  .prayer-card .prayer-item .time { color: var(--text-light); font-size: 0.85rem; }
+  .zakat-card { background: var(--white); border-radius: var(--rounded); padding: 0.5rem 0.7rem; margin: 0.3rem 0; box-shadow: var(--shadow-sm); border-bottom: 3px solid var(--gold); }
+  .zakat-card .zakat-title { font-size: 1.1rem; font-weight: 700; color: var(--primary); text-align: center; margin-bottom: 0.2rem; }
+  .zakat-card .zakat-input-group { margin: 0.15rem 0; }
+  .zakat-card .zakat-input-group label { display: block; font-weight: 600; font-size: 0.8rem; color: var(--text); }
+  .zakat-card .zakat-input-group input { width: 100%; padding: 0.3rem 0.5rem; border: 2px solid var(--gray-medium); border-radius: var(--rounded); font-family: var(--font-ui); font-size: 0.9rem; }
   .zakat-card .zakat-input-group input:focus { border-color: var(--primary); outline: none; }
-  .zakat-card .zakat-result { text-align: center; padding: 0.2rem; background: var(--light-green); border-radius: var(--rounded); margin-top: 0.15rem; }
-  .zakat-card .zakat-result .amount { font-size: 1.1rem; font-weight: 700; color: var(--primary); }
-  .zakat-card .zakat-btn { width: 100%; padding: 0.25rem; background: var(--gold-gradient); border: none; border-radius: var(--rounded); font-weight: 700; font-family: var(--font-ui); font-size: 0.75rem; cursor: pointer; transition: var(--transition); color: var(--dark); margin-top: 0.1rem; }
+  .zakat-card .zakat-result { text-align: center; padding: 0.3rem; background: var(--light-green); border-radius: var(--rounded); margin-top: 0.2rem; }
+  .zakat-card .zakat-result .amount { font-size: 1.3rem; font-weight: 700; color: var(--primary); }
+  .zakat-card .zakat-btn { width: 100%; padding: 0.35rem; background: var(--gold-gradient); border: none; border-radius: var(--rounded); font-weight: 700; font-family: var(--font-ui); font-size: 0.9rem; cursor: pointer; transition: var(--transition); color: var(--dark); margin-top: 0.15rem; }
   .zakat-card .zakat-btn:hover { transform: translateY(-2px); box-shadow: var(--shadow); }
-  .quiz-card { background: var(--white); border-radius: var(--rounded); padding: 0.4rem 0.6rem; margin: 0.25rem 0; box-shadow: var(--shadow-sm); }
-  .quiz-card .question { font-size: 0.8rem; font-weight: 600; color: var(--primary); margin-bottom: 0.1rem; }
-  .quiz-card .option-btn { display: block; width: 100%; padding: 0.15rem 0.4rem; margin: 0.05rem 0; border: 2px solid var(--gray-medium); border-radius: var(--rounded); background: var(--white); cursor: pointer; transition: var(--transition); font-family: var(--font-ui); font-size: 0.7rem; text-align: left; }
+  .quiz-card { background: var(--white); border-radius: var(--rounded); padding: 0.5rem 0.7rem; margin: 0.3rem 0; box-shadow: var(--shadow-sm); }
+  .quiz-card .question { font-size: 2rem; font-weight: 600; color: var(--primary); margin-bottom: 0.15rem; }
+  .quiz-card .option-btn { display: block; width: 100%; padding: 0.2rem 0.5rem; margin: 0.1rem 0; border: 2px solid var(--gray-medium); border-radius: var(--rounded); background: var(--white); cursor: pointer; transition: var(--transition); font-family: var(--font-ui); font-size: 1.85rem; text-align: left; }
   .quiz-card .option-btn:hover { border-color: var(--primary); background: rgba(26,71,42,0.05); }
   .quiz-card .option-btn.correct { border-color: #4caf50; background: #e8f5e9; }
   .quiz-card .option-btn.wrong { border-color: #f44336; background: #ffebee; }
-  .quiz-card .result { text-align: center; padding: 0.15rem; font-size: 0.8rem; font-weight: 600; }
-  .quiz-progress { font-size: 0.6rem; color: var(--gray-dark); text-align: center; margin-bottom: 0.1rem; }
-  .time-tracker-card { background: var(--white); border-radius: var(--rounded); padding: 0.4rem 0.6rem; margin: 0.25rem 0; box-shadow: var(--shadow-sm); border-left: 4px solid var(--gold); text-align: center; }
-  .time-tracker-card .time-display { font-size: 1.6rem; font-weight: 700; color: var(--primary); font-family: 'Courier New', monospace; }
-  .time-tracker-card .time-label { font-size: 0.55rem; color: var(--gray-dark); margin-top: 0.05rem; }
-  .time-tracker-card .time-controls { display: flex; gap: 0.2rem; justify-content: center; margin-top: 0.15rem; }
-  .time-tracker-card .time-btn { padding: 0.1rem 0.5rem; border: 2px solid var(--primary); border-radius: var(--rounded-full); background: var(--white); cursor: pointer; font-family: var(--font-ui); font-size: 0.55rem; font-weight: 600; transition: var(--transition); color: var(--primary); }
+  .quiz-card .result { text-align: center; padding: 0.2rem; font-size: 0.95rem; font-weight: 600; }
+  .quiz-progress { font-size: 0.75rem; color: var(--gray-dark); text-align: center; margin-bottom: 0.15rem; }
+  .time-tracker-card { background: var(--white); border-radius: var(--rounded); padding: 0.5rem 0.7rem; margin: 0.3rem 0; box-shadow: var(--shadow-sm); border-left: 4px solid var(--gold); text-align: center; }
+  .time-tracker-card .time-display { font-size: 2rem; font-weight: 700; color: var(--primary); font-family: 'Courier New', monospace; }
+  .time-tracker-card .time-label { font-size: 0.7rem; color: var(--gray-dark); margin-top: 0.1rem; }
+  .time-tracker-card .time-controls { display: flex; gap: 0.3rem; justify-content: center; margin-top: 0.2rem; }
+  .time-tracker-card .time-btn { padding: 0.15rem 0.6rem; border: 2px solid var(--primary); border-radius: var(--rounded-full); background: var(--white); cursor: pointer; font-family: var(--font-ui); font-size: 0.7rem; font-weight: 600; transition: var(--transition); color: var(--primary); }
   .time-tracker-card .time-btn:hover { background: var(--primary); color: var(--white); }
   .time-tracker-card .time-btn.gold { border-color: var(--gold); background: var(--gold-gradient); color: var(--dark); }
-  .knowledge-card { background: var(--white); border-radius: var(--rounded); padding: 0.4rem 0.6rem; margin: 0.25rem 0; border-bottom: 3px solid var(--gold); box-shadow: var(--shadow-sm); }
-  .knowledge-card .kb-title { font-size: 0.8rem; font-weight: 700; color: var(--primary); }
-  .knowledge-card .kb-content { font-size: 0.7rem; line-height: 1.7; color: var(--text); margin-top: 0.05rem; }
-  .knowledge-card .kb-source { font-size: 0.5rem; color: var(--gray-dark); margin-top: 0.05rem; }
-  .knowledge-card .kb-number { font-size: 0.5rem; color: var(--gold); font-weight: 600; }
-  .knowledge-nav { display: flex; gap: 0.2rem; flex-wrap: wrap; margin-top: 0.15rem; justify-content: center; }
-  .knowledge-nav-btn { padding: 0.1rem 0.5rem; border: none; border-radius: var(--rounded-full); cursor: pointer; font-weight: 600; font-family: var(--font-ui); font-size: 0.55rem; transition: var(--transition); background: var(--primary); color: var(--white); }
+  .knowledge-card { background: var(--white); border-radius: var(--rounded); padding: 0.5rem 0.7rem; margin: 0.3rem 0; border-bottom: 3px solid var(--gold); box-shadow: var(--shadow-sm); }
+  .knowledge-card .kb-title { font-size: 1.5rem; font-weight: 700; color: var(--primary); }
+  .knowledge-card .kb-content { font-size: 2rem; line-height: 1.8; color: var(--text); margin-top: 0.1rem; }
+  .knowledge-card .kb-source { font-size: 1.8rem; color: var(--gray-dark); margin-top: 0.1rem; }
+  .knowledge-card .kb-number { font-size: 1.5rem; color: var(--gold); font-weight: 600; }
+  .knowledge-nav { display: flex; gap: 0.3rem; flex-wrap: wrap; margin-top: 0.2rem; justify-content: center; }
+  .knowledge-nav-btn { padding: 0.15rem 0.6rem; border: none; border-radius: var(--rounded-full); cursor: pointer; font-weight: 600; font-family: var(--font-ui); font-size: 0.7rem; transition: var(--transition); background: var(--primary); color: var(--white); }
   .knowledge-nav-btn:hover { background: var(--primary-light); transform: translateY(-2px); }
   .knowledge-nav-btn.gold { background: var(--gold-gradient); color: var(--dark); }
   .knowledge-nav-btn:disabled { opacity: 0.4; cursor: not-allowed; transform: none !important; }
-  .home-btn-container { text-align: center; margin: 0.2rem 0; }
-  .home-btn { padding: 0.25rem 1.2rem; background: var(--primary); color: var(--white); border: none; border-radius: var(--rounded-full); font-weight: 700; font-family: var(--font-ui); font-size: 0.65rem; cursor: pointer; transition: var(--transition); }
+  .home-btn-container { text-align: center; margin: 0.3rem 0; }
+  .home-btn { padding: 0.35rem 1.5rem; background: var(--primary); color: var(--white); border: none; border-radius: var(--rounded-full); font-weight: 700; font-family: var(--font-ui); font-size: 0.8rem; cursor: pointer; transition: var(--transition); }
   .home-btn:hover { background: var(--primary-light); transform: translateY(-3px); box-shadow: var(--shadow); }
-.wordsearch-count { font-size:0.65rem; color:var(--gray-dark); margin-bottom:0.4rem; text-align:center; }
+.wordsearch-count { font-size:0.8rem; color:var(--gray-dark); margin-bottom:0.5rem; text-align:center; }
 .wordsearch-item {
-  background: var(--white); padding: 0.4rem 0.6rem; margin: 0.25rem 0;
+  background: var(--white); padding: 0.5rem 0.7rem; margin: 0.3rem 0;
   border-radius: var(--rounded); border-left: 3px solid var(--gold);
   box-shadow: var(--shadow-sm); cursor: pointer; transition: var(--transition);
 }
 .wordsearch-item:hover { border-color: var(--primary); transform: translateX(3px); background: var(--light-green); }
-.wordsearch-item .ws-ref { font-weight: 700; color: var(--primary); font-size: 0.75rem; margin-bottom:0.1rem; }
+.wordsearch-item .ws-ref { font-weight: 700; color: var(--primary); font-size: 0.9rem; margin-bottom:0.15rem; }
 .wordsearch-item .ws-lang-tag {
-  font-size: 0.5rem; background: var(--gold-gradient); color: var(--dark);
-  padding: 0.05rem 0.35rem; border-radius: var(--rounded-full); font-weight:700; margin-left:0.3rem;
+  font-size: 0.6rem; background: var(--gold-gradient); color: var(--dark);
+  padding: 0.1rem 0.4rem; border-radius: var(--rounded-full); font-weight:700; margin-left:0.4rem;
 }
-.wordsearch-item .ws-text { font-size: 0.75rem; color: var(--text); line-height: 1.6; }
-.wordsearch-item .ws-text-ar { font-family: var(--font-arabic); direction: rtl; text-align: right; font-size: 0.95rem; }
+.wordsearch-item .ws-text { font-size: 0.9rem; color: var(--text); line-height: 1.7; }
+.wordsearch-item .ws-text-ar { font-family: var(--font-arabic); direction: rtl; text-align: right; font-size: 1.1rem; }
   /* Modal styles */
   .tafsir-modal-overlay, .pdf-viewer-overlay, .settings-panel-overlay, .sura-panel-overlay {
     display: none;
@@ -847,14 +848,14 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0.4rem 0.8rem;
+    padding: 0.5rem 1rem;
     background: var(--header-gradient);
     color: white;
     flex-shrink: 0;
   }
   .tafsir-modal-header h3, .pdf-viewer-header h3 {
     color: white;
-    font-size: 0.85rem;
+    font-size: 1rem;
     margin: 0;
   }
   .tafsir-modal-header .close-modal, .pdf-viewer-header .viewer-btn.close {
@@ -862,8 +863,8 @@
     border: none;
     color: white;
     cursor: pointer;
-    font-size: 0.85rem;
-    padding: 0.05rem 0.35rem;
+    font-size: 1rem;
+    padding: 0.1rem 0.4rem;
     border-radius: var(--rounded);
     transition: var(--transition);
   }
@@ -872,17 +873,17 @@
     transform: rotate(90deg);
   }
   .tafsir-modal-body, .pdf-viewer-body {
-    padding: 0.6rem;
+    padding: 0.8rem;
     overflow-y: auto;
     flex: 1;
-    line-height: 1.8;
+    line-height: 1.9;
     color: var(--text);
   }
   .settings-panel-content, .sura-panel-content {
     max-width: 800px;
     width: 100%;
     height: 100vh;
-    padding: 0.8rem;
+    padding: 1rem;
     overflow-y: auto;
     animation: slideInRight 0.3s ease;
     border-radius: 0;
@@ -892,64 +893,270 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 0.5rem;
-    padding-bottom: 0.3rem;
+    margin-bottom: 0.6rem;
+    padding-bottom: 0.4rem;
     border-bottom: 2px solid var(--gray-medium);
   }
   .settings-panel-content .settings-header h2, .sura-panel-content .sura-header h2 {
-    font-size: 0.95rem;
+    font-size: 1.1rem;
     color: var(--primary);
     margin: 0;
   }
   .settings-panel-content .settings-header .close-settings, .sura-panel-content .sura-header .close-sura {
     background: none;
     border: none;
-    font-size: 1rem;
+    font-size: 1.2rem;
     cursor: pointer;
     color: var(--gray-dark);
     transition: var(--transition);
-    padding: 0.05rem;
+    padding: 0.1rem;
   }
   .settings-panel-content .settings-header .close-settings:hover, .sura-panel-content .sura-header .close-sura:hover {
     color: var(--primary);
     transform: rotate(90deg);
   }
-  .settings-panel-content .setting-group { margin-bottom: 0.5rem; }
-  .settings-panel-content .setting-group label { display: block; font-weight: 600; color: var(--primary); margin-bottom: 0.05rem; font-size: 0.7rem; }
-  .settings-panel-content .setting-group .range-container { display: flex; align-items: center; gap: 0.4rem; }
-  .settings-panel-content .setting-group input[type="range"] { flex: 1; height: 4px; -webkit-appearance: none; appearance: none; background: var(--gray-medium); border-radius: 3px; outline: none; }
-  .settings-panel-content .setting-group input[type="range"]::-webkit-slider-thumb { -webkit-appearance: none; appearance: none; width: 12px; height: 12px; border-radius: 50%; background: var(--gold-gradient); cursor: pointer; }
-  .settings-panel-content .setting-group .range-value { min-width: 30px; text-align: center; font-weight: 700; color: var(--primary); font-size: 0.75rem; background: var(--light-green); padding: 0.05rem 0.25rem; border-radius: var(--rounded); }
-  .settings-panel-content .setting-group select { width: 100%; padding: 0.2rem 0.35rem; border: 2px solid var(--gray-medium); border-radius: var(--rounded); font-family: var(--font-ui); font-size: 0.7rem; background: var(--white); color: var(--text); }
+  .settings-panel-content .setting-group { margin-bottom: 0.6rem; }
+  .settings-panel-content .setting-group label { display: block; font-weight: 600; color: var(--primary); margin-bottom: 0.1rem; font-size: 0.85rem; }
+  .settings-panel-content .setting-group .range-container { display: flex; align-items: center; gap: 0.5rem; }
+  .settings-panel-content .setting-group input[type="range"] { flex: 1; height: 5px; -webkit-appearance: none; appearance: none; background: var(--gray-medium); border-radius: 3px; outline: none; }
+  .settings-panel-content .setting-group input[type="range"]::-webkit-slider-thumb { -webkit-appearance: none; appearance: none; width: 14px; height: 14px; border-radius: 50%; background: var(--gold-gradient); cursor: pointer; }
+  .settings-panel-content .setting-group .range-value { min-width: 35px; text-align: center; font-weight: 700; color: var(--primary); font-size: 0.9rem; background: var(--light-green); padding: 0.1rem 0.3rem; border-radius: var(--rounded); }
+  .settings-panel-content .setting-group select { width: 100%; padding: 0.3rem 0.45rem; border: 2px solid var(--gray-medium); border-radius: var(--rounded); font-family: var(--font-ui); font-size: 0.85rem; background: var(--white); color: var(--text); }
   .settings-panel-content .setting-group select:focus { border-color: var(--primary); outline: none; }
-  .settings-panel-content .setting-group .checkbox-group { display: flex; align-items: center; gap: 0.25rem; }
-  .settings-panel-content .setting-group .checkbox-group input[type="checkbox"] { width: 14px; height: 14px; accent-color: var(--primary); cursor: pointer; }
-  .settings-panel-content .setting-group .checkbox-group label { margin-bottom: 0; cursor: pointer; font-size: 0.7rem; }
-  .settings-panel-content .btn-reset { width: 100%; padding: 0.25rem; background: var(--primary); color: var(--white); border: none; border-radius: var(--rounded); font-weight: 600; font-family: var(--font-ui); font-size: 0.7rem; cursor: pointer; transition: var(--transition); }
+  .settings-panel-content .setting-group .checkbox-group { display: flex; align-items: center; gap: 0.3rem; }
+  .settings-panel-content .setting-group .checkbox-group input[type="checkbox"] { width: 16px; height: 16px; accent-color: var(--primary); cursor: pointer; }
+  .settings-panel-content .setting-group .checkbox-group label { margin-bottom: 0; cursor: pointer; font-size: 0.85rem; }
+  .settings-panel-content .btn-reset { width: 100%; padding: 0.35rem; background: var(--primary); color: var(--white); border: none; border-radius: var(--rounded); font-weight: 600; font-family: var(--font-ui); font-size: 0.85rem; cursor: pointer; transition: var(--transition); }
   .settings-panel-content .btn-reset:hover { background: var(--primary-light); transform: translateY(-2px); }
   ..sura-panel-content { max-width: 1100px; }
 .sura-panel-content .sura-grid { 
   display: grid; 
-  grid-template-columns: repeat(auto-fill, minmax(90px, 1fr)); 
-  gap: 0.5rem; 
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); 
+  gap: 0.6rem; 
+}
+/* ===== আয়াত শেয়ার কার্ড ===== */
+.share-card-modal-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.7);
+  backdrop-filter: blur(10px);
+  z-index: 10000;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+.share-card-modal-overlay.active {
+  display: flex;
+  animation: fadeIn 0.3s ease;
+}
+.share-card-container {
+  background: var(--white);
+  border-radius: var(--rounded);
+  max-width: 550px;
+  width: 100%;
+  padding: 1.2rem;
+  box-shadow: var(--shadow-large);
+  max-height: 95vh;
+  overflow-y: auto;
+  animation: scaleIn 0.3s ease;
+}
+.share-card-container .card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.8rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--gold);
+}
+.share-card-container .card-header h3 {
+  color: var(--primary);
+  margin: 0;
+  font-size: 1.1rem;
+}
+.share-card-container .card-header .close-card-btn {
+  background: none;
+  border: none;
+  font-size: 1.3rem;
+  cursor: pointer;
+  color: var(--gray-dark);
+  transition: var(--transition);
+  padding: 0.1rem 0.3rem;
+}
+.share-card-container .card-header .close-card-btn:hover {
+  color: var(--primary);
+  transform: rotate(90deg);
+}
+/* ===== কার্ড প্রিভিউ ===== */
+#share-card-preview {
+  background: var(--light-bg);
+  border-radius: var(--rounded);
+  padding: 0.5rem;
+  margin-bottom: 0.8rem;
+  overflow: hidden;
+}
+#share-card-preview .card-inner {
+  background: linear-gradient(145deg, #0d2b1a, #1a4a2a);
+  border-radius: 16px;
+  padding: 1.5rem 1.2rem;
+  min-height: 220px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  border: 3px double var(--gold);
+  padding: 1.6rem 1.3rem;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+}
+#share-card-preview .card-inner::after {
+  content: '';
+  position: absolute;
+  inset: 8px;
+  border: 1px solid rgba(212,175,55,0.5);
+  border-radius: 10px;
+  pointer-events: none;
+}
+#share-card-preview .card-inner .corner-ornament {
+  position: absolute;
+  width: 26px;
+  height: 26px;
+  color: var(--gold-light);
+  font-size: 1.4rem;
+  line-height: 1;
+  opacity: 0.85;
+  font-family: var(--font-arabic);
+}
+#share-card-preview .card-inner .corner-tl { top: 4px; left: 8px; }
+#share-card-preview .card-inner .corner-tr { top: 4px; right: 8px; }
+#share-card-preview .card-inner .corner-bl { bottom: 4px; left: 8px; }
+#share-card-preview .card-inner .corner-br { bottom: 4px; right: 8px; }
+#share-card-preview .card-inner .card-header-text {
+  font-size: 0.65rem;
+  color: var(--gold-light);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 0.5rem;
+  font-family: var(--font-ui);
+}
+#share-card-preview .card-inner .card-arabic {
+  font-family: var(--font-arabic);
+  font-size: 1.4rem;
+  text-align: right;
+  direction: rtl;
+  color: #f5e6c8;
+  line-height: 2;
+  margin-bottom: 0.5rem;
+}
+#share-card-preview .card-inner .card-bengali {
+  font-family: var(--font-bengali);
+  font-size: 0.9rem;
+  color: #e8f0e8;
+  line-height: 1.7;
+  margin-bottom: 0.3rem;
+}
+#share-card-preview .card-inner .card-english {
+  font-family: var(--font-english);
+  font-size: 0.75rem;
+  color: #c0d0c0;
+  font-style: italic;
+  line-height: 1.6;
+  margin-bottom: 0.3rem;
+}
+#share-card-preview .card-inner .card-reference {
+  font-family: var(--font-ui);
+  font-size: 0.7rem;
+  color: var(--gold-light);
+  font-weight: 600;
+  margin-top: 0.3rem;
+  border-top: 1px solid rgba(212,175,55,0.2);
+  padding-top: 0.3rem;
+}
+#share-card-preview .card-inner .card-footer-brand {
+  font-size: 0.55rem;
+  color: rgba(212,175,55,0.6);
+  text-align: center;
+  margin-top: 0.5rem;
+  font-weight: 300;
+  letter-spacing: 0.5px;
+}
+/* ===== শেয়ার বাটন ===== */
+.share-card-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.4rem;
+  margin-top: 0.3rem;
+}
+.share-card-actions .share-action-btn {
+  padding: 0.5rem;
+  border: none;
+  border-radius: var(--rounded);
+  cursor: pointer;
+  font-family: var(--font-ui);
+  font-weight: 700;
+  font-size: 0.75rem;
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.3rem;
+  color: var(--white);
+}
+.share-card-actions .share-action-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow);
+}
+.share-card-actions .share-action-btn.download-btn {
+  background: linear-gradient(135deg, #2d7d3a, #1a5a2a);
+}
+.share-card-actions .share-action-btn.whatsapp-btn {
+  background: #25D366;
+}
+.share-card-actions .share-action-btn.fb-btn {
+  background: #1877F2;
+}
+.share-card-actions .share-action-btn.copy-btn {
+  background: #6a7a6a;
+}
+.share-card-actions .share-action-btn.telegram-btn {
+  background: #229ED9;
+}
+.share-card-actions .share-action-btn.twitter-btn {
+  background: #000;
+}
+@media (max-width: 480px) {
+  .share-card-actions {
+    grid-template-columns: 1fr 1fr;
+  }
+  #share-card-preview .card-inner {
+    padding: 1rem 0.8rem;
+    min-height: 160px;
+  }
+  #share-card-preview .card-inner .card-arabic {
+    font-size: 1.1rem;
+  }
+  #share-card-preview .card-inner .card-bengali {
+    font-size: 0.75rem;
+  }
 }
 .sura-panel-content .sura-grid .sura-item { 
   background: var(--light-green); 
   border: 2px solid transparent; 
   border-radius: var(--rounded); 
-  padding: 0.6rem 0.4rem; 
+  padding: 0.7rem 0.5rem; 
   text-align: center; 
   cursor: pointer; 
   transition: var(--transition); 
   font-weight: 600; 
   color: var(--primary); 
-  font-size: 0.85rem; 
+  font-size: 1rem; 
   font-family: var(--font-ui); 
 }
 .sura-panel-content .sura-grid .sura-item strong {
-  font-size: 1rem;
+  font-size: 1.2rem;
   display: block;
-  margin-bottom: 0.15rem;
+  margin-bottom: 0.2rem;
 }
 .sura-panel-content .sura-grid .sura-item:hover { 
   background: var(--primary); 
@@ -958,14 +1165,14 @@
 }
 .sura-panel-content .sura-search { 
   width: 100%; 
-  padding: 0.5rem 0.8rem; 
+  padding: 0.6rem 1rem; 
   border: 2px solid var(--gray-medium); 
   border-radius: var(--rounded-full); 
   font-family: var(--font-ui); 
-  font-size: 0.95rem; 
+  font-size: 1.1rem; 
   background: var(--white); 
   color: var(--text); 
-  margin-bottom: 0.6rem; 
+  margin-bottom: 0.8rem; 
 }
 .sura-panel-content .sura-search:focus { 
   border-color: var(--primary); 
@@ -974,39 +1181,39 @@
   .pdf-viewer-content { max-width: 1100px; max-height: 94vh; }
   .pdf-viewer-content .pdf-viewer-body iframe { width: 100%; height: 100%; min-height: 350px; border: none; border-radius: 8px; }
   .pdf-viewer-content .pdf-viewer-footer {
-    padding: 0.25rem 0.6rem;
+    padding: 0.3rem 0.7rem;
     background: var(--gray-light);
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
-    gap: 0.2rem;
+    gap: 0.3rem;
     flex-shrink: 0;
   }
-  .pdf-viewer-content .pdf-viewer-footer .page-info { font-size: 0.6rem; color: var(--gray-dark); }
-  .pdf-viewer-content .pdf-viewer-footer .page-controls { display: flex; gap: 0.2rem; }
+  .pdf-viewer-content .pdf-viewer-footer .page-info { font-size: 0.7rem; color: var(--gray-dark); }
+  .pdf-viewer-content .pdf-viewer-footer .page-controls { display: flex; gap: 0.3rem; }
   .pdf-viewer-content .pdf-viewer-footer .page-btn {
-    padding: 0.08rem 0.35rem;
+    padding: 0.12rem 0.45rem;
     border: 1px solid var(--gray-medium);
     border-radius: var(--rounded);
     background: var(--white);
     cursor: pointer;
     font-family: var(--font-ui);
-    font-size: 0.5rem;
+    font-size: 0.65rem;
     transition: var(--transition);
   }
   .pdf-viewer-content .pdf-viewer-footer .page-btn:hover:not(:disabled) { background: var(--primary); color: var(--white); border-color: var(--primary); }
   .pdf-viewer-content .pdf-viewer-footer .page-btn:disabled { opacity: 0.4; cursor: not-allowed; }
-  .pdf-viewer-content .pdf-viewer-footer .zoom-controls { display: flex; gap: 0.15rem; align-items: center; }
-  .pdf-viewer-content .pdf-viewer-footer .zoom-controls .zoom-label { font-size: 0.5rem; color: var(--gray-dark); min-width: 28px; text-align: center; }
+  .pdf-viewer-content .pdf-viewer-footer .zoom-controls { display: flex; gap: 0.2rem; align-items: center; }
+  .pdf-viewer-content .pdf-viewer-footer .zoom-controls .zoom-label { font-size: 0.65rem; color: var(--gray-dark); min-width: 32px; text-align: center; }
   .pdf-viewer-content .pdf-viewer-footer .zoom-controls .zoom-btn {
-    padding: 0.05rem 0.25rem;
+    padding: 0.1rem 0.3rem;
     border: 1px solid var(--gray-medium);
     border-radius: var(--rounded);
     background: var(--white);
     cursor: pointer;
     font-family: var(--font-ui);
-    font-size: 0.5rem;
+    font-size: 0.65rem;
     transition: var(--transition);
   }
   .pdf-viewer-content .pdf-viewer-footer .zoom-controls .zoom-btn:hover { background: var(--primary); color: var(--white); border-color: var(--primary); }
@@ -1015,10 +1222,10 @@
     border: none;
     color: white;
     cursor: pointer;
-    padding: 0.1rem 0.35rem;
+    padding: 0.15rem 0.45rem;
     border-radius: var(--rounded);
     transition: var(--transition);
-    font-size: 0.55rem;
+    font-size: 0.7rem;
     font-family: var(--font-ui);
   }
   .pdf-viewer-content .pdf-viewer-header .viewer-btn:hover { background: rgba(255,255,255,0.3); }
@@ -1028,30 +1235,33 @@
   @media (max-width: 768px) {
     .chatbot-header-premium { padding: 0.25rem 0.5rem; min-height: 40px; }
     .header-brand .brand-text { font-size: 0.75rem; }
-    .control-btn { font-size: 0.45rem; padding: 0.08rem 0.3rem; }
-    .digital-clock { font-size: 0.45rem; min-width: 50px; padding: 0.05rem 0.25rem; }
-    .digital-clock .clock-time { font-size: 0.6rem; }
-    .app-tab-btn { font-size: 0.55rem; padding: 0.15rem 0.45rem; }
-    .app-tab-btn .tab-icon { font-size: 0.65rem; }
-    .tab-content-panel { padding: 0.3rem 0.5rem; }
-    .quick-feature-grid { grid-template-columns: repeat(auto-fit, minmax(65px, 1fr)); gap: 0.2rem; }
-    .quick-feature-grid .qf-btn { font-size: 0.45rem; padding: 0.2rem 0.05rem; }
-    .quick-feature-grid .qf-btn .qf-icon { font-size: 0.9rem; }
-    .book-grid-panel { grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); }
-    .chat-input-area { padding: 0.2rem 0.4rem; min-height: 36px; }
-    .input-btn { font-size: 0.55rem; padding: 0.15rem 0.35rem; min-height: 24px; }
-    .panel-header h2 { font-size: 0.95rem; }
-    .welcome-section-compact h1 { font-size: 1.4rem; }
+    .control-btn { font-size: 0.55rem; padding: 0.12rem 0.35rem; }
+    .digital-clock { font-size: 0.55rem; min-width: 50px; padding: 0.05rem 0.25rem; }
+    .digital-clock .clock-time { font-size: 0.7rem; }
+    .app-tab-btn { font-size: 0.75rem; padding: 0.2rem 0.55rem; }
+    .app-tab-btn .tab-icon { font-size: 0.8rem; }
+    .tab-content-panel { padding: 0.35rem 0.6rem; }
+    .quick-feature-grid { grid-template-columns: repeat(auto-fit, minmax(80px, 1fr)); gap: 0.25rem; }
+    .quick-feature-grid .qf-btn { font-size: 0.6rem; padding: 0.25rem 0.1rem; }
+    .quick-feature-grid .qf-btn .qf-icon { font-size: 1rem; }
+    .book-grid-panel { grid-template-columns: repeat(auto-fill, minmax(110px, 1fr)); }
+    .chat-input-area { padding: 0.25rem 0.5rem; min-height: 40px; }
+    .input-btn { font-size: 0.65rem; padding: 0.2rem 0.4rem; min-height: 28px; }
+    .panel-header h2 { font-size: 1.1rem; }
+    .welcome-section-compact h1 { font-size: 1.8rem; }
+    .welcome-section-compact .welcome-sub { font-size: 1.2rem; }
   }
   @media (max-width: 480px) {
     .header-brand .brand-text { font-size: 0.6rem; }
     .header-brand .brand-icon { font-size: 0.9rem; }
-    .control-btn { font-size: 0.35rem; padding: 0.05rem 0.2rem; }
-    .digital-clock { font-size: 0.35rem; min-width: 40px; }
-    .app-tab-btn { font-size: 0.45rem; padding: 0.1rem 0.3rem; }
-    .app-tab-btn .tab-icon { font-size: 0.55rem; }
-    .quick-feature-grid { grid-template-columns: 1fr 1fr; gap: 0.15rem; }
-    .book-grid-panel { grid-template-columns: repeat(auto-fill, minmax(80px, 1fr)); }
+    .control-btn { font-size: 0.45rem; padding: 0.08rem 0.25rem; }
+    .digital-clock { font-size: 0.45rem; min-width: 40px; }
+    .app-tab-btn { font-size: 0.6rem; padding: 0.15rem 0.4rem; }
+    .app-tab-btn .tab-icon { font-size: 0.7rem; }
+    .quick-feature-grid { grid-template-columns: 1fr 1fr; gap: 0.2rem; }
+    .book-grid-panel { grid-template-columns: repeat(auto-fill, minmax(90px, 1fr)); }
+    .welcome-section-compact h1 { font-size: 1.4rem; }
+    .welcome-section-compact .welcome-sub { font-size: 0.9rem; }
   }
 /* টাইপিং কার্সরের স্টাইল */
   .typing-cursor {
@@ -1071,38 +1281,38 @@
 .share-btn-grid .share-opt {
   display:flex; align-items:center; justify-content:center; gap:0.3rem; padding:0.5rem 0.4rem;
   border-radius:var(--rounded); border:2px solid var(--gray-medium); background:var(--white);
-  cursor:pointer; font-family:var(--font-ui); font-weight:700; font-size:0.7rem;
+  cursor:pointer; font-family:var(--font-ui); font-weight:700; font-size:0.8rem;
   color:var(--text); transition:var(--transition); text-decoration:none;
 }
 .share-btn-grid .share-opt:hover { border-color:var(--gold); transform:translateY(-2px); }
-.action-btn-row { display:flex; gap:0.25rem; flex-wrap:wrap; margin-top:0.3rem; justify-content:center; }
+.action-btn-row { display:flex; gap:0.3rem; flex-wrap:wrap; margin-top:0.4rem; justify-content:center; }
 .action-btn-row button, .action-btn-row a {
-  border:none; padding:4px 9px; border-radius:6px; cursor:pointer; font-weight:600;
-  font-family:var(--font-ui); font-size:0.6rem; color:#fff; text-decoration:none; display:inline-block;
+  border:none; padding:5px 11px; border-radius:6px; cursor:pointer; font-weight:600;
+  font-family:var(--font-ui); font-size:0.7rem; color:#fff; text-decoration:none; display:inline-block;
 }
 .full-surah-verse {
   background: var(--white);
   border-radius: var(--rounded);
-  padding: 0.5rem 0.6rem;
-  margin: 0.4rem 0;
+  padding: 0.6rem 0.7rem;
+  margin: 0.5rem 0;
   box-shadow: var(--shadow-sm);
   border-left: 3px solid var(--gray-medium);
 }
 .fs-verse-header {
   display: flex;
   align-items: center;
-  gap: 0.3rem;
-  margin-bottom: 0.2rem;
+  gap: 0.4rem;
+  margin-bottom: 0.25rem;
   flex-wrap: wrap;
 }
 .fs-verse-num {
   background: var(--gold-gradient);
   color: var(--dark);
   font-weight: 800;
-  font-size: 0.65rem;
-  padding: 0.1rem 0.45rem;
+  font-size: 0.75rem;
+  padding: 0.15rem 0.55rem;
   border-radius: var(--rounded-full);
-  min-width: 20px;
+  min-width: 24px;
   text-align: center;
 }
 .fs-audio-btn {
@@ -1110,11 +1320,11 @@
   background: var(--primary);
   color: #fff;
   border: none;
-  width: 26px;
-  height: 26px;
+  width: 30px;
+  height: 30px;
   border-radius: 50%;
   cursor: pointer;
-  font-size: 0.75rem;
+  font-size: 0.85rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1126,7 +1336,7 @@
   border: none;
   color: var(--primary);
   font-weight: 700;
-  font-size: 0.6rem;
+  font-size: 0.7rem;
   cursor: pointer;
   font-family: var(--font-ui);
   text-decoration: underline;
@@ -1515,8 +1725,8 @@
       <button class='app-tab-btn' data-tab='timer'><span class='tab-icon'>&#9201;&#65039;</span> ট&#2494;ইম&#2494;র</button>
       <button class='app-tab-btn' data-tab='quiz'><span class='tab-icon'>🧠</span> ক&#2497;ইজ</button>
       <button class='app-tab-btn' data-tab='knowledge'><span class='tab-icon'>📚</span> জ&#2509;ঞ&#2494;ন</button>
+      <button class='app-tab-btn' data-tab='tajweed'><span class='tab-icon'>🎙&#65039;</span> ত&#2494;জব&#2496;দ</button>
       <button class='app-tab-btn' data-tab='help'><span class='tab-icon'>🆘</span> স&#2494;হ&#2494;য&#2509;য</button>
-      <button class='app-tab-btn' data-tab='guide'><span class='tab-icon'>📘</span> গ&#2494;ইড</button>
     </div>
 <!-- ========== TAB: CHAT ========== -->
 <div class='tab-content-panel active' id='tab-chat'>
@@ -1539,6 +1749,7 @@
             <button class='qf-btn' data-action='categories'><span class='qf-icon'>📑</span>ব&#2495;ষয&#2492;সম&#2498;হ</button>
             <button class='qf-btn' data-action='wordsearch'><span class='qf-icon'>🔍</span>শব&#2509;দ খ&#2497;&#2433;জ&#2497;ন</button>
             <button class='qf-btn' data-action='knowledge'><span class='qf-icon'>📚</span>জ&#2509;ঞ&#2494;ন</button>
+            <button class='qf-btn' data-action='tajweed'><span class='qf-icon'>🎙&#65039;</span>ত&#2494;জব&#2496;দ</button>
             <button class='qf-btn' data-action='help'><span class='qf-icon'>🆘</span>স&#2494;হ&#2494;য&#2509;য</button>
           </div>
         </div>
@@ -1624,7 +1835,7 @@
         <div class='panel-header'>
           <h2>📜 হ&#2494;দ&#2495;স</h2>
           <div class='panel-actions'>
-            <button class='panel-action-btn gold' id='hadith-random-btn'>🎲 র&#2509;য&#2494;ন&#2509;ড&#2494;ম</button>
+            <button class='panel-action-btn gold' id='hadith-random-btn'>পর&#2503;র হ&#2494;দ&#2495;স </button>
           </div>
         </div>
         <div id='hadith-container'/>
@@ -1685,6 +1896,19 @@
         <div id='knowledge-container'/>
       </div>
     </div>
+    <!-- ========== TAB: TAJWEED ========== -->
+<div class='tab-content-panel' id='tab-tajweed'>
+  <div class='panel-scroll-area'>
+    <div class='panel-header'>
+      <h2>🎙&#65039; ত&#2494;জব&#2496;দ শ&#2495;ক&#2509;ষ&#2494;</h2>
+      <div class='panel-actions'>
+        <button class='panel-action-btn' id='tajweed-prev-btn'>&#9664; আগ&#2503;র</button>
+        <button class='panel-action-btn gold' id='tajweed-next-btn'>পরবর&#2509;ত&#2496; &#9654;</button>
+      </div>
+    </div>
+    <div id='tajweed-container'/>
+  </div>
+</div>
     <!-- ========== TAB: HELP ========== -->
     <div class='tab-content-panel' id='tab-help'>
       <div class='panel-scroll-area'>
@@ -1694,18 +1918,39 @@
         <div id='help-container'/>
       </div>
     </div>
-    <!-- ========== TAB: USER GUIDE ========== -->
-<div class='tab-content-panel' id='tab-guide'>
-  <div class='panel-scroll-area'>
-    <div class='panel-header'>
-      <h2>📘Talks With Al Quran ব&#2509;যবহ&#2494;র ন&#2495;র&#2509;দ&#2503;শ&#2495;ক&#2494;</h2>
-    </div>
-    <div id='guide-container'/>
-  </div>
-</div>
   </div>
   <!-- ===== MODALS ===== -->
-  
+  <!-- ===== আয&#2492;&#2494;ত শ&#2503;য&#2492;&#2494;র ক&#2494;র&#2509;ড মড&#2494;ল ===== -->
+<div class='share-card-modal-overlay' id='share-card-modal'>
+  <div class='share-card-container'>
+    <div class='card-header'>
+      <h3>📸 আয&#2492;&#2494;ত শ&#2503;য&#2492;&#2494;র ক&#2494;র&#2509;ড</h3>
+      <button class='close-card-btn' id='close-share-card-modal'>&#10005;</button>
+    </div>
+    <div id='share-card-preview'>
+      <div class='card-inner' id='card-inner'>
+        <span class='corner-ornament corner-tl'>&#64830;</span>
+    <span class='corner-ornament corner-tr'>&#64831;</span>
+    <span class='corner-ornament corner-bl'>&#64830;</span>
+    <span class='corner-ornament corner-br'>&#64831;</span>
+        <div class='card-header-text'>🕌 আল-ক&#2497;রআন</div>
+        <div class='card-arabic' id='card-arabic-text'>ب&#1616;س&#1618;م&#1616; الل&#1614;&#1617;ه&#1616; الر&#1614;&#1617;ح&#1618;م&#1614;&#1648;ن&#1616; الر&#1614;&#1617;ح&#1616;يم&#1616;</div>
+        <div class='card-bengali' id='card-bengali-text'>পরম কর&#2497;ণ&#2494;ময&#2492; ও অত&#2495; দয&#2492;&#2494;ল&#2497; আল&#2509;ল&#2494;হর ন&#2494;ম&#2503; শ&#2497;র&#2497; করছ&#2495;&#2404;</div>
+        <div class='card-english' id='card-english-text'>In the name of Allah, the Most Gracious, the Most Merciful.</div>
+        <div class='card-reference' id='card-reference-text'>স&#2498;র&#2494; ১, আয&#2492;&#2494;ত ১</div>
+        <div class='card-footer-brand'>&#8212; Talks With Al Quran</div>
+      </div>
+    </div>
+    <div class='share-card-actions'>
+      <button class='share-action-btn download-btn' id='download-card-btn'>&#11015;&#65039; ড&#2494;উনল&#2507;ড</button>
+      <button class='share-action-btn whatsapp-btn' id='share-wa-btn'>🟢 WhatsApp</button>
+      <button class='share-action-btn fb-btn' id='share-fb-btn'>🔵 Facebook</button>
+      <button class='share-action-btn telegram-btn' id='share-tg-btn'>&#9992;&#65039; Telegram</button>
+      <button class='share-action-btn twitter-btn' id='share-twitter-btn'>&#10006;&#65039; X</button>
+      <button class='share-action-btn copy-btn' id='copy-card-text-btn'>📋 ট&#2503;ক&#2509;সট কপ&#2495;</button>
+    </div>
+  </div>
+</div>
   <!-- Tafsir Modal -->
   <div class='tafsir-modal-overlay' id='tafsir-modal'>
     <div class='tafsir-modal-content'>
@@ -1798,15 +2043,15 @@
       <div class='setting-group'>
   <label for='bengali-font-size'>ব&#2494;&#2434;ল&#2494; ফন&#2509;ট স&#2494;ইজ</label>
   <div class='range-container'>
-    <input id='bengali-font-size' max='60' min='25' type='range' value='17'/>
-    <span class='range-value' id='bengali-font-size-value'>17px</span>
+    <input id='bengali-font-size' max='60' min='25' type='range' value='18'/>
+    <span class='range-value' id='bengali-font-size-value'>18px</span>
   </div>
 </div>
 <div class='setting-group'>
   <label for='arabic-font-size'>আরব&#2495; ফন&#2509;ট স&#2494;ইজ</label>
   <div class='range-container'>
-    <input id='arabic-font-size' max='100' min='25' type='range' value='22'/>
-    <span class='range-value' id='arabic-font-size-value'>22px</span>
+    <input id='arabic-font-size' max='100' min='25' type='range' value='24'/>
+    <span class='range-value' id='arabic-font-size-value'>24px</span>
   </div>
 </div>
       <div class='setting-group'>
@@ -1836,8 +2081,8 @@
       <div class='setting-group'>
         <label for='english-font-size'>ই&#2434;র&#2503;জ&#2495; ফন&#2509;ট স&#2494;ইজ</label>
         <div class='range-container'>
-          <input id='english-font-size' max='50' min='10' type='range' value='15'/>
-          <span class='range-value' id='english-font-size-value'>15px</span>
+          <input id='english-font-size' max='50' min='10' type='range' value='16'/>
+          <span class='range-value' id='english-font-size-value'>16px</span>
         </div>
       </div>
       <div class='setting-group'>
@@ -2124,6 +2369,15 @@
       {title:'ঈমানের ৬টি স্তম্ভ', content:'১. আল্লাহতে বিশ্বাস\n২. ফেরেশতাদের প্রতি বিশ্বাস\n৩. আসমানী কিতাবসমূহে বিশ্বাস\n৪. রাসূলগণের প্রতি বিশ্বাস\n৫. আখিরাত বা শেষ বিচারের দিনে বিশ্বাস\n৬. তাকদীর বা ভাগ্যের ভালো-মন্দের প্রতি বিশ্বাস', source:'কুরআন ও সুন্নাহ'},
       {title:'ইসলামের ৫টি স্তম্ভ', content:'১. কালিমা শাহাদাত (ঈমান আনা)\n২. সালাত (নামাজ) প্রতিষ্ঠা করা\n৩. জাকাত প্রদান করা\n৪. রমজান মাসে সিয়াম (রোজা) রাখা\n৫. সাওম (হজ্জ) পালন করা', source:'সহিহ হাদিস'}
     ];
+
+var TAJWEED_RULES = [
+  {title:'নূন সাকিন ও তানভীনের ইযহার', content:'হালকী অক্ষর (ء، ه، ع، ح، غ، خ) এর আগে নূন সাকিন বা তানভীন আসলে স্পষ্টভাবে উচ্চারণ করতে হয়, গুন্নাহ ছাড়াই।', example:'مَنْ آمَنَ'},
+  {title:'ইদগাম (মিলিয়ে পড়া)', content:'নূন সাকিন বা তানভীনের পর ي، ن، م، و، ل، ر অক্ষর এলে দুটি অক্ষর মিলিয়ে উচ্চারণ করতে হয়।', example:'مِنْ رَبِّهِمْ'},
+  {title:'ইকলাব', content:'নূন সাকিন বা তানভীনের পর ب অক্ষর এলে নূনের উচ্চারণ মীম-এ পরিবর্তিত হয়ে গুন্নাহসহ পড়তে হয়।', example:'مِنْ بَعْدِ'},
+  {title:'ইখফা', content:'নূন সাকিন বা তানভীনের পর বাকি ১৫টি অক্ষর এলে নূনের উচ্চারণ আংশিক গোপন রেখে গুন্নাহসহ পড়তে হয়।', example:'مِنْ شَيْءٍ'},
+  {title:'মদ্দ (দীর্ঘ টান)', content:'আলিফ, ওয়াও বা ইয়া দ্বারা তৈরি স্বরকে নির্দিষ্ট মাত্রা অনুযায়ী টেনে পড়াকে মদ্দ বলে।', example:'قَالُوا'},
+  {title:'কলকলাহ', content:'ق، ط، ب، ج، د অক্ষরে সাকিন (থামা) অবস্থায় একটি হালকা কম্পনসহ উচ্চারণ করতে হয়।', example:'يَخْلُقُ'}
+];
     // ============================================================
     // 2. STATE
     // ============================================================
@@ -2146,6 +2400,7 @@
       recognition: null,
       dataLoaded: false,
       knowledgeIndex: 0,
+	  tajweedIndex: 0,
       activeCategory: 'সব',
       quizState: null,
       expandedPosts: {},
@@ -2159,7 +2414,7 @@
       qtAya: '1',
       qtFullSurahMode: false, 
       audioSettings: { speed: 1, autoPlay: false },
-      fontSettings: { bengaliSize: 17, arabicSize: 22, bengaliFont: 'Kalpurush, Hind Siliguri, sans-serif', arabicFont: 'Amiri, serif', englishFont: 'Georgia, serif', englishSize: 15 },
+      fontSettings: { bengaliSize: 18, arabicSize: 24, bengaliFont: 'Kalpurush, Hind Siliguri, sans-serif', arabicFont: 'Amiri, serif', englishFont: 'Georgia, serif', englishSize: 16 },
       currentTab: 'chat'
     };
     // ============================================================
@@ -2179,11 +2434,10 @@
     quiz: document.getElementById('tab-quiz'),
     knowledge: document.getElementById('tab-knowledge'),
     help: document.getElementById('tab-help'),
-    guide: document.getElementById('tab-guide')
+ tajweed: document.getElementById('tab-tajweed')
   },
-  guideContainer: document.getElementById('guide-container'),
-      chatMessages: document.getElementById('chat-messages'),
-  chatScrollArea: document.getElementById('chat-scroll-area'),   // ← নতুন যোগ করুন
+  chatMessages: document.getElementById('chat-messages'),
+  chatScrollArea: document.getElementById('chat-scroll-area'),
       chatInput: document.getElementById('chat-input'),
       sendBtn: document.getElementById('send-btn'),
       clearBtn: document.getElementById('clear-btn'),
@@ -2217,6 +2471,9 @@
       knowledgeContainer: document.getElementById('knowledge-container'),
       knowledgePrevBtn: document.getElementById('knowledge-prev-btn'),
       knowledgeNextBtn: document.getElementById('knowledge-next-btn'),
+	  tajweedContainer: document.getElementById('tajweed-container'),
+tajweedPrevBtn: document.getElementById('tajweed-prev-btn'),
+tajweedNextBtn: document.getElementById('tajweed-next-btn'),
       helpContainer: document.getElementById('help-container'),
       tafsirModal: document.getElementById('tafsir-modal'),
   closeTafsir: document.getElementById('close-tafsir-modal'),
@@ -2446,7 +2703,6 @@ setTimeout(processQueue, speed);
       state.currentTab = tabId;
       
       if (state.dataLoaded) {
-    if (tabId === 'guide') renderGuide();
         if (tabId === 'blog') renderBlogPosts();
         if (tabId === 'books') renderBooks();
         if (tabId === 'hadith') renderHadith();
@@ -2457,6 +2713,7 @@ setTimeout(processQueue, speed);
         if (tabId === 'knowledge') renderKnowledge();
         if (tabId === 'help') renderHelp();
         if (tabId === 'quran') renderQtContent();
+		if (tabId === 'tajweed') renderTajweed();
       }
     }
     // ============================================================
@@ -2684,6 +2941,7 @@ setTimeout(processQueue, speed);
     html += '<button onclick="window.downloadVersePDF(\'' + sura + '\',\'' + aya + '\')" style="background:#c0392b;color:#fff;border:none;padding:5px 10px;border-radius:6px;cursor:pointer;font-weight:700;font-family:var(--font-ui);font-size:0.75rem;">📄 পিডিএফ</button>';
     html += '<button onclick="window.shareVerse(\'' + sura + '\',\'' + aya + '\')" style="background:#0d47a1;color:#fff;border:none;padding:5px 10px;border-radius:6px;cursor:pointer;font-weight:700;font-family:var(--font-ui);font-size:0.75rem;">📤 শেয়ার</button>';
     html += '</div>';
+html += '<button onclick="window.openShareCardModal(\'' + sura + '\',\'' + aya + '\')" style="background:linear-gradient(135deg,#d4af37,#f0d080);color:#000;border:none;padding:5px 10px;border-radius:6px;cursor:pointer;font-weight:700;font-family:var(--font-ui);font-size:0.75rem;">🖼️ কার্ড</button>';
   } else {
     var key = sura + ':' + aya;
     var tafsir = state.tafsirData[key];
@@ -2700,8 +2958,9 @@ setTimeout(processQueue, speed);
     html += '<button onclick="window.playAudio(\'' + sura + '\',\'' + aya + '\')" style="background:var(--primary);color:#fff;border:none;padding:5px 10px;border-radius:6px;cursor:pointer;font-weight:700;font-family:var(--font-ui);font-size:0.75rem;">🎧 তিলাওয়াত শুনুন</button>';
     html += '<button onclick="window.copyAya(\'' + sura + '\',\'' + aya + '\')" style="background:var(--gold);color:#000;border:none;padding:5px 10px;border-radius:6px;cursor:pointer;font-weight:700;font-family:var(--font-ui);font-size:0.75rem;">📋 কপি করুন</button>';
     html += '<button onclick="window.downloadTafsirPDF(\'' + sura + '\',\'' + aya + '\')" style="background:#c0392b;color:#fff;border:none;padding:5px 10px;border-radius:6px;cursor:pointer;font-weight:700;font-family:var(--font-ui);font-size:0.75rem;">📄 পিডিএফ (তাফসীরসহ)</button>';
-    html += '<button onclick="window.shareTafsir(\'' + sura + '\',\'' + aya + '\')" style="background:#0d47a1;color:#fff;border:none;padding:5px 10px;border-radius:6px;cursor:pointer;font-weight:700;font-family:var(--font-ui);font-size:0.75rem;">📤 শেয়ার</button>';
-    html += '</div>';
+   html += '<button onclick="window.shareTafsir(\'' + sura + '\',\'' + aya + '\')" ... >📤 শেয়ার</button>';
+html += shareCardBtn(sura, aya);
+html += '</div>';
   }
   dom.qtDisplay.innerHTML = html;
 }
@@ -2766,7 +3025,8 @@ function renderFullSurahView(sura) {
     html += '<div class="fs-verse-header"><span class="fs-verse-num">' + v.aya + '</span>';
     if (category) html += formatCategoryDisplay(category);
     html += '<button class="fs-audio-btn" onclick="window.playAudio(\'' + sura + '\',\'' + v.aya + '\')">🎧</button>';
-    html += '</div>';
+html += '</div>';
+html += '<div style="text-align:right;margin-top:0.2rem;">' + shareCardBtn(sura, v.aya) + '</div>';
     if (arabic && arabic.ayat) html += '<div class="verse-arabic">' + arabic.ayat + '</div>';
     html += '<div class="verse-translation">' + v.text + '</div>';
     html += '<div style="text-align:right;"><button class="fs-tafsir-link" onclick="window.showTafsir(\'' + sura + '\',\'' + v.aya + '\')">📖 তাফসীর দেখুন</button></div>';
@@ -3020,26 +3280,148 @@ window.shareSurah = function(sura) {
       var totalDisplay = document.getElementById('total-reading-panel');
       if (totalDisplay) totalDisplay.textContent = '0 মিনিট 0 সেকেন্ড';
     };
-    // QUIZ - only works when quiz tab is active
-    var QUIZ_QUESTIONS = [
-      {q:"কুরআনের প্রথম সূরার নাম কি?", o:["আল-ফাতিহা","আল-বাকারা","আল-ইখলাস","ইয়াসিন"], c:0},
-      {q:"কুরআনে মোট কয়টি সূরা আছে?", o:["114","100","125","99"], c:0},
-      {q:"আয়াতুল কুরসি কোন সূরায় আছে?", o:["সূরা বাকারা","সূরা ইখলাস","সূরা ফাতিহা","সূরা ইয়াসিন"], c:0},
-      {q:"ইসলামের ৫টি স্তম্ভের প্রথমটি কি?", o:["কালিমা","সালাত","জাকাত","রোজা"], c:0},
-      {q:"ঈমানের স্তম্ভ মোট কয়টি?", o:["৬টি","৫টি","৭টি","৪টি"], c:0},
-      {q:"সূরা ইখলাসে মোট কয়টি আয়াত আছে?", o:["৪টি","৩টি","৫টি","৭টি"], c:0},
-      {q:"সবচেয়ে ছোট সূরার নাম কি?", o:["আল-কাওসার","আল-ইখলাস","আন-নাস","আল-ফালাক"], c:0},
-      {q:"কুরআনের সবচেয়ে বড় সূরা কোনটি?", o:["আল-বাকারা","আন-নিসা","আলে ইমরান","আল-মায়িদাহ"], c:0},
-      {q:"কোন সূরাকে 'কুরআনের হৃদয়' বলা হয়?", o:["ইয়াসিন","আর-রহমান","আল-মুলক","আল-কাহফ"], c:0},
-      {q:"শেষ নবীর নাম কি?", o:["হযরত মুহাম্মদ (সা.)","হযরত ঈসা (আ.)","হযরত মূসা (আ.)","হযরত ইব্রাহিম (আ.)"], c:0}
-    ];
-    var QUIZ_CONFIG = {
-      questionsPerQuiz: 5,
-      answerDelay: 1400,
-      showProgressBar: true,
-      shuffleQuestions: true,
-      shuffleOptions: true
-    };
+// QUIZ - only works when quiz tab is active
+var QUIZ_QUESTIONS = [
+  // মৌলিক ইসলামী জ্ঞান
+  {q:"কুরআনের প্রথম সূরার নাম কি?", o:["আল-ফাতিহা","আল-বাকারা","আল-ইখলাস","ইয়াসিন"], c:0},
+  {q:"কুরআনে মোট কয়টি সূরা আছে?", o:["114","100","125","99"], c:0},
+  {q:"আয়াতুল কুরসি কোন সূরায় আছে?", o:["সূরা বাকারা","সূরা ইখলাস","সূরা ফাতিহা","সূরা ইয়াসিন"], c:0},
+  {q:"ইসলামের ৫টি স্তম্ভের প্রথমটি কি?", o:["কালিমা","সালাত","জাকাত","রোজা"], c:0},
+  {q:"ঈমানের স্তম্ভ মোট কয়টি?", o:["৬টি","৫টি","৭টি","৪টি"], c:0},
+  {q:"সূরা ইখলাসে মোট কয়টি আয়াত আছে?", o:["৪টি","৩টি","৫টি","৭টি"], c:0},
+  {q:"সবচেয়ে ছোট সূরার নাম কি?", o:["আল-কাওসার","আল-ইখলাস","আন-নাস","আল-ফালাক"], c:0},
+  {q:"কুরআনের সবচেয়ে বড় সূরা কোনটি?", o:["আল-বাকারা","আন-নিসা","আলে ইমরান","আল-মায়িদাহ"], c:0},
+  {q:"কোন সূরাকে 'কুরআনের হৃদয়' বলা হয়?", o:["ইয়াসিন","আর-রহমান","আল-মুলক","আল-কাহফ"], c:0},
+  {q:"শেষ নবীর নাম কি?", o:["হযরত মুহাম্মদ (সা.)","হযরত ঈসা (আ.)","হযরত মূসা (আ.)","হযরত ইব্রাহিম (আ.)"], c:0},
+  
+  // নবী-রাসূল সম্পর্কিত
+  {q:"প্রথম নবী কে?", o:["হযরত আদম (আ.)","হযরত ইদরিস (আ.)","হযরত নূহ (আ.)","হযরত ইব্রাহিম (আ.)"], c:0},
+  {q:"'আবুল বাশার' কার উপাধি?", o:["হযরত আদম (আ.)","হযরত নূহ (আ.)","হযরত ইব্রাহিম (আ.)","হযরত মুহাম্মদ (সা.)"], c:0},
+  {q:"কুরআনে সর্বাধিক কোন নবীর নাম উল্লেখ আছে?", o:["হযরত মূসা (আ.)","হযরত ইব্রাহিম (আ.)","হযরত নূহ (আ.)","হযরত ঈসা (আ.)"], c:0},
+  {q:"হযরত মুহাম্মদ (সা.)-এর পিতার নাম কি?", o:["আবদুল্লাহ","আবু তালিব","আব্দুল মুত্তালিব","হারিস"], c:0},
+  {q:"হযরত মুহাম্মদ (সা.)-এর মাতার নাম কি?", o:["আমিনা","হালিমা","খাদিজা","আয়েশা"], c:0},
+  {q:"হযরত মুহাম্মদ (সা.) কোথায় জন্মগ্রহণ করেন?", o:["মক্কা","মদিনা","জেদ্দা","তায়েফ"], c:0},
+  {q:"হযরত মুহাম্মদ (সা.) কত বছর বয়সে নবী হন?", o:["৪০","২৫","৩৫","৫০"], c:0},
+  {q:"প্রথম নবী কত বছর বেঁচে ছিলেন?", o:["১০০০ বছর","৯৫০ বছর","৮০০ বছর","৫০০ বছর"], c:0},
+  {q:"'খলিলুল্লাহ' কার উপাধি?", o:["হযরত ইব্রাহিম (আ.)","হযরত মুহাম্মদ (সা.)","হযরত মূসা (আ.)","হযরত ঈসা (আ.)"], c:0},
+  {q:"'কলিমুল্লাহ' কার উপাধি?", o:["হযরত মূসা (আ.)","হযরত ইব্রাহিম (আ.)","হযরত ঈসা (আ.)","হযরত মুহাম্মদ (সা.)"], c:0},
+  
+  // কুরআন ও সূরা সম্পর্কিত
+  {q:"কুরআন নাযিল হয় কোন মাসে?", o:["রমযান","মুহররম","রজব","শাওয়াল"], c:0},
+  {q:"প্রথম কুরআন নাযিল হয় কোথায়?", o:["হেরা গুহায়","সওর গুহায়","উহুদ পাহাড়ে","মিনায়"], c:0},
+  {q:"কুরআনের সর্বশেষ সূরার নাম কি?", o:["আন-নাস","আল-ফালাক","আল-ইখলাস","আল-মাসাদ"], c:0},
+  {q:"কোন সূরায় বিসমিল্লাহ দুইবার আছে?", o:["আন-নামল","আল-বাকারা","ইয়াসিন","আর-রহমান"], c:0},
+  {q:"সিজদার আয়াত কয়টি?", o:["১৪টি","১০টি","১৫টি","১২টি"], c:0},
+  {q:"সূরা আর-রহমানে কোন শব্দটি ৩১ বার উল্লেখ আছে?", o:["ফাবি আইয়ি আলায়ি রাব্বিকুমা তুকাজ্জিবান","আর-রহমান","আল্লাহ","ইন্না"], c:0},
+  {q:"পবিত্র কুরআনের প্রথম আয়াত কি?", o:["বিসমিল্লাহির রহমানির রহিম","আলহামদু লিল্লাহি রাব্বিল আলামিন","ইকরা বিসমি রাব্বিকাল্লাজি খালাক","আয়াতুল কুরসি"], c:0},
+  {q:"কুরআনের মোট আয়াত কয়টি?", o:["৬২৩৬","৬০০০","৬৫০০","৬১০০"], c:0},
+  {q:"মক্কী সূরা কয়টি?", o:["৮৬টি","৮৮টি","৮০টি","৯০টি"], c:0},
+  {q:"মাদানী সূরা কয়টি?", o:["২৮টি","২৫টি","৩০টি","২০টি"], c:0},
+  
+  // নামাজ সম্পর্কিত
+  {q:"ফরজ নামাজ কয়টি?", o:["৫টি","৩টি","৭টি","৬টি"], c:0},
+  {q:"সুবহে সাদিক থেকে সূর্যোদয় পর্যন্ত কোন নামাজের সময়?", o:["ফজর","যোহর","আসর","মাগরিব"], c:0},
+  {q:"জুমার নামাজ কয় রাকাত?", o:["২ রাকাত","৪ রাকাত","৩ রাকাত","৬ রাকাত"], c:0},
+  {q:"তারাবীর নামাজ কত রাকাত?", o:["২০ রাকাত","৮ রাকাত","১২ রাকাত","২৪ রাকাত"], c:0},
+  {q:"নামাজের কোন রাকাতে সিজদা করতে হয়?", o:["প্রতি রাকাতে","শুধু শেষ রাকাতে","শুধু প্রথম রাকাতে","শুধু দ্বিতীয় রাকাতে"], c:0},
+  {q:"সিজদার সময় কি বলতে হয়?", o:["সুবহানা রাব্বিয়াল আলা","সুবহানা রাব্বিয়াল আজিম","আল্লাহু আকবার","সামি আল্লাহু লিমান হামিদাহ"], c:0},
+  {q:"নামাজের প্রথম ফরজ কি?", o:["তাকবীরে তাহরীমা","ক্বিয়াম","কিরাত","রুকু"], c:0},
+  {q:"নামাজে কতবার তাকবীর বলতে হয়?", o:["প্রতি রাকাতে","শুধু শুরুতে","শুধু শেষে","কখনো না"], c:0},
+  {q:"'সালাতুল উসতা' কোন নামাজ?", o:["আসর","যোহর","ফজর","মাগরিব"], c:0},
+  {q:"মসজিদে নববী কোথায় অবস্থিত?", o:["মদিনা","মক্কা","জেরুজালেম","কায়রো"], c:0},
+  
+  // রোজা সম্পর্কিত
+  {q:"রমযান মাসে কত দিন রোজা রাখতে হয়?", o:["৩০ দিন","২৯ দিন","৩১ দিন","২৮ দিন"], c:0},
+  {q:"শবে বরাত কোন মাসে?", o:["শাবান","রমযান","রজব","মুহররম"], c:0},
+  {q:"শবে কদর কোন রাতে?", o:["২৭শে রমযান","২৫শে রমযান","২৯শে রমযান","২১শে রমযান"], c:0},
+  {q:"ইফতারের সময় কী পড়তে হয়?", o:["দোয়া","নামাজ","কুরআন","জিকির"], c:0},
+  {q:"রোজা রাখার উদ্দেশ্য কি?", o:["তাকওয়া অর্জন","ক্ষুধা অনুভব","স্বাস্থ্য রক্ষা","অভ্যাস"], c:0},
+  {q:"সিয়াম শব্দের অর্থ কি?", o:["বিরত থাকা","খাওয়া","ঘুমানো","যুদ্ধ"], c:0},
+  {q:"ইসলামের কোন স্তম্ভে রোজা?", o:["৪র্থ","৩য়","২য়","৫ম"], c:0},
+  {q:"সেহরির সময় কি পড়তে হয়?", o:["নিয়ত","দোয়া","কুরআন","নামাজ"], c:0},
+  {q:"রমযানের শেষ ১০ দিনে কী বেশি করা উচিত?", o:["ইবাদত","খাওয়া","ঘুম","বাজে কাজ"], c:0},
+  {q:"ঈদুল ফিতর কখন উদযাপিত হয়?", o:["শাওয়াল মাসের ১ম দিন","রমযানের শেষ দিন","জিলহজ মাসে","রজব মাসে"], c:0},
+  
+  // হজ্জ ও জাকাত সম্পর্কিত
+  {q:"হজ্জ ইসলামের কোন স্তম্ভ?", o:["৫ম","৪র্থ","৩য়","২য়"], c:0},
+  {q:"হজ্জ কোথায় করতে হয়?", o:["মক্কা","মদিনা","জেরুজালেম","কায়রো"], c:0},
+  {q:"সাফা ও মারওয়া কোথায় অবস্থিত?", o:["মক্কায়","মদিনায়","জেরুজালেমে","কুফায়"], c:0},
+  {q:"কাবা শরীফের কালো পাথরের নাম কি?", o:["হাজরে আসওয়াদ","হাজরে ত্বওয়াফ","মাকামে ইব্রাহিম","হাতীম"], c:0},
+  {q:"জাকাত কাদের দিতে হয়?", o:["সম্পদশালী","গরীব","মধ্যবিত্ত","সবাই"], c:0},
+  {q:"জাকাতের হার কত?", o:["২.৫%","৫%","১০%","২০%"], c:0},
+  {q:"জাকাত ইসলামের কোন স্তম্ভ?", o:["৩য়","২য়","৪র্থ","৫ম"], c:0},
+  {q:"উশর কি?", o:["ফসলের জাকাত","গরুের জাকাত","সোনার জাকাত","রূপার জাকাত"], c:0},
+  {q:"ফিতরা কত?", o:["নির্দিষ্ট পরিমাণ খাদ্য","টাকা","গরু","ছাগল"], c:0},
+  {q:"ইসলামে দানের গুরুত্ব কি?", o:["অত্যন্ত গুরুত্বপূর্ণ","গৌণ","ঐচ্ছিক","নিষিদ্ধ"], c:0},
+  
+  // ইসলামী ইতিহাস ও ঘটনা
+  {q:"হিজরী সনের প্রথম মাস কোনটি?", o:["মুহররম","সফর","রবিউল আউয়াল","রজব"], c:0},
+  {q:"ইসলামি ক্যালেন্ডার কোন ঘটনা থেকে শুরু?", o:["হিজরত","বদর যুদ্ধ","ওহী নাযিল","মক্কা বিজয়"], c:0},
+  {q:"বদর যুদ্ধ কত সালে সংঘটিত হয়?", o:["২ হিজরী","৩ হিজরী","১ হিজরী","৪ হিজরী"], c:0},
+  {q:"উহুদ যুদ্ধ কত সালে হয়?", o:["৩ হিজরী","২ হিজরী","৪ হিজরী","৫ হিজরী"], c:0},
+  {q:"মক্কা বিজয় কত সালে হয়?", o:["৮ হিজরী","৯ হিজরী","৭ হিজরী","১০ হিজরী"], c:0},
+  {q:"আম্মার ইবনে ইয়াসির কে ছিলেন?", o:["প্রথম শহীদ","প্রথম নবী","প্রথম সাহাবী","প্রথম খলিফা"], c:0},
+  {q:"বিলাল ইবনে রাবাহ কে ছিলেন?", o:["প্রথম মুয়াজ্জিন","প্রথম নবী","প্রথম খলিফা","প্রথম সাহাবী"], c:0},
+  {q:"খাদিজা (রা.) কে ছিলেন?", o:["প্রথম স্ত্রী","দ্বিতীয় স্ত্রী","তৃতীয় স্ত্রী","চতুর্থ স্ত্রী"], c:0},
+  {q:"আয়েশা (রা.) কে ছিলেন?", o:["দ্বিতীয় স্ত্রী","প্রথম স্ত্রী","তৃতীয় স্ত্রী","চতুর্থ স্ত্রী"], c:0},
+  {q:"হযরত আবু বকর (রা.)-এর উপাধি কি?", o:["আস-সিদ্দিক","আল-ফারুক","জুননুরাইন","আসাদুল্লাহ"], c:0},
+  
+  // ফিকহ ও মাসায়েল
+  {q:"ইসলামে কয়টি মাজহাব প্রসিদ্ধ?", o:["৪টি","৫টি","৩টি","৬টি"], c:0},
+  {q:"ইমাম আবু হানিফা কোন মাজহাবের?", o:["হানাফি","শাফি","মালিকি","হাম্বলি"], c:0},
+  {q:"ইমাম শাফি কোন মাজহাবের?", o:["শাফি","হানাফি","মালিকি","হাম্বলি"], c:0},
+  {q:"ইমাম মালিক কোন মাজহাবের?", o:["মালিকি","হানাফি","শাফি","হাম্বলি"], c:0},
+  {q:"ইমাম আহমাদ বিন হাম্বল কোন মাজহাবের?", o:["হাম্বলি","হানাফি","শাফি","মালিকি"], c:0},
+  {q:"হারাম শব্দের অর্থ কি?", o:["নিষিদ্ধ","অনুমোদিত","মাকরুহ","ওয়াজিব"], c:0},
+  {q:"হালাল শব্দের অর্থ কি?", o:["অনুমোদিত","নিষিদ্ধ","মাকরুহ","সুন্নত"], c:0},
+  {q:"ওয়াজিব শব্দের অর্থ কি?", o:["অত্যাবশ্যক","ঐচ্ছিক","নিষিদ্ধ","অনুমোদিত"], c:0},
+  {q:"সুন্নত শব্দের অর্থ কি?", o:["নবীর কার্য","ঈমান","আদেশ","ওয়াজিব"], c:0},
+  {q:"মাকরুহ শব্দের অর্থ কি?", o:["অপছন্দনীয়","নিষিদ্ধ","ওয়াজিব","সুন্নত"], c:0},
+  
+  // আল্লাহ ও তাওহীদ
+  {q:"আল্লাহ কতটি নাম আছে?", o:["৯৯টি","১০০টি","৯৮টি","১০১টি"], c:0},
+  {q:"আল্লাহর কোন নামটি সবচেয়ে বড়?", o:["আল্লাহ","আর-রহমান","আর-রহিম","আল-কুদ্দুস"], c:0},
+  {q:"'আর-রহমান' শব্দের অর্থ কি?", o:["সর্বশ্রেষ্ঠ দয়ালু","সর্বশ্রেষ্ঠ ক্ষমাশীল","সর্বশ্রেষ্ঠ জ্ঞানী","সর্বশ্রেষ্ঠ বিচারক"], c:0},
+  {q:"'আল-মালিক' শব্দের অর্থ কি?", o:["সর্বশ্রেষ্ঠ রাজা","সর্বশ্রেষ্ঠ দয়ালু","সর্বশ্রেষ্ঠ ক্ষমাশীল","সর্বশ্রেষ্ঠ জ্ঞানী"], c:0},
+  {q:"'আল-কুদ্দুস' শব্দের অর্থ কি?", o:["পবিত্র","মহান","জ্ঞানী","ক্ষমাশীল"], c:0},
+  {q:"তাওহীদ বলতে কি বোঝায়?", o:["আল্লাহকে একক জ্ঞান করা","আল্লাহকে মনে রাখা","আল্লাহকে ভয় করা","আল্লাহকে ভালোবাসা"], c:0},
+  {q:"শিরক বলতে কি বোঝায়?", o:["আল্লাহর সাথে অংশীদার স্থাপন","নামাজ পড়া","রোজা রাখা","হজ্জ করা"], c:0},
+  {q:"ইসলামের মূল বিশ্বাস কি?", o:["লা ইলাহা ইল্লাল্লাহ","আল্লাহু আকবার","সুবহানাল্লাহ","আলহামদুলিল্লাহ"], c:0},
+  {q:"কে সৃষ্টিকর্তা?", o:["আল্লাহ","মুহাম্মদ","ঈসা","মূসা"], c:0},
+  {q:"কে একমাত্র ইবাদতের যোগ্য?", o:["আল্লাহ","নবী","ফেরেশতা","ওলি"], c:0},
+  
+  // জান্নাত-জাহান্নাম
+  {q:"জান্নাত কয়টি?", o:["৭টি","৮টি","৫টি","৬টি"], c:0},
+  {q:"জাহান্নাম কয়টি?", o:["৭টি","৮টি","৫টি","৬টি"], c:0},
+  {q:"সর্বোচ্চ জান্নাতের নাম কি?", o:["ফিরদাউস","আদন","নাঈম","মা'ওয়া"], c:0},
+  {q:"জাহান্নামের সর্বনিম্ন স্তরের নাম কি?", o:["হুতামা","জাহান্নাম","সাঈর","লাযা"], c:0},
+  {q:"জান্নাতের নিচে কোন নদী প্রবাহিত?", o:["বহু নদী","একটি নদী","দুটি নদী","তিনটি নদী"], c:0},
+  {q:"জান্নাতের ফল বিশেষ কি?", o:["খেজুর","আঙ্গুর","ডালিম","সবকিছু"], c:0},
+  {q:"জাহান্নামের আগুন কেমন?", o:["অত্যন্ত তীব্র","সাধারণ","মৃদু","ঠাণ্ডা"], c:0},
+  {q:"জান্নাতে কারা প্রবেশ করবে?", o:["মুমিনগণ","কাফিরগণ","সমস্ত মানুষ","ফেরেশতাগণ"], c:0},
+  {q:"জাহান্নাম থেকে বাঁচার উপায় কি?", o:["ঈমান ও আমল","শুধু বিশ্বাস","শুধু আমল","কোনোটিই না"], c:0},
+  {q:"জান্নাতের প্রধান নিয়ামত কি?", o:["আল্লাহর সাক্ষাৎ","খেজুর","নদী","উদ্যান"], c:0},
+  
+  // আদব ও আখলাক
+  {q:"ইসলামে মাতা-পিতার প্রতি কেমন আচরণ করতে হয়?", o:["সম্মান ও সেবা","অবজ্ঞা","উপেক্ষা","ঘৃণা"], c:0},
+  {q:"প্রতিবেশীর সাথে কেমন ব্যবহার করতে হয়?", o:["ভালো","খারাপ","উদাসীন","শত্রুতাপূর্ণ"], c:0},
+  {q:"মিথ্যা বলা ইসলামে কি?", o:["হারাম","হালাল","মাকরুহ","ওয়াজিব"], c:0},
+  {q:"গীবত বলতে কি বোঝায়?", o:["পরনিন্দা","প্রশংসা","দোয়া","নামাজ"], c:0},
+  {q:"ইসলামে আতিথেয়তার গুরুত্ব কেমন?", o:["অত্যন্ত গুরুত্বপূর্ণ","গৌণ","ঐচ্ছিক","নিষিদ্ধ"], c:0},
+  {q:"অসুস্থ ব্যক্তিকে দেখতে যাওয়া কি?", o:["সুন্নত","ওয়াজিব","হারাম","মাকরুহ"], c:0},
+  {q:"মুসলিমদের মধ্যে সালামের উত্তর দেয়া কি?", o:["ওয়াজিব","সুন্নত","হারাম","মাকরুহ"], c:0},
+  {q:"ইসলামে হাসি-খুশি থাকার গুরুত্ব?", o:["উৎসাহিত","নিরুৎসাহিত","নিষিদ্ধ","অপছন্দনীয়"], c:0},
+  {q:"ক্রোধ নিয়ন্ত্রণে ইসলামের উপদেশ কি?", o:["ধৈর্য ধারণ","চিৎকার","মারামারি","গালিগালাজ"], c:0},
+  {q:"ক্ষমা করার গুণ কেমন?", o:["উত্তম","মন্দ","অপ্রয়োজনীয়","নিষিদ্ধ"], c:0}
+];
+
+var QUIZ_CONFIG = {
+  questionsPerQuiz: 10,
+  answerDelay: 1400,
+  showProgressBar: true,
+  shuffleQuestions: true,
+  shuffleOptions: true
+};
     function shuffleArray(arr) {
       var a = arr.slice();
       for (var i = a.length - 1; i > 0; i--) {
@@ -3197,10 +3579,31 @@ window.shareSurah = function(sura) {
       state.knowledgeIndex = (state.knowledgeIndex + direction + state.knowledgeBase.length) % state.knowledgeBase.length;
       renderKnowledge();
     };
+function renderTajweed() {
+  if (!dom.tajweedContainer || state.currentTab !== 'tajweed') return;
+  var item = TAJWEED_RULES[state.tajweedIndex % TAJWEED_RULES.length];
+  var total = TAJWEED_RULES.length;
+  var html = '<div class="knowledge-card">';
+  html += '<div class="kb-number">🎙️ নিয়ম ' + (state.tajweedIndex + 1) + '/' + total + '</div>';
+  html += '<div class="kb-title">' + item.title + '</div>';
+  html += '<div class="kb-content">' + item.content + '</div>';
+  if (item.example) html += '<div class="verse-arabic" style="margin-top:0.4rem;">' + item.example + '</div>';
+  html += '</div>';
+  dom.tajweedContainer.innerHTML = html;
+}
+window.navTajweedPanel = function(direction) {
+  if (state.currentTab !== 'tajweed') {
+    switchTab('tajweed');
+    setTimeout(function() { navTajweedPanel(direction); }, 300);
+    return;
+  }
+  state.tajweedIndex = (state.tajweedIndex + direction + TAJWEED_RULES.length) % TAJWEED_RULES.length;
+  renderTajweed();
+};
     // HELP - only works when help tab is active
     function renderHelp() {
       if (!dom.helpContainer || state.currentTab !== 'help') return;
-      var html = '<div class="knowledge-card"><div class="kb-title">🆘 সাহায্য / Help</div><div class="kb-content">';
+      var html = '<div class="knowledge-card"><div class="kb-title">🆘 সাহায্য ও গাইড</div><div class="kb-content">';
       html += '📖 <strong>কুরআন অনুসন্ধান:</strong><br>';
       html += '  • "2:255" বা "২:২৫৫"<br>';
       html += '  • "সূরা ২ আয়াত ২৫৫"<br><br>';
@@ -3210,38 +3613,12 @@ window.shareSurah = function(sura) {
       html += '💰 <strong>যাকাত:</strong> "যাকাত"<br>';
       html += '⏱️ <strong>টাইমার:</strong> "টাইমার"<br>';
       html += '🧠 <strong>কুইজ:</strong> "কুইজ"<br>';
+      html += '📑 <strong>বিষয়:</strong> "বিষয়" লিখে সব ক্যাটাগরি দেখুন<br>';
+      html += '🔍 <strong>শব্দ সার্চ:</strong> "খুঁজুন [শব্দ]" লিখে কুরআনে শব্দ খুঁজুন<br>';
       html += '💡 বাংলা ও ইংরেজি উভয় ভাষায় কাজ করে';
       html += '</div></div>';
       dom.helpContainer.innerHTML = html;
     }
-  // ইউজার গাইড - শুধু গাইড ট্যাব সক্রিয় থাকলেই কাজ করবে
-var GUIDE_SECTIONS = [
-  {icon:'💬', title:'চ্যাট ট্যাব', content:'সরাসরি টাইপ করে প্রশ্ন করুন। যেমন: "2:255" লিখে যেকোনো আয়াত দেখুন, অথবা "সূরা ২ আয়াত ২৫৫" লিখুন। কীওয়ার্ড লিখেও ফিচারে যেতে পারবেন — যেমন "হাদিস", "বই", "যাকাত" ইত্যাদি।'},
-  {icon:'📖', title:'কুরআন ট্যাব', content:'সূরা ও আয়াত নম্বর সিলেক্ট করে "দেখুন" চাপুন। উপরে ট্যাব থেকে "আয়াত" বা "তাফসীর" মোড বেছে নিতে পারবেন। নিচের আগের/পরবর্তী বাটন দিয়ে ধারাবাহিকভাবে আয়াত পড়া যায়।'},
-  {icon:'📝', title:'ব্লগ ট্যাব', content:'সার্চ বক্সে লিখে ব্লগ পোস্ট খুঁজুন। পোস্টের শিরোনামে ক্লিক করলে বা "পড়ুন" বাটনে ক্লিক করলে সম্পূর্ণ লেখা দেখা যাবে।'},
-  {icon:'📚', title:'বই ট্যাব', content:'ক্যাটাগরি বাটন দিয়ে বই ফিল্টার করুন। "পড়ুন" বাটনে ক্লিক করলে পিডিএফ ভিউয়ারে বইটি খুলবে, যেখানে ডাউনলোড ও ফুলস্ক্রিন অপশনও আছে।'},
-  {icon:'📜', title:'হাদিস ট্যাব', content:'"র‍্যান্ডম" বাটনে ক্লিক করে নতুন নতুন হাদিস দেখুন — আরবি টেক্সট, বাংলা অনুবাদ ও উৎসসহ।'},
-  {icon:'🕌', title:'নামাজের সময়', content:'দিনের পাঁচ ওয়াক্ত নামাজ ও সূর্যোদয়ের সময় এখানে দেখা যায়।'},
-  {icon:'💰', title:'যাকাত ক্যালকুলেটর', content:'মোট সম্পদের পরিমাণ ও হার লিখে "গণনা করুন" চাপলেই যাকাতের পরিমাণ বের হয়ে যাবে। নিসাবের নিচে থাকলে সতর্কবার্তা দেখাবে।'},
-  {icon:'⏱️', title:'টাইমার', content:'কুরআন বা বই পড়ার সময় ট্র্যাক করতে "শুরু" চাপুন, শেষে "থামুন" চাপলে মোট সময় যোগ হয়ে যাবে।'},
-  {icon:'🧠', title:'কুইজ', content:'"নতুন কুইজ" চাপলে ৫টি র‍্যান্ডম ইসলামিক প্রশ্ন আসবে। উত্তর দিলে সাথে সাথে সঠিক/ভুল দেখাবে এবং শেষে স্কোর ও ফলাফল দেখাবে।'},
-  {icon:'📚', title:'জ্ঞান ট্যাব', content:'ইসলামিক জ্ঞানের কার্ড একের পর এক দেখতে "আগের/পরবর্তী" বাটন ব্যবহার করুন।'},
-  {icon:'🎤', title:'ভয়েস সার্চ', content:'হেডারের 🎤 বাটনে চাপলে বাংলায় কথা বলে প্রশ্ন করতে পারবেন — কথা বলা শেষ হলে স্বয়ংক্রিয়ভাবে উত্তর আসবে।'},
-  {icon:'⚙️', title:'সেটিংস', content:'বাংলা/আরবি ফন্ট সাইজ, ফন্ট স্টাইল ও অডিও স্পিড কাস্টমাইজ করতে পারবেন। "ডিফল্ট সেটিংস" বাটনে সব আগের অবস্থায় ফিরে যাবে।'},
-  {icon:'📖', title:'সূরা তালিকা', content:'হেডারের "সূরা" বাটনে ক্লিক করলে ১১৪টি সূরার তালিকা দেখা যাবে, সার্চ বক্স দিয়ে নাম দিয়ে খুঁজেও নিতে পারবেন। যেকোনো সূরায় ক্লিক করলে সরাসরি সেই সূরার প্রথম আয়াতে চলে যাবে।'},
-  {icon:'🌙', title:'ডার্ক মোড', content:'হেডারের 🌙/☀️ বাটনে ক্লিক করে লাইট বা ডার্ক থিমের মধ্যে পরিবর্তন করতে পারবেন — এটি সবসময়ের জন্য মনে রাখা হয়।'}
-];
-function renderGuide() {
-  if (!dom.guideContainer || state.currentTab !== 'guide') return;
-  var html = '';
-  GUIDE_SECTIONS.forEach(function(sec) {
-    html += '<div class="knowledge-card">';
-    html += '<div class="kb-title">' + sec.icon + ' ' + sec.title + '</div>';
-    html += '<div class="kb-content">' + sec.content + '</div>';
-    html += '</div>';
-  });
-  dom.guideContainer.innerHTML = html;
-}
     // ============================================================
     // 10. PDF VIEWER
     // ============================================================
@@ -3315,6 +3692,7 @@ function renderGuide() {
 html += '<div class="action-btn-row">';
 html += '<button style="background:#c0392b;" onclick="window.downloadTafsirPDF(\''+sura+'\',\''+aya+'\')">📄 পিডিএফ ডাউনলোড</button>';
 html += '<button style="background:#0d47a1;" onclick="window.shareTafsir(\''+sura+'\',\''+aya+'\')">📤 শেয়ার করুন</button>';
+html += shareCardBtn(sura, aya);
 html += '</div>';
       
       dom.tafsirTitle.textContent = 'সূরা ' + sura + ', আয়াত ' + aya + ' - তাফসীর';
@@ -3762,6 +4140,11 @@ window.shareCategory = function(categoryName) {
             renderKnowledge();
             return;
           }
+		if (lower.indexOf('তাজবীদ') !== -1 || lower.indexOf('tajweed') !== -1) {
+  switchTab('tajweed');
+  renderTajweed();
+  return;
+}
           if (lower.indexOf('সাহায্য') !== -1 || lower.indexOf('help') !== -1) {
             switchTab('help');
             renderHelp();
@@ -3826,7 +4209,9 @@ addBotMessage('🤔 আমি এই প্রশ্নের উত্তর �
   html += '<button onclick="window.playAudio(\'' + aya.sura + '\',\'' + aya.aya + '\')" style="background:var(--secondary);color:#fff;border:none;padding:3px 8px;border-radius:5px;cursor:pointer;font-weight:600;font-family:var(--font-ui);font-size:0.6rem;">🎧 শুনুন</button>';
   html += '<button onclick="window.copyAya(\'' + aya.sura + '\',\'' + aya.aya + '\')" style="background:var(--gold);color:#000;border:none;padding:3px 8px;border-radius:5px;cursor:pointer;font-weight:600;font-family:var(--font-ui);font-size:0.6rem;">📋 কপি</button>';
   html += '<button onclick="window.downloadVersePDF(\'' + aya.sura + '\',\'' + aya.aya + '\')" style="background:#c0392b;color:#fff;border:none;padding:3px 8px;border-radius:5px;cursor:pointer;font-weight:600;font-family:var(--font-ui);font-size:0.6rem;">📄 পিডিএফ</button>';
-  html += '<button onclick="window.shareVerse(\'' + aya.sura + '\',\'' + aya.aya + '\')" style="background:#0d47a1;color:#fff;border:none;padding:3px 8px;border-radius:5px;cursor:pointer;font-weight:600;font-family:var(--font-ui);font-size:0.6rem;">📤 শেয়ার</button>';
+  // ========== শেয়ার কার্ড বাটন যোগ করা হয়েছে ==========
+  html += '<button onclick="window.openShareCardModal(\'' + aya.sura + '\',\'' + aya.aya + '\')" style="background:linear-gradient(135deg,#d4af37,#f0d080);color:#000;border:none;padding:3px 8px;border-radius:5px;cursor:pointer;font-weight:700;font-family:var(--font-ui);font-size:0.6rem;">🖼️ কার্ড</button>';
+  // ==================================================
   html += '</div>';
   addBotMessage(html, 'normal', true);
 }
@@ -3864,9 +4249,9 @@ addBotMessage('🤔 আমি এই প্রশ্নের উত্তর �
           document.getElementById('auto-play-audio').checked = settings.autoPlayAudio || false;
           state.audioSettings.speed = parseFloat(settings.audioSpeed) || 1;
           state.audioSettings.autoPlay = settings.autoPlayAudio || false;
-          state.fontSettings.bengaliSize = parseInt(settings.bengaliSize) || 17;
-          state.fontSettings.arabicSize = parseInt(settings.arabicSize) || 22;
-          state.fontSettings.englishSize = parseInt(settings.englishSize) || 15;
+          state.fontSettings.bengaliSize = parseInt(settings.bengaliSize) || 18;
+          state.fontSettings.arabicSize = parseInt(settings.arabicSize) || 24;
+          state.fontSettings.englishSize = parseInt(settings.englishSize) || 16;
           state.fontSettings.bengaliFont = settings.bengaliFont || 'Kalpurush, Hind Siliguri, sans-serif';
           state.fontSettings.arabicFont = settings.arabicFont || 'Amiri, serif';
           state.fontSettings.englishFont = settings.englishFont || 'Georgia, serif';
@@ -3906,12 +4291,12 @@ addBotMessage('🤔 আমি এই প্রশ্নের উত্তর �
       root.style.setProperty('--font-english', state.fontSettings.englishFont);
     }
     function resetSettings() {
-      document.getElementById('bengali-font-size').value = 17;
-      document.getElementById('bengali-font-size-value').textContent = '17px';
-      document.getElementById('arabic-font-size').value = 22;
-      document.getElementById('arabic-font-size-value').textContent = '22px';
-      document.getElementById('english-font-size').value = 15;
-      document.getElementById('english-font-size-value').textContent = '15px';
+      document.getElementById('bengali-font-size').value = 18;
+      document.getElementById('bengali-font-size-value').textContent = '18px';
+      document.getElementById('arabic-font-size').value = 24;
+      document.getElementById('arabic-font-size-value').textContent = '24px';
+      document.getElementById('english-font-size').value = 16;
+      document.getElementById('english-font-size-value').textContent = '16px';
       document.getElementById('audio-speed').value = 1;
       document.getElementById('audio-speed-value').textContent = '1.0x';
       document.getElementById('bengali-font-family').value = 'Kalpurush, Hind Siliguri, sans-serif';
@@ -4145,6 +4530,10 @@ case 'wordsearch':
           switchTab('knowledge');
           renderKnowledge();
           break;
+		case 'tajweed':
+  switchTab('tajweed');
+  renderTajweed();
+  break;
         case 'help':
           switchTab('help');
           renderHelp();
@@ -4171,6 +4560,40 @@ case 'wordsearch':
     window.toggleTimerPanel = toggleTimerPanel;
     window.resetTimerPanel = resetTimerPanel;
     window.answerQuizPanel = answerQuizPanel;
+// শেয়ার কার্ড মডাল ইভেন্ট
+document.getElementById('close-share-card-modal').addEventListener('click', closeShareCardModal);
+document.getElementById('share-card-modal').addEventListener('click', function(e) {
+  if (e.target === this) closeShareCardModal();
+});
+
+// ডাউনলোড বাটন
+document.getElementById('download-card-btn').addEventListener('click', downloadShareCard);
+
+// শেয়ার বাটন
+document.getElementById('share-wa-btn').addEventListener('click', function() { shareCardToPlatform('whatsapp'); });
+document.getElementById('share-fb-btn').addEventListener('click', function() { shareCardToPlatform('facebook'); });
+document.getElementById('share-tg-btn').addEventListener('click', function() { shareCardToPlatform('telegram'); });
+document.getElementById('share-twitter-btn').addEventListener('click', function() { shareCardToPlatform('twitter'); });
+document.getElementById('copy-card-text-btn').addEventListener('click', copyShareCardText);
+
+// ESC কী
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') {
+    closeShareCardModal();
+  }
+});
+
+function shareCardBtn(sura, aya) {
+  return '<button onclick="window.openShareCardModal(\'' + sura + '\',\'' + aya + '\')" style="background:linear-gradient(135deg,#d4af37,#f0d080);color:#000;border:none;padding:3px 8px;border-radius:5px;cursor:pointer;font-weight:700;font-family:var(--font-ui);font-size:0.6rem;">🖼️ কার্ড</button>';
+}
+window.shareCardBtn = shareCardBtn;
+
+// উইন্ডোতে ফাংশন এক্সপোজ
+window.openShareCardModal = openShareCardModal;
+window.closeShareCardModal = closeShareCardModal;
+window.downloadShareCard = downloadShareCard;
+window.shareCardToPlatform = shareCardToPlatform;
+window.copyShareCardText = copyShareCardText;
     function init() {
       updateClock();
       setInterval(updateClock, 1000);
@@ -4295,6 +4718,8 @@ if (dom.pwaInstallBtn) {
       dom.quizStartBtn.addEventListener('click', startQuizPanel);
       dom.knowledgePrevBtn.addEventListener('click', function() { navKnowledgePanel(-1); });
       dom.knowledgeNextBtn.addEventListener('click', function() { navKnowledgePanel(1); });
+      if (dom.tajweedPrevBtn) dom.tajweedPrevBtn.addEventListener('click', function() { navTajweedPanel(-1); });
+if (dom.tajweedNextBtn) dom.tajweedNextBtn.addEventListener('click', function() { navTajweedPanel(1); });
       document.getElementById('bengali-font-size').addEventListener('input', function() {
         document.getElementById('bengali-font-size-value').textContent = this.value + 'px';
         saveSettings();
@@ -4468,6 +4893,429 @@ function performWordSearch(keyword) {
   showWordSearchResults(keyword, results);
 }
 window.performWordSearch = performWordSearch;
+// ============================================================
+// 22. আয়াত শেয়ার কার্ড (Share Card)
+// ============================================================
+
+// শেয়ার কার্ডের জন্য ডেটা স্টোর
+var shareCardData = null;
+
+// শেয়ার কার্ড মডাল খোলা
+function openShareCardModal(sura, aya) {
+  // আয়াতের ডেটা সংগ্রহ
+  var bengali = state.quranData.find(function(a) {
+    return String(a.sura) === String(sura) && String(a.aya) === String(aya);
+  });
+  var arabic = state.arabicData.find(function(a) {
+    return String(a.sura) === String(sura) && String(a.VerseIDAr) === String(aya);
+  });
+  var english = state.englishData.find(function(a) {
+    return String(a.sura) === String(sura) && String(a.aya) === String(aya);
+  });
+  var category = getCategoryForVerse(sura, aya);
+
+  // ডেটা সেভ
+  shareCardData = {
+    sura: sura,
+    aya: aya,
+    bengali: bengali ? bengali.text : 'আয়াত পাওয়া যায়নি',
+    arabic: arabic ? arabic.ayat : '',
+    english: english ? english.text : '',
+    category: category || '',
+    suraName: getSurahName(parseInt(sura))
+  };
+
+  // কার্ডে ডেটা আপডেট
+  document.getElementById('card-arabic-text').textContent = shareCardData.arabic || '—';
+  document.getElementById('card-bengali-text').textContent = shareCardData.bengali;
+  document.getElementById('card-english-text').textContent = shareCardData.english || '—';
+  document.getElementById('card-reference-text').textContent = 'সূরা ' + sura + ', আয়াত ' + aya + ' — ' + shareCardData.suraName;
+
+  // মডাল দেখান
+  document.getElementById('share-card-modal').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+
+// শেয়ার কার্ড মডাল বন্ধ
+function closeShareCardModal() {
+  document.getElementById('share-card-modal').classList.remove('active');
+  document.body.style.overflow = '';
+  shareCardData = null;
+}
+
+// ===== কার্ড ইমেজ তৈরি ও ডাউনলোড =====
+function downloadShareCard() {
+  if (!shareCardData) return;
+  
+  var cardElement = document.getElementById('card-inner');
+  
+  // লোডিং ইন্ডিকেটর
+  var btn = document.getElementById('download-card-btn');
+  var originalText = btn.innerHTML;
+  btn.innerHTML = '⏳ তৈরি হচ্ছে...';
+  btn.disabled = true;
+
+  // html2canvas ব্যবহার করে ইমেজ তৈরি
+  html2canvas(cardElement, {
+    scale: 2.5,
+    useCORS: true,
+    backgroundColor: '#0d2b1a',
+    width: cardElement.scrollWidth,
+    height: cardElement.scrollHeight,
+    windowWidth: cardElement.scrollWidth,
+    windowHeight: cardElement.scrollHeight,
+    logging: false,
+    onclone: function(document) {
+      // ক্লোন করা ডকুমেন্টে স্টাইল ঠিক রাখা
+    }
+  }).then(function(canvas) {
+    // ইমেজ ডাউনলোড
+    var link = document.createElement('a');
+    link.download = 'TalksWithAlQuran-Sura-' + shareCardData.sura + '-Aya-' + shareCardData.aya + '.png';
+    link.href = canvas.toDataURL('image/png');
+    link.click();
+    
+    btn.innerHTML = originalText;
+    btn.disabled = false;
+  }).catch(function(err) {
+    console.error('Card export error:', err);
+    btn.innerHTML = '❌ ব্যর্থ';
+    btn.disabled = false;
+    setTimeout(function() {
+      btn.innerHTML = originalText;
+    }, 2000);
+  });
+}
+
+// ===== কার্ড টেক্সট কপি =====
+function copyShareCardText() {
+  if (!shareCardData) return;
+  var text = '🕌 سُورَة ' + shareCardData.sura + ', آيَة ' + shareCardData.aya + '\n\n';
+  if (shareCardData.arabic) text += shareCardData.arabic + '\n\n';
+  text += shareCardData.bengali + '\n\n';
+  if (shareCardData.english) text += '🇬🇧 ' + shareCardData.english + '\n\n';
+  text += '— Talks With Al Quran\n';
+  text += '📖 ' + window.location.href;
+  
+  copyTextToClipboard(text, function() {
+    showToast('✅ টেক্সট কপি করা হয়েছে!');
+  }, function() {
+    showToast('❌ কপি করতে সমস্যা হয়েছে');
+  });
+}
+
+// ===== শেয়ার ফাংশন (সম্পূর্ণ আপডেটেড - সব প্ল্যাটফর্মে ইমেজ) =====
+function shareCardToPlatform(platform) {
+  if (!shareCardData) return;
+  
+  var cardElement = document.getElementById('card-inner');
+  
+  // বাটন খুঁজে বের করা
+  var btn = document.querySelector('.share-action-btn[data-platform="' + platform + '"]');
+  if (!btn) {
+    btn = document.getElementById('share-wa-btn');
+  }
+  
+  if (btn) {
+    btn.innerHTML = '⏳ তৈরি হচ্ছে...';
+    btn.disabled = true;
+  }
+
+  // html2canvas দিয়ে ইমেজ তৈরি
+  html2canvas(cardElement, {
+    scale: 2.5,
+    useCORS: true,
+    backgroundColor: '#0d2b1a',
+    width: cardElement.scrollWidth,
+    height: cardElement.scrollHeight,
+    windowWidth: cardElement.scrollWidth,
+    windowHeight: cardElement.scrollHeight,
+    logging: false
+  }).then(function(canvas) {
+    
+    // ইমেজ ডেটা URL তৈরি
+    var imageDataURL = canvas.toDataURL('image/png');
+    
+    // ===== সব প্ল্যাটফর্মের জন্য আলাদা হ্যান্ডেল =====
+    switch(platform) {
+      
+      // ===== WHATSAPP =====
+      case 'whatsapp':
+        // ইমেজ ডাউনলোড
+        var link = document.createElement('a');
+        link.download = 'TalksWithAlQuran-Sura-' + shareCardData.sura + '.png';
+        link.href = imageDataURL;
+        link.click();
+        
+        // টেক্সট শেয়ার
+        var text = '🕌 সূরা ' + shareCardData.sura + ', আয়াত ' + shareCardData.aya + '\n' +
+                   shareCardData.bengali + '\n\n' +
+                   '📖 ' + window.location.href;
+        window.open('https://wa.me/?text=' + encodeURIComponent(text), '_blank');
+        
+        if (btn) {
+          btn.innerHTML = '✅ ডাউনলোড হয়েছে';
+          btn.disabled = false;
+          setTimeout(function() { resetShareButtons(); }, 3000);
+        }
+        break;
+      
+      // ===== FACEBOOK =====
+      case 'facebook':
+        // Facebook-এ ইমেজ শেয়ার করার জন্য Canvas থেকে Blob তৈরি
+        canvas.toBlob(function(blob) {
+          if (navigator.share && navigator.canShare && navigator.canShare({ files: [new File([blob], 'image.png', {type: 'image/png'})] })) {
+            // মোবাইলে Native Share
+            navigator.share({
+              title: 'Talks With Al Quran',
+              text: '🕌 সূরা ' + shareCardData.sura + ', আয়াত ' + shareCardData.aya,
+              files: [new File([blob], 'TalksWithAlQuran.png', {type: 'image/png'})]
+            }).catch(function(e) {
+              if (e.name !== 'AbortError') {
+                // ফ্যালব্যাক: টেক্সট শেয়ার
+                shareTextOnly(platform);
+              }
+            });
+          } else {
+            // ডেস্কটপ: ইমেজ ডাউনলোড + ফেসবুকে শেয়ার লিংক
+            var fbText = '🕌 সূরা ' + shareCardData.sura + ', আয়াত ' + shareCardData.aya + '\n' +
+                         shareCardData.bengali + '\n\n' +
+                         '📖 ' + window.location.href;
+            window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(window.location.href) + '&quote=' + encodeURIComponent(fbText), '_blank', 'width=600,height=500');
+          }
+          
+          if (btn) {
+            btn.innerHTML = '✅ শেয়ার হয়েছে';
+            btn.disabled = false;
+            setTimeout(function() { resetShareButtons(); }, 3000);
+          }
+        }, 'image/png');
+        break;
+      
+      // ===== TELEGRAM =====
+      case 'telegram':
+        // Telegram-এ ইমেজ শেয়ার
+        canvas.toBlob(function(blob) {
+          if (navigator.share && navigator.canShare && navigator.canShare({ files: [new File([blob], 'image.png', {type: 'image/png'})] })) {
+            // মোবাইলে Native Share
+            navigator.share({
+              title: 'Talks With Al Quran',
+              text: '🕌 সূরা ' + shareCardData.sura + ', আয়াত ' + shareCardData.aya,
+              files: [new File([blob], 'TalksWithAlQuran.png', {type: 'image/png'})]
+            }).catch(function(e) {
+              if (e.name !== 'AbortError') {
+                shareTextOnly(platform);
+              }
+            });
+          } else {
+            // ডেস্কটপ: টেক্সট + লিংক শেয়ার
+            var tgText = '🕌 সূরা ' + shareCardData.sura + ', আয়াত ' + shareCardData.aya + '\n' +
+                         shareCardData.bengali + '\n\n' +
+                         '📖 ' + window.location.href;
+            window.open('https://t.me/share/url?url=' + encodeURIComponent(window.location.href) + '&text=' + encodeURIComponent(tgText), '_blank', 'width=600,height=500');
+          }
+          
+          if (btn) {
+            btn.innerHTML = '✅ শেয়ার হয়েছে';
+            btn.disabled = false;
+            setTimeout(function() { resetShareButtons(); }, 3000);
+          }
+        }, 'image/png');
+        break;
+      
+      // ===== TWITTER / X =====
+      case 'twitter':
+        // Twitter-এ ইমেজ শেয়ার
+        canvas.toBlob(function(blob) {
+          if (navigator.share && navigator.canShare && navigator.canShare({ files: [new File([blob], 'image.png', {type: 'image/png'})] })) {
+            // মোবাইলে Native Share
+            navigator.share({
+              title: 'Talks With Al Quran',
+              text: '🕌 সূরা ' + shareCardData.sura + ', আয়াত ' + shareCardData.aya,
+              files: [new File([blob], 'TalksWithAlQuran.png', {type: 'image/png'})]
+            }).catch(function(e) {
+              if (e.name !== 'AbortError') {
+                shareTextOnly(platform);
+              }
+            });
+          } else {
+            // ডেস্কটপ: টেক্সট + লিংক শেয়ার
+            var twText = '🕌 সূরা ' + shareCardData.sura + ', আয়াত ' + shareCardData.aya + '\n' +
+                         shareCardData.bengali + '\n\n' +
+                         '📖 ' + window.location.href;
+            window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(twText), '_blank', 'width=600,height=500');
+          }
+          
+          if (btn) {
+            btn.innerHTML = '✅ শেয়ার হয়েছে';
+            btn.disabled = false;
+            setTimeout(function() { resetShareButtons(); }, 3000);
+          }
+        }, 'image/png');
+        break;
+      
+      default:
+        // অন্য কোনো প্ল্যাটফর্ম
+        shareTextOnly(platform);
+        if (btn) {
+          btn.innerHTML = '✅ শেয়ার হয়েছে';
+          btn.disabled = false;
+          setTimeout(function() { resetShareButtons(); }, 3000);
+        }
+    }
+    
+  }).catch(function(err) {
+    console.error('Card generation error:', err);
+    // html2canvas ব্যর্থ হলে টেক্সট শেয়ার
+    shareTextOnly(platform);
+    if (btn) {
+      btn.innerHTML = '❌ ব্যর্থ';
+      btn.disabled = false;
+      setTimeout(function() { resetShareButtons(); }, 3000);
+    }
+  });
+}
+
+// ===== টেক্সট শেয়ার (ফ্যালব্যাক) =====
+function shareTextOnly(platform) {
+  if (!shareCardData) return;
+  
+  var text = '🕌 সূরা ' + shareCardData.sura + ', আয়াত ' + shareCardData.aya + '\n' +
+             '— ' + shareCardData.suraName + '\n\n' +
+             shareCardData.bengali + '\n\n';
+  
+  if (shareCardData.english) {
+    text += '🇬🇧 ' + shareCardData.english + '\n\n';
+  }
+  
+  text += '📖 ' + window.location.href;
+  
+  var encodedText = encodeURIComponent(text);
+  var urls = {
+    whatsapp: 'https://wa.me/?text=' + encodedText,
+    facebook: 'https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(window.location.href) + '&quote=' + encodedText,
+    telegram: 'https://t.me/share/url?url=' + encodeURIComponent(window.location.href) + '&text=' + encodedText,
+    twitter: 'https://twitter.com/intent/tweet?text=' + encodedText
+  };
+  
+  if (urls[platform]) {
+    window.open(urls[platform], '_blank', 'width=600,height=500');
+  }
+}
+
+// ===== বাটন রিসেট =====
+function resetShareButtons() {
+  var labels = {
+    'whatsapp': '🟢 WhatsApp',
+    'facebook': '🔵 Facebook',
+    'telegram': '✈️ Telegram',
+    'twitter': '✖️ X'
+  };
+  
+  document.querySelectorAll('.share-action-btn').forEach(function(btn) {
+    var platform = btn.getAttribute('data-platform');
+    if (platform && labels[platform]) {
+      btn.innerHTML = labels[platform];
+      btn.disabled = false;
+    }
+  });
+}
+
+// ===== টোস্ট নোটিফিকেশন =====
+function showToast(message) {
+  var existing = document.querySelector('.toast-notification');
+  if (existing) existing.remove();
+  
+  var toast = document.createElement('div');
+  toast.className = 'toast-notification';
+  toast.innerHTML = message;
+  toast.style.cssText = `
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--primary);
+    color: white;
+    padding: 10px 24px;
+    border-radius: 50px;
+    font-family: var(--font-ui);
+    font-size: 0.9rem;
+    font-weight: 600;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    z-index: 99999;
+    animation: messageSlide 0.3s ease;
+    max-width: 90%;
+    text-align: center;
+  `;
+  document.body.appendChild(toast);
+  
+  setTimeout(function() {
+    toast.style.opacity = '0';
+    toast.style.transition = 'opacity 0.3s ease';
+    setTimeout(function() {
+      toast.remove();
+    }, 300);
+  }, 2500);
+}
+
+// ===== কপি ইউটিলিটি =====
+function copyTextToClipboard(text, onSuccess, onError) {
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(text).then(onSuccess).catch(onError);
+  } else {
+    // ফ্যালব্যাক
+    var textarea = document.createElement('textarea');
+    textarea.value = text;
+    textarea.style.position = 'fixed';
+    textarea.style.opacity = '0';
+    document.body.appendChild(textarea);
+    textarea.select();
+    try {
+      document.execCommand('copy');
+      onSuccess();
+    } catch (e) {
+      onError(e);
+    }
+    document.body.removeChild(textarea);
+  }
+}
+
+// ===== আয়াতের অ্যাকশন বাটনে "শেয়ার কার্ড" যোগ করা =====
+// displayAyaResult ফাংশন আপডেট
+function displayAyaResultWithShareCard(aya) {
+  var arabic = state.arabicData.find(function(a) {
+    return String(a.sura) === String(aya.sura) && String(a.VerseIDAr) === String(aya.aya);
+  });
+  var english = state.englishData.find(function(a) {
+    return String(a.sura) === String(aya.sura) && String(a.aya) === String(aya.aya);
+  });
+  var category = getCategoryForVerse(aya.sura, aya.aya);
+  
+  var html = '<strong>সূরা ' + aya.sura + ', আয়াত ' + aya.aya + ' (সূরা ' + getSurahName(parseInt(aya.sura)) + ')</strong>';
+  if (category) html += '<br>' + formatCategoryDisplay(category);
+  if (arabic && arabic.ayat) html += '<div class="arabic-text">' + arabic.ayat + '</div>';
+  html += '<div style="padding:0.3rem 0.5rem;background:#f8f9fa;border-radius:var(--rounded);border-left:4px solid var(--primary);margin:0.2rem 0;">' + aya.text + '</div>';
+  if (english && english.text) {
+    html += '<div class="english-text" style="padding:0.3rem 0.5rem;background:#fff8e1;border-radius:var(--rounded);border-left:4px solid var(--gold);margin:0.2rem 0;font-style:italic;color:var(--text-light);">🇬🇧 ' + english.text + '</div>';
+  }
+  
+  // আপডেটেড অ্যাকশন বাটন (শেয়ার কার্ড সহ)
+  html += '<div style="display:flex;gap:0.2rem;flex-wrap:wrap;margin-top:0.2rem;justify-content:center;">';
+  html += '<button onclick="window.showTafsir(\'' + aya.sura + '\',\'' + aya.aya + '\')" style="background:var(--primary);color:#fff;border:none;padding:3px 8px;border-radius:5px;cursor:pointer;font-weight:600;font-family:var(--font-ui);font-size:0.6rem;">📖 তাফসীর</button>';
+  html += '<button onclick="window.playAudio(\'' + aya.sura + '\',\'' + aya.aya + '\')" style="background:var(--secondary);color:#fff;border:none;padding:3px 8px;border-radius:5px;cursor:pointer;font-weight:600;font-family:var(--font-ui);font-size:0.6rem;">🎧 শুনুন</button>';
+  html += '<button onclick="window.copyAya(\'' + aya.sura + '\',\'' + aya.aya + '\')" style="background:var(--gold);color:#000;border:none;padding:3px 8px;border-radius:5px;cursor:pointer;font-weight:600;font-family:var(--font-ui);font-size:0.6rem;">📋 কপি</button>';
+  html += '<button onclick="window.downloadVersePDF(\'' + aya.sura + '\',\'' + aya.aya + '\')" style="background:#c0392b;color:#fff;border:none;padding:3px 8px;border-radius:5px;cursor:pointer;font-weight:600;font-family:var(--font-ui);font-size:0.6rem;">📄 পিডিএফ</button>';
+  // নতুন: শেয়ার কার্ড বাটন
+  html += '<button onclick="window.openShareCardModal(\'' + aya.sura + '\',\'' + aya.aya + '\')" style="background:linear-gradient(135deg,#d4af37,#f0d080);color:#000;border:none;padding:3px 8px;border-radius:5px;cursor:pointer;font-weight:700;font-family:var(--font-ui);font-size:0.6rem;">🖼️ কার্ড</button>';
+  html += '</div>';
+  
+  addBotMessage(html, 'normal', true);
+}
+
+// ===== Qt ডিসপ্লে ও অন্যান্য জায়গায় শেয়ার কার্ড যোগ করা =====
+// renderQtContent ফাংশন আপডেট (শুধু শেয়ার কার্ড বাটন যোগ)
+// QT ডিসপ্লেতে বাটন যোগ করতে renderQtContent-এ এই লাইন যোগ করুন:
+// html += '<button onclick="window.openShareCardModal(\'' + sura + '\',\'' + aya + '\')" style="background:linear-gradient(135deg,#d4af37,#f0d080);color:#000;border:none;padding:5px 10px;border-radius:6px;cursor:pointer;font-weight:700;font-family:var(--font-ui);font-size:0.75rem;">🖼️ কার্ড</button>';
     // ============================================================
     // 21. START
     // ============================================================
