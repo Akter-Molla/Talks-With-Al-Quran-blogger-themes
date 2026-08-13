@@ -3,7 +3,7 @@
 <html b:version='2' class='v2' expr:dir='data:blog.languageDirection' xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
 <head>
   <meta charset='utf-8'/>
-  <meta content='width=device-width, initial-scale=1.0' name='viewport'/>
+  <meta content='width=device-width, initial-scale=1.0, viewport-fit=cover, interactive-widget=resizes-content' name='viewport'/>
 <!-- =========================================================
      TALKS WITH AL QURAN - SEO & BRAND META
      ========================================================= -->
@@ -138,6 +138,7 @@
     font-size: var(--bengali-font-size);
     transition: background 0.4s, color 0.4s;
     height: 100vh;
+	 height: 100dvh;
     width: 100vw;
   }
   ::-webkit-scrollbar { width: 4px; }
@@ -151,6 +152,8 @@
     background: var(--white);
     z-index: 1000;
     height: 100vh;
+    height: 100dvh;
+    height: var(--app-height, 100dvh);
     width: 100vw;
     overflow: hidden;
   }
@@ -297,7 +300,7 @@
     border-radius: var(--rounded-full);
     background: var(--primary);
     color: var(--white);
-    font-size: 1.5rem;
+    font-size: 1rem;
     font-weight: 600;
     cursor: pointer;
     font-family: var(--font-ui);
@@ -756,9 +759,10 @@
   color: var(--dark);
 }
   .hadith-card { background: var(--white); border-radius: var(--rounded); padding: 0.5rem 0.7rem; margin: 0.3rem 0; border-right: 4px solid var(--gold); box-shadow: var(--shadow-sm); }
-  .hadith-card .hadith-text { font-size: 0.95rem; line-height: 1.8; font-style: italic; color: var(--text); }
-  .hadith-card .hadith-translation { margin: 0.1rem 0; font-size: 0.85rem; }
-  .hadith-card .hadith-source { font-size: 0.7rem; color: var(--gray-dark); margin-top: 0.1rem; }
+  .hadith-card .hadith-text { font-size: 2rem; line-height: 1.8; font-style: italic; color: var(--text); }
+  .hadith-card .hadith-translation { margin: 0.1rem 0; font-size: 1.85rem; }
+  .hadith-card .hadith-source { font-size: 1.5rem; color: var(--gray-dark); margin-top: 0.1rem; }
+  .hadith-card .hadith-number { font-size: 0.85rem; color: var(--gold); font-weight: 700; margin-bottom: 0.3rem; display: block; }
   .prayer-card { background: var(--white); border-radius: var(--rounded); padding: 0.5rem 0.7rem; margin: 0.3rem 0; box-shadow: var(--shadow-sm); }
   .prayer-card .prayer-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.1rem; }
   .prayer-card .prayer-item { display: flex; justify-content: space-between; padding: 0.1rem 0.2rem; border-bottom: 1px solid var(--gray-light); }
@@ -1125,6 +1129,13 @@
 .share-card-actions .share-action-btn.twitter-btn {
   background: #000;
 }
+
+input, select, textarea {
+  font-size: 16px !important;
+}
+@media (min-width: 481px) {
+  .chat-input-area input { font-size: 0.95rem !important; }
+}
 @media (max-width: 480px) {
   .share-card-actions {
     grid-template-columns: 1fr 1fr;
@@ -1139,6 +1150,20 @@
   #share-card-preview .card-inner .card-bengali {
     font-size: 0.75rem;
   }
+}
+.input-actions {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.3rem;
+  flex-shrink: 0;
+}
+.input-btn.voice-inline {
+  background: var(--primary);
+  color: #fff;
+}
+.input-btn.voice-inline.active {
+  background: #c0392b;
 }
 .sura-panel-content .sura-grid .sura-item { 
   background: var(--light-green); 
@@ -1251,6 +1276,42 @@
     .welcome-section-compact h1 { font-size: 1.8rem; }
     .welcome-section-compact .welcome-sub { font-size: 1.2rem; }
   }
+.input-btn.keyboard-toggle { background: var(--gold-gradient); color: var(--dark); }
+.input-btn.keyboard-toggle.active { background: var(--primary); color: #fff; }
+
+.virtual-keyboard-panel {
+  display: none;
+  background: var(--white);
+  border-top: 1px solid var(--gray-medium);
+  padding: 0.4rem 0.5rem;
+  flex-shrink: 0;
+}
+.virtual-keyboard-panel.active { display: block; }
+.vk-lang-tabs { display:flex; gap:0.3rem; margin-bottom:0.35rem; }
+.vk-lang-btn {
+  flex:1; padding:0.3rem; border:2px solid var(--gray-medium); border-radius:var(--rounded);
+  background:var(--white); cursor:pointer; font-family:var(--font-ui); font-weight:700; font-size:0.75rem; color:var(--text);
+}
+#vk-voice-btn.recording { background:#c0392b; color:#fff; border-color:#c0392b; }
+.vk-lang-btn.active { border-color:var(--gold); background:var(--gold-gradient); color:var(--dark); }
+.vk-keys-area {
+  display:grid; grid-template-columns:repeat(10, 1fr); gap:0.2rem; max-height:140px; overflow-y:auto;
+}
+.vk-key {
+  padding:0.35rem 0.1rem; border:1px solid var(--gray-medium); border-radius:6px; background:var(--gray-light);
+  cursor:pointer; font-size:0.85rem; text-align:center; color:var(--text); transition:var(--transition);
+}
+.vk-key:hover, .vk-key:active { background:var(--gold-gradient); color:var(--dark); }
+.vk-keys-area[data-lang="bn"] .vk-key { font-family:var(--font-bengali); }
+.vk-keys-area[data-lang="ar"] .vk-key { font-family:var(--font-arabic); font-size:1rem; }
+.vk-keys-area[data-lang="en"] .vk-key { font-family:var(--font-english); }
+.vk-bottom-row { display:flex; gap:0.3rem; margin-top:0.3rem; }
+.vk-bottom-row .vk-key { flex:1; padding:0.4rem; font-weight:700; }
+.vk-bottom-row .vk-enter { background:var(--gold-gradient); color:var(--dark); }
+@media (max-width:480px) {
+  .vk-keys-area { grid-template-columns:repeat(8,1fr); }
+  .vk-key { font-size:0.75rem; padding:0.3rem 0.05rem; }
+}
   @media (max-width: 480px) {
     .header-brand .brand-text { font-size: 0.6rem; }
     .header-brand .brand-icon { font-size: 0.9rem; }
@@ -1754,6 +1815,21 @@
           </div>
         </div>
         <div class='chat-messages-area' id='chat-messages'/>
+   <!-- Virtual Unicode Keyboard -->
+<div class='virtual-keyboard-panel' id='virtual-keyboard-panel'>
+  <div class='vk-lang-tabs'>
+  <button class='vk-lang-btn active' data-lang='bn'>ব&#2494;&#2434;ল&#2494;</button>
+  <button class='vk-lang-btn' data-lang='ar'>العربية</button>
+  <button class='vk-lang-btn' data-lang='en'>English</button>
+  <button class='vk-lang-btn' id='vk-voice-btn' style='flex:0 0 44px;' type='button'>🎤</button>
+</div>
+  <div class='vk-keys-area' data-lang='bn' id='vk-keys-area'/>
+  <div class='vk-bottom-row'>
+    <button class='vk-key vk-space' id='vk-space-btn' type='button'>Space</button>
+    <button class='vk-key vk-backspace' id='vk-backspace-btn' type='button'>&#9003;</button>
+    <button class='vk-key vk-enter' id='vk-enter-btn' type='button'>&#8629; প&#2494;ঠ&#2494;ন</button>
+  </div>
+</div>
       </div>
       
       <!-- Chat Input - only visible in chat tab -->
@@ -1762,10 +1838,12 @@
           <input aria-label='কুরআন বট প্রশ্ন ইনপুট' autofocus='autofocus' id='chat-input' placeholder='আয়াত, হাদিস, বই, প্রশ্ন লিখুন...' type='text'/>
         </div>
         <div class='input-actions'>
-          <button class='input-btn send' id='send-btn'>📤</button>
-          <button class='input-btn secondary' id='tafsir-btn'>📖</button>
-          <button class='input-btn outline' id='clear-btn'>🗑&#65039;</button>
-        </div>
+  <button class='input-btn send' id='send-btn' title='পাঠান'>📤</button>
+  <button class='input-btn voice-inline' id='voice-input-btn' title='ভয়েস'>🎤</button>
+  <button class='input-btn keyboard-toggle' id='keyboard-toggle-btn' title='কিবোর্ড'>&#9000;&#65039;</button>
+  <button class='input-btn secondary' id='tafsir-btn' title='তাফসীর'>📖</button>
+  <button class='input-btn outline' id='clear-btn' title='মুছুন'>🗑&#65039;</button>
+</div>
       </div>
     </div>
     <!-- ========== TAB: QURAN ========== -->
@@ -1830,17 +1908,19 @@
       </div>
     </div>
     <!-- ========== TAB: HADITH ========== -->
-    <div class='tab-content-panel' id='tab-hadith'>
-      <div class='panel-scroll-area'>
-        <div class='panel-header'>
-          <h2>📜 হ&#2494;দ&#2495;স</h2>
-          <div class='panel-actions'>
-            <button class='panel-action-btn gold' id='hadith-random-btn'>পর&#2503;র হ&#2494;দ&#2495;স </button>
-          </div>
-        </div>
-        <div id='hadith-container'/>
+<div class='tab-content-panel' id='tab-hadith'>
+  <div class='panel-scroll-area'>
+    <div class='panel-header'>
+      <h2>📜 হ&#2494;দ&#2495;স</h2>
+      <div class='panel-actions'>
+        <button class='panel-action-btn' id='hadith-prev-btn'>&#9664; আগ&#2503;র</button>
+        <button class='panel-action-btn gold' id='hadith-next-btn'>পরবর&#2509;ত&#2496; &#9654;</button>
+    
       </div>
     </div>
+    <div id='hadith-container'/>
+  </div>
+</div>
     <!-- ========== TAB: PRAYER ========== -->
     <div class='tab-content-panel' id='tab-prayer'>
       <div class='panel-scroll-area'>
@@ -2250,7 +2330,7 @@
       {sura:'1', aya:'1', text:'সব প্রশংসা আল্লাহর, যিনি সকল সৃষ্টির পালনকর্তা।'},
       {sura:'1', aya:'2', text:'যিনি পরম করুণাময়, অতি দয়ালু।'},
       {sura:'1', aya:'3', text:'যিনি বিচার দিনের মালিক।'},
-      {sura:'1', aya:'4', text:'আমরা শুধু আপনারই ইবাদত করি এবং শুধু您的ই সাহায্য প্রার্থনা করি।'},
+      {sura:'1', aya:'4', text:'আমরা শুধু আপনারই ইবাদত করি এবং শুধু আপনারই সাহায্য প্রার্থনা করি।'},
       {sura:'1', aya:'5', text:'আমাদেরকে সরল পথ দেখান।'},
       {sura:'1', aya:'6', text:'সেই পথ, যাদেরকে আপনি অনুগ্রহ করেছেন।'},
       {sura:'1', aya:'7', text:'তাদের পথ নয়, যাদের প্রতি আপনার ক্রোধ হয়েছে এবং যারা পথভ্রষ্ট হয়েছে।'},
@@ -2363,13 +2443,117 @@
       {text:'خيركم من تعلم القرآن وعلمه', translation:'তোমাদের মধ্যে সর্বোত্তম ব্যক্তি সে, যে কুরআন শিক্ষা করে এবং তা অন্যকে শিক্ষা দেয়।', source:'সহিহ বুখারী', narrator:'উসমান ইবনে আফফান (রা.)'},
       {text:'الطهور شطر الإيمان', translation:'পবিত্রতা ঈমানের অর্ধেক।', source:'সহিহ মুসলিম', narrator:'আবু মালিক আশআরী (রা.)'},
       {text:'من لا يرحم لا يرحم', translation:'যে দয়া করে না, তার প্রতিও দয়া করা হয় না।', source:'সহিহ বুখারী', narrator:'জারীর ইবনে আবদুল্লাহ (রা.)'},
-      {text:'الكلمة الطيبة صدقة', translation:'ভালো কথা বলা একটি সদকা।', source:'সহিহ বুখারী', narrator:'আবু হুরায়রা (রা.)'}
-    ];
-    var KNOWLEDGE = [
-      {title:'ঈমানের ৬টি স্তম্ভ', content:'১. আল্লাহতে বিশ্বাস\n২. ফেরেশতাদের প্রতি বিশ্বাস\n৩. আসমানী কিতাবসমূহে বিশ্বাস\n৪. রাসূলগণের প্রতি বিশ্বাস\n৫. আখিরাত বা শেষ বিচারের দিনে বিশ্বাস\n৬. তাকদীর বা ভাগ্যের ভালো-মন্দের প্রতি বিশ্বাস', source:'কুরআন ও সুন্নাহ'},
-      {title:'ইসলামের ৫টি স্তম্ভ', content:'১. কালিমা শাহাদাত (ঈমান আনা)\n২. সালাত (নামাজ) প্রতিষ্ঠা করা\n৩. জাকাত প্রদান করা\n৪. রমজান মাসে সিয়াম (রোজা) রাখা\n৫. সাওম (হজ্জ) পালন করা', source:'সহিহ হাদিস'}
+      {text:'الكلمة الطيبة صدقة', translation:'ভালো কথা বলা একটি সদকা।', source:'সহিহ বুখারী', narrator:'আবু হুরায়রা (রা.)'},
+      {text:'اتق الله حيثما كنت', translation:'তুমি যেখানেই থাকো আল্লাহকে ভয় করো।', source:'সুনানে তিরমিযী', narrator:'আবু যার (রা.)'},
+      {text:'أحب الناس إلى الله أنفعهم للناس', translation:'আল্লাহর কাছে সবচেয়ে প্রিয় মানুষ হলো সেই, যে মানুষের সবচেয়ে বেশি উপকার করে।', source:'মিশকাত', narrator:'আবদুল্লাহ ইবনে ওমর (রা.)'},
+      {text:'خير الناس من يطول عمره ويحسن عمله', translation:'সেরা মানুষ সেই, যে দীর্ঘায়ু হয় এবং তার কাজ উত্তম হয়।', source:'সুনানে তিরমিযী', narrator:'আবু বকর (রা.)'},
+      {text:'المؤمن للمؤمن كالبنيان يشد بعضه بعضا', translation:'মুমিনরা পরস্পর একে অপরের জন্য দেয়ালের মত, যার এক অংশ অন্য অংশকে শক্ত করে ধরে রাখে।', source:'সহিহ বুখারী', narrator:'আবু মূসা (রা.)'},
+      {text:'مثل المؤمنين في توادهم وتراحمهم كمثل الجسد الواحد', translation:'মুমিনদের পারস্পরিক ভালোবাসা ও দয়ার উদাহরণ একটি দেহের মতো; যখন একটি অঙ্গ কষ্ট পায়, তখন সারা দেহ জ্বর ও অনিদ্রায় কষ্ট পায়।', source:'সহিহ মুসলিম', narrator:'নুমান ইবনে বশির (রা.)'},
+      {text:'لا تحاسدوا ولا تنافسوا ولا تباغضوا ولا تدابروا', translation:'তোমরা হিংসা করো না, একে অপরের সাথে শত্রুতা করো না, ঘৃণা করো না এবং একে অপরকে ত্যাগ করো না।', source:'সহিহ মুসলিম', narrator:'আবু হুরায়রা (রা.)'},
+      {text:'من كان يؤمن بالله واليوم الآخر فليكرم ضيفه', translation:'যে আল্লাহ ও পরকালে বিশ্বাস করে, সে যেন তার অতিথিকে সম্মান করে।', source:'সহিহ বুখারী', narrator:'আবু হুরায়রা (রা.)'},
+      {text:'من كان يؤمن بالله واليوم الآخر فليصل رحمه', translation:'যে আল্লাহ ও পরকালে বিশ্বাস করে, সে যেন আত্মীয়তার সম্পর্ক রক্ষা করে।', source:'সহিহ বুখারী', narrator:'আবু হুরায়রা (রা.)'},
+      {text:'سباب المسلم فسوق وقتاله كفر', translation:'মুসলিমকে গালি দেওয়া ফাসেকী (পাপাচার) এবং তার সাথে যুদ্ধ করা কুফরী।', source:'সহিহ বুখারী', narrator:'আবদুল্লাহ ইবনে মাসউদ (রা.)'},
+      {text:'من دعا إلى هدى كان له من الأجر كأجور من اتبعه', translation:'যে ব্যক্তি সৎপথের দিকে ডাকে, সে সেই সব মানুষের সমান সওয়াব পাবে যারা তাকে অনুসরণ করে।', source:'সহিহ মুসলিম', narrator:'আবু হুরায়রা (রা.)'},
+      {text:'من دعا إلى ضلالة كان عليه من الإثم كآثام من اتبعه', translation:'যে ব্যক্তি গোমরাহীর দিকে ডাকে, সে সেই সব মানুষের সমান গুনাহের বোঝা বহন করবে যারা তাকে অনুসরণ করে।', source:'সহিহ মুসলিম', narrator:'আবু হুরায়রা (রা.)'},
+      {text:'الدعاء هو العبادة', translation:'দোয়াই হলো ইবাদত।', source:'সুনানে আবু দাউদ', narrator:'নুমান ইবনে বশির (রা.)'},
+      {text:'الحياء من الإيمان', translation:'লজ্জা ঈমানের অংশ।', source:'সহিহ বুখারী', narrator:'আবু হুরায়রা (রা.)'},
+      {text:'لا تغضب', translation:'রাগ করো না।', source:'সহিহ বুখারী', narrator:'আবু হুরায়রা (রা.)'},
+      {text:'احفظ الله يحفظك', translation:'আল্লাহকে স্মরণ কর, তিনি তোমাকে রক্ষা করবেন।', source:'সুনানে তিরমিযী', narrator:'আবদুল্লাহ ইবনে আব্বাস (রা.)'},
+      {text:'كن في الدنيا كأنك غريب أو عابر سبيل', translation:'দুনিয়ায় তুমি যেন একজন মুসাফির বা পথচারীর মতো থাক।', source:'সহিহ বুখারী', narrator:'আবদুল্লাহ ইবনে ওমর (রা.)'},
+      {text:'خيركم أحسنكم خلقا', translation:'তোমাদের মধ্যে সর্বোত্তম ব্যক্তি সে, যে চরিত্রে উত্তম।', source:'সহিহ বুখারী', narrator:'আবু হুরায়রা (রা.)'},
+      {text:'اللهم إني أعوذ بك من الهم والحزن', translation:'হে আল্লাহ, আমি উদ্বেগ ও দুঃখ থেকে আপনার কাছে আশ্রয় চাই।', source:'সহিহ বুখারী', narrator:'আনাস (রা.)'},
+      {text:'ساعدوا إخوانكم الظالمين والمظلومين', translation:'তোমরা তোমাদের ভাইদের সাহায্য করো, চাই তারা জালিম হোক বা মজলুম।', source:'সহিহ বুখারী', narrator:'আনাস (রা.)'},
+      {text:'إياكم والظلم فإن الظلم ظلمات يوم القيامة', translation:'তোমরা জুলুম থেকে বাঁচো, কারণ কিয়ামতের দিন জুলুম অন্ধকার হবে।', source:'সহিহ মুসলিম', narrator:'জাবির (রা.)'},
+      {text:'ما نقصت صدقة من مال', translation:'দান করলে সম্পদ কমে না।', source:'সহিহ মুসলিম', narrator:'আবু হুরায়রা (রা.)'},
+      {text:'كل معروف صدقة', translation:'প্রত্যেক সৎ কাজই সদকা।', source:'সহিহ বুখারী', narrator:'জাবির (রা.)'},
+      {text:'من نفس عن مؤمن كربة من كرب الدنيا نفس الله عنه كربة من كرب يوم القيامة', translation:'যে ব্যক্তি কোনো মুমিনের দুনিয়ার কষ্ট দূর করে, আল্লাহ তার কিয়ামতের কষ্ট দূর করবেন।', source:'সহিহ মুসলিম', narrator:'আবু হুরায়রা (রা.)'},
+      {text:'من يرد الله به خيرا يفقهه في الدين', translation:'আল্লাহ যার কল্যাণ চান, তাকে দ্বীনের গভীর জ্ঞান দান করেন।', source:'সহিহ বুখারী', narrator:'মুয়াবিয়া (রা.)'},
+      {text:'إن الله كتب الإحسان على كل شيء', translation:'আল্লাহ প্রতিটি বিষয়ে ভালোভাবে করার নির্দেশ দিয়েছেন।', source:'সহিহ মুসলিম', narrator:'শাদ্দাদ ইবনে আওস (রা.)'},
+      {text:'لين الله أعظم من قهره', translation:'আল্লাহর কোমলতা তাঁর শক্তির চেয়েও মহান।', source:'মিশকাত', narrator:'আবু হুরায়রা (রা.)'},
+      {text:'لا يزني الزاني حين يزني وهو مؤمن', translation:'ব্যভিচারী যখন ব্যভিচার করে, তখন সে মুমিন থাকে না।', source:'সহিহ বুখারী', narrator:'আবু হুরায়রা (রা.)'},
+      {text:'من شرب الخمر لم تقبل له صلاة أربعين يوما', translation:'যে মদ পান করে, তার চল্লিশ দিনের নামাজ কবুল হয় না।', source:'সুনানে তিরমিযী', narrator:'আবদুল্লাহ ইবনে ওমর (রা.)'},
+      {text:'لا يدخل الجنة قتات', translation:'যে ব্যক্তি চোগলখোরী করে, সে জান্নাতে প্রবেশ করবে না।', source:'সহিহ বুখারী', narrator:'হুযাইফা (রা.)'},
+      {text:'إن الله جميل يحب الجمال', translation:'নিশ্চয়ই আল্লাহ সুন্দর এবং তিনি সৌন্দর্য পছন্দ করেন।', source:'সহিহ মুসলিম', narrator:'আবদুল্লাহ ইবনে মাসউদ (রা.)'},
+      {text:'اطلبوا العلم من المهد إلى اللحد', translation:'জ্ঞান অন্বেষণ করো দোলনা থেকে কবর পর্যন্ত।', source:'মিশকাত', narrator:'আনাস (রা.)'},
+      {text:'العلماء ورثة الأنبياء', translation:'আলেমরা হলো নবীদের উত্তরাধিকারী।', source:'সুনানে আবু দাউদ', narrator:'আবু দারদা (রা.)'},
+      {text:'من سلك طريقا يطلب فيه علما سلك الله به طريقا إلى الجنة', translation:'যে ব্যক্তি জ্ঞান অর্জনের পথে চলে, আল্লাহ তাকে জান্নাতের পথে চলান।', source:'সহিহ মুসলিম', narrator:'আবু হুরায়রা (রা.)'},
+      {text:'الدنيا سجن المؤمن وجنة الكافر', translation:'দুনিয়া মুমিনের জন্য কারাগার এবং কাফিরের জন্য জান্নাত।', source:'সহিহ মুসলিম', narrator:'আবু হুরায়রা (রা.)'},
+      {text:'أكثروا من ذكر الله حتى يقال مجنون', translation:'আল্লাহকে এত বেশি স্মরণ করো যে মানুষ তোমাকে পাগল বলবে।', source:'মিশকাত', narrator:'আবু সাঈদ (রা.)'},
+      {text:'من ذكر الله في ملأ ذكرته الملائكة', translation:'যে কোনো সমাবেশে আল্লাহকে স্মরণ করে, ফেরেশতারা তাকে স্মরণ করে।', source:'সহিহ মুসলিম', narrator:'আবু হুরায়রা (রা.)'},
+      {text:'لا تحقرن من المعروف شيئا ولو أن تلقى أخاك بوجه طلق', translation:'কোনো সৎ কাজকে সামান্য মনে করো না, এমনকি তোমার ভাইয়ের সাথে প্রসন্ন মুখে সাক্ষাৎ করাও সৎ কাজ।', source:'সহিহ মুসলিম', narrator:'আবু যার (রা.)'},
+      {text:'الراحمون يرحمهم الرحمن', translation:'দয়াশীলদের প্রতি দয়াময় আল্লাহ দয়া করেন।', source:'সুনানে তিরমিযী', narrator:'আবদুল্লাহ ইবনে আমর (রা.)'},
+      {text:'من لم يشكر الناس لا يشكر الله', translation:'যে মানুষের শুকরিয়া আদায় করে না, সে আল্লাহরও শুকরিয়া আদায় করে না।', source:'সুনানে আবু দাউদ', narrator:'আবু হুরায়রা (রা.)'},
+      {text:'أفضل الجهاد كلمة حق عند سلطان جائر', translation:'সর্বশ্রেষ্ঠ জিহাদ হলো ন্যায়ের কথা জালিম শাসকের সামনে বলা।', source:'সুনানে আবু দাউদ', narrator:'আবু সাঈদ (রা.)'},
+      {text:'اللهم بارك لنا في رجب وشعبان وبلغنا رمضان', translation:'হে আল্লাহ, আমাদের জন্য রজব ও শাবান মাসকে বরকতময় কর এবং রমজানে পৌঁছে দাও।', source:'মিশকাত', narrator:'আনাস (রা.)'},
+      {text:'من فطر صائما كان له مثل أجره', translation:'যে ব্যক্তি রোজাদারকে ইফতার করায়, সে রোজাদারের সমান সওয়াব পাবে।', source:'সুনানে তিরমিযী', narrator:'জায়েদ ইবনে খালিদ (রা.)'},
+      {text:'الصيام جنة', translation:'রোজা হলো ঢাল (জাহান্নাম থেকে বাঁচার)।', source:'সহিহ বুখারী', narrator:'আবু হুরায়রা (রা.)'},
+      {text:'من صام رمضان إيمانا واحتسابا غفر له ما تقدم من ذنبه', translation:'যে ব্যক্তি ঈমান ও সওয়াবের আশায় রমজানের রোজা রাখে, তার আগের সব গুনাহ মাফ করা হয়।', source:'সহিহ বুখারী', narrator:'আবু হুরায়রা (রা.)'},
+      {text:'من قام رمضان إيمانا واحتسابا غفر له ما تقدم من ذنبه', translation:'যে ব্যক্তি ঈমান ও সওয়াবের আশায় রমজানে রাত জেগে ইবাদত করে, তার আগের সব গুনাহ মাফ করা হয়।', source:'সহিহ বুখারী', narrator:'আবু হুরায়রা (রা.)'},
+      {text:'خيركم من أطعم الطعام ورد السلام', translation:'তোমাদের মধ্যে সর্বোত্তম তারা, যারা খাবার দেয় এবং সালামের উত্তর দেয়।', source:'মিশকাত', narrator:'আবদুল্লাহ ইবনে আমর (রা.)'},
+      {text:'أفشوا السلام بينكم', translation:'তোমাদের মধ্যে সালামের প্রচলন করো।', source:'সহিহ মুসলিম', narrator:'আবু হুরায়রা (রা.)'},
+      {text:'السلام اسم من أسماء الله فأفشوه بينكم', translation:'সালাম আল্লাহর একটি নাম, তাই তোমরা এর প্রচলন করো।', source:'মিশকাত', narrator:'আবু হুরায়রা (রা.)'},
+      {text:'من يضمن لي ما بين لحييه وما بين رجليه أضمن له الجنة', translation:'যে ব্যক্তি তার জিহ্বা ও লজ্জাস্থানের দায়িত্ব নেয়, আমি তার জন্য জান্নাতের দায়িত্ব নিই।', source:'সহিহ বুখারী', narrator:'আবু হুরায়রা (রা.)'},
+      {text:'لا يبلغ العبد درجة المتقين حتى يدع ما لا بأس به حذرا مما به بأس', translation:'বান্দা মুত্তাকীদের মর্যাদা পায় না যতক্ষণ না সে সন্দেহজনক বিষয়ও ছেড়ে দেয়।', source:'সুনানে তিরমিযী', narrator:'আবু হুরায়রা (রা.)'},
+      {text:'كل الناس يغدو فبائع نفسه فمعتقها أو موبقها', translation:'প্রত্যেক মানুষ সকালে বের হয়, কেউ তার নিজেকে বিক্রি করে মুক্ত করে দেয়, আবার কেউ ধ্বংস করে।', source:'সহিহ মুসলিম', narrator:'আবু হুরায়রা (রা.)'},
+      {text:'الحج المبرور ليس له جزاء إلا الجنة', translation:'মাবরুর হজ্জের প্রতিদান জান্নাত ছাড়া আর কিছু নয়।', source:'সহিহ বুখারী', narrator:'আবু হুরায়রা (রা.)'},
+      {text:'من حج فلم يرفث ولم يفسق رجع كيوم ولدته أمه', translation:'যে হজ্জ করে এবং অশ্লীলতা ও পাপাচার থেকে বেঁচে থাকে, সে নবজাতকের মতো নিষ্পাপ হয়ে ফিরে আসে।', source:'সহিহ বুখারী', narrator:'আবু হুরায়রা (রা.)'},
+      {text:'إن الله يباهي بأهل عرفة أهل السماء', translation:'আল্লাহ আরাফাতের হাজীদের নিয়ে আসমানের ফেরেশতাদের কাছে গর্ব করেন।', source:'সহিহ মুসলিম', narrator:'আয়িশা (রা.)'},
+      {text:'عمرة في رمضان تعدل حجة', translation:'রমজানের একটি ওমরা হজ্জের সমান।', source:'সহিহ বুখারী', narrator:'আবদুল্লাহ ইবনে আব্বাস (রা.)'},
+      {text:'من توضأ فأحسن الوضوء خرجت خطاياه من جسده حتى تخرج من تحت أظفاره', translation:'যে উত্তমরূপে ওজু করে, তার গুনাহ শরীর থেকে বেরিয়ে যায়, এমনকি নখের নিচ থেকেও।', source:'সহিহ মুসলিম', narrator:'আবু হুরায়রা (রা.)'},
+      {text:'من قال لا إله إلا الله وحده لا شريك له له الملك وله الحمد وهو على كل شيء قدير مائة مرة كانت له عدل عشر رقاب', translation:'যে ব্যক্তি "লা ইলাহা ইল্লাল্লাহু ওয়াহদাহু লা শারিকা লাহু লাহুল মুলকু ওয়া লাহুল হামদু ওয়া হুয়া আলা কুল্লি শাইয়িন কাদির" ১০০ বার পড়ে, সে ১০ জন দাস মুক্ত করার সওয়াব পায়।', source:'সহিহ বুখারী', narrator:'আবু হুরায়রা (রা.)'},
+      {text:'سبحان الله وبحمده سبحان الله العظيم', translation:'পবিত্র ও প্রশংসিত আল্লাহ। মহান আল্লাহ পবিত্র।', source:'সহিহ বুখারী', narrator:'আবু হুরায়রা (রা.)'},
+      {text:'أفضل الذكر لا إله إلا الله', translation:'শ্রেষ্ঠ যিকির হলো "লা ইলাহা ইল্লাল্লাহ"।', source:'সুনানে তিরমিযী', narrator:'জাবির (রা.)'},
+      {text:'خير الدعاء دعاء يوم عرفة', translation:'শ্রেষ্ঠ দোয়া হলো আরাফাতের দিনের দোয়া।', source:'সুনানে তিরমিযী', narrator:'আবদুল্লাহ ইবনে আমর (রা.)'},
+      {text:'استفتح عملك ببسم الله', translation:'তোমার কাজ শুরু করো "বিসমিল্লাহ" দিয়ে।', source:'মিশকাত', narrator:'আবু হুরায়রা (রা.)'},
+      {text:'من سرته حسنته وساءته سيئته فذلك المؤمن', translation:'যার ভালো কাজ তাকে খুশি করে এবং মন্দ কাজ তাকে দুঃখ দেয়, সেই মুমিন।', source:'সুনানে তিরমিযী', narrator:'আনাস (রা.)'},
+      {text:'لا يؤمن أحدكم حتى أكون أحب إليه من والده وولده والناس أجمعين', translation:'তোমাদের কেউ মুমিন হতে পারবে না যতক্ষণ না আমি (রাসূল) তার কাছে তার পিতা, পুত্র ও সমস্ত মানুষের চেয়ে প্রিয় না হই।', source:'সহিহ বুখারী', narrator:'আনাস (রা.)'},
+      {text:'ثلاث من كن فيه وجد حلاوة الإيمان: أن يكون الله ورسوله أحب إليه مما سواهما، وأن يحب المرء لا يحبه إلا لله، وأن يكره أن يعود في الكفر كما يكره أن يقذف في النار', translation:'যার মধ্যে তিনটি গুণ আছে, সে ঈমানের মাধুর্য পাবে: ১. আল্লাহ ও তাঁর রাসূল তার কাছে সবচেয়ে প্রিয় হবেন; ২. সে কাউকে শুধুমাত্র আল্লাহর জন্য ভালোবাসবে; ৩. সে কুফরে ফিরে যাওয়াকে আগুনে নিক্ষিপ্ত হওয়ার মতো ঘৃণা করবে।', source:'সহিহ বুখারী', narrator:'আনাস (রা.)'},
+      {text:'ليس منا من لم يرحم صغيرنا ويعرف حق كبيرنا', translation:'যে আমাদের ছোটদের প্রতি দয়া করে না এবং বড়দের মর্যাদা বোঝে না, সে আমাদের অন্তর্ভুক্ত নয়।', source:'সুনানে তিরমিযী', narrator:'আবদুল্লাহ ইবনে আমর (রা.)'},
+      {text:'ألا أخبركم بمن يحرم على النار؟ يحرم على النار كل هيّن لين قريب سهل', translation:'আমি কি তোমাদের বলবো কে জাহান্নামের জন্য হারাম? প্রত্যেক বিনয়ী, কোমল, সহজ-সরল ও নম্র ব্যক্তি জাহান্নামের জন্য হারাম।', source:'সুনানে তিরমিযী', narrator:'আবদুল্লাহ ইবনে মাসউদ (রা.)'},
+      {text:'صنائع المعروف تقي مصارع السوء', translation:'ভালো কাজগুলো মৃত্যুর সময় বিপদ থেকে রক্ষা করে।', source:'মিশকাত', narrator:'আবু হুরায়রা (রা.)'},
+      {text:'ما من أيام العمل الصالح فيهن أحب إلى الله من هذه الأيام العشر', translation:'১০ জিলহজের দিনগুলোর চেয়ে আল্লাহর কাছে বেশি পছন্দনীয় কোনো দিনে সৎকর্ম নেই।', source:'সহিহ বুখারী', narrator:'আবদুল্লাহ ইবনে আব্বাস (রা.)'},
+      {text:'صوم يوم عرفة يكفر سنتين ماضية ومستقبلة', translation:'আরাফাতের দিনের রোজা আগের ও পরের দুই বছরের গুনাহ মাফ করে।', source:'সহিহ মুসলিম', narrator:'আবু কাতাদা (রা.)'},
+      {text:'من استطاع منكم الباءة فليتزوج فإنه أغض للبصر وأحصن للفرج', translation:'যার সামর্থ্য আছে সে যেন বিয়ে করে, কারণ তা দৃষ্টি নিচু রাখে এবং লজ্জাস্থানের হিফাজত করে।', source:'সহিহ বুখারী', narrator:'আবদুল্লাহ ইবনে মাসউদ (রা.)'},
+      {text:'خير النساء من إذا نظرت إليها سرتك وإذا أمرتها أطاعتك وإذا غبت عنها حفظتك في نفسها ومالك', translation:'সেরা স্ত্রী হলো যে তাকে দেখলে খুশি হও, আদেশ করলে মান্য করে এবং অনুপস্থিতিতে নিজের ও সম্পদের হিফাজত করে।', source:'মিশকাত', narrator:'আবু হুরায়রা (রা.)'},
+      {text:'استوصوا بالنساء خيرا فإنهن خلقن من ضلع', translation:'তোমরা নারীদের সাথে উত্তম আচরণ কর, কারণ তারা পাঁজরের হাড় থেকে সৃষ্টি হয়েছে।', source:'সহিহ বুখারী', narrator:'আবু হুরায়রা (রা.)'},
+      {text:'لا يفرك مؤمن مؤمنة إن كره منها خلقا رضي منها آخر', translation:'কোনো মুমিন তার স্ত্রীকে ঘৃণা করবে না; যদি তার কোনো স্বভাব অপছন্দ করে, তবে অন্যটি পছন্দ করবে।', source:'সহিহ মুসলিম', narrator:'আবু হুরায়রা (রা.)'},
+      {text:'من كان له ثلاث بنات فصبر عليهن وكساهن من جدته كن له حجابا من النار', translation:'যার তিনটি মেয়ে আছে এবং সে তাদের ধৈর্য্যের সাথে লালন-পালন করে ও নিজের সম্পদ থেকে তাদের খরচ দেয়, তারা তার জন্য জাহান্নামের পর্দা হবে।', source:'মিশকাত', narrator:'আবু সাঈদ (রা.)'},
+      {text:'أكرموا أولادكم وأحسنوا أدبهم', translation:'তোমরা তোমাদের সন্তানদের সম্মান করো এবং তাদের উত্তম আদব শিক্ষা দাও।', source:'সুনানে ইবনে মাজাহ', narrator:'আয়িশা (রা.)'},
+      {text:'الولد للفراش وللعاهر الحجر', translation:'সন্তান স্বামীর, আর ব্যভিচারী পাথর পায় (অর্থাৎ কোনো অধিকার নেই)।', source:'সহিহ বুখারী', narrator:'আয়িশা (রা.)'},
+      {text:'من صلى علي صلاة صلى الله عليه بها عشرا', translation:'যে ব্যক্তি আমার প্রতি একবার দরুদ পাঠায়, আল্লাহ তার উপর দশবার রহমত বর্ষণ করেন।', source:'সহিহ মুসলিম', narrator:'আবু হুরায়রা (রা.)'},
+      {text:'لا تسبوا أصحابي فوالذي نفسي بيده لو أن أحدكم أنفق مثل أحد ذهبا ما أدرك مد أحدهم ولا نصيفه', translation:'তোমরা আমার সাহাবীদের গালি দিও না; কসম সেই সত্তার যাঁর হাতে আমার প্রাণ, তোমাদের কেউ যদি উহুদ পর্বত পরিমাণ সোনা দান করেও, তবে তাদের এক মুঠো বা অর্ধেক মুঠো খরচের সমানও হবে না।', source:'সহিহ বুখারী', narrator:'আবু সাঈদ (রা.)'},
+      {text:'لا يبلغنكم عن أصحابي شيء فتأذوا به فإني أحب أن أخرج إليكم وأنا سليم الصدر', translation:'আমার সাহাবীদের সম্পর্কে কোনো খারাপ কথা তোমাদের কাছে পৌঁছালে তোমরা কষ্ট পেয়ো না, কারণ আমি আমার সাহাবীদের সম্পর্কে সুধারণা নিয়ে তোমাদের কাছে আসতে পছন্দ করি।', source:'মিশকাত', narrator:'আবদুল্লাহ ইবনে মাসউদ (রা.)'},
+      {text:'المسلم أخو المسلم لا يظلمه ولا يسلمه', translation:'মুসলিম মুসলিমের ভাই; সে তার উপর জুলুম করে না এবং তাকে শত্রুর কাছে ছেড়ে দেয় না।', source:'সহিহ বুখারী', narrator:'আবদুল্লাহ ইবনে ওমর (রা.)'},
+      {text:'كل المسلم على المسلم حرام: دمه وماله وعرضه', translation:'প্রত্যেক মুসলিমের জন্য অপর মুসলিমের রক্ত, সম্পদ ও সম্ভ্রম হারাম।', source:'সহিহ মুসলিম', narrator:'আবু হুরায়রা (রা.)'},
+      {text:'من كان آخر كلامه لا إله إلا الله دخل الجنة', translation:'যার শেষ কথা "লা ইলাহা ইল্লাল্লাহ" হবে, সে জান্নাতে প্রবেশ করবে।', source:'সুনানে আবু দাউদ', narrator:'আবু দারদা (রা.)'},
+      {text:'الدنيا دار فناء والآخرة دار بقاء', translation:'দুনিয়া হলো ধ্বংসের ঘর, আর আখিরাত হলো স্থায়ী ঘর।', source:'মিশকাত', narrator:'আবু হুরায়রা (রা.)'},
+      {text:'من أبطأ به عمله لم يسرع به نسبه', translation:'যার আমল তাকে পিছিয়ে দেয়, তার বংশ তাকে এগিয়ে দিতে পারে না।', source:'সহিহ মুসলিম', narrator:'আবু হুরায়রা (রা.)'},
+      {text:'كفى بالمرء إثما أن يضيع من يعول', translation:'একজন ব্যক্তির পাপের জন্য যথেষ্ট যে তার ভরণপোষণের দায়িত্বে যাদের আছে তাদের অবহেলা করে।', source:'সুনানে আবু দাউদ', narrator:'আবদুল্লাহ ইবনে ওমর (রা.)'},
+      {text:'من أقال مسلما عثرته أقال الله عثرته', translation:'যে ব্যক্তি কোনো মুসলিমের ভুল ক্ষমা করে, আল্লাহ তার ভুল ক্ষমা করেন।', source:'সুনানে আবু দাউদ', narrator:'আবু হুরায়রা (রা.)'}
     ];
 
+    var KNOWLEDGE = [
+      {title:'ঈমানের ৬টি স্তম্ভ', content:'১. আল্লাহতে বিশ্বাস\n২. ফেরেশতাদের প্রতি বিশ্বাস\n৩. আসমানী কিতাবসমূহে বিশ্বাস\n৪. রাসূলগণের প্রতি বিশ্বাস\n৫. আখিরাত বা শেষ বিচারের দিনে বিশ্বাস\n৬. তাকদীর বা ভাগ্যের ভালো-মন্দের প্রতি বিশ্বাস', source:'কুরআন ও সুন্নাহ'},
+      {title:'ইসলামের ৫টি স্তম্ভ', content:'১. কালিমা শাহাদাত (ঈমান আনা)\n২. সালাত (নামাজ) প্রতিষ্ঠা করা\n৩. জাকাত প্রদান করা\n৪. রমজান মাসে সিয়াম (রোজা) রাখা\n৫. সাওম (হজ্জ) পালন করা', source:'সহিহ হাদিস'},
+      {title:'ইহসানের স্তর', content:'আল্লাহর ইবাদত এমনভাবে করা যেন তাকে দেখা যায়; আর যদি তাকে না দেখা যায়, তবে তিনি তোমাকে দেখছেন।', source:'সহিহ বুখারী (জিবরীলের হাদিস)'},
+      {title:'কিয়ামতের বড় লক্ষণসমূহ', content:'১. দাজ্জালের আবির্ভাব\n২. ঈসা (আ.)-এর অবতরণ\n৩. ইয়াজুজ-মাজুজের বের হওয়া\n৪. সূর্য পশ্চিম থেকে উদিত হওয়া\n৫. ইমাম মাহদীর আবির্ভাব\n৬. দাব্বাতুল আরদের বের হওয়া\n৭. ধোঁয়া (দুখান)\n৮. ভূমিধস (পূর্ব, পশ্চিম ও আরব উপদ্বীপে)', source:'কুরআন ও সহিহ হাদিস'},
+      {title:'নামাজের ফরজসমূহ', content:'১. তাকবীরে তাহরিমা (আল্লাহু আকবার বলা)\n২. দাঁড়িয়ে পড়া (কিয়াম) - সামর্থ্য থাকলে\n৩. সূরা ফাতিহা পড়া\n৪. রুকু করা\n৫. সিজদা করা\n৬. শেষ বৈঠক (তাশাহহুদ)\n৭. সালাম ফিরানো\n৮. রুকু-সিজদার স্থিরতা (ইত্মিনান)\n৯. ত্রুটি পূরণে সিজদায়ে সাহু', source:'ফিকহী গ্রন্থসমূহ'},
+      {title:'ওজু ভঙ্গের কারণ', content:'১. পেছনের রাস্তা থেকে বায়ু নির্গমন\n২. প্রস্রাব-পায়খানা করা\n৩. গভীর ঘুম\n৪. অজ্ঞান হওয়া বা মাতাল হওয়া\n৫. উন্মাদনা\n৬. স্ত্রী-সহবাস\n৭. রক্ত বা পুঁজ বের হওয়া (বেশিরভাগ মাযহাব অনুযায়ী)\n৮. উটের গোশত খাওয়া (হানাফী মাযহাব ছাড়া)', source:'ফিকহী গ্রন্থসমূহ'},
+      {title:'গোসল ফরজ হওয়ার কারণ', content:'১. স্ত্রী-সহবাস (ঋতুস্রাব বা নিফাস ছাড়া)\n২. বীর্যপাত (ঘুম বা জাগ্রত অবস্থায়)\n৩. ঋতুস্রাব (হায়েজ) শেষ হওয়া\n৪. নিফাস (প্রসবের পর রক্তস্রাব) শেষ হওয়া\n৫. মৃত্যু (মৃত ব্যক্তিকে গোসল দেওয়া)', source:'কুরআন ও সহিহ হাদিস'},
+      {title:'জাকাতের হকদার (মাসারিফ)', content:'১. ফকীর (অতি দরিদ্র)\n২. মিসকীন (স্বল্প সম্পদবান)\n৩. জাকাত সংগ্রহকারী\n৪. যাদের ইসলাম গ্রহণের প্রবণতা সৃষ্টি করা হয়\n৫. দাস মুক্তির জন্য\n৬. ঋণগ্রস্ত ব্যক্তি\n৭. আল্লাহর রাস্তায় (জিহাদ, ইলম ইত্যাদি)\n৮. মুসাফির (পথচারী যার খরচ শেষ)', source:'সূরা আত-তওবা (৯:৬০)'},
+      {title:'রমজানের ফজিলত', content:'১. এ মাসেই কুরআন নাজিল হয়েছে\n২. এ মাসে জান্নাতের দরজা খোলা ও জাহান্নামের দরজা বন্ধ থাকে\n৩. শয়তানদের শৃঙ্খলিত করা হয়\n৪. লাইলাতুল কদর (হাজার মাসের চেয়ে উত্তম)\n৫. এই মাসে রোজা রাখা ফরজ\n৬. এ মাসে যে ইবাদত করে, সে অতীতের গুনাহ মাফ পায়', source:'কুরআন ও সহিহ হাদিস'},
+      {title:'হজ্জের ফরজসমূহ', content:'১. ইহরাম বাঁধা (নিয়ত ও তালবিয়া)\n২. আরাফাতের ময়দানে ওকুফ (অবস্থান) করা\n৩. তাওয়াফে ইফাযা (জিয়ারতের তাওয়াফ)\n৪. সাফা-মারওয়ায় সাঈ করা\n৫. মীনায় জামরাতে কঙ্কর নিক্ষেপ\n৬. মাথা মুণ্ডানো বা চুল ছোট করা (তাহাল্লুল)\n৭. কুরবানি করা (হজ্জে কিরান ও তামাত্তুরের জন্য)', source:'ফিকহী গ্রন্থসমূহ'},
+      {title:'নবীজীর (সা.) চরিত্রের বৈশিষ্ট্য', content:'১. সত্যবাদী ও আমানতদার (আল-আমিন)\n২. নম্র ও বিনয়ী\n৩. দয়ালু ও করুণাময়\n৪. ক্ষমাশীল ও সহনশীল\n৫. সাহসী ও দৃঢ়প্রতিজ্ঞ\n৬. ন্যায়পরায়ণ ও সুষ্ঠু বিচারক\n৭. আত্মমর্যাদাবান কিন্তু অহংকারী নন\n৮. সহজ-সরল ও মধ্যপন্থী\n৯. পরিবার-প্রিয় ও স্নেহময়\n১০. অতিথিপরায়ণ ও উদার', source:'সীরাত গ্রন্থসমূহ'},
+      {title:'আল্লাহর ৯৯টি নাম (আসমাউল হুসনা)', content:'আল্লাহর সুন্দর নামসমূহ যেমন: আর-রহমান (পরম দয়ালু), আর-রহীম (অতি দয়ালু), আল-মালিক (সর্বশক্তিমান রাজা), আল-কুদ্দুস (পবিত্র), আস-সালাম (শান্তিদাতা), আল-মুমিন (নিরাপত্তাদাতা), আল-মুহাইমিন (রক্ষাকারী), আল-আযীয (পরাক্রমশালী), আল-জাব্বার (শক্তিশালী), আল-মুতাকাব্বির (মহিমান্বিত), ইত্যাদি।', source:'কুরআন ও সহিহ হাদিস'},
+      {title:'জান্নাতের ৮টি দরজা', content:'১. বাবুস সালাত (নামাজীদের জন্য)\n২. বাবুল জিহাদ (মুজাহিদদের জন্য)\n৩. বাবুস সাদাকা (দানশীলদের জন্য)\n৪. বাবুর রাইয়ান (রোজাদারদের জন্য)\n৫. বাবুল হজ্জ (হাজীদের জন্য)\n৬. বাবুল কাযিমিন আল-গাইয ওয়াল আফিন আনিন-নাস (যারা রাগ চাপা রাখে ও মানুষকে ক্ষমা করে)\n৭. বাবুল ইমান (ঈমানদারদের জন্য)\n৮. বাবুজ যিকর (যারা বেশি আল্লাহকে স্মরণ করে)', source:'সহিহ হাদিস'},
+      {title:'জাহান্নামের বর্ণনা', content:'জাহান্নামের ৭টি স্তর রয়েছে। এর জ্বালানি পাথর ও মানুষ। এর শাস্তি অত্যন্ত কঠোর - ফুটন্ত পানি, দুর্গন্ধময় বায়ু, কালো ধোঁয়া এবং আগুনের শিখা। জাহান্নামবাসীদের চামড়া বারবার পুড়িয়ে নতুন করা হবে। তাদের পানীয় হবে ফুটন্ত পানি ও পুঁজ।', source:'কুরআন ও সহিহ হাদিস'},
+      {title:'মৃত্যুর পর আত্মার অবস্থা', content:'১. মৃত্যুর সময় আযরাইল (আ.) প্রাণ হরণ করেন\n২. আত্মা দেহ থেকে বের হয় (উত্তম আত্মা সুগন্ধি ও ফেরেশতা সহ, মন্দ আত্মা কষ্টে)\n৩. কবরে প্রশ্ন করা হয় (মুনকার ও নাকীর)\n৪. কবর হয় জান্নাতের বাগান বা জাহান্নামের গর্ত\n৫. কিয়ামত পর্যন্ত অপেক্ষা (বরযখ)\n৬. কিয়ামতের দিন পুনরুত্থান হবে', source:'কুরআন ও সহিহ হাদিস'},
+      {title:'শিরকের প্রকারভেদ', content:'১. শিরকে আকবর (বড় শিরক) - আল্লাহর সাথে অন্য কাউকে শরিক করা, যেমন মূর্তিপূজা\n২. শিরকে আসগর (ছোট শিরক) - রিয়া (লোক দেখানো আমল), নামাজে অহংকার\n৩. শিরকে খাফী (গোপন শিরক) - অন্তরের সংকীর্ণতা ও আল্লাহর উপর ভরসা না করা\n৪. শিরকে জালী (প্রকাশ্য শিরক) - মূর্তি বা অন্য কিছুর সামনে সিজদা\n৫. শিরকে তাবী (অনুসরণমূলক) - অন্যদেরকে আইন-প্রণেতা বানানো', source:'কুরআন ও ফিকহী গ্রন্থসমূহ'},
+      {title:'কুরআনের প্রধান বিষয়বস্তু', content:'১. তাওহীদ (আল্লাহর একত্ববাদ)\n২. নবুওয়ত (নবীদের প্রতি বিশ্বাস)\n৩. আখিরাত (পুনরুত্থান ও বিচার)\n৪. ইবাদত ও আনুগত্য\n৫. নৈতিকতা ও চরিত্র\n৬. আইন ও বিধান (হালাল-হারাম)\n৭. ইতিহাস ও পূর্ববর্তী জাতির কাহিনী\n৮. জিহাদ ও সংগ্রাম\n৯. দোয়া ও যিকির\n১০. আখিরাতের পুরস্কার ও শাস্তি', source:'উলুমুল কুরআন'},
+      {title:'মহানবী (সা.)-এর ১০টি নাম', content:'১. মুহাম্মাদ (প্রশংসিত)\n২. আহমাদ (অধিক প্রশংসাকারী)\n৩. আল-মুস্তফা (মনোনীত)\n৪. আল-মুস্তফা (নির্বাচিত)\n৫. আর-রাসূল (প্রেরিত)\n৬. আন-নবী (নবী)\n৭. আল-আমিন (বিশ্বস্ত)\n৮. আল-মুসতাহ (উপদেশদাতা)\n৯. আল-কাসিম (বণ্টনকারী)\n১০. আল-আকিব (শেষ নবী)', source:'সীরাত গ্রন্থসমূহ'},
+      {title:'ইবাদতের প্রকারভেদ', content:'১. ইবাদতে কলবি (অন্তরের) - যেমন তাওহীদ, তওবা, তাকওয়া, ভরসা, ভালোবাসা\n২. ইবাদতে লিসানী (জিহ্বার) - যেমন যিকির, দোয়া, তিলাওয়াত, দরুদ\n৩. ইবাদতে জিসমী (শারীরিক) - যেমন নামাজ, রোজা, হজ্জ\n৪. ইবাদতে মালী (আর্থিক) - যেমন জাকাত, সদকা, কুরবানি\n৫. ইবাদতে ইজতিমাই (সামাজিক) - যেমন জামাত, সৎকাজের আদেশ, অসৎকাজের নিষেধ', source:'কুরআন ও সুন্নাহ'},
+      {title:'দোয়া কবুলের শর্ত', content:'১. একনিষ্ঠভাবে শুধু আল্লাহর কাছে প্রার্থনা করা\n২. হালাল খাদ্য ও পোশাক পরিধান করা\n৩. গাফিলতি ছাড়া মনোযোগ সহকারে দোয়া করা\n৪. দোয়ায় সুদৃঢ় বিশ্বাস রাখা\n৫. পাপাচার ও আত্মীয়তা ছিন্ন করার দোয়া না করা\n৬. তাড়াহুড়ো না করা\n৭. নবী (সা.)-এর পদ্ধতিতে দোয়া করা\n৮. দোয়ার সময় আল্লাহর প্রশংসা ও দরুদ পাঠ করা', source:'সহিহ হাদিস'}
+    ];
 var TAJWEED_RULES = [
   {title:'নূন সাকিন ও তানভীনের ইযহার', content:'হালকী অক্ষর (ء، ه، ع، ح، غ، خ) এর আগে নূন সাকিন বা তানভীন আসলে স্পষ্টভাবে উচ্চারণ করতে হয়, গুন্নাহ ছাড়াই।', example:'مَنْ آمَنَ'},
   {title:'ইদগাম (মিলিয়ে পড়া)', content:'নূন সাকিন বা তানভীনের পর ي، ن، م، و، ل، ر অক্ষর এলে দুটি অক্ষর মিলিয়ে উচ্চারণ করতে হয়।', example:'مِنْ رَبِّهِمْ'},
@@ -2400,6 +2584,7 @@ var TAJWEED_RULES = [
       recognition: null,
       dataLoaded: false,
       knowledgeIndex: 0,
+      hadithIndex: 0,
 	  tajweedIndex: 0,
       activeCategory: 'সব',
       quizState: null,
@@ -2461,7 +2646,9 @@ var TAJWEED_RULES = [
       bookCategoryFilter: document.getElementById('book-category-filter'),
       bookRefreshBtn: document.getElementById('book-refresh-btn'),
       hadithContainer: document.getElementById('hadith-container'),
-      hadithRandomBtn: document.getElementById('hadith-random-btn'),
+   
+      hadithPrevBtn: document.getElementById('hadith-prev-btn'),
+hadithNextBtn: document.getElementById('hadith-next-btn'),
       prayerContainer: document.getElementById('prayer-container'),
       zakatContainer: document.getElementById('zakat-container'),
       timerContainer: document.getElementById('timer-container'),
@@ -2518,14 +2705,14 @@ categoriesBtn: document.getElementById('categories-btn'),
       suraPanelBtn: document.getElementById('sura-panel-btn'),
       settingsPanelBtn: document.getElementById('settings-panel-btn'),
       shareModal: document.getElementById('share-modal'),
-closeShareModal: document.getElementById('close-share-modal'),
-shareModalBody: document.getElementById('share-modal-body'),
-wordsearchModal: document.getElementById('wordsearch-modal'),
-closeWordsearchModal: document.getElementById('close-wordsearch-modal'),
-wordsearchModalBody: document.getElementById('wordsearch-modal-body'),
-wordsearchModalTitle: document.getElementById('wordsearch-modal-title'),
-pwaInstallBtn: document.getElementById('pwa-install-btn'),
-qtFullSurahBtn: document.getElementById('qt-fullsurah-btn'),
+	  closeShareModal: document.getElementById('close-share-modal'),
+	  shareModalBody: document.getElementById('share-modal-body'),
+	  wordsearchModal: document.getElementById('wordsearch-modal'),
+	  closeWordsearchModal: document.getElementById('close-wordsearch-modal'),
+	  wordsearchModalBody: document.getElementById('wordsearch-modal-body'),
+	  wordsearchModalTitle: document.getElementById('wordsearch-modal-title'),
+	  pwaInstallBtn: document.getElementById('pwa-install-btn'),
+	  qtFullSurahBtn: document.getElementById('qt-fullsurah-btn'),
       clock: document.getElementById('clock-time'),
       clockAmPm: document.getElementById('clock-am-pm')
     };
@@ -2958,7 +3145,7 @@ html += '<button onclick="window.openShareCardModal(\'' + sura + '\',\'' + aya +
     html += '<button onclick="window.playAudio(\'' + sura + '\',\'' + aya + '\')" style="background:var(--primary);color:#fff;border:none;padding:5px 10px;border-radius:6px;cursor:pointer;font-weight:700;font-family:var(--font-ui);font-size:0.75rem;">🎧 তিলাওয়াত শুনুন</button>';
     html += '<button onclick="window.copyAya(\'' + sura + '\',\'' + aya + '\')" style="background:var(--gold);color:#000;border:none;padding:5px 10px;border-radius:6px;cursor:pointer;font-weight:700;font-family:var(--font-ui);font-size:0.75rem;">📋 কপি করুন</button>';
     html += '<button onclick="window.downloadTafsirPDF(\'' + sura + '\',\'' + aya + '\')" style="background:#c0392b;color:#fff;border:none;padding:5px 10px;border-radius:6px;cursor:pointer;font-weight:700;font-family:var(--font-ui);font-size:0.75rem;">📄 পিডিএফ (তাফসীরসহ)</button>';
-   html += '<button onclick="window.shareTafsir(\'' + sura + '\',\'' + aya + '\')" ... >📤 শেয়ার</button>';
+   html += '<button onclick="window.shareTafsir(\'' + sura + '\',\'' + aya + '\')" style="background:#0d47a1;color:#fff;border:none;padding:5px 10px;border-radius:6px;cursor:pointer;font-weight:700;font-family:var(--font-ui);font-size:0.75rem;">📤 শেয়ার</button>';
 html += shareCardBtn(sura, aya);
 html += '</div>';
   }
@@ -3165,20 +3352,24 @@ window.shareSurah = function(sura) {
       state.activeCategory = category;
       renderBooks();
     };
+
     // HADITH - only works when hadith tab is active
+       // HADITH - only works when hadith tab is active
     function renderHadith(hadith) {
       if (!dom.hadithContainer || state.currentTab !== 'hadith') return;
+      var total = state.hadithData.length;
       if (!hadith) {
-        hadith = state.hadithData[Math.floor(Math.random() * state.hadithData.length)];
+        hadith = state.hadithData[state.hadithIndex % total];
       }
       var html = '<div class="hadith-card">';
-      html += '<div class="hadith-number">📜 হাদিস</div>';
+      html += '<div class="hadith-number">📜 হাদিস ' + (state.hadithIndex + 1) + '/' + total + '</div>';
       html += '<div class="hadith-text">' + hadith.text + '</div>';
       html += '<div class="hadith-translation"><strong>অনুবাদ:</strong> ' + hadith.translation + '</div>';
       html += '<div class="hadith-source">📚 ' + hadith.source + ' | 🗣️ ' + hadith.narrator + '</div>';
       html += '</div>';
       dom.hadithContainer.innerHTML = html;
     }
+
     // PRAYER - only works when prayer tab is active
     function renderPrayer() {
       if (!dom.prayerContainer || state.currentTab !== 'prayer') return;
@@ -3579,6 +3770,16 @@ var QUIZ_CONFIG = {
       state.knowledgeIndex = (state.knowledgeIndex + direction + state.knowledgeBase.length) % state.knowledgeBase.length;
       renderKnowledge();
     };
+window.navHadithPanel = function(direction) {
+  if (state.currentTab !== 'hadith') {
+    switchTab('hadith');
+    setTimeout(function() { navHadithPanel(direction); }, 300);
+    return;
+  }
+  var total = state.hadithData.length;
+  state.hadithIndex = (state.hadithIndex + direction + total) % total;
+  renderHadith(state.hadithData[state.hadithIndex]);
+};
 function renderTajweed() {
   if (!dom.tajweedContainer || state.currentTab !== 'tajweed') return;
   var item = TAJWEED_RULES[state.tajweedIndex % TAJWEED_RULES.length];
@@ -3601,24 +3802,94 @@ window.navTajweedPanel = function(direction) {
   renderTajweed();
 };
     // HELP - only works when help tab is active
-    function renderHelp() {
-      if (!dom.helpContainer || state.currentTab !== 'help') return;
-      var html = '<div class="knowledge-card"><div class="kb-title">🆘 সাহায্য ও গাইড</div><div class="kb-content">';
-      html += '📖 <strong>কুরআন অনুসন্ধান:</strong><br>';
-      html += '  • "2:255" বা "২:২৫৫"<br>';
-      html += '  • "সূরা ২ আয়াত ২৫৫"<br><br>';
-      html += '📜 <strong>হাদিস:</strong> "হাদিস"<br>';
-      html += '📝 <strong>ব্লগ:</strong> "ব্লগ"<br>';
-      html += '📚 <strong>বই:</strong> "বই"<br>';
-      html += '💰 <strong>যাকাত:</strong> "যাকাত"<br>';
-      html += '⏱️ <strong>টাইমার:</strong> "টাইমার"<br>';
-      html += '🧠 <strong>কুইজ:</strong> "কুইজ"<br>';
-      html += '📑 <strong>বিষয়:</strong> "বিষয়" লিখে সব ক্যাটাগরি দেখুন<br>';
-      html += '🔍 <strong>শব্দ সার্চ:</strong> "খুঁজুন [শব্দ]" লিখে কুরআনে শব্দ খুঁজুন<br>';
-      html += '💡 বাংলা ও ইংরেজি উভয় ভাষায় কাজ করে';
-      html += '</div></div>';
-      dom.helpContainer.innerHTML = html;
-    }
+   // HELP - only works when help tab is active
+function renderHelp() {
+  if (!dom.helpContainer || state.currentTab !== 'help') return;
+  var html = '';
+
+  // ================= পরিচিতি =================
+  html += '<div class="knowledge-card"><div class="kb-title">🆘 কীভাবে ব্যবহার করবেন — সম্পূর্ণ গাইড</div>';
+  html += '<div class="kb-content">নিচের চ্যাট বক্সে লিখে Enter চাপুন বা 🎤/⌨️ বাটন ব্যবহার করুন। যেকোনো কমান্ড বাংলা বা ইংরেজি উভয় ভাষাতেই কাজ করে।</div></div>';
+
+  // ================= চ্যাটে আয়াত খোঁজা =================
+  html += '<div class="knowledge-card"><div class="kb-title">📖 চ্যাটে আয়াত খোঁজার নিয়ম</div><div class="kb-content">';
+  html += 'নিচের যেকোনো ফরম্যাটে লিখলেই আয়াত দেখাবে:<br>';
+  html += '• <strong>2:255</strong> (সূরা নম্বর : আয়াত নম্বর)<br>';
+  html += '• <strong>2.255</strong> বা <strong>2/255</strong> বা <strong>2,255</strong><br>';
+  html += '• <strong>সূরা 2 আয়াত 255</strong><br>';
+  html += '• <strong>সূরা ২ আয়াত ২৫৫</strong> (বাংলা সংখ্যায়ও চলবে)<br><br>';
+  html += 'আয়াত দেখানোর পর নিচে এই বাটনগুলো পাবেন:<br>';
+  html += '📖 তাফসীর — বিস্তারিত ব্যাখ্যা মডালে দেখাবে<br>';
+  html += '🎧 শুনুন — তিলাওয়াত অডিও চালাবে<br>';
+  html += '📋 কপি — আয়াতের টেক্সট ক্লিপবোর্ডে কপি হবে<br>';
+  html += '📄 পিডিএফ — আয়াত পিডিএফ আকারে ডাউনলোড হবে<br>';
+  html += '🖼️ কার্ড — সুন্দর ডিজাইনের ছবি কার্ড তৈরি করে শেয়ার/ডাউনলোড করা যাবে';
+  html += '</div></div>';
+
+  // ================= ট্যাব পরিচালনা =================
+  html += '<div class="knowledge-card"><div class="kb-title">📑 ট্যাব পরিচালনা</div><div class="kb-content">';
+  html += 'উপরের ট্যাব বার থেকে সরাসরি ক্লিক করে যেকোনো সেকশনে যেতে পারবেন। অথবা চ্যাটে নিচের শব্দগুলো লিখেও সরাসরি সেই ট্যাবে চলে যাবেন:<br><br>';
+  html += '💬 <strong>"হোম"</strong> / "home" → চ্যাট ট্যাবে ফিরে যাবে ও চ্যাট মুছে যাবে<br>';
+  html += '📖 <strong>"কুরআন"</strong> / "quran" → কুরআন ও তাফসীর ট্যাব<br>';
+  html += '📝 <strong>"ব্লগ"</strong> / "blog" → ব্লগ পোস্ট ট্যাব<br>';
+  html += '📚 <strong>"বই"</strong> / "book" / "পিডিএফ" → বইয়ের ট্যাব<br>';
+  html += '📜 <strong>"হাদিস"</strong> / "hadith" → হাদিস ট্যাব<br>';
+  html += '🕌 <strong>"নামাজ"</strong> / "সালাত" / "সময়" → নামাজের সময়সূচী<br>';
+  html += '💰 <strong>"যাকাত"</strong> / "zakat" → যাকাত ক্যালকুলেটর<br>';
+  html += '⏱️ <strong>"টাইমার"</strong> / "timer" → পড়ার সময় ট্র্যাকার<br>';
+  html += '🧠 <strong>"কুইজ"</strong> / "quiz" → নতুন কুইজ শুরু হবে<br>';
+  html += '📚 <strong>"জ্ঞান"</strong> / "knowledge" → ইসলামিক জ্ঞানভান্ডার<br>';
+  html += '🎙️ <strong>"তাজবীদ"</strong> / "tajweed" → তাজবীদের নিয়মকানুন<br>';
+  html += '🆘 <strong>"সাহায্য"</strong> / "help" → এই গাইড পেজ';
+  html += '</div></div>';
+
+  // ================= কুরআন ও তাফসীর ট্যাব =================
+  html += '<div class="knowledge-card"><div class="kb-title">📖 কুরআন ও তাফসীর ট্যাব ব্যবহার</div><div class="kb-content">';
+  html += '১. উপরের ড্রপডাউন থেকে সূরা বেছে নিন, আয়াত নম্বর বক্সে লিখুন, তারপর "যান" বাটনে চাপুন।<br>';
+  html += '২. ◀️ ▶️ বাটন দিয়ে আগের/পরের আয়াতে যেতে পারবেন।<br>';
+  html += '৩. উপরের ট্যাব থেকে <strong>"কুরআন"</strong> বা <strong>"তাফসীর"</strong> মোড বেছে নিন — তাফসীর মোডে ইবনে কাসিরের ব্যাখ্যা দেখাবে।<br>';
+  html += '৪. <strong>"সম্পূর্ণ সূরা"</strong> বাটনে চাপলে পুরো সূরা একসাথে (সব আয়াত + অনুবাদ) দেখতে পারবেন, প্রতিটি আয়াতের পাশে আলাদা অডিও ও তাফসীর বাটনসহ।<br>';
+  html += '৫. প্রতিটি আয়াতের নিচে 🎧 তিলাওয়াত, 📋 কপি, 📄 পিডিএফ, 📤 শেয়ার এবং 🖼️ কার্ড বাটন পাবেন।<br>';
+  html += '৬. আয়াতের সাথে কোনো বিষয়/ক্যাটাগরি (📑) যুক্ত থাকলে সেটাতে ক্লিক করলে ওই বিষয়ের সব আয়াত একসাথে দেখতে পারবেন।';
+  html += '</div></div>';
+
+  // ================= বিষয় ও শব্দ খোঁজা =================
+  html += '<div class="knowledge-card"><div class="kb-title">📑 বিষয় তালিকা ও শব্দ খোঁজা</div><div class="kb-content">';
+  html += '🔖 <strong>"বিষয়"</strong> বা "categories" লিখলে কুরআনের সব বিষয়/টপিকের তালিকা দেখাবে — কোন বিষয়ে কতটি আয়াত আছে তাও বলবে। যেকোনো বিষয়ে ক্লিক করলে সেই বিষয়ের সব আয়াত দেখতে পারবেন এবং একসাথে পিডিএফ ডাউনলোড বা শেয়ার করতে পারবেন।<br><br>';
+  html += '🔍 <strong>"খুঁজুন [শব্দ]"</strong> বা <strong>"search [word]"</strong> লিখে কুরআনের যেকোনো শব্দ (আরবি/বাংলা/ইংরেজি) খুঁজতে পারবেন। যেমন — <em>"খুঁজুন সবর"</em> বা <em>"search patience"</em> লিখলে সেই শব্দ সম্বলিত সব আয়াত একসাথে দেখাবে, হাইলাইট করা অবস্থায়।';
+  html += '</div></div>';
+
+  // ================= ভয়েস ইনপুট =================
+  html += '<div class="knowledge-card"><div class="kb-title">🎤 ভয়েস দিয়ে প্রশ্ন করা</div><div class="kb-content">';
+  html += 'চ্যাট ইনপুট বক্সের পাশে 🎤 বাটনে চাপুন। মাইক্রোফোন পারমিশন দিন, তারপর কথা বলুন — যা বলবেন তা লেখায় রূপান্তরিত হয়ে সরাসরি প্রসেস হবে।<br><br>';
+  html += '⚠️ ভয়েস ফিচার কাজ করতে হলে ব্রাউজারের Speech Recognition সাপোর্ট লাগবে (Chrome-এ ভালো কাজ করে) এবং মাইক্রোফোন পারমিশন দিতে হবে।';
+  html += '</div></div>';
+
+  // ================= ভার্চুয়াল কিবোর্ড =================
+  html += '<div class="knowledge-card"><div class="kb-title">⌨️ ভার্চুয়াল কিবোর্ড ব্যবহার</div><div class="kb-content">';
+  html += 'চ্যাট ইনপুটের পাশে ⌨️ বাটনে চাপলে স্ক্রিনে একটি ইউনিকোড কিবোর্ড খুলবে, যেখানে বাংলা, আরবি ও ইংরেজি — তিন ভাষার অক্ষর টাইপ করতে পারবেন।<br><br>';
+  html += '• উপরের ভাষা বাটন (বাংলা/আরবি/English) থেকে ভাষা পরিবর্তন করুন।<br>';
+  html += '• কিবোর্ডের 🎤 বাটনে চেপে ভয়েস দিয়েও লিখতে পারবেন (নির্বাচিত ভাষা অনুযায়ী)।<br>';
+  html += '• Space, Backspace ও Enter বাটনও কিবোর্ডেই পাবেন।<br>';
+  html += '• আবার ⌨️ বাটনে চাপলে কিবোর্ড বন্ধ হয়ে যাবে এবং সাধারণ (native) কিবোর্ড ফিরে আসবে।';
+  html += '</div></div>';
+
+  // ================= অন্যান্য ফিচার =================
+  html += '<div class="knowledge-card"><div class="kb-title">🧩 অন্যান্য ফিচার</div><div class="kb-content">';
+  html += '📜 <strong>হাদিস ট্যাব:</strong> ◀️ ▶️ বাটনে আগের/পরের হাদিস দেখুন।<br>';
+  html += '📚 <strong>জ্ঞান ও তাজবীদ ট্যাব:</strong> ◀️ ▶️ বাটনে ভিন্ন ভিন্ন বিষয় ব্রাউজ করুন।<br>';
+  html += '🧠 <strong>কুইজ ট্যাব:</strong> "নতুন কুইজ" বাটনে চেপে ১০টি এলোমেলো প্রশ্নের কুইজ শুরু করুন, প্রতি উত্তরে সাথে সাথে ফলাফল দেখাবে।<br>';
+  html += '💰 <strong>যাকাত ক্যালকুলেটর:</strong> মোট সম্পদ ও হার লিখে "গণনা করুন" চাপুন।<br>';
+  html += '⏱️ <strong>টাইমার:</strong> ▶️/⏹️ বাটনে পড়ার সময় ট্র্যাক করুন, মোট সময় জমা থাকবে।<br>';
+  html += '📚 <strong>বই ট্যাব:</strong> ক্যাটাগরি অনুযায়ী ফিল্টার করে বই পড়ুন বা পোস্ট লিংকে যান।<br>';
+  html += '🖼️ <strong>শেয়ার কার্ড:</strong> যেকোনো আয়াতের 🖼️ কার্ড বাটনে চাপলে সুন্দর ছবি তৈরি হবে, যা ডাউনলোড বা WhatsApp/Facebook/Telegram/X-এ সরাসরি শেয়ার করা যাবে।<br>';
+  html += '🌙/☀️ <strong>থিম টগল:</strong> উপরের আইকনে চেপে ডার্ক/লাইট মোড পরিবর্তন করুন।<br>';
+  html += '⚙️ <strong>সেটিংস:</strong> ফন্টের আকার, ফন্ট স্টাইল ও অডিওর গতি নিজের পছন্দমতো সেট করুন।<br>';
+  html += '📲 <strong>হোম স্ক্রিনে ইনস্টল:</strong> অ্যাপ আইকনে চেপে সাইটটি মোবাইলের হোম স্ক্রিনে যোগ করুন।';
+  html += '</div></div>';
+
+  dom.helpContainer.innerHTML = html;
+}
     // ============================================================
     // 10. PDF VIEWER
     // ============================================================
@@ -4582,11 +4853,35 @@ document.addEventListener('keydown', function(e) {
     closeShareCardModal();
   }
 });
-
+function setAppHeight() {
+  var h = window.visualViewport ? window.visualViewport.height : window.innerHeight;
+  document.documentElement.style.setProperty('--app-height', h + 'px');
+}
+setAppHeight();
+if (window.visualViewport) {
+  window.visualViewport.addEventListener('resize', setAppHeight);
+} else {
+  window.addEventListener('resize', setAppHeight);
+}
+dom.chatInput.addEventListener('focus', function() {
+  setTimeout(function() {
+    dom.chatInput.scrollIntoView({ behavior: 'smooth', block: 'end' });
+  }, 300);
+});
 function shareCardBtn(sura, aya) {
   return '<button onclick="window.openShareCardModal(\'' + sura + '\',\'' + aya + '\')" style="background:linear-gradient(135deg,#d4af37,#f0d080);color:#000;border:none;padding:3px 8px;border-radius:5px;cursor:pointer;font-weight:700;font-family:var(--font-ui);font-size:0.6rem;">🖼️ কার্ড</button>';
 }
 window.shareCardBtn = shareCardBtn;
+
+if (window.visualViewport) {
+  dom.chatInput.addEventListener('focus', function() {
+    setTimeout(function() {
+      window.scrollTo(0, 0);
+      document.body.scrollTop = 0;
+      dom.chatInput.scrollIntoView({ block: 'end' });
+    }, 350);
+  });
+}
 
 // উইন্ডোতে ফাংশন এক্সপোজ
 window.openShareCardModal = openShareCardModal;
@@ -4669,6 +4964,13 @@ if (dom.pwaInstallBtn) {
         if (e.target === dom.aboutModal) closeAboutModal();
       });
       dom.voiceBtn.addEventListener('click', toggleVoice);
+      var voiceInputBtn = document.getElementById('voice-input-btn');
+if (voiceInputBtn) {
+  voiceInputBtn.addEventListener('click', function() {
+    toggleVoice();
+    voiceInputBtn.classList.toggle('active', state.isVoiceActive);
+  });
+}
       dom.themeToggle.addEventListener('click', toggleTheme);
       dom.suraPanelBtn.addEventListener('click', openSuraPanel);
       dom.closeSura.addEventListener('click', closeSuraPanel);
@@ -4702,10 +5004,10 @@ if (dom.pwaInstallBtn) {
         renderBlogPosts();
       });
       dom.bookRefreshBtn.addEventListener('click', renderBooks);
-      dom.hadithRandomBtn.addEventListener('click', function() {
-        var hadith = state.hadithData[Math.floor(Math.random() * state.hadithData.length)];
-        renderHadith(hadith);
-      });
+
+if (dom.hadithPrevBtn) dom.hadithPrevBtn.addEventListener('click', function() { navHadithPanel(-1); });
+if (dom.hadithNextBtn) dom.hadithNextBtn.addEventListener('click', function() { navHadithPanel(1); });
+
       dom.timerResetBtn.addEventListener('click', function() {
         if (state.timerRunning) {
           clearInterval(state.timerInterval);
@@ -4803,7 +5105,133 @@ if (dom.categoriesBtn) {
       dom.chatInput.focus();
       console.log('🤖 কুরআন বট ১০.৪ (ট্যাব সিস্টেম - শুধু একটিভ ট্যাব) লোড হয়েছে!');
     }
-  
+  // ===== ভার্চুয়াল ইউনিকোড কিবোর্ড (বাংলা/আরবি/ইংরেজি) =====
+var VK_LAYOUTS = {
+  bn: ['অ','আ','ই','ঈ','উ','ঊ','ঋ','এ','ঐ','ও','ঔ',
+       'ক','খ','গ','ঘ','ঙ','চ','ছ','জ','ঝ','ঞ',
+       'ট','ঠ','ড','ঢ','ণ','ত','থ','দ','ধ','ন',
+       'প','ফ','ব','ভ','ম','য','র','ল','শ','ষ',
+       'স','হ','ড়','ঢ়','য়','ৎ','ং','ঃ','ঁ','্',
+       'া','ি','ী','ু','ূ','ৃ','ে','ৈ','ো','ৌ'],
+  ar: ['ا','ب','ت','ث','ج','ح','خ','د','ذ','ر',
+       'ز','س','ش','ص','ض','ط','ظ','ع','غ','ف',
+       'ق','ك','ل','م','ن','ه','و','ي','ء','ة',
+       'ى','ئ','ؤ','لا','َ','ً','ُ','ٌ','ِ','ٍ',
+       'ّ','ْ','ٰ','۔','،','؟'],
+  en: ['Q','W','E','R','T','Y','U','I','O','P',
+       'A','S','D','F','G','H','J','K','L',
+       'Z','X','C','V','B','N','M',
+       '1','2','3','4','5','6','7','8','9','0']
+};
+var vkCurrentLang = 'bn';
+function renderVirtualKeyboard(lang) {
+  vkCurrentLang = lang;
+  var area = document.getElementById('vk-keys-area');
+  if (!area) return;
+  area.setAttribute('data-lang', lang);
+  var keys = VK_LAYOUTS[lang] || [];
+  var html = '';
+  keys.forEach(function(k) {
+    var safe = k.replace(/'/g, "\\'");
+    html += '<button type="button" class="vk-key" onclick="window.vkInsertChar(\'' + safe + '\')">' + k + '</button>';
+  });
+  area.innerHTML = html;
+  document.querySelectorAll('.vk-lang-btn').forEach(function(btn) {
+    btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
+  });
+}
+var VK_SPEECH_LANGS = { bn: 'bn-BD', ar: 'ar-SA', en: 'en-US' };
+var vkRecognition = null, vkRecording = false;
+
+function vkStartVoiceInput() {
+  var SR = window.SpeechRecognition || window.webkitSpeechRecognition;
+  var voiceBtn = document.getElementById('vk-voice-btn');
+  if (!SR) { addBotMessage('❌ আপনার ব্রাউজার ভয়েস টাইপিং সাপোর্ট করে না।', 'error'); return; }
+  if (vkRecording && vkRecognition) { vkRecognition.stop(); return; }
+
+  vkRecognition = new SR();
+  vkRecognition.lang = VK_SPEECH_LANGS[vkCurrentLang] || 'bn-BD';
+  vkRecognition.continuous = false;
+  vkRecognition.interimResults = false;
+
+  vkRecognition.onstart = function() {
+    vkRecording = true;
+    if (voiceBtn) { voiceBtn.classList.add('recording'); voiceBtn.textContent = '🔴'; }
+  };
+  vkRecognition.onresult = function(e) {
+    window.vkInsertChar(e.results[0][0].transcript);
+  };
+  vkRecognition.onerror = vkRecognition.onend = function() {
+    vkRecording = false;
+    if (voiceBtn) { voiceBtn.classList.remove('recording'); voiceBtn.textContent = '🎤'; }
+  };
+  try { vkRecognition.start(); } catch(e) {}
+}
+var vkVoiceBtnEl = document.getElementById('vk-voice-btn');
+if (vkVoiceBtnEl) vkVoiceBtnEl.addEventListener('click', vkStartVoiceInput);
+window.vkInsertChar = function(ch) {
+  var input = dom.chatInput;
+  if (!input) return;
+  var start = input.selectionStart != null ? input.selectionStart : input.value.length;
+  var end = input.selectionEnd != null ? input.selectionEnd : input.value.length;
+  input.value = input.value.substring(0, start) + ch + input.value.substring(end);
+  var newPos = start + ch.length;
+  input.focus();
+  input.setSelectionRange(newPos, newPos);
+};
+function vkBackspace() {
+  var input = dom.chatInput;
+  if (!input) return;
+  var start = input.selectionStart != null ? input.selectionStart : input.value.length;
+  var end = input.selectionEnd != null ? input.selectionEnd : input.value.length;
+  if (start === end && start > 0) {
+    input.value = input.value.substring(0, start - 1) + input.value.substring(end);
+    start = start - 1;
+  } else {
+    input.value = input.value.substring(0, start) + input.value.substring(end);
+  }
+  input.focus();
+  input.setSelectionRange(start, start);
+}
+
+function toggleVirtualKeyboard() {
+  var panel = document.getElementById('virtual-keyboard-panel');
+  var btn = document.getElementById('keyboard-toggle-btn');
+  if (!panel) return;
+  var isActive = panel.classList.toggle('active');
+  if (btn) btn.classList.toggle('active', isActive);
+  if (isActive) {
+    renderVirtualKeyboard(vkCurrentLang);
+    dom.chatInput.setAttribute('readonly', 'readonly');
+    dom.chatInput.blur();
+    // কীবোর্ড খোলার পর চ্যাট অটো স্ক্রল করে নিচে নামবে
+    setTimeout(function() {
+      scrollChatToBottom();
+      panel.scrollIntoView({ behavior: 'smooth', block: 'end' });
+    }, 150);
+  } else {
+    dom.chatInput.removeAttribute('readonly');
+  }
+}
+window.toggleVirtualKeyboard = toggleVirtualKeyboard;
+
+var keyboardToggleBtn = document.getElementById('keyboard-toggle-btn');
+if (keyboardToggleBtn) keyboardToggleBtn.addEventListener('click', toggleVirtualKeyboard);
+document.querySelectorAll('.vk-lang-btn').forEach(function(btn) {
+  btn.addEventListener('click', function() {
+    renderVirtualKeyboard(this.getAttribute('data-lang'));
+  });
+});
+var vkSpaceBtn = document.getElementById('vk-space-btn');
+if (vkSpaceBtn) vkSpaceBtn.addEventListener('click', function() { window.vkInsertChar(' '); });
+var vkBackspaceBtn = document.getElementById('vk-backspace-btn');
+if (vkBackspaceBtn) vkBackspaceBtn.addEventListener('click', vkBackspace);
+var vkEnterBtn = document.getElementById('vk-enter-btn');
+if (vkEnterBtn) {
+  vkEnterBtn.addEventListener('click', function() {
+    processQuery(dom.chatInput.value);
+  });
+}
   // ============================================================
 // 13B. QURAN TEXT / WORD SEARCH
 // ============================================================
