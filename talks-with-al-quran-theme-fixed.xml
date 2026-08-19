@@ -10218,12 +10218,6 @@ function displayAyaResultWithShareCard(aya) {
         headerControls.appendChild(morePanel);
     }
 
-    // ── সাইডবার ট্যাব গ্রুপিং ──────────────────────────────
-    var TAB_GROUPS = [
-        { label: '📖 কুরআন ও গবেষণা', tabs: ['chat','quran','sura','categories','wordsearch','wbw','hadith'] },
-        { label: '🧭 শেখা ও অনুশীলন', tabs: ['quiz','knowledge','tajweed','salat','dhikr'] },
-        { label: '🛠️ আরও টুলস', tabs: ['blog','books','video','prayer','zakat','help'] }
-    ];
     function groupSidebarTabs() {
         var container = document.getElementById('app-tabs');
         if (!container || container.getAttribute('data-grouped') === '1') return;
