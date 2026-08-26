@@ -1,0 +1,572 @@
+[
+  {
+    "sura": 1,
+    "ayahCount": 7,
+    "ruku": 1
+  },
+  {
+    "sura": 2,
+    "ayahCount": 286,
+    "ruku": 40
+  },
+  {
+    "sura": 3,
+    "ayahCount": 200,
+    "ruku": 20
+  },
+  {
+    "sura": 4,
+    "ayahCount": 176,
+    "ruku": 24
+  },
+  {
+    "sura": 5,
+    "ayahCount": 120,
+    "ruku": 16
+  },
+  {
+    "sura": 6,
+    "ayahCount": 165,
+    "ruku": 20
+  },
+  {
+    "sura": 7,
+    "ayahCount": 206,
+    "ruku": 24
+  },
+  {
+    "sura": 8,
+    "ayahCount": 75,
+    "ruku": 10
+  },
+  {
+    "sura": 9,
+    "ayahCount": 129,
+    "ruku": 16
+  },
+  {
+    "sura": 10,
+    "ayahCount": 109,
+    "ruku": 11
+  },
+  {
+    "sura": 11,
+    "ayahCount": 123,
+    "ruku": 10
+  },
+  {
+    "sura": 12,
+    "ayahCount": 111,
+    "ruku": 12
+  },
+  {
+    "sura": 13,
+    "ayahCount": 43,
+    "ruku": 6
+  },
+  {
+    "sura": 14,
+    "ayahCount": 52,
+    "ruku": 7
+  },
+  {
+    "sura": 15,
+    "ayahCount": 99,
+    "ruku": 6
+  },
+  {
+    "sura": 16,
+    "ayahCount": 128,
+    "ruku": 16
+  },
+  {
+    "sura": 17,
+    "ayahCount": 111,
+    "ruku": 12
+  },
+  {
+    "sura": 18,
+    "ayahCount": 110,
+    "ruku": 12
+  },
+  {
+    "sura": 19,
+    "ayahCount": 98,
+    "ruku": 6
+  },
+  {
+    "sura": 20,
+    "ayahCount": 135,
+    "ruku": 8
+  },
+  {
+    "sura": 21,
+    "ayahCount": 112,
+    "ruku": 7
+  },
+  {
+    "sura": 22,
+    "ayahCount": 78,
+    "ruku": 10
+  },
+  {
+    "sura": 23,
+    "ayahCount": 118,
+    "ruku": 6
+  },
+  {
+    "sura": 24,
+    "ayahCount": 64,
+    "ruku": 9
+  },
+  {
+    "sura": 25,
+    "ayahCount": 77,
+    "ruku": 6
+  },
+  {
+    "sura": 26,
+    "ayahCount": 227,
+    "ruku": 11
+  },
+  {
+    "sura": 27,
+    "ayahCount": 93,
+    "ruku": 7
+  },
+  {
+    "sura": 28,
+    "ayahCount": 88,
+    "ruku": 9
+  },
+  {
+    "sura": 29,
+    "ayahCount": 69,
+    "ruku": 7
+  },
+  {
+    "sura": 30,
+    "ayahCount": 60,
+    "ruku": 6
+  },
+  {
+    "sura": 31,
+    "ayahCount": 34,
+    "ruku": 4
+  },
+  {
+    "sura": 32,
+    "ayahCount": 30,
+    "ruku": 3
+  },
+  {
+    "sura": 33,
+    "ayahCount": 73,
+    "ruku": 9
+  },
+  {
+    "sura": 34,
+    "ayahCount": 54,
+    "ruku": 6
+  },
+  {
+    "sura": 35,
+    "ayahCount": 45,
+    "ruku": 5
+  },
+  {
+    "sura": 36,
+    "ayahCount": 83,
+    "ruku": 5
+  },
+  {
+    "sura": 37,
+    "ayahCount": 182,
+    "ruku": 5
+  },
+  {
+    "sura": 38,
+    "ayahCount": 88,
+    "ruku": 5
+  },
+  {
+    "sura": 39,
+    "ayahCount": 75,
+    "ruku": 8
+  },
+  {
+    "sura": 40,
+    "ayahCount": 85,
+    "ruku": 9
+  },
+  {
+    "sura": 41,
+    "ayahCount": 54,
+    "ruku": 6
+  },
+  {
+    "sura": 42,
+    "ayahCount": 53,
+    "ruku": 5
+  },
+  {
+    "sura": 43,
+    "ayahCount": 89,
+    "ruku": 7
+  },
+  {
+    "sura": 44,
+    "ayahCount": 59,
+    "ruku": 3
+  },
+  {
+    "sura": 45,
+    "ayahCount": 37,
+    "ruku": 4
+  },
+  {
+    "sura": 46,
+    "ayahCount": 35,
+    "ruku": 4
+  },
+  {
+    "sura": 47,
+    "ayahCount": 38,
+    "ruku": 4
+  },
+  {
+    "sura": 48,
+    "ayahCount": 29,
+    "ruku": 4
+  },
+  {
+    "sura": 49,
+    "ayahCount": 18,
+    "ruku": 2
+  },
+  {
+    "sura": 50,
+    "ayahCount": 45,
+    "ruku": 3
+  },
+  {
+    "sura": 51,
+    "ayahCount": 60,
+    "ruku": 3
+  },
+  {
+    "sura": 52,
+    "ayahCount": 49,
+    "ruku": 2
+  },
+  {
+    "sura": 53,
+    "ayahCount": 62,
+    "ruku": 3
+  },
+  {
+    "sura": 54,
+    "ayahCount": 55,
+    "ruku": 3
+  },
+  {
+    "sura": 55,
+    "ayahCount": 78,
+    "ruku": 3
+  },
+  {
+    "sura": 56,
+    "ayahCount": 96,
+    "ruku": 3
+  },
+  {
+    "sura": 57,
+    "ayahCount": 29,
+    "ruku": 4
+  },
+  {
+    "sura": 58,
+    "ayahCount": 22,
+    "ruku": 3
+  },
+  {
+    "sura": 59,
+    "ayahCount": 24,
+    "ruku": 3
+  },
+  {
+    "sura": 60,
+    "ayahCount": 13,
+    "ruku": 2
+  },
+  {
+    "sura": 61,
+    "ayahCount": 14,
+    "ruku": 2
+  },
+  {
+    "sura": 62,
+    "ayahCount": 11,
+    "ruku": 2
+  },
+  {
+    "sura": 63,
+    "ayahCount": 11,
+    "ruku": 2
+  },
+  {
+    "sura": 64,
+    "ayahCount": 18,
+    "ruku": 2
+  },
+  {
+    "sura": 65,
+    "ayahCount": 12,
+    "ruku": 2
+  },
+  {
+    "sura": 66,
+    "ayahCount": 12,
+    "ruku": 2
+  },
+  {
+    "sura": 67,
+    "ayahCount": 30,
+    "ruku": 2
+  },
+  {
+    "sura": 68,
+    "ayahCount": 52,
+    "ruku": 2
+  },
+  {
+    "sura": 69,
+    "ayahCount": 52,
+    "ruku": 2
+  },
+  {
+    "sura": 70,
+    "ayahCount": 44,
+    "ruku": 2
+  },
+  {
+    "sura": 71,
+    "ayahCount": 28,
+    "ruku": 2
+  },
+  {
+    "sura": 72,
+    "ayahCount": 28,
+    "ruku": 2
+  },
+  {
+    "sura": 73,
+    "ayahCount": 20,
+    "ruku": 2
+  },
+  {
+    "sura": 74,
+    "ayahCount": 56,
+    "ruku": 2
+  },
+  {
+    "sura": 75,
+    "ayahCount": 40,
+    "ruku": 2
+  },
+  {
+    "sura": 76,
+    "ayahCount": 31,
+    "ruku": 2
+  },
+  {
+    "sura": 77,
+    "ayahCount": 50,
+    "ruku": 2
+  },
+  {
+    "sura": 78,
+    "ayahCount": 40,
+    "ruku": 2
+  },
+  {
+    "sura": 79,
+    "ayahCount": 46,
+    "ruku": 2
+  },
+  {
+    "sura": 80,
+    "ayahCount": 42,
+    "ruku": 1
+  },
+  {
+    "sura": 81,
+    "ayahCount": 29,
+    "ruku": 1
+  },
+  {
+    "sura": 82,
+    "ayahCount": 19,
+    "ruku": 1
+  },
+  {
+    "sura": 83,
+    "ayahCount": 36,
+    "ruku": 1
+  },
+  {
+    "sura": 84,
+    "ayahCount": 25,
+    "ruku": 1
+  },
+  {
+    "sura": 85,
+    "ayahCount": 22,
+    "ruku": 1
+  },
+  {
+    "sura": 86,
+    "ayahCount": 17,
+    "ruku": 1
+  },
+  {
+    "sura": 87,
+    "ayahCount": 19,
+    "ruku": 1
+  },
+  {
+    "sura": 88,
+    "ayahCount": 26,
+    "ruku": 1
+  },
+  {
+    "sura": 89,
+    "ayahCount": 30,
+    "ruku": 1
+  },
+  {
+    "sura": 90,
+    "ayahCount": 20,
+    "ruku": 1
+  },
+  {
+    "sura": 91,
+    "ayahCount": 15,
+    "ruku": 1
+  },
+  {
+    "sura": 92,
+    "ayahCount": 21,
+    "ruku": 1
+  },
+  {
+    "sura": 93,
+    "ayahCount": 11,
+    "ruku": 1
+  },
+  {
+    "sura": 94,
+    "ayahCount": 8,
+    "ruku": 1
+  },
+  {
+    "sura": 95,
+    "ayahCount": 8,
+    "ruku": 1
+  },
+  {
+    "sura": 96,
+    "ayahCount": 19,
+    "ruku": 1
+  },
+  {
+    "sura": 97,
+    "ayahCount": 5,
+    "ruku": 1
+  },
+  {
+    "sura": 98,
+    "ayahCount": 8,
+    "ruku": 1
+  },
+  {
+    "sura": 99,
+    "ayahCount": 8,
+    "ruku": 1
+  },
+  {
+    "sura": 100,
+    "ayahCount": 11,
+    "ruku": 1
+  },
+  {
+    "sura": 101,
+    "ayahCount": 11,
+    "ruku": 1
+  },
+  {
+    "sura": 102,
+    "ayahCount": 8,
+    "ruku": 1
+  },
+  {
+    "sura": 103,
+    "ayahCount": 3,
+    "ruku": 1
+  },
+  {
+    "sura": 104,
+    "ayahCount": 9,
+    "ruku": 1
+  },
+  {
+    "sura": 105,
+    "ayahCount": 5,
+    "ruku": 1
+  },
+  {
+    "sura": 106,
+    "ayahCount": 4,
+    "ruku": 1
+  },
+  {
+    "sura": 107,
+    "ayahCount": 7,
+    "ruku": 1
+  },
+  {
+    "sura": 108,
+    "ayahCount": 3,
+    "ruku": 1
+  },
+  {
+    "sura": 109,
+    "ayahCount": 6,
+    "ruku": 1
+  },
+  {
+    "sura": 110,
+    "ayahCount": 3,
+    "ruku": 1
+  },
+  {
+    "sura": 111,
+    "ayahCount": 5,
+    "ruku": 1
+  },
+  {
+    "sura": 112,
+    "ayahCount": 4,
+    "ruku": 1
+  },
+  {
+    "sura": 113,
+    "ayahCount": 5,
+    "ruku": 1
+  },
+  {
+    "sura": 114,
+    "ayahCount": 6,
+    "ruku": 1
+  }
+]
